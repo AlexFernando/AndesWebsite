@@ -1,0 +1,115 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.2",
+  "hash": "f1c873661f15d6073f23",
+  "publicPath": "/static/",
+  "outputPath": "/home/alexf/react_2020/andes/build/static",
+  "assetsByChunkName": {
+    "andes": "andes.module.js"
+  },
+  "assets": [
+    {
+      "name": "andes.module.js",
+      "size": 9309298,
+      "chunks": [
+        "andes"
+      ],
+      "chunkNames": [
+        "andes"
+      ],
+      "info": {},
+      "emitted": false,
+      "isOverSizeLimit": true
+    },
+    {
+      "name": "images/1.jpeg",
+      "size": 89365,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/link2.jpg",
+      "size": 114167,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/link3.jpg",
+      "size": 441092,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/link4.jpeg",
+      "size": 158464,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/logo.png",
+      "size": 475425,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/mision.jpeg",
+      "size": 201192,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/vision.jpeg",
+      "size": 173255,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "andes": {
+      "chunks": [
+        "andes"
+      ],
+      "assets": [
+        "andes.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "andes": {
+      "chunks": [
+        "andes"
+      ],
+      "assets": [
+        "andes.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 2,
+      "debug": false
+    }
+  },
+  "children": []
+}
