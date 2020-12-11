@@ -2,14 +2,14 @@ import React, { useEffect, useState, useRef } from "react";
 import {css, styled} from "frontity";
 import {Border} from './Menu';
 import Link from "./Link";
+import SecondaryNavbar from './SecondaryNavbar';
+
 
 const DropDownBox = styled.div`
   display: flex;
   flex-direction: column;  
   width: 100%;
-
  
-
   @media(min-width: 768px) {
     position: fixed;
     top: 14vh;
@@ -18,14 +18,14 @@ const DropDownBox = styled.div`
     justify-content: flex-start;
     align-items: center;
     background-color: #fff;
-    border-top: 1px solid #e5e5e5;
+    border: 1px solid #e5e5e5;
   }
 `
 
-const VerticalBorder = styled.div `
+export const VerticalBorder = styled.div `
   
   @media(min-width: 768px){ 
-    border-left: 1px solid #000;
+    border-left: 1px solid #808080;
     margin-left: 2rem;
   }
 `
@@ -52,7 +52,7 @@ const ListStyle = styled.li`
 
   &:first-of-type {
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 1rem;
   }
 
@@ -78,7 +78,7 @@ const ButtonStyled = styled.button`
     font-size: 1rem;
 `;
 
-const Dropdown = ({open, setOpen, options=null, secondTitle =null, options2 = null, ImageNav = null, thirdTitle =null, options3 = null}) => {
+const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitle =null, options2 = null, ImageNav = null, thirdTitle =null, options3 = null}) => {
 
   let titleOptions = options.shift();
 
@@ -90,7 +90,9 @@ const Dropdown = ({open, setOpen, options=null, secondTitle =null, options2 = nu
       return;
     }
     // outside click
+  
     setOpen(false);
+    
   };
    
   useEffect(() => {
@@ -104,6 +106,7 @@ const Dropdown = ({open, setOpen, options=null, secondTitle =null, options2 = nu
   return (
 
     <DropDownBox ref={node}>
+      
       {open && (
         <>
           <ImageStyle src={ImageNav} />
@@ -118,7 +121,7 @@ const Dropdown = ({open, setOpen, options=null, secondTitle =null, options2 = nu
               {options.map(opt => (
                     <>
                       <ListStyle key={opt}>
-                        <ButtonStyled onClick={() => setOpen(false)}><Link href={`/${opt.toLowerCase().replace(/\s/g, "")}`}>{opt}</Link></ButtonStyled>
+                        <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}><Link href={`/${opt.toLowerCase().replace(/\s/g, "")}`}>{opt}</Link></ButtonStyled>
                       </ListStyle>
                       <Border />
                     </>
@@ -135,7 +138,7 @@ const Dropdown = ({open, setOpen, options=null, secondTitle =null, options2 = nu
                         {options2.map(opt2 => (
                               <>
                               <ListStyle key={opt2}>
-                                <ButtonStyled onClick={() => setOpen(false)}>
+                                <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}>
                                   <Link href={`/${opt2.toLowerCase().replace(/\s/g, "")}`}>{opt2}</Link>  
                                 </ButtonStyled>                                
                               </ListStyle>
@@ -158,7 +161,7 @@ const Dropdown = ({open, setOpen, options=null, secondTitle =null, options2 = nu
                         {options3.map(opt3 => (
                               <>
                               <ListStyle key={opt3}>
-                                <ButtonStyled onClick={() => setOpen(false)}>
+                                <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}>
                                   <Link href={`/${opt3.toLowerCase().replace(/\s/g, "")}`}>{opt3}</Link>  
                                 </ButtonStyled>                                
                               </ListStyle>

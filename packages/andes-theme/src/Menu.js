@@ -3,14 +3,13 @@ import Dropdown from "./Dropdown";
 import {css, styled} from "frontity";
 import LinkButton from './LinkButton';
 import Image from "@frontity/components/image";
-import logo from './images/logo.png';
+import logo from './static/images/logoscaled.png';
 import { ButtonAction } from './bgImage';
-import imgAndes from './images/1.jpeg';
-import imgResearch from './images/link2.jpg';
-import imgPluriculturalidad from './images/link3.jpg';
-import imgNoticias from './images/link4.jpeg';
+import imgAndes from './static/images/1.jpeg';
+import imgPluriculturalidad from './static/images/link3.jpg';
+import imgNoticias from './static/images/link4.jpeg';
 import Link from "./Link";
-
+import SecondaryNavbar from './SecondaryNavbar';
  
 const Navigation = styled.nav`
   display: flex;
@@ -27,8 +26,8 @@ const Navigation = styled.nav`
   width: 100%;
 
   @media (max-width: 768px) {
-    height: 12vh;
-    position: absolute;
+    height: 14vh;
+    position: fixed;
     top: 0;
   }
 `
@@ -46,8 +45,9 @@ const Toggle = styled.div`
 const Navbox = styled.div`
   display: flex;
   height: 100%;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  margin: 0 1rem 0 0;
   
 
   @media (max-width: 768px) {
@@ -110,12 +110,13 @@ const Button = styled.a`
     display: flex;
     margin: 1rem 0rem 1rem 1rem;
     font-size: 1.2rem;
-    color: #61a534;
+    color: #000;
     text-decoration: none;
+    cursor: pointer;
    
     @media(min-width: 768px) {
-        margin: 0rem 2rem 0 2rem;
-        font-size: 1.5rem;
+        margin: 0rem 1rem 0 1rem;
+        font-size: 1.3rem;
         color: #000;
     }
 `;
@@ -134,11 +135,6 @@ export const Border = styled.div`
 
 `;
 
-export const EmptyContent = styled.div`
-  content : "";
-  height  : 1px;
-  width   : 100vh;  /* or 100px */
-`;
 
 const Menu =  () => {
 
@@ -158,7 +154,7 @@ const Menu =  () => {
     <Navigation>
       
       <Link href="/"><Image src={logo} height="60" width="60" /></Link>
-      
+ 
       <Toggle
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}
@@ -166,23 +162,37 @@ const Menu =  () => {
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </Toggle>  
     
+      
+
       {navbarOpen ? (
         <>
+             
         <Navbox>
-        
+           
+        <SecondaryNavbar
+            navOpen = {navbarOpen}
+            setNavOpen = {setNavbarOpen}
+        />
             <Border />
+            <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
+              <Link  href= "/">Inicio</Link> 
+            </Button>
+            <Border />
+
             <Button onClick={() => setOpenAboutMobile(!openAboutMobile)}>
-              Andes
+            < Link href="#">Andes</Link>
             </Button>
             <Border />
               {openAboutMobile ? 
                 <MobileBox>
                   <Dropdown
+                    navOpen = {navbarOpen}
+                    setNavOpen = {setNavbarOpen}
                     open = {openAboutMobile}
                     setOpen = {setOpenAboutMobile}
                     options={["Quiénes somos?", "Filosofia", "Personas"]}
                     secondTitle = {'Que Hacemos?'}
-                    options2={["Territorios Bioculturales", "Investigación", "Incidencias Políticas"]}
+                    options2={["Territorios Bioculturales", "Incidencias Políticas"]}
                     thirdTitle = {["Dónde trabajamos?"]}
                     options3={["Parque de la Papa - Pisac", "Parque de Maíz - Lares", "Parque Espiritual - Vilcanota", "Programas y Redes Internacionales"]}
                   /> 
@@ -193,15 +203,17 @@ const Menu =  () => {
         
 
             <Button onClick={() => setOpenResearchMObile(!openResearchMobile)}>
-              Pluriversidad
+              <Link href="#">Pluriversidad</Link>
             </Button>
             <Border />
               {openResearchMobile ?
                 <MobileBox>
                   <Dropdown
+                    navOpen = {navbarOpen}
+                    setNavOpen = {setNavbarOpen}
                     open = {openResearchMobile}
                     setOpen = {setOpenResearchMObile}
-                    options = {["Yachay Kuychi", "Quiénes somos?"]}
+                    options = {["Yachay Kuychi", "Quienes somos?"]}
                     secondTitle = {'Que Hacemos?'}
                     options2 = {["Cursos", "Pasantías", "Intercambios"]}
                     thirdTitle = {"Utilidades"}
@@ -212,26 +224,22 @@ const Menu =  () => {
                   : null
               } 
 
-            <Button onClick={() => setOpenEventosMobile(!openEventosMobile)}>
-              Publicaciones
-            </Button>
-            <Border />
-              {openEventosMobile ? 
-                <MobileBox>
-                  <Dropdown
-                    open = {openEventosMobile}
-                    setOpen = {setOpenEventosMobile}
-                    options={["Publicaciones","Bibliografía", "Videos", "Fotos"]}
-                  />
-                  
-                </MobileBox>
-                  : null
-              } 
+          <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
+              <Link href="/publicaciones">Publicaciones</Link>
+          </Button>
+          <Border />
 
-          <Button href= "/noticiasrelevantes"> Noticias</Button> 
-          <Button href= "/eventos"> Eventos</Button> 
+          <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
+            <Link href= "/noticiasrelevantes">Noticias</Link>
+          </Button> 
+          <Border />
+          
+          <Button onClick = {() => setNavbarOpen(!navbarOpen)}> 
+            <Link href= "/eventos">Eventos</Link>
+          </Button> 
+          <Border />
 
-          <ButtonAction >
+          <ButtonAction onClick = {() => setNavbarOpen(!navbarOpen)}>
              <LinkButton href="/">Contacto</LinkButton>
           </ButtonAction>
               <br></br>
@@ -244,13 +252,13 @@ const Menu =  () => {
 
       ) : (
         <Navbox open>
-      
-          <Button onClick={() => setOpenAbout(!openAbout)}>Andes</Button> 
-          <Button onClick={() => setOpenResearch(!openResearch)}>Pluriversidad</Button> 
-          <Button onClick={() => setOpenEventos(!openEventos)}>Publicaciones</Button> 
-          <Button href= "/noticiasrelevantes"> Noticias</Button> 
-          <Button href= "/eventos"> Eventos</Button> 
-          <ButtonAction > <LinkButton href="/">Contacto</LinkButton></ButtonAction>
+          <Button><Link href="/">INICIO</Link></Button>
+          <Button onClick={() => setOpenAbout(!openAbout)}>ANDES</Button> 
+          <Button onClick={() => setOpenResearch(!openResearch)}>PLURIVERSIDAD</Button> 
+          <Button><Link href="/publicaciones">PUBLICACIONES</Link></Button> 
+          <Button><Link href= "/noticiasrelevantes">NOTICIAS</Link></Button> 
+          <Button> <Link href= "/eventos">EVENTOS</Link></Button> 
+          <ButtonAction > <LinkButton href="/">CONTACTO</LinkButton></ButtonAction>
 
         </Navbox>
   
@@ -265,7 +273,7 @@ const Menu =  () => {
         setOpen = {setOpenAbout}
         options={["Quiénes somos?", "Filosofia", "Personas"]}
         secondTitle = {'Que hacemos?'}
-        options2={["Territorios Culturales", "Investigación", "Incidencias Políticas"]}
+        options2={["Territorios Bioculturales", "Incidencias Políticas"]}
         thirdTitle = {["Dónde trabajamos?"]}
         options3={["Parque de la Papa - Pisac", "Parque de Maíz - Lares", "Parque Espiritual - Vilcanota", "Programas y Redes Internacionales"]}
         ImageNav = {imgAndes}
@@ -276,7 +284,7 @@ const Menu =  () => {
       <Dropdown
         open = {openResearch}
         setOpen = {setOpenResearch}
-        options = {["Yachay Kuychi", "Quiénes somos?"]}
+        options = {["Yachay Kuychi", "Quienes somos?"]}
         secondTitle = {'Que Hacemos?'}
         options2 = {["Cursos", "Pasantías", "Intercambios"]}
         thirdTitle =  {"Utilidades"}

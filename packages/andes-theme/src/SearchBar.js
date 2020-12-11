@@ -6,14 +6,20 @@ import {ButtonAction} from './bgImage';
 import {SectionContainer} from './Filosofia';
 import LinkButton from "./LinkButton";
 
-const SearchBar = styled.div`
+export const SearchBar = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding-top: 2rem;
+
+    @media (max-width: 768px){
+        padding: 0 1rem;
+        flex-direction: column;
+        align-items: stretch;
+    }
 `;
 
-const InputBar = styled.form`
+export const InputBar = styled.form`
     display: flex;
     flex-basis: 70%;
     justify-content: flex-start;
@@ -23,6 +29,10 @@ const InputBar = styled.form`
     border: 1px solid gray;
     border-radius: 1rem;
 
+    @media (max-width: 768px){
+        margin-bottom: 1rem;
+    }
+
     input {
         font-size: 1.6rem;
         border: none;
@@ -30,13 +40,14 @@ const InputBar = styled.form`
         padding-left: 1rem;
         width: 70%;
         @media (max-width: 768px){
-            font-size: 1rem;
+            width: 100%;
+            font-size: 1.2rem;
         }
     }    
 `
 
 
-const PostStyled = styled.div`
+export const PostStyled = styled.div`
         
     background-color: #fff;
     padding: 2rem;
@@ -52,7 +63,7 @@ const PostStyled = styled.div`
     }
 
     @media (max-width: 768px){
-        margin: 1rem;
+        margin: 0rem;
 
         div {
             font-size: .8rem;
@@ -60,7 +71,7 @@ const PostStyled = styled.div`
     }
 `;
 
-const NotFoundContainer = styled.div`
+export const NotFoundContainer = styled.div`
     
     text-align: center;
     margin-top: 2rem;
@@ -136,7 +147,7 @@ const SearchBarComponent = ({state}) => {
 
         e.preventDefault();
   
-        const results = people.filter(person => person.titulo.toLowerCase().includes(searchTerm) || person.content.toLowerCase().includes(searchTerm));
+        const results = people.filter(person => person.titulo.toLowerCase().includes(searchTerm.toLowerCase()) || person.content.toLowerCase().includes(searchTerm.toLowerCase()));
      
         setSearchResults(results);
 

@@ -3,9 +3,13 @@ import { connect, styled } from "frontity";
 
 const Anchor = styled.a`
   color: #000;
-  font-weight: 200;
+  font-weight: 400;
   text-decoration: none;
   cursor: pointer;
+
+  @media(max-width: 768px) {
+      font-weight: 200;
+  }
 `;
 
 const Link = ({ href, actions, children }) => {

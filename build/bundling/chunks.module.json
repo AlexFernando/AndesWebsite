@@ -2,16 +2,34 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "f1c873661f15d6073f23",
+  "hash": "daa208b49bfa1c26ec2b",
   "publicPath": "/static/",
   "outputPath": "/home/alexf/react_2020/andes/build/static",
   "assetsByChunkName": {
-    "andes": "andes.module.js"
+    "andes": [
+      "andes.module.js",
+      "andes.de9cb8979ae6804a3af1.hot-update.js"
+    ]
   },
   "assets": [
     {
+      "name": "andes.de9cb8979ae6804a3af1.hot-update.js",
+      "size": 121085,
+      "chunks": [
+        "andes"
+      ],
+      "chunkNames": [
+        "andes"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "andes.module.js",
-      "size": 9309298,
+      "size": 9775846,
       "chunks": [
         "andes"
       ],
@@ -19,12 +37,134 @@
         "andes"
       ],
       "info": {},
-      "emitted": false,
-      "isOverSizeLimit": true
+      "emitted": false
+    },
+    {
+      "name": "de9cb8979ae6804a3af1.hot-update.json",
+      "size": 47,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
     },
     {
       "name": "images/1.jpeg",
       "size": 89365,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/14670IIED-pdf-212x300.jpg",
+      "size": 17005,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/Andean_Cultural_Affirmation_and_Cultural-pdf.jpg",
+      "size": 144597,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/Everyday-Experts-complete-pdf.jpg",
+      "size": 131106,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/GB7-Briefing-Note-final-pdf-212x300.jpg",
+      "size": 18748,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/Sayre_et_al-2017-Culture_Agriculture_Food_and_Environment-pdf-768x994.jpg",
+      "size": 154222,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/Seedlawstudy_Bert-Visser-pdf.jpg",
+      "size": 74644,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/annales-257x300.png",
+      "size": 174115,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/applePark.jpg",
+      "size": 12740,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/biocultural-288x300.png",
+      "size": 131772,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/disertacion-286x300.png",
+      "size": 45674,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/ecosystem-274x300.png",
+      "size": 68999,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/estudioparquemaiz.png",
+      "size": 80401,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/homenews.jpeg",
+      "size": 150534,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/interspecies-respect-269x300.png",
+      "size": 63796,
       "chunks": [],
       "chunkNames": [],
       "info": {},
@@ -55,8 +195,8 @@
       "emitted": false
     },
     {
-      "name": "images/logo.png",
-      "size": 475425,
+      "name": "images/logoscaled.png",
+      "size": 121747,
       "chunks": [],
       "chunkNames": [],
       "info": {},
@@ -65,6 +205,126 @@
     {
       "name": "images/mision.jpeg",
       "size": 201192,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/parquemaiz.jpg",
+      "size": 52918,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/parquemaiz2.jpg",
+      "size": 116089,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/parquemaiz3.png",
+      "size": 154551,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/parquepapa.jpg",
+      "size": 222419,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/parquepapa2.jpg",
+      "size": 205295,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/programas1.jpeg",
+      "size": 72286,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/programas2.jpg",
+      "size": 203269,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/programas3.jpg",
+      "size": 57717,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/seed-223x300.png",
+      "size": 112980,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/territoriobio.png",
+      "size": 140082,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/territoriobio2.png",
+      "size": 49239,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/territoriobio3.jpg",
+      "size": 6456,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/transgenicos.jpg",
+      "size": 83389,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/vilcanota1.jpg",
+      "size": 350364,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/vilcanota2.jpg",
+      "size": 251685,
       "chunks": [],
       "chunkNames": [],
       "info": {},
@@ -86,7 +346,8 @@
         "andes"
       ],
       "assets": [
-        "andes.module.js"
+        "andes.module.js",
+        "andes.de9cb8979ae6804a3af1.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -98,7 +359,8 @@
         "andes"
       ],
       "assets": [
-        "andes.module.js"
+        "andes.module.js",
+        "andes.de9cb8979ae6804a3af1.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

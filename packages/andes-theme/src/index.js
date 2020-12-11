@@ -14,13 +14,9 @@ export default {
           isReady: true,
           isFetching: false,
           isBackgroundImage: true,
+          isHomePage: true,
         },
 
-        "/brief/": {
-          isReady: true,
-          isFetching: false,
-          isBrief: true,
-        },
 
         "/filosofia/": {
           isReady: true,
@@ -34,19 +30,13 @@ export default {
           isStuff: true,
         },
 
-        "/noticiasrelevantes/": {
-          isReady: true,
-          isFetching: false,
-          isNoticiasRelevantes: true,
-        },
-
         "/searchbar/": {
           isReady: true,
           isFetching: false,
           isSearchBar: true,
         },
 
-        "/territoriosculturales/": {
+        "/territoriosbioculturales/": {
           isReady: true,
           isFetching: false,
           isTerritorios: true,
@@ -68,6 +58,66 @@ export default {
           isReady: true,
           isFetching: false,
           isPotatoPark: true,
+        },
+
+        "/parquedemaíz-lares/": {
+          isReady: true,
+          isFetching: false,
+          isLaresPark: true,
+        },
+
+        "/parqueespiritual-vilcanota/": {
+          isReady: true,
+          isFetching: false,
+          isVilcanotaPark: true,
+        },
+
+        "/programasyredesinternacionales/": {
+          isReady: true,
+          isFetching: false,
+          isInternationalsPrograms: true,
+        },
+
+        "/cursos/": {
+          isReady: true,
+          isFetching: false,
+          isCursos: true,
+        },
+
+        "/quienessomos/": {
+          isReady: true,
+          isFetching: false,
+          isNosotrosYachay: true,
+        },
+
+        "/pasantías/": {
+          isReady: true,
+          isFetching: false,
+          isPasantias: true,
+        },
+
+        "/intercambios/": {
+          isReady: true,
+          isFetching: false,
+          isIntercambios: true,
+        },
+
+        "/cajadeherramientas/": {
+          isReady: true,
+          isFetching: false,
+          isToolkit: true,
+        },
+
+        "/publicaciones/": {
+          isReady: true,
+          isFetching: false,
+          isPublicaciones: true,
+        },        
+
+        "/noticiasrelevantes/": {
+          isReady: true,
+          isFetching: false,
+          isNoticiasRelevantes: true,
         },
 
         "/eventos/": {

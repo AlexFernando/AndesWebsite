@@ -1,14 +1,18 @@
 import React from 'react';
 import {connect, css, styled } from "frontity";
-import missionImg from './images/mision.jpeg';
-import visionImg from './images/vision.jpeg';
+import missionImg from './static/images/mision.jpeg';
+import visionImg from './static/images/vision.jpeg';
 
 export const MarginTopContainer = styled.div`
     margin-top: 14vh;
+
+    @media(max-width: 768px) {
+        margin-top: 10vh;
+    }
 `;
 
 export const Title = styled.span`
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
     line-height: 2;
  
@@ -20,7 +24,7 @@ export const SubTitle = styled.h2 `
     display: flex;
     flex-wrap: nowrap;
     align-items: center;   
-    font-size: 3.2rem;
+    font-size: 2.8rem;
     font-weight: 400;
     line-height: 1;
     letter-spacing: 3px;
@@ -43,7 +47,7 @@ export const Separator = styled.span`
 export const HeadContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 3rem;
+    padding: 2rem;
 `;
 
 export const SectionContainer = styled.div`

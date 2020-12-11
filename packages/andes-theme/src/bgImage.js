@@ -1,6 +1,6 @@
 import React from "react";
 import {connect, styled } from "frontity";
-import bgImage from "./images/link3.jpg";
+import bgImage from "./static/images/link3.jpg";
 import LinkButton from "./LinkButton";
 import {MarginTopContainer} from './Filosofia';
 
@@ -29,9 +29,9 @@ const TextoImagen = styled.div`
 
     h1 {
         text-transform: uppercase;
-        font-size: 3rem;
+        font-size: 2.5rem;
         letter-spacing: 4px;
-        margin-top: 10rem;
+        margin-top: 5rem;
 
         @media(min-width: 768px) {
             font-size: 4.5rem;
@@ -72,10 +72,12 @@ export const ButtonAction = styled.button`
     cursor: pointer;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5rem;
     
 
     @media(min-width: 768px) {
         flex-basis: 20%;
+        margin-bottom: 0rem;
     }
 
     &:hover {
@@ -90,8 +92,8 @@ const BgImage = () => {
             <MarginTopContainer>
                 <Content>
                     <TextoImagen>
-                        <h1>Respuestas Locales frente a la crisis del COVID-19</h1>
-                        <p>Estamos trabajando para proporcionar recursos a nuestros socios indígenas, apoyar a nuestro personal de trabajo, y re-imaginar formas de trabajar.</p>
+                        <h1>Aniversario Andes - 14 de Diciembre 2020 </h1>
+                        <p>Únete a la celebración de 25 años de trabajo por salvaguardar la herencia cultural</p>
                         <ButtonAction>
                             <LinkButton href="/">Saber Mas</LinkButton>
                         </ButtonAction>                

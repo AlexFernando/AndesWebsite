@@ -15,8 +15,10 @@ const ContainerNav = styled.nav`
   top:0;
   color: #fff;
 
-  div{
+  a{
     cursor: pointer;
+    text-decoration: none;
+    color: #fff;    
   }
   p {
       margin-left: 2rem;
@@ -28,19 +30,17 @@ const ContainerNav = styled.nav`
 
 
   @media (max-width: 768px) {
-    display: none;
+      position: relative;
   }
-
-
 `
 
-const SecondaryNavbar = ({actions}) => {
+const SecondaryNavbar = ({actions, setNavOpen, navOpen}) => {
 
     const handleClick = e => {
 
         e.preventDefault();
-
         actions.router.set("/searchbar");
+
     }
 
     return ( 
@@ -48,10 +48,10 @@ const SecondaryNavbar = ({actions}) => {
         <ContainerNav>
             <p>Algún Slogan de la organización</p>
 
-            <div onClick={handleClick}>
+            <a href="/searchbar">
                 <span>Search</span>
                 <FontAwesomeIcon css={css`font-size: 1.2rem; margin-right: 2rem;`}icon={faSearch}/>
-            </div>
+            </a>
         </ContainerNav >
 
      );

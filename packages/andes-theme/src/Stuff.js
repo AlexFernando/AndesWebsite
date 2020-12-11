@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import imgPluriculturalidad from './images/link3.jpg';
-import imgAndes from './images/1.jpeg';
-import imgResearch from './images/link2.jpg';
-import imgNoticias from './images/link4.jpeg';
+import imgPluriculturalidad from './static/images/link3.jpg';
+import imgAndes from './static/images/1.jpeg';
+import imgResearch from './static//images/link2.jpg';
+import imgNoticias from './static/images/link4.jpeg';
 
-const SubSection = styled.div`
+export const SubSection = styled.div`
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -30,7 +30,7 @@ const SubSection = styled.div`
     }
 `;
 
-const TextContainer = styled.div`
+export const TextContainer = styled.div`
 
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@ const TextContainer = styled.div`
     } 
 `;
 
-const ImageSection = styled.img`
+export const ImageSection = styled.img`
     max-width: 100%;
     max-height: 100%;
     border-radius: 5px;
