@@ -2,6 +2,7 @@ import React from "react";
 import {connect, styled } from "frontity";
 import bgImage from "./static/images/link3.jpg";
 import LinkButton from "./LinkButton";
+import LinkButtonHome from './LinkButtonHome';
 import {MarginTopContainer} from './Filosofia';
 
 const Content = styled.div`  
@@ -86,17 +87,47 @@ export const ButtonAction = styled.button`
     }
 `;
 
+export const ButtonHome = styled.a`
+    display: flex;
+    justify-content: center;
+    background-color: #f07723 ;
+    align-items: center;
+    padding: 1rem;
+    height: 30px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #FFF;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5rem;
+    
+
+    @media(min-width: 768px) {
+        flex-basis: 20%;
+        margin-bottom: 0rem;
+    }
+
+    &:hover {
+        background-color: #F05523;
+        transition: all 0.4s;
+    }
+`;
+
 
 const BgImage = () => {
     return (
             <MarginTopContainer>
                 <Content>
                     <TextoImagen>
-                        <h1>Aniversario Andes - 14 de Diciembre 2020 </h1>
-                        <p>Únete a la celebración de 25 años de trabajo por salvaguardar la herencia cultural</p>
-                        <ButtonAction>
-                            <LinkButton href="/">Saber Mas</LinkButton>
-                        </ButtonAction>                
+                        <h1>25 Aniversario de la Asociación ANDES </h1>
+                        <p>Únete a la celebración de 25 años de trabajo por salvaguardar el patrimonio biocultural</p>
+                     
+                            <ButtonHome href="/aniversario">Saber Mas</ButtonHome>
+                                       
                     </TextoImagen>
                 </Content>
             </MarginTopContainer>

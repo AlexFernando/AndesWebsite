@@ -125,6 +125,12 @@ export default {
           isFetching: false,
           isEventos: true,
         },
+
+        "/aniversario/": {
+          isReady: true,
+          isFetching: false,
+          isAniversario: true,
+        }
       },
     },
   },

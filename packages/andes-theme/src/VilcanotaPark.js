@@ -3,8 +3,8 @@ import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionContainer, CardsContainer, Card} from './potatoPark'
 import imgPluriculturalidad from './static/images/link3.jpg';
-import vilcanotaFirst from './static/images/vilcanota1.jpg'
-import vilcanotaSecond from './static/images/vilcanota2.jpg'
+import vilcanotaFirst from './static/images/vilcanota1scaled.jpg'
+import vilcanotaSecond from './static/images/vilcanota2scaled.jpg'
 
 
 const VilcanotaPark = () => {

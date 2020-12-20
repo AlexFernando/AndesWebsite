@@ -24,7 +24,7 @@ import NosotrosYachay from './NosotrosYachay';
 import Pasantias from './Pasantias';
 import Intercambios from './Intercambios';
 import Toolkit from './Toolkit';
-
+import Aniversary from './Aniversary';
 
 const Root = ({ state }) => {
 
@@ -60,7 +60,6 @@ const Root = ({ state }) => {
             <Head>
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
             </Head>
             
             <SecondaryNavbar />
@@ -105,6 +104,8 @@ const Root = ({ state }) => {
                 {data.isIntercambios && <Intercambios/>}
 
                 {data.isToolkit && <Toolkit />}
+
+                {data.isAniversario && <Aniversary />}
             <Contact />
 
             <Footer title={"Andes"}/>

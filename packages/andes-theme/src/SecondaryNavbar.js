@@ -7,13 +7,14 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons';
 const ContainerNav = styled.nav`
   display: flex;
   width: 100%;
-  height: 4vh;
+  height: 6vh;
   background-color: #44841a;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top:0;
   color: #fff;
+  z-index: 3;
 
   a{
     cursor: pointer;
@@ -21,6 +22,7 @@ const ContainerNav = styled.nav`
     color: #fff;    
   }
   p {
+      font-style: italic;
       margin-left: 2rem;
   }
 
@@ -46,7 +48,7 @@ const SecondaryNavbar = ({actions, setNavOpen, navOpen}) => {
     return ( 
 
         <ContainerNav>
-            <p>Algún Slogan de la organización</p>
+            <p>"Juntos hacia el Sumaq Kawsay"</p>
 
             <a href="/searchbar">
                 <span>Search</span>
