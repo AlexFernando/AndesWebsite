@@ -1,0 +1,221 @@
+[
+	{
+		"title": "II. Educación Biocultural - Cosmovisión Andina como Marco Conceptual",
+		"url": "http://andes.center/wp-content/uploads/2019/10/II-Educacion-Biocultural-Cosmovision-Andina.pdf",
+		"urlImage": "./static/images/educacionBiocultural.png",
+		"date": "2018",
+		"author": "Unknown",		
+		"category": "Andean Cosmovision as Conceptual Framework",
+		"subcategory": ""
+	},
+
+	{
+		"title": "Biocultural heritage territories",
+		"url": "http://andes.center/wp-content/uploads/2018/09/sifor10.pdf",
+		"urlImage": "./static/images/sifor10.png",
+		"date": "2018",
+		"author": "Unknown",		
+		"category": "Methods and Tools for Biocultural Education",
+		"subcategory": "Biocultural heritage territories"
+	},
+
+----------------------------------------------------------------------------------------	
+	{
+
+		"Title": "Yachay Kuychi Toolkit Users Manual",
+		"url": "",
+		"urlImage": "http://andes.center/wp-content/uploads/2019/03/user-manual.png",
+		"date": "2018",
+		"author": "ANDES",		
+		"category": "Yachay Kuychi Toolkit Users Manual",
+		"subcategory": ""
+	},
+
+	{
+
+		"Title": "Manual de Usuario Yachay Kuychi Caja de Herramientas",
+		"url": "",
+		"urlImage": "http://andes.center/wp-content/uploads/2019/03/manual-usuario.png",
+		"date": "2018",
+		"author": "ANDES",		
+		"category": "Yachay Kuychi Toolkit Users Manual",
+		"subcategory": ""
+	},
+
+	{
+
+		"Title": "Andean Cosmovision as Conceptual Framework",
+		"url": "http://andes.center/wp-content/uploads/2019/10/II-Andean-Cosmovision-as-Conceptual-Framework.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2019/10/II-Andean-Cosmovision-as-Conceptual-Framework.jpg",
+		"date": "2019",
+		"author": "ANDES",		
+		"category": "Andean Cosmovision as Conceptual Framework",
+		"subcategory": ""
+	},
+
+	{
+
+		"Title": "Cosmovision Andina como Marco Conceptual",
+		"url": "http://andes.center/wp-content/uploads/2019/10/II-Educacion-Biocultural-Cosmovision-Andina.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2019/10/II-Educacion-Biocultural-Cosmovision-Andina.jpg",
+		"date": "2019",
+		"author": "ANDES",		
+		"category": "Andean Cosmovision as Conceptual Framework",
+		"subcategory": ""
+	},
+
+	{
+
+		"Title": "Biocultural Heritage Territories",
+		"url": "http://andes.center/wp-content/uploads/2018/09/sifor10.pdf ",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/09/biocultural.png",
+		"date": "",
+		"author": "IIED",		
+		"category": "Methods and Tools for Biocultural Education",
+		"subcategory": "Biocultural Heritage Territories"
+	},
+
+	{
+
+		"Title": "Calendario Agrícola Comunidad Pampacorral",
+		"url": "http://andes.center/wp-content/uploads/2018/11/Calendario-Agri%CC%81cola-Comunidad-Pampacorral.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/11/Calendario-Agrícola-Comunidad-Pampacorral.png",
+		"date": "2016",
+		"author": "ANDES",		
+		"category": "Methods and Tools for Biocultural Education",
+		"subcategory": "Calendars"
+	},
+
+	{
+
+		"Title": "Calendarios de las Comunidades de Lares",
+		"url": "http://andes.center/wp-content/uploads/2018/11/Calendarios-por-comunidad.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/11/Calendarios-por-comunidad.png",
+		"date": "2016",
+		"author": "ANDES",		
+		"category": "Methods and Tools for Biocultural Education",
+		"subcategory": "Calendars"
+	},
+
+	{
+
+		"Title": "Indicators Relevant for Indigenous Peoples: A Resource Book",
+		"url": "http://andes.center/wp-content/uploads/2018/09/indicators-resource-book.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/09/10.png",
+		"date": "2008",
+		"author": "Indigenous Peoples International Centre for Policy Research and Education",		
+		"category": "Methods and Tools for Biocultural Education",
+		"subcategory": "Indicators"
+	},
+
+	{
+
+		"Title": "Toolkit for the Indicators of Resilience in Socio-ecological Landscapes",
+		"url": "http://andes.center/wp-content/uploads/2018/09/Resilience-Indicators-SEPLS-TOOLKIT.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/09/14.png",
+		"date": "2014",
+		"author": "UNU-IAS, Bioversity International, IGES and UNDP",		
+		"category": "Methods and Tools for Biocultural Education",
+		"subcategory": "Indicators"
+	},
+
+
+	{
+
+		"Title": "Plagas y Enfermedades de Papa",
+		"url": "http://andes.center/wp-content/uploads/2019/10/Manual-Plagas-y-enfermedades-de-papa.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2019/10/Manual-de-Plagas-y-Enfermedades-de-Papa.jpg",
+		"date": "2019",
+		"author": "ANDES and Oxfam Novib",		
+		"category": "Farmer Field Schools Manuals and Guides",
+		"subcategory": "Farmer Field Schools"
+	},
+
+	{
+
+		"Title": "Plagas y Enfermedades de Maiz",
+		"url": "http://andes.center/wp-content/uploads/2019/10/Manual-Plagas-y-efermedades-del-Maiz.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2019/10/Manual-de-Plagas-y-Enfermedades-de-Maiz.jpg",
+		"date": "2019",
+		"author": "ANDES and Oxfam Novib",		
+		"category": "Farmer Field Schools Manuals and Guides",
+		"subcategory": "Farmer Field Schools"
+	},
+
+	{
+
+		"Title": "Mejoramiento Participativo de Maiz",
+		"url": "http://andes.center/wp-content/uploads/2019/10/Guia-de-Mejoramiento-Participativo-de-Maiz.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/11/maiz.png",
+		"date": "2019",
+		"author": "ANDES and Oxfam Novib",		
+		"category": "Farmer Field Schools Manuals and Guides",
+		"subcategory": "Farmer Field Schools"
+	},
+
+	{
+
+		"Title": "Manual - Ciclo de Maiz",
+		"url": "http://andes.center/wp-content/uploads/2019/10/Manual-Ciclo-del-Maiz.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/11/maual-desarrollo-vegetativo-del-maiz.png",
+		"date": "2019",
+		"author": "ANDES and Oxfam Novib",		
+		"category": "Farmer Field Schools Manuals and Guides",
+		"subcategory": "Farmer Field Schools"
+	},
+
+	{
+
+		"Title": "The Role of Women in Nutrition Conservation and Use of NUS",
+		"url": "http://andes.center/wp-content/uploads/2018/08/Farmer-Field-Schools-in-Lares-Feild-Guide.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/08/nus-nutrition.png",
+		"date": "2018",
+		"author": "ANDES",		
+		"category": "Farmer Field Schools Manuals and Guides",
+		"subcategory": "Nutrition"
+	},
+
+	{
+
+		"Title": "The Potato",
+		"url": "http://andes.center/wp-content/uploads/2018/08/The-Potato-FAO-.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/08/the-potato.png",
+		"date": "2008",
+		"author": "FAO",		
+		"category": "Farmer Field Schools Manuals and Guides",
+		"subcategory": "Participatory Plant Breeding"
+	},
+
+	{
+
+		"Title": "Manual de recomendaciones técnicas para cultivo de maiz",
+		"url": "http://andes.center/wp-content/uploads/2018/11/Maiz-recomendaciones-te%CC%81cnicas.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/11/Maiz-recomendaciones-técnicas.png",
+		"date": "2009",
+		"author": "Nevio Bonilla Morales",		
+		"category": "Farmer Field Schools Manuals and Guides",
+		"subcategory": "Participatory Plant Breeding"
+	},
+
+	{
+
+		"Title": "Good Practices in Buidling Innovative Rural Institutions to Increase Food Security",
+		"url": "http://andes.center/wp-content/uploads/2018/08/FAO-2012-institutions.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/08/iinovate-rural.png",
+		"date": "2012",
+		"author": "FAO",		
+		"category": "Farmer Field Schools Manuals and Guides",
+		"subcategory": "Seed Enterprise"
+	},
+
+	{
+
+		"Title": "Escuelas de Campo para la Produccion de Semillas de Calidad de Papa",
+		"url": "http://andes.center/wp-content/uploads/2018/08/FAO-2012-institutions.pdf",
+		"urlImage": "http://andes.center/wp-content/uploads/2018/08/fao-manual-semillas.png",
+		"date": "2016",
+		"author": "FAO",		
+		"category": "Farmer Field Schools Manuals and Guides",
+		"subcategory": "Seed Enterprise"
+	},
+]

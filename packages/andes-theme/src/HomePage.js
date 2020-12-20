@@ -2,6 +2,7 @@ import React from 'react';
 import {connect, styled } from "frontity";
 import imgResearch from './static//images/link2.jpg';
 import homeNews from './static/images/homenews.jpeg';
+import potatoPark from './static/images/1.jpeg';
 
 export const SectionText = styled.div`
     display: flex;
@@ -20,6 +21,11 @@ export const SectionText = styled.div`
         align-items: center;
         flex-direction: column;
         padding: 1rem 2rem 1rem 2rem;
+
+        @media(max-width: 768px) {
+        
+            padding: 1rem;
+        }
 
         h1 {
             color: #44841a;
@@ -77,20 +83,40 @@ const CardsHome = styled.div`
     flex-basis: 33.33%;
     background-color: #fff;
 
-    img {
-        width: 100%;
-        height: 20vh;        
+    div {
+        position: relative;
+        img {
+        width: 100%;  
     }
+        strong {
+            display: flex;
+            justify-content: center;
+            background-color: #f07723 ;
+            align-items: center;
+            position: absolute;
+            padding: .5rem;
+            border-radius: .5rem;
+            top: -.5rem;
+            left: -1.2rem;
+            font-size: .8rem;
+            color: #fff;
+            transform: rotate(-30deg);
+        }
+    }
+
 
     h3 {
         color: #44841a;
-        padding: 0 1rem 0 1rem;
+        text-align: center;
     }
+
+ 
 
     span {
         padding: 1rem 1rem 2rem 1rem;
         font-weight: 400;
-        font-size: 1rem;        
+        font-size: 1rem;  
+        text-align: center;      
     }
 
     div {
@@ -115,7 +141,7 @@ const HomePage = ({state}) => {
         <>
         <SectionText>
             <div>  
-                <h1>Bienvenidos a Andes</h1>              
+                <h1>Bienvenidos a ANDES</h1>              
                 <p>ANDES trabaja activamente en los temas de biodiversidad, derechos indígenas y desarrollo solidario. Además promovemos el intercambio horizontal de experiencias y las políticas que valoran el conocimiento tradicional indígena para aportar en el diálogo global sobre cambios climáticos.</p>
                 <div>
                     <a href="/filosofia">Explorar</a>
@@ -127,10 +153,16 @@ const HomePage = ({state}) => {
         <SectionHomePage>
             <CardsHomeContainer>
                 <CardsHome>
-                    
+                    <div>
                     <img src={homeNews} />
+                    <strong>Noticia</strong>
+                    </div>
+               
 
+                 
                     <h3>Indigenous Resilience</h3>
+                        
+                
                     
                     <span>
                         From the Mongolian Steppes to the Andean Mountains
@@ -142,11 +174,14 @@ const HomePage = ({state}) => {
  
                 </CardsHome>
                 <CardsHome>
-                    
-                    <img src={imgResearch} />
-
-                    <h3>Aniversario Andes</h3>
-
+                    <div>
+                        <img src={imgResearch} />
+                        <strong>Evento</strong>
+                    </div>
+               
+               
+                    <h3>Aniversario ANDES</h3>
+                        
                     <span>
                         Únete a la celebración de 25 años de trabajo por salvaguardar la herencia cultural
                     </span>
@@ -158,11 +193,14 @@ const HomePage = ({state}) => {
                 </CardsHome>
 
                 <CardsHome>
+                    <div>
+                        <img src={potatoPark} />
+                        <strong>Publicación</strong>
+                    </div>
+
                     
-                    <img src={homeNews} />
-
                     <h3>Research</h3>
-
+                   
                     <span>
                         Interspecies respect and Potato Conservation in the Peruvian cradle of domestication
                     </span>
@@ -177,8 +215,8 @@ const HomePage = ({state}) => {
 
         <SectionText>
             <div>  
-                <h1>Pluridiversidad - Yachay Kuychi</h1>              
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla nulla quis sagittis hendrerit. Ut arcu dui, hendrerit ullamcorper tempus id, aliquam sed lacus.</p>
+                <h1>Pluriversidad - Yachay Kuychi</h1>              
+                <p>La Pluriversidad Yachay Kuychi (Arco Iris de Conocimientos), es una institución internacional de educación e investigación intercultural, y un centro de excelencia en sistemas alimentarios indígenas y Paisajes bioculturales</p>
                 <div>
                     <a href="/quienessomos">Informarse</a>
                 </div>
@@ -186,7 +224,7 @@ const HomePage = ({state}) => {
 
             <div>  
                 <h1>Parque de la Papa</h1>              
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla nulla quis sagittis hendrerit. Ut arcu dui, hendrerit ullamcorper tempus id, aliquam sed lacus.</p>
+                <p>El Parque de la Papa está ubicado en el distrito de Pisac, aproximadamente a 40 kilómetros de la ciudad de Cusco (Perú), en el Valle Sagrado de los Incas. Cubriendo una superficie de 9280 hectáreas y ubicada en una altura entre 3400 y 4600 metros arriba del nivel del mar.</p>
                 <div>
                     <a href="/parquedelapapa-pisac">Conocer</a>
                 </div>

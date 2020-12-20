@@ -5,6 +5,11 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
 import {SectionContainer} from './Filosofia';
 import LinkButton from "./LinkButton";
+import {dataNews} from './data/dataNews';
+import {dataEvents} from './data/dataEvents';
+import {dataPublications} from './dataPublicaciones';
+import {EventContainer} from './Eventos';
+import {PublicationCard} from './Publicaciones';
 
 export const SearchBar = styled.div`
     display: flex;
@@ -48,27 +53,41 @@ export const InputBar = styled.form`
 
 
 export const PostStyled = styled.div`
-        
-    background-color: #fff;
+    
+    background-color: #eaeaea;
     padding: 2rem;
     margin: 2rem;
+    border-radius: 1rem;
+   
 
-    h3 {
-        color: #44841a;
-        font-size: 1.8rem;
-    }
+    a{
+        text-decoration: none;
+        color: #000;
 
-    p {
-        font-size: 1.3rem;
-    }
+        img {
+            max-width: 100vh;
+            max-height: 100vh;
+        }
 
-    @media (max-width: 768px){
-        margin: 0rem;
+        h3 {
+            color: #44841a;
+            font-size: 1.8rem;
+        }
 
-        div {
-            font-size: .8rem;
+        p {
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 768px){
+            margin: 0rem;
+
+            div {
+                font-size: .8rem;
+            }
         }
     }
+
+    
 `;
 
 export const NotFoundContainer = styled.div`
@@ -93,50 +112,16 @@ export const NotFoundContainer = styled.div`
 
 const SearchBarComponent = ({state}) => {
 
-    const people = [
 
-        {
-            titulo: "Semillas de Papa",
-            content: "Para los pueblos indígenas, las semillas son más que alimentos: son miembros de su familia",
-            categoria: "Categoria 1",
-            fecha : "Noviembre 17, 2020"
-        },
-   
-        {
-            titulo: "Cómo el Parque de la Papa del Perú podría evitar la crisis alimentaria mundial",
-            content: "El parque agrícola alto en los Andes conserva la experiencia para criar cepas aptas para un clima cambiante. Para los pueblos indígenas, las semillas son más que alimentos: son miembros de su familia",
-            categoria: "Categoria 2",
-            fecha : "Noviembre 1, 2020"
-        },
-
-        {
-            titulo: "Nota de Prensa: Rechazo de la papa GM en África",
-            content: "Los agricultores andinos y africanos condenan la información de secuencia digital de papas de los centros de origen: abre puertas para la biopiratería.",
-            categoria: "Categoria 3",
-            fecha : "Octubre 15, 2020"
-        },
-
-        {
-            titulo:   "El Parque de la Papa – Zona de Agrobiodiversidad",
-            content: "El Parque de la Papa fue reconocido recientemente como una Zona de Agrobiodiversidad por el estado peruano.",
-            categoria: "Categoria 2",
-            fecha : "Septiembre 15, 2020"
-        },
-
-        {
-            titulo:   "Respuestas locales a la crisis COVID-19",
-            content: "Igual que nuestros hermanos y hermanas en todo el mundo, nos enfrentamos a desafíos sin precedentes en el contexto de la pandemia actual. Estamos trabajando para proporcionar recursos a nuestros socios indígenas, apoyar a nuestro personal, y re-imaginar formas de trabajar en un mundo donde las reuniones grupales se han vuelto imposibles.",
-            categoria: "Categoria 1",
-            fecha : "Julio 15, 2020"
-        },
-    ];
-
+    const [viewAll , setViewAll] = useState(false);
 
     const [searchTerm, setSearchTerm] = useState("");
     
     const [searchResults, setSearchResults] = useState([]);
 
     const [alternativeTerm, setAlternativeTerm] = useState("");
+
+    
 
     const handleChange = event => {
        setSearchTerm(event.target.value);
@@ -147,7 +132,17 @@ const SearchBarComponent = ({state}) => {
 
         e.preventDefault();
   
-        const results = people.filter(person => person.titulo.toLowerCase().includes(searchTerm.toLowerCase()) || person.content.toLowerCase().includes(searchTerm.toLowerCase()));
+        const news = dataNews.filter(person => person.titulo.toLowerCase().includes(searchTerm.toLowerCase()) || person.content.toLowerCase().includes(searchTerm.toLowerCase()));
+
+        const events = dataEvents.filter(event => event.title.toLowerCase().includes(searchTerm.toLowerCase()));
+
+        const publications = dataPublications.filter(event => event.Title.toLowerCase().includes(searchTerm.toLowerCase()));
+
+        console.log("eventos filtrados ", events);
+
+        console.log("publications filtrados ", publications);
+
+        const results = [...news, ...events, ...publications]
      
         setSearchResults(results);
 
@@ -185,19 +180,58 @@ const SearchBarComponent = ({state}) => {
             
             { searchResults.length === 0 && alternativeTerm === "" ?
 
-                people.map(item => (
+                dataNews.map(item => (
                     <PostStyled>
-                        <h3>{item.titulo}</h3>
-                        <p>{item.content}</p>
-                        <div>
-                            <strong>{item.categoria}</strong>
-                            &nbsp; &nbsp; &nbsp; 
-                            <strong>|</strong>
-                            &nbsp; &nbsp; &nbsp; 
-                            <strong>Fecha:</strong>
-                            &nbsp;&nbsp;
-                            {item.fecha}
-                        </div>
+
+                        <a href={`${item.url}`} target="_blank" rel="noopener">
+                            <img src={item.urlImage}/>
+                            <h3>{item.titulo}</h3>
+                            <p>{item.content}</p>
+                            <div>
+                                <strong>Fecha:</strong>
+                                &nbsp;&nbsp;
+                                {item.fecha}
+                            </div>
+                        </a>
+                        
+                    </PostStyled>
+                ))
+
+                : null
+            }
+
+            { searchResults.length === 0 && alternativeTerm === "" ?
+
+            dataEvents.map(item => (
+                <PostStyled>
+                    <img src={item.urlImage}/>
+                    <h3>{item.title}</h3>
+                    <div>
+                        <strong>Fecha:</strong>
+                        &nbsp;&nbsp;
+                        {item.date}
+                    </div>
+                </PostStyled>
+            ))
+
+            : null
+            }
+
+
+            { searchResults.length === 0 && alternativeTerm === "" ?
+
+                dataPublications.map(item => (
+                    <PostStyled>
+                        <a href={`${item.url}`} target="_blank" rel="noopener">
+                            <img src={item.urlImage} />
+                            <h3>{item.Title}</h3>
+                            <div>
+                                
+                                <span>Autor: {item.author}</span>
+                                <br></br>
+                                <span>{item.date}</span>
+                            </div>
+                        </a>  
                     </PostStyled>
                 ))
 
@@ -208,17 +242,24 @@ const SearchBarComponent = ({state}) => {
             {    
                 searchResults.map(item => (
                     <PostStyled>
-                        <h3>{item.titulo}</h3>
-                        <p>{item.content}</p>
-                        <div>
-                            <strong>{item.categoria}</strong>
-                            &nbsp; &nbsp; &nbsp; 
-                            <strong>|</strong>
-                            &nbsp; &nbsp; &nbsp; 
-                            <strong>Fecha:</strong>
-                            &nbsp;&nbsp;
-                            {item.fecha}
-                        </div>
+                        <a href={`${item.url}`} target="_blank" rel="noopener">
+                            <img src={item.urlImage}/>
+                            
+                            <div>
+                                <h3>{item.titulo}</h3>
+                                <h3>{item.Title}</h3>
+                                <h3>{item.title}</h3>
+                                <p>{item.content}</p>
+                                <p>{item.author}</p>
+                                <span>
+                                    <strong>Fecha:</strong>
+                                    &nbsp;&nbsp;
+                                    {item.fecha}
+                                    {item.date}
+                                </span>
+                            </div>
+                            
+                        </a>
                     </PostStyled>
                 ))
             }

@@ -13,7 +13,7 @@ import SecondaryNavbar from './SecondaryNavbar';
  
 const Navigation = styled.nav`
   display: flex;
-  height: 10vh;
+  height: 12vh;
   background-color: #fff;
   justify-content: space-between;
   align-items: center;
@@ -21,12 +21,13 @@ const Navigation = styled.nav`
   margin: 0 auto;
   padding: 0 auto;
   position: fixed;
-  top: 4vh;
+  top: 6vh;
   left:0;
   width: 100%;
+  z-index: 3;
 
   @media (max-width: 768px) {
-    height: 14vh;
+    height: 18vh;
     position: fixed;
     top: 0;
   }
@@ -60,7 +61,7 @@ const Navbox = styled.div`
     overflow-y: scroll;
     background-color: #fff;
     transition: all 0.3s ease-in;
-    top: 12vh;
+    top: 18vh;
     left: ${props => (props.open ? "-100%" : "0")};
   }
 `
@@ -103,6 +104,7 @@ const MobileBox = styled.div`
   @media (max-width: 768px) {
     display: flex;
     top: 12vh;
+    z-index: 3;
   }
 `
 
@@ -174,11 +176,6 @@ const Menu =  () => {
             setNavOpen = {setNavbarOpen}
         />
             <Border />
-            <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
-              <Link  href= "/">Inicio</Link> 
-            </Button>
-            <Border />
-
             <Button onClick={() => setOpenAboutMobile(!openAboutMobile)}>
             < Link href="#">Andes</Link>
             </Button>
@@ -252,7 +249,6 @@ const Menu =  () => {
 
       ) : (
         <Navbox open>
-          <Button><Link href="/">INICIO</Link></Button>
           <Button onClick={() => setOpenAbout(!openAbout)}>ANDES</Button> 
           <Button onClick={() => setOpenResearch(!openResearch)}>PLURIVERSIDAD</Button> 
           <Button><Link href="/publicaciones">PUBLICACIONES</Link></Button> 

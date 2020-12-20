@@ -16,7 +16,7 @@ const SectionPublications = styled.div`
     padding: 0rem 2rem 1rem 2rem;
 `;
 
-const PublicationCard = styled.div`
+export const PublicationCard = styled.div`
     display: flex;
     margin-top: 3rem;
     flex-basis: 22%;
@@ -127,7 +127,7 @@ const Publicaciones = () => {
         e.preventDefault();
 
      
-        const results = dataPublications.filter( publication => publication.content.toLowerCase().includes(searchTerm.toLowerCase()));
+        const results = dataPublications.filter( publication => publication.Title.toLowerCase().includes(searchTerm.toLowerCase()));
      
         setSearchResults(results);
 
@@ -149,7 +149,7 @@ const Publicaciones = () => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Publicaciones
+                    25 Publicaciones
                 </Title>
                 <SubTitle>
                     Investigacion<br></br>Portal de Conocimiento
@@ -188,8 +188,8 @@ const Publicaciones = () => {
                         {console.log(dataPublications[publication].url)}
                         <PublicationCard>
                             <a href={`${dataPublications[publication].url}`} target="_blank" rel="noopener">
-                                <img src={dataPublications[publication].titulo} />
-                                <p>{dataPublications[publication].content}</p>
+                                <img src={dataPublications[publication].urlImage} />
+                                <p>{dataPublications[publication].Title}</p>
                             </a> 
                             
                         </PublicationCard>
@@ -209,10 +209,10 @@ const Publicaciones = () => {
                             <MatchPublication>
 
                             <a href={`${searchResults[publication].url}`} target="_blank" rel="noopener">
-                                <img src={searchResults[publication].titulo} />
+                                <img src={searchResults[publication].urlImage} />
                                 <div>
-                                    <h3>{searchResults[publication].content}</h3>
-                                    <span>Autor: {searchResults[publication].autor}</span>
+                                    <h3>{searchResults[publication].Title}</h3>
+                                    <span>Autor: {searchResults[publication].author}</span>
                                     <p>{searchResults[publication].date}</p>
                                     <p></p>
                                 </div>
@@ -252,4 +252,4 @@ const Publicaciones = () => {
     );
 }
  
-export default Publicaciones;
+export default connect(Publicaciones);

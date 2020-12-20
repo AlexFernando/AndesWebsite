@@ -1,6 +1,7 @@
 import React from 'react';
-import {connect} from "frontity";
+import {connect, styled} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, SectionContainer, MarginTopContainer} from './Filosofia';
+import ToolkitLogic from './ToolkitLogic';
 
 const Toolkit = ({state}) => {
     return ( 
@@ -10,11 +11,16 @@ const Toolkit = ({state}) => {
                     Caja de Herramientas
                 </Title>
                 <SubTitle>
-                    Archivos <br></br> de Interés
+                    Nuestras <br></br> Herramientas
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
+
+
+            <ToolkitLogic />
         </MarginTopContainer>
+
+
     );
 }
  

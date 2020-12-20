@@ -9,10 +9,13 @@ const DropDownBox = styled.div`
   display: flex;
   flex-direction: column;  
   width: 100%;
+  z-index: 3;
+ 
+
  
   @media(min-width: 768px) {
     position: fixed;
-    top: 14vh;
+    top: 18vh;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

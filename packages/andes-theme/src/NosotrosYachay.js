@@ -11,6 +11,7 @@ import { faLightbulb, faListAlt, faArrowAltCircleRight, faPeopleCarry } from '@f
 
 import imgResearch from './static/images/homenews.jpeg';
 import transgenicos from './static/images/transgenicos.jpg';
+import potatoPark from './static/images/link4.jpeg';
 
 const NosotrosYachay = ({state}) => {
     return ( 
@@ -48,7 +49,7 @@ const NosotrosYachay = ({state}) => {
                             En septiembre de 2019, ALLSA trabajó en coordinación con la Pluriversidad Yachay Kuychi para realizar un intercambio de aprendizaje en Cusco Perú.
                             </p>
                             <div>
-                                <a href="https://www.servindi.org/actualidad/24/06/2020/senor-vizcarra-el-pueblo-peruano-rechaza-los-transgenicos" target="_blank" rel="noopener" >LEER HISTORIA</a>
+                                <a href="https://www.globalenvironments.org/latin-american-school-for-food-systems-resilience/ " target="_blank" rel="noopener" >LEER HISTORIA</a>
                             </div>
                         </div>
                     </SectionText>
@@ -141,7 +142,7 @@ const NosotrosYachay = ({state}) => {
                         
                 </TextContainer>
 
-                <ImageSection src = {imgResearch} />
+                <ImageSection src = {potatoPark} />
                 
             </SubSection>
         </MarginTopContainer>
