@@ -5,56 +5,71 @@ import {HeadContainer, Title, SubTitle, Separator, SectionContainer, MarginTopCo
 import {dataEvents} from './data/dataEvents';
 import useFilterYears from './hooks/useFilterYears';
 
+import Calendar from './Calendar';
 
 const SectionEvent = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 2rem;
+    justify-content: space-around;
+    align-items: flex-start;
 `;
 
 export const EventContainer = styled.div`
 
-    margin: 2rem 0;
+    flex-basis: 40%;
     text-align: center;
-    flex-basis: 50%;
+    margin-top: 3rem;
 
-
-    @media(max-width: 768px) {
-        flex-basis: 100%;
+    h1 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        
+        color: #44841a;
     }
-   
+
     img {
         max-width: 100%;
+        height: auto;
+        margin-top: 2rem;
     }
 
     h3 {
         color: #f07723;
+        font-size: 1.5rem;
     }
 
     p {
         color: #545454;
+        font-size: 1.2rem;
     }
 `;
 
 const Eventos = ({state}) => {
 
-    const [filtered, saveFiltered] = useState([]);
+    const [isEvent, setIsEvent] = useState(false)
+    const [id, setId] = useState(null);
 
-    // categories 
-    const {category, FilterUI} = useFilterYears();
+    const eventDay = [];
+
+    const eventMonth = [];
+
+    const eventYear = [];
+
+    const idArray = [];
     
       //Cada vez que se haga un cambio en category el useEffect se vuelve a ejecutar
-    useEffect( () => {
-        if(category) {
-            const filter = dataEvents.filter(event => event.date === category)
-            saveFiltered(filter);
-        } else {
-            saveFiltered(dataEvents)
-        }
-    }, [category, dataEvents])
+   
+    dataEvents.map( event => {
+        const arrayDate = event.date.split("-");
+        eventDay.push(parseInt(arrayDate[0]))
+        eventMonth.push(parseInt(arrayDate[1])-1)
+        eventYear.push(parseInt(arrayDate[2]))
+        idArray.push(event.id)
+    })
 
+    const filtered = dataEvents.filter(event => event.id === id)
+  
+
+    console.log(filtered);
     return ( 
         <MarginTopContainer>
             <HeadContainer>
@@ -67,29 +82,47 @@ const Eventos = ({state}) => {
                 <Separator></Separator>
             </HeadContainer>
 
-    
                 <SectionEvent>
-                    {FilterUI()}
 
-                    {filtered.length > 0 ? 
-                        filtered.map(event => (
-                            <EventContainer>
-                                <img src={event.urlImage} />
-                            
-                                <h3>{event.title}</h3>
-                        
-                                <p>{event.date}</p>
                                 
-                            </EventContainer>
-                        ))
+                {
+                    isEvent ? 
+                        filtered.map( event => (    
+                            <EventContainer>
+                            
+                                <img  src = {event.urlImage} />
+                                
+                                <h3>{event.title}</h3>
+                                <p>{event.dateString}</p>
+                            </EventContainer>   
+                    )) 
+                    
+                    :  
+                    <>
+                    
+                    <EventContainer>
+                        <h1>Lo mas reciente</h1>
+                        
+                        <img  src = {dataEvents[0].urlImage} />
+                        <h3>{dataEvents[0].title}</h3>
+                        <p>{dataEvents[0].dateString}</p>
+                    </EventContainer>
+                    </>
+                }
 
-                        : 
+                <Calendar 
+                    eventDay = {eventDay} 
+                    eventMonth = {eventMonth} 
+                    eventYear = {eventYear} 
+                    setIsEvent = {setIsEvent}
+                    setId = {setId}
+                    idArray = {idArray}
+                />
 
-                        null
-                    }
+
                 </SectionEvent>
 
-     
+
 
         </MarginTopContainer>
     );
