@@ -8,8 +8,6 @@ import LinkButton from "./LinkButton";
 import {dataNews} from './data/dataNews';
 import {dataEvents} from './data/dataEvents';
 import {dataPublications} from './dataPublicaciones';
-import {EventContainer} from './Eventos';
-import {PublicationCard} from './Publicaciones';
 
 export const SearchBar = styled.div`
     display: flex;
