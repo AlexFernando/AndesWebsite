@@ -42,13 +42,13 @@ export default {
           isTerritorios: true,
         },
 
-        "/investigación/": {
+        "/investigacion/": {
           isReady: true,
           isFetching: false,
           isInvestigacion: true,
         },
 
-        "/incidenciaspolíticas/": {
+        "/incidenciaspoliticas/": {
           isReady: true,
           isFetching: false,
           isPolitica: true,
@@ -60,7 +60,7 @@ export default {
           isPotatoPark: true,
         },
 
-        "/parquedemaíz-lares/": {
+        "/parquedemaiz-lares/": {
           isReady: true,
           isFetching: false,
           isLaresPark: true,
@@ -90,7 +90,7 @@ export default {
           isNosotrosYachay: true,
         },
 
-        "/pasantías/": {
+        "/pasantias/": {
           isReady: true,
           isFetching: false,
           isPasantias: true,

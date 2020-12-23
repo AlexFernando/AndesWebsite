@@ -9,12 +9,15 @@ import pdplan2010 from '../static/images/eventos/pdp-lan-2010.png'
 import internationalCongressEthnobiology from '../static/images/eventos/internationalCongressEthnobiology2008.jpg'
 import latidoApus2006 from '../static/images/eventos/AFICHE-FINAL-El-látido-de-los-Apus2006.jpg'
 import vilcanota2004 from '../static/images/eventos/Afiche-Parque-Espiritual-del-Vilcanota2004.jpg'
+import webinarParquePapa from '../static/images/eventos/webinar8parquedelapapa.jpg';
+import Swift_webinar from '../static/images/eventos/Swift_webinar_scaled.jpg';
+import IIED_webinar from '../static/images/eventos/IIED_webinar-scaled.jpg';
 
 
 export const dataEvents = [
 
 	{
-		"title": "Conferencia Virtual Aniversario ANDES 2020",
+		"title": "Celebrando 25 anos de acción para el patrimonio biocultural indigena",
 		"urlImage": `${aniversario2020}`,
 		"date": "14-12-2020",
 		"dateString": "14 de Diciembre de 2020",
@@ -96,19 +99,27 @@ export const dataEvents = [
 
 
 	{
-		"title": "Un Evento de Prueba",
-		"urlImage": `${ejemplo1}`,
-		"date": "02-12-2020",
-		"dateString": "02 de Diciembre de 2020",
+		"title": "Parque de la papa: Defender el pasado para asegurar el futuro ",
+		"urlImage": `${webinarParquePapa}`,
+		"date": "31-07-2020",
+		"dateString": "31 de Julio de 2020",
 		"id" : 11
 	},
 
 	{
-		"title": "Otro Evento de Prueba",
-		"urlImage": `${ejemplo2}`,
-		"date": "10-11-2020",
-		"dateString": "10 de Noviembre de 2020",
+		"title": "Celebrating Suzanne Benally and New Directions (Swift Foundation) ",
+		"urlImage": `${Swift_webinar}`,
+		"date": "01-09-2020",
+		"dateString": "1 de Septiembre de 2020",
 		"id" : 12
+	},
+
+	{
+		"title": "Indigenous Food Systems, biocultural heritage, and the SDGs (IIED)",
+		"urlImage": `${IIED_webinar}`,
+		"date": "09-10-2020",
+		"dateString": "09 de Octubre de 2020",
+		"id" : 13
 	},
 
 ]

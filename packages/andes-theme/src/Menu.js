@@ -187,11 +187,11 @@ const Menu =  () => {
                     setNavOpen = {setNavbarOpen}
                     open = {openAboutMobile}
                     setOpen = {setOpenAboutMobile}
-                    options={["Quiénes somos?", "Filosofia", "Personas"]}
-                    secondTitle = {'Que Hacemos?'}
-                    options2={["Territorios Bioculturales", "Incidencias Políticas"]}
+                    options={["Quienes somos?", "Filosofia", "Personas"]}
+                    secondTitle = {'Qué Hacemos?'}
+                    options2={["Territorios Bioculturales", "Incidencias Politicas"]}
                     thirdTitle = {["Dónde trabajamos?"]}
-                    options3={["Parque de la Papa - Pisac", "Parque de Maíz - Lares", "Parque Espiritual - Vilcanota", "Programas y Redes Internacionales"]}
+                    options3={["Parque de la Papa - Pisac", "Parque de Maiz - Lares", "Parque Espiritual - Vilcanota", "Programas y Redes Internacionales"]}
                   /> 
                 </MobileBox>
 
@@ -211,8 +211,8 @@ const Menu =  () => {
                     open = {openResearchMobile}
                     setOpen = {setOpenResearchMObile}
                     options = {["Yachay Kuychi", "Quienes somos?"]}
-                    secondTitle = {'Que Hacemos?'}
-                    options2 = {["Cursos", "Pasantías", "Intercambios"]}
+                    secondTitle = {'Qué Hacemos?'}
+                    options2 = {["Cursos", "Pasantias", "Intercambios"]}
                     thirdTitle = {"Utilidades"}
                     options3 = {["Caja de herramientas"]}
                   />
@@ -267,11 +267,11 @@ const Menu =  () => {
       <Dropdown
         open = {openAbout}
         setOpen = {setOpenAbout}
-        options={["Quiénes somos?", "Filosofia", "Personas"]}
+        options={["Quienes somos?", "Filosofia", "Personas"]}
         secondTitle = {'Que hacemos?'}
-        options2={["Territorios Bioculturales", "Incidencias Políticas"]}
+        options2={["Territorios Bioculturales", "Incidencias Politicas"]}
         thirdTitle = {["Dónde trabajamos?"]}
-        options3={["Parque de la Papa - Pisac", "Parque de Maíz - Lares", "Parque Espiritual - Vilcanota", "Programas y Redes Internacionales"]}
+        options3={["Parque de la Papa - Pisac", "Parque de Maiz - Lares", "Parque Espiritual - Vilcanota", "Programas y Redes Internacionales"]}
         ImageNav = {imgAndes}
       />  : null
     }
@@ -281,8 +281,8 @@ const Menu =  () => {
         open = {openResearch}
         setOpen = {setOpenResearch}
         options = {["Yachay Kuychi", "Quienes somos?"]}
-        secondTitle = {'Que Hacemos?'}
-        options2 = {["Cursos", "Pasantías", "Intercambios"]}
+        secondTitle = {'Qué Hacemos?'}
+        options2 = {["Cursos", "Pasantias", "Intercambios"]}
         thirdTitle =  {"Utilidades"}
         options3 = {["Caja de herramientas"]}
         ImageNav = {imgPluriculturalidad}

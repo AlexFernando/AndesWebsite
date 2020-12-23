@@ -16,6 +16,7 @@ export const SearchBar = styled.div`
     padding-top: 2rem;
 
     @media (max-width: 768px){
+
         padding: 0 1rem;
         flex-direction: column;
         align-items: stretch;
@@ -52,38 +53,64 @@ export const InputBar = styled.form`
 
 export const PostStyled = styled.div`
     
+ 
     background-color: #eaeaea;
     padding: 2rem;
     margin: 2rem;
     border-radius: 1rem;
-   
 
     a{
         text-decoration: none;
-        color: #000;
-
-        img {
-            max-width: 100vh;
-            max-height: 100vh;
-        }
-
-        h3 {
-            color: #44841a;
-            font-size: 1.8rem;
-        }
-
-        p {
-            font-size: 1.3rem;
-        }
+        display: flex;
+        justify-content: space-around;
 
         @media (max-width: 768px){
-            margin: 0rem;
+            flex-direction:column-reverse;
+        }
 
-            div {
-                font-size: .8rem;
+        img {
+            flex-basis: 30%;
+            object-fit: contain;
+            width: 220px;
+            height: 300px;
+
+            @media(max-width: 768px) {
+                width: 100%;
+                height: 100%;
+                margin: 1rem 0;
             }
         }
+
+        div{
+            flex-basis: 60%;
+
+            h3 {
+                color: #44841a;
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+                color: #545454;
+            }
+
+            span, strong {
+                color: #545454;
+            }
+
+            @media (max-width: 768px){
+                margin: 0rem;
+
+                div {
+                    font-size: .8rem;
+                }
+            }
+        
+        }
     }
+
+
+        
 
     
 `;
@@ -183,12 +210,13 @@ const SearchBarComponent = ({state}) => {
 
                         <a href={`${item.url}`} target="_blank" rel="noopener">
                             <img src={item.urlImage}/>
-                            <h3>{item.titulo}</h3>
-                            <p>{item.content}</p>
+                            
                             <div>
+                                <h3>{item.titulo}</h3>
+                                <p>{item.content}</p>
                                 <strong>Fecha:</strong>
                                 &nbsp;&nbsp;
-                                {item.fecha}
+                                <span>{item.fecha}</span>
                             </div>
                         </a>
                         
@@ -200,31 +228,13 @@ const SearchBarComponent = ({state}) => {
 
             { searchResults.length === 0 && alternativeTerm === "" ?
 
-            dataEvents.map(item => (
-                <PostStyled>
-                    <img src={item.urlImage}/>
-                    <h3>{item.title}</h3>
-                    <div>
-                        <strong>Fecha:</strong>
-                        &nbsp;&nbsp;
-                        {item.date}
-                    </div>
-                </PostStyled>
-            ))
-
-            : null
-            }
-
-
-            { searchResults.length === 0 && alternativeTerm === "" ?
-
                 dataPublications.map(item => (
                     <PostStyled>
                         <a href={`${item.url}`} target="_blank" rel="noopener">
                             <img src={item.urlImage} />
-                            <h3>{item.Title}</h3>
+                            
                             <div>
-                                
+                                <h3>{item.Title}</h3>
                                 <span>Autor: {item.author}</span>
                                 <br></br>
                                 <span>{item.date}</span>
@@ -236,6 +246,25 @@ const SearchBarComponent = ({state}) => {
                 : null
             }
 
+            { searchResults.length === 0 && alternativeTerm === "" ?
+
+                dataEvents.map(item => (
+                    <PostStyled>
+                        <a href="/eventos">
+                            <img src={item.urlImage}/>
+                            
+                            <div>
+                                <h3>{item.title}</h3>
+                                <strong>Fecha:</strong>
+                                &nbsp;&nbsp;
+                                <span>{item.date}</span>
+                            </div>
+                        </a>
+                    </PostStyled>
+                ))
+
+                : null
+            }
 
             {    
                 searchResults.map(item => (

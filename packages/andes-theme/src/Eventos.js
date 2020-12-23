@@ -3,7 +3,6 @@ import {connect, styled, css} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, SectionContainer, MarginTopContainer} from './Filosofia';
 
 import {dataEvents} from './data/dataEvents';
-import useFilterYears from './hooks/useFilterYears';
 
 import Calendar from './Calendar';
 
@@ -11,35 +10,43 @@ const SectionEvent = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+
+    
+    @media(max-width: 768px) {
+        flex-direction: column-reverse;
+        margin: 0 .5rem;
+    }
 `;
 
 export const EventContainer = styled.div`
 
     flex-basis: 40%;
-    text-align: center;
     margin-top: 3rem;
 
     h1 {
         text-transform: uppercase;
         font-size: 2rem;
-        
+        font-weight: bold;
         color: #44841a;
     }
 
     img {
+        max-height: 100%;
         max-width: 100%;
-        height: auto;
-        margin-top: 2rem;
+        object-fit: contain;
     }
 
     h3 {
         color: #f07723;
         font-size: 1.5rem;
+        text-transform: uppercase;
     }
 
     p {
-        color: #545454;
+        color: #44841a;
         font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
     }
 `;
 
@@ -89,7 +96,7 @@ const Eventos = ({state}) => {
                     isEvent ? 
                         filtered.map( event => (    
                             <EventContainer>
-                            
+                                <h1>ANDES - Eventos</h1>
                                 <img  src = {event.urlImage} />
                                 
                                 <h3>{event.title}</h3>
