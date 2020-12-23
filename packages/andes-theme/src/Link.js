@@ -20,6 +20,7 @@ const Link = ({ href, actions, children }) => {
         onClick={event => {
           event.preventDefault();
           actions.router.set(href); 
+          window.scrollTo(0, 0);
         }}
       >
         {children}

@@ -231,6 +231,8 @@ const HomePage = ({state}) => {
             </div>
         </SectionText>
 
+        
+
         </>
     );
 }

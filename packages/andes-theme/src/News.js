@@ -4,7 +4,6 @@ import {HeadContainer, Title, SubTitle, Separator, SectionContainer, MarginTopCo
 import {dataNews} from './data/dataNews';
 import {PostStyled} from './SearchBar';
 
-
 const News = () => {
 
 
@@ -22,13 +21,16 @@ const News = () => {
             {    
                 dataNews.map(item => (
                     <PostStyled>
-                        <h3>{item.titulo}</h3>
-                        <p>{item.content}</p>
-                        <div>
-                            <strong>Fecha:</strong>
-                            &nbsp;&nbsp;
-                            {item.fecha}
-                        </div>
+                        <a href={`${item.url}`} target="_blank" rel="noopener">
+                            <img src={item.urlImage}/>
+                            <div>
+                                <h3>{item.titulo}</h3>
+                                <p>{item.content}</p>
+                                <strong>Fecha:</strong>
+                                &nbsp;&nbsp;
+                                <span>{item.fecha}</span>
+                            </div>
+                        </a>
                     </PostStyled>
                 ))
             }

@@ -2,30 +2,19 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "cf12a13671e43e24a457",
+  "hash": "4015a1c4bce1919332d2",
   "publicPath": "/static/",
   "outputPath": "/home/alexf/react_2020/andes/build/static",
   "assetsByChunkName": {
     "andes": [
       "andes.module.js",
-      "andes.40572c2ca64b43923f37.hot-update.js"
+      "andes.f957453e44fa66cf335b.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "40572c2ca64b43923f37.hot-update.json",
-      "size": 47,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
-    {
-      "name": "andes.40572c2ca64b43923f37.hot-update.js",
-      "size": 70346,
+      "name": "andes.f957453e44fa66cf335b.hot-update.js",
+      "size": 61159,
       "chunks": [
         "andes"
       ],
@@ -40,7 +29,7 @@
     },
     {
       "name": "andes.module.js",
-      "size": 10242267,
+      "size": 10273718,
       "chunks": [
         "andes"
       ],
@@ -51,12 +40,23 @@
       "emitted": false
     },
     {
+      "name": "f957453e44fa66cf335b.hot-update.json",
+      "size": 47,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "images/1.jpeg",
       "size": 89365,
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/AFICHE-FINAL-El-látido-de-los-Apus2006.jpg",
@@ -64,7 +64,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Afiche-Parque-Espiritual-del-Vilcanota2004.jpg",
@@ -72,7 +72,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Ayni_ayllu_yanantin_chanincha.png",
@@ -80,7 +80,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Building_transdisciplinarity_for_managing_complexity.png",
@@ -88,7 +88,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Calendario-Agrícola-Comunidad-Pampacorral.png",
@@ -96,7 +96,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Calendarios-por-comunidad.png",
@@ -104,7 +104,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Climate-Change-Indigenous-population.jpg",
@@ -112,7 +112,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Climate_change_social_learning_case_study.png",
@@ -120,7 +120,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/CocinandoconlaAgrobiodiversidaddeLares_LibrodeRecetas.png",
@@ -128,7 +128,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Conservation_planning_Ecotourism_design_Hettler.png",
@@ -136,7 +136,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Criar_dejarse_criar_Madden.png",
@@ -144,7 +144,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Decolonization_as_relocalization_grey.png",
@@ -152,7 +152,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Escalating_tensions_greenwoodsanchez.png",
@@ -160,7 +160,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Estudio_de_linea_de_base_agrobiodiversidad.png",
@@ -168,7 +168,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Everyday-Experts-complete-pdf.jpg",
@@ -176,7 +176,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/FotogrupalANDESytecnicosscaled.jpg",
@@ -184,7 +184,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/FotogrupalLarescaled.jpg",
@@ -192,7 +192,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Governanca_para_a_conservacao_ramos.png",
@@ -200,7 +200,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/II-Andean-Cosmovision-as-Conceptual-Framework.jpg",
@@ -208,7 +208,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/II-Educacion-Biocultural-Cosmovision-Andina.jpg",
@@ -216,7 +216,15 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
+    },
+    {
+      "name": "images/IIED_webinar-scaled.jpg",
+      "size": 84541,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
     },
     {
       "name": "images/Indigenous_claims_native_crops.png",
@@ -224,7 +232,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Interspecies_respect_peruvian_cradle_of_domestication.png",
@@ -232,7 +240,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Krystynascaled.jpeg",
@@ -240,7 +248,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Maiz-recomendaciones-técnicas.png",
@@ -248,7 +256,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Manual-de-Plagas-y-Enfermedades-de-Maiz.jpg",
@@ -256,7 +264,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Manual-de-Plagas-y-Enfermedades-de-Papa.jpg",
@@ -264,7 +272,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Papa_alimento_ancestral_para_el_futuro.png",
@@ -272,7 +280,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Plantes_et_savoirs_dano.png",
@@ -280,7 +288,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Poster-Festival-Biocultural-2016.jpg",
@@ -288,7 +296,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Resilient_farming_systems_in_times_of_uncertainty.png",
@@ -296,7 +304,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Situating_in_situ.png",
@@ -304,7 +312,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/Social_Economy_based_microenterprises_cheong.png",
@@ -312,7 +320,15 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
+    },
+    {
+      "name": "images/Swift_webinar_scaled.jpg",
+      "size": 80434,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
     },
     {
       "name": "images/Thriving_biodiversity_perus_potato_park.png",
@@ -320,7 +336,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/TraditionalResourceRightsandIndigenousPeopleintheAndes.png",
@@ -328,7 +344,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/You_cant_grow_potatoes_in_the_sky.png",
@@ -336,7 +352,15 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
+    },
+    {
+      "name": "images/agrobiodiversidad.jpg",
+      "size": 158670,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
     },
     {
       "name": "images/applePark.jpg",
@@ -344,7 +368,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/aprendizajeCooperativo2011.png",
@@ -352,7 +376,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/biocultural.png",
@@ -360,7 +384,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/bioculturalHeritagePeru.png",
@@ -368,7 +392,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/bioculturalHeritagesInnovationsPotatosParkj.png",
@@ -376,7 +400,23 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
+    },
+    {
+      "name": "images/curso1.jpg",
+      "size": 77168,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "images/curso2.jpg",
+      "size": 142743,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
     },
     {
       "name": "images/desafioDeSaberes2013.png",
@@ -384,7 +424,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/estudioparquemaiz.png",
@@ -392,7 +432,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/fao-manual-semillas.png",
@@ -400,7 +440,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/homenews.jpeg",
@@ -408,7 +448,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/iinovate-rural.png",
@@ -416,7 +456,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/indicators-of-resilence.png",
@@ -424,7 +464,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/indicators-relevant-for-indigenous-peoples.png",
@@ -432,7 +472,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/internationalCongressEthnobiology2008.jpg",
@@ -440,7 +480,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/link2.jpg",
@@ -448,7 +488,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/link3.jpg",
@@ -456,7 +496,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/link4.jpeg",
@@ -464,7 +504,15 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
+    },
+    {
+      "name": "images/localCovid2scaled.jpg",
+      "size": 99916,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
     },
     {
       "name": "images/logoscaled.png",
@@ -472,7 +520,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/manual-desarrollo-vegetativo-del-maiz.png",
@@ -480,7 +528,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/manual-usuario.png",
@@ -488,7 +536,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/mejoramiento-participativo-maiz.png",
@@ -496,7 +544,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/mision.jpeg",
@@ -504,7 +552,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/nus-nutrition.png",
@@ -512,7 +560,23 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
+    },
+    {
+      "name": "images/papaCrisis.jpeg",
+      "size": 174621,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "images/papaGMrechazo.jpg",
+      "size": 74100,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
     },
     {
       "name": "images/parquemaiz.jpg",
@@ -520,7 +584,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/parquemaiz2.jpg",
@@ -528,7 +592,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/parquemaiz3.png",
@@ -536,7 +600,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/parquepapa.jpg",
@@ -544,7 +608,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/parquepapa2.jpg",
@@ -552,7 +616,47 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
+    },
+    {
+      "name": "images/pasantia1.jpg",
+      "size": 96764,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "images/pasantia2.jpg",
+      "size": 104994,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "images/pasantia3.jpg",
+      "size": 101311,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "images/pasantia4.jpeg",
+      "size": 99738,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "images/pasantia5.jpg",
+      "size": 212508,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
     },
     {
       "name": "images/pdp-lan-2010.png",
@@ -560,7 +664,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/programas1.jpeg",
@@ -568,7 +672,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/programas2.jpg",
@@ -576,7 +680,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/programas3.jpg",
@@ -584,7 +688,15 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
+    },
+    {
+      "name": "images/semillasPapa.jpg",
+      "size": 203454,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
     },
     {
       "name": "images/territoriobio.png",
@@ -592,7 +704,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/territoriobio2.png",
@@ -600,7 +712,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/territoriobio3.jpg",
@@ -608,7 +720,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/the-culinary-sanctuary-of-the-potato-park.png",
@@ -616,7 +728,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/the-potato.png",
@@ -624,7 +736,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/transgenicos.jpg",
@@ -632,7 +744,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/user-manual.png",
@@ -640,7 +752,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/uymuy-2017.png",
@@ -648,7 +760,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/vilcanota1scaled.jpg",
@@ -656,7 +768,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/vilcanota2scaled.jpg",
@@ -664,7 +776,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "images/vision.jpeg",
@@ -672,7 +784,15 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": false
+      "emitted": true
+    },
+    {
+      "name": "images/webinar8parquedelapapa.jpg",
+      "size": 197904,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": true
     }
   ],
   "filteredAssets": 0,
@@ -683,7 +803,7 @@
       ],
       "assets": [
         "andes.module.js",
-        "andes.40572c2ca64b43923f37.hot-update.js"
+        "andes.f957453e44fa66cf335b.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -696,7 +816,7 @@
       ],
       "assets": [
         "andes.module.js",
-        "andes.40572c2ca64b43923f37.hot-update.js"
+        "andes.f957453e44fa66cf335b.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
