@@ -1,4 +1,4 @@
-import Root from "./Root";
+import Root from "./components/Root";
 
 export default {
   name: "andes-theme",
@@ -126,11 +126,23 @@ export default {
           isEventos: true,
         },
 
-        "/aniversario/": {
+        "/aniversariopersonas/": {
           isReady: true,
           isFetching: false,
-          isAniversario: true,
-        }
+          isAniversarioPersonas: true,
+        },
+
+        "/aniversarioproyectos/": {
+          isReady: true,
+          isFetching: false,
+          isAniversarioProyectos: true,
+        },
+
+        "/aniversariopublicaciones/": {
+          isReady: true,
+          isFetching: false,
+          isAniversarioPublicaciones: true,
+        },
       },
     },
   },
