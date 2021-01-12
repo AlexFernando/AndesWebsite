@@ -77,30 +77,28 @@ const AnniversaryProjects = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                25 PROYECTOS, INTERCAMBIOS Y CAMPAÑAS
+                25 PROJECTS, EXCHANGES AND CAMPAIGNS
                 </Title>
                 <SubTitle>
-                    Celebrando<br></br> el 25th Aniversario
+                    Celebrating <br></br> the 25th Anniversary
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionContainer>
             
-                    <h1>ANDES Celebra sus 25 Años</h1>              
-                    <p> Como parte de las celebraciones de nuestro 25 aniversario, nos gustaría compartir algunos
-                    de los resultados de los proyectos, campañas y eventos pasados ​​de ANDES, que, por
-                    supuesto, solo son posibles gracias a las importantes contribuciones de nuestros socios. Ha
-                    habido demasiadas acciones para nombrarlas todas, pero aquí hay algunos de los aspectos
-                    más destacados de los 25 años de historia de ANDES.</p>
+                    <h1>ANDES Celebrates 25 th Anniversary</h1>              
+                    <p> As part of our 25 th anniversary celebrations, we would like to share some of the results of
+                        ANDES’ past projects, campaigns and events, which, of course, are only possible thanks to
+                        important contributions by our partners. There have been too many actions to name them all,
+                        but here are a few of the highlights from ANDES’ 25-year history..</p>
 
-                    <h1>25 proyectos, intercambios e campañas</h1>
+                    <h1>25 projects, campaigns and exchanges</h1>
                     <p>
-                        Apoyar al establecimiento de Territorios de Patrimonio Biocultural Indígena es motivo de
-                        mucho orgullo en ANDES. Brindamos asistencia técnica, desarrollo de capacidades,
-                        recaudación de fondos y forjamos alianzas para apoyar a las comunidades indígenas en los
-                        Andes y en todo el mundo para proteger sus paisajes, sistemas alimentarios, cultura y
-                        derechos.
+                        Supporting the establishment of Indigenous Biocultural Heritage Territories is a source of much
+                        pride at ANDES. We provide technical assistance, capacity building, fundraising, and forge
+                        alliances to support indigenous communities in the Andes and around the world to protect their
+                        landscapes, food systems, culture and rights.
                     </p> 
             
             </SectionContainer>
@@ -108,16 +106,16 @@ const AnniversaryProjects = ({state}) => {
 
             <SectionContainer>
             
-                    <h1>Nuestros colegas en el Parque de la Papa, el Parque Chalakuy y el Parque Espiritual
-                        Vilcanota continúan inspirándonos y motivándonos en nuestro trabajo, y ¡son una
-                        inspiración para la acción positiva en todo el mundo!
+                    <h1>Our colleagues in the Potato Park, Chalakuy Park, and Vilcanota Spiritual Park continue to
+                        inspire and motivate us in our work, and they are an inspiration for positive action around
+                        the world!
                     </h1>
                     
                     <SectionProjectText>
                         <div>
-                            <Link href="/parquedelapapa-pisac"><h3>1.- Parque de la papa</h3></Link>
-                            <Link href="/parquedemaiz-lares"><h3>2.- Parque Chalakuy</h3></Link> 
-                            <Link href="/parqueespiritual-vilcanota/"><h3>3.- Parque Espiritual de Vilcanota</h3></Link>  
+                            <Link href="/parquedelapapa-pisac"><h3>1.- Potato Park</h3></Link>
+                            <Link href="/parquedemaiz-lares"><h3>2.- Chalakuy Park</h3></Link> 
+                            <Link href="/parqueespiritual-vilcanota/"><h3>3.-Spiritual Park of Vilcanota</h3></Link>  
                         </div>
 
                         <div>
@@ -130,10 +128,10 @@ const AnniversaryProjects = ({state}) => {
 
             <SectionContainer>
                 
-                <h1>Un componente clave del trabajo de ANDES es la investigación-acción liderada por
-                    comunidades, particularmente con las comunidades indígenas en los Andes y alrededor del
-                    mundo. Nuestra investigación colaborativa y el desarrollo de políticas se centra en los
-                    vínculos entre las acciones locales y los procesos globales.
+                <h1>
+                    A key component of ANDES work is community-led action research, particularly with
+                    indigenous communities in the Andes and around the world. Our collaborative research
+                    and policy development focuses on links between local actions and global processes.
                 </h1>
 
                 
@@ -157,11 +155,11 @@ const AnniversaryProjects = ({state}) => {
 
 
             <SectionContainer>
-                <h1>Gran parte del impacto de ANDES es el resultado de sus programas educativos
-                    innovadores, que reúnen a pueblos indígenas, agricultores, científicos, académicos y
-                    hacedores de políticas para abordar problemas complejos, incluidos el cambio climático,
-                    los sistemas alimentarios indígenas, la pérdida de biodiversidad y los derechos de los
-                    pueblos indígenas y nuestra madre tierra.
+                <h1>
+                    Much of ANDES impact is a result of its innovative education programs, which bring
+                    together indigenous peoples, farmers, scientists, academics and policy makers to address
+                    complex problems, including climate change, indigenous food systems, biodiversity loss,
+                    and the rights of indigenous peoples and our mother earth.
                 </h1>
 
                 <SectionProjectText>
@@ -193,11 +191,12 @@ const AnniversaryProjects = ({state}) => {
             </SectionContainer>
 
             <SectionContainer>
-                    <h1>ANDES también ha asumido un papel de liderazgo en redes internacionales como INMIP,
-                        IPCCA e ISE. Los intercambios de conocimiento anuales entre los miembros de la Red
-                        Internacional De Pueblos Indígenas de Montana (INMIP)) han forjado alianzas sólidas y
-                        voces unificadas para crear conciencia e influir en las políticas a nivel local, nacional e
-                        internacional.
+                    <h1>
+                        ANDES has also taken a leading role in international networks such as INMIP, IPCCA and
+                        ISE. The annual knowledge exchanges and Walking Workshops with members of the
+                        International Network of Indigenous Peoples (INMIP) have forged strong alliances and
+                        unified voices to raise awareness and influence policy at local, national and international
+                        levels.
                     </h1>
                 <SectionProjectText>
                     <div>
@@ -224,17 +223,16 @@ const AnniversaryProjects = ({state}) => {
 
             <SectionContainer>
 
-                <h1>Finalmente, ANDES participa activamente en campañas públicas para influir en las políticas
-                    que impactan a los pueblos indígenas, sus sistemas alimentarios, derechos y medios de
-                    vida.</h1>
+                <h1>Finally, ANDES actively engages in public campaigns to influence policies that impact
+                    indigenous peoples, their food systems, rights and livelihoods.</h1>
 
                 <SectionProjectText>
                     <div>                 
-                        <a><h3>23.- Ordenanza Municipal contra los Transgenicos</h3></a>
+                        <a><h3>23.- Municipal Ordinance on GMOs</h3></a>
 
-                        <a><h3>24.- Campania contra Biopirateria</h3></a>
+                        <a><h3>24.- Campaign Against Biopiracy</h3></a>
 
-                        <a><h3>25.- Campana contra nuevas herramientas para edición de genes</h3></a>
+                        <a><h3>25.- Campaign against new gene editing tools</h3></a>
                     </div>
 
                     <div>

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {connect, styled, css} from "frontity";
-import {dataToolkit} from '../data/dataToolkit';
-import useFilterSubcategories from '../hooks/useFilterSubcategories';
+import {dataToolkit} from '../data/dataToolkitEnglish';
+import useFilterSubcategories from '../hooks/useFilterSubcategoriesEnglish';
 import {NotFoundContainer} from './SearchBar'
 
 const SectionToolkit = styled.div`
@@ -106,7 +106,7 @@ const ToolkitLogic = () => {
                                         <img src={elemToolkit.urlImage} />
                                         <div>
                                             <h3>{elemToolkit.title}</h3>
-                                            <span>Autor: {elemToolkit.author}</span>
+                                            <span>Author: {elemToolkit.author}</span>
                                             <p>{elemToolkit.date}</p>
                                         </div>
                                     </a>  
@@ -119,41 +119,41 @@ const ToolkitLogic = () => {
                         <NotFoundContainer>
                             <h2>Oops!</h2> 
                                 
-                            <h3>No hay archivos para mostrar en esta categoría</h3>
+                            <h3>There's no files to show in this category </h3>
 
-                            <p>Por favor, pulsa click en otra categoría</p>
+                            <p>Please, click in another category</p>
 
-                            <p>Gracias</p>
+                            <p>Thank you</p>
                         </NotFoundContainer> 
                 
                         <NotFoundContainer>
                             <h2>Oops!</h2> 
                                 
-                            <h3>No hay archivos para mostrar en esta categoría</h3>
+                            <h3>There's no files to show in this category </h3>
 
-                            <p>Por favor, pulsa click en otra categoría</p>
+                            <p>Please, click in another category</p>
 
-                            <p>Gracias</p>
+                            <p>Thank you</p>
                         </NotFoundContainer>
 
                         <NotFoundContainer>
                             <h2>Oops!</h2> 
                                 
-                            <h3>No hay archivos para mostrar en esta categoría</h3>
+                            <h3>There's no files to show in this category </h3>
 
-                            <p>Por favor, pulsa click en otra categoría</p>
+                            <p>Please, click in another category</p>
 
-                            <p>Gracias</p>
+                            <p>Thank you</p>
                         </NotFoundContainer>
 
                         <NotFoundContainer>
                             <h2>Oops!</h2> 
-                                
-                            <h3>No hay archivos para mostrar en esta categoría</h3>
+                                    
+                            <h3>There's no files to show in this category </h3>
 
-                            <p>Por favor, pulsa click en otra categoría</p>
+                            <p>Please, click in another category</p>
 
-                            <p>Gracias</p>
+                            <p>Thank you</p>
                         </NotFoundContainer>
                         </ContainerPapers> 
                     

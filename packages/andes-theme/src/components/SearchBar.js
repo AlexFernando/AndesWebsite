@@ -5,8 +5,8 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
 import {SectionContainer} from './Filosofia';
 import LinkButton from "./LinkButton";
-import {dataNews} from '../data/dataNews';
-import {dataEvents} from '../data/dataEvents';
+import {dataNews} from '../data/dataNewsEnglish';
+import {dataEvents} from '../data/dataEventsEnglish';
 import {dataPublications} from '../data/dataPublicaciones';
 
 export const SearchBar = styled.div`
@@ -16,8 +16,7 @@ export const SearchBar = styled.div`
     padding-top: 2rem;
 
     @media (max-width: 768px){
-
-        padding: 0 1rem;
+        padding: 2rem 1rem 0rem 1rem;
         flex-direction: column;
         align-items: stretch;
     }
@@ -45,7 +44,7 @@ export const InputBar = styled.form`
         width: 70%;
         @media (max-width: 768px){
             width: 100%;
-            font-size: 1.2rem;
+            font-size: .7rem;
         }
     }    
 `
@@ -58,6 +57,11 @@ export const PostStyled = styled.div`
     padding: 2rem;
     margin: 2rem;
     border-radius: 1rem;
+
+    @media (max-width: 768px){
+        padding: 1rem;
+        margin: 1rem;
+    }
 
     a{
         text-decoration: none;
@@ -108,11 +112,6 @@ export const PostStyled = styled.div`
         
         }
     }
-
-
-        
-
-    
 `;
 
 export const NotFoundContainer = styled.div`
@@ -162,10 +161,6 @@ const SearchBarComponent = ({state}) => {
         const events = dataEvents.filter(event => event.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
         const publications = dataPublications.filter(event => event.Title.toLowerCase().includes(searchTerm.toLowerCase()));
-
-        console.log("eventos filtrados ", events);
-
-        console.log("publications filtrados ", publications);
 
         const results = [...news, ...events, ...publications]
      

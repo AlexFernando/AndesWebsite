@@ -2,16 +2,45 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "cf4c5c9a83bbd9f5ed25",
+  "hash": "4e879536ed2c19c028a3",
   "publicPath": "/static/",
   "outputPath": "/home/alexf/react_2020/andes/build/static",
   "assetsByChunkName": {
-    "andes": "andes.module.js"
+    "andes": [
+      "andes.module.js",
+      "andes.aa5e77acb459d881ac11.hot-update.js"
+    ]
   },
   "assets": [
     {
+      "name": "aa5e77acb459d881ac11.hot-update.json",
+      "size": 47,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "andes.aa5e77acb459d881ac11.hot-update.js",
+      "size": 104608,
+      "chunks": [
+        "andes"
+      ],
+      "chunkNames": [
+        "andes"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "andes.module.js",
-      "size": 10537327,
+      "size": 12133880,
       "chunks": [
         "andes"
       ],
@@ -861,7 +890,8 @@
         "andes"
       ],
       "assets": [
-        "andes.module.js"
+        "andes.module.js",
+        "andes.aa5e77acb459d881ac11.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -873,7 +903,8 @@
         "andes"
       ],
       "assets": [
-        "andes.module.js"
+        "andes.module.js",
+        "andes.aa5e77acb459d881ac11.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

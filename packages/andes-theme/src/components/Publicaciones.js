@@ -149,10 +149,10 @@ const Publicaciones = () => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Publicaciones
+                    Publications
                 </Title>
                 <SubTitle>
-                    Investigacion<br></br>Portal de Conocimiento
+                    Research<br></br>Knowledge Portal
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
@@ -173,7 +173,7 @@ const Publicaciones = () => {
                     </InputBar>
                 
                     <ButtonAction  onClick={handleSubmit}>
-                            <LinkButton href="/publicaciones">BUSCAR</LinkButton>
+                            <LinkButton href="/publicaciones">SEARCH</LinkButton>
                     </ButtonAction>
                 </SearchBar>
             </SectionContainer>

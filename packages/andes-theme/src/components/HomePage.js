@@ -76,6 +76,7 @@ const CardsHomeContainer = styled.div`
 
     @media (max-width: 768px){
         flex-direction: column;
+        padding: 0rem;
     }
 `;
 
@@ -85,6 +86,10 @@ const CardsHome = styled.div`
     margin: 1rem 2rem;
     flex-basis: 33.33%;
     background-color: #fff;
+
+    @media (max-width: 768px){
+        margin: 1rem;
+    }
 
     div {
         position: relative;
@@ -145,10 +150,13 @@ const HomePage = ({state}) => {
         <>
         <SectionText>
             <div>  
-                <h1>Bienvenidos a ANDES</h1>              
-                <p>ANDES trabaja activamente en los temas de biodiversidad, derechos indígenas y desarrollo solidario. Además promovemos el intercambio horizontal de experiencias y las políticas que valoran el conocimiento tradicional indígena para aportar en el diálogo global sobre cambios climáticos.</p>
+                <h1>Welcome to ANDES</h1>              
+                <p>
+                ANDES actively works on issues of biodiversity conservation, indigenous rights, and sustainable development. Furthermore, we promote the horizontal exchange of experiences and policies which value traditional and indigenous knowledge and contribute to the global dialogue on climate change.
+                </p>
+
                 <div>
-                    <Link href="/filosofia">Explorar</Link>
+                    <Link href="/filosofia">Explore</Link>
                 </div>
             </div>
         </SectionText>
@@ -160,13 +168,13 @@ const HomePage = ({state}) => {
                     <img src={personas25} />
                     </div>
                
-                    <h3>25 PERSONAS CLAVE</h3>
+                    <h3>25 PEOPLE</h3>
                              
                     <span>
-                    Como parte de las celebraciones de nuestro 25 aniversario, ANDES desea agradecer a todos los que han contribuido al desarrollo institucional, la investigación colaborativa y el intercambio de conocimientos
+                        As part of our 25th anniversary celebrations, ANDES would like to thank everyone who has contributed to institutional development, collaborative research and knowledge sharing.
                     </span>
                     <div>
-                        <Link href="/aniversariopersonas" >LEER MAS</Link>
+                        <Link href="/aniversariopersonas" >READ MORE</Link>
                     </div>
  
                 </CardsHome>
@@ -176,15 +184,14 @@ const HomePage = ({state}) => {
                     </div>
                
                
-                    <h3>25 PROYECTOS, INTERCAMBIOS Y CAMAPAÑAS</h3>
+                    <h3>25 PROJETS, EXCHANGES Y CAMPAINGS</h3>
                         
                     <span>
-                        Nos gustaría compartir algunos de los resultados de los proyectos, campañas y eventos pasados ​​de ANDES, que, por
-                        supuesto, solo son posibles gracias a las importantes contribuciones de nuestros socios.                    
+                        We would like to share some of the results of the past projects, campaigns and events of ANDES, which, of course, are only possible thanks to the important contributions of our partners.                   
                     </span>
                     
                     <div>
-                        <Link href="/aniversarioproyectos" >LEER MAS</Link>
+                        <Link href="/aniversarioproyectos" >READ MORE</Link>
                     </div>
                    
                 </CardsHome>
@@ -195,15 +202,14 @@ const HomePage = ({state}) => {
                     </div>
 
                     
-                    <h3>25 PUBLICACIONES</h3>
+                    <h3>25 PUBLICATIONS</h3>
                    
                     <span>
-                        Nos gustaría compartir algunos de los resultados de nuestras investigaciones a través de publicaciones que, por supuesto, solo son posibles
-                        gracias a las importantes contribuciones de nuestros socios.
+                        We would like to share some of the results of our research through publications which, of course, are only possible thanks to the important contributions of our partners.
                     </span>
                     
                     <div>
-                        <Link href="/aniversariopublicaciones" >LEER MAS</Link>
+                        <Link href="/aniversariopublicaciones" >READ MORE</Link>
                     </div>
                    
                 </CardsHome>
@@ -212,18 +218,23 @@ const HomePage = ({state}) => {
 
         <SectionText>
             <div>  
-                <h1>Pluriversidad - Yachay Kuychi</h1>              
-                <p>La Pluriversidad Yachay Kuychi (Arco Iris de Conocimientos), es una institución internacional de educación e investigación intercultural, y un centro de excelencia en sistemas alimentarios indígenas y Paisajes bioculturales</p>
+                <h1>Pluriversity - Yachay Kuychi</h1>              
+                <p>
+                    The Yachay Kuychi Pluriversity (Rainbow of Knowledge), is an international institution of intercultural education and research, and a center of excellence in indigenous food systems and biocultural landscapes
+                </p>
+                
                 <div>
-                    <Link href="/quienessomos">Informarse</Link>
+                    <Link href="/quienessomos">LEARN</Link>
                 </div>
             </div>
 
             <div>  
-                <h1>Parque de la Papa</h1>              
-                <p>El Parque de la Papa está ubicado en el distrito de Pisac, aproximadamente a 40 kilómetros de la ciudad de Cusco (Perú), en el Valle Sagrado de los Incas. Cubriendo una superficie de 9280 hectáreas y ubicada en una altura entre 3400 y 4600 metros arriba del nivel del mar.</p>
+                <h1>Potato Park</h1>              
+                <p>
+                    The Potato Park is located in the Pisac district, approximately 40 kilometers from the city of Cusco (Peru), in the Sacred Valley of the Incas. Covering an area of ​​9280 hectares and located at a height between 3400 and 4600 meters above sea level.
+                </p>
                 <div>
-                    <Link href="/parquedelapapa-pisac">Conocer</Link>
+                    <Link href="/parquedelapapa-pisac">LEARN</Link>
                 </div>
             </div>
         </SectionText>
@@ -234,39 +245,32 @@ const HomePage = ({state}) => {
                 <CardsHome>
                     <div>
                     <img src={homeNews} />
-                    <strong>Noticia</strong>
+                    <strong>News</strong>
                     </div>
-               
-
-                 
-                    <h3>Indigenous Resilience</h3>
-                        
-                
-                    
-                    <span>
-                        From the Mongolian Steppes to the Andean Mountains
-                    </span>
+                        <h3>Indigenous Resilience</h3>
+                        <span>
+                            From the Mongolian Steppes to the Andean Mountains
+                        </span>
                     <div>
-                        <a href="https://www.culturalsurvival.org/publications/cultural-survival-quarterly/indigenous-resilience-mongolian-steppes-andean-mountains" target="_blank" rel="noopener" >LEER MAS</a>
-
+                        <a href="https://www.culturalsurvival.org/publications/cultural-survival-quarterly/indigenous-resilience-mongolian-steppes-andean-mountains" target="_blank" rel="noopener" >READ MORE</a>
                     </div>
  
                 </CardsHome>
                 <CardsHome>
                     <div>
                         <img src={imgResearch} />
-                        <strong>Evento</strong>
+                        <strong>Event</strong>
                     </div>
                
                
-                    <h3>Aniversario ANDES</h3>
+                    <h3>Anniversary ANDES</h3>
                         
                     <span>
-                        Únete a la celebración de 25 años de trabajo por salvaguardar la herencia cultural
+                        Join us, to the celebration of 25 years safeguarding the biocultural heritage
                     </span>
                     
                     <div>
-                        <a href="/" >LEER MAS</a>
+                        <a href="/" >READ MORE</a>
                     </div>
                    
                 </CardsHome>
@@ -274,7 +278,7 @@ const HomePage = ({state}) => {
                 <CardsHome>
                     <div>
                         <img src={potatoPark} />
-                        <strong>Publicación</strong>
+                        <strong>Publication</strong>
                     </div>
 
                     
@@ -285,7 +289,7 @@ const HomePage = ({state}) => {
                     </span>
                     
                     <div>
-                        <a href="http://andes.center/wp-content/uploads/2018/04/ASHS_28-2018-4_PIMBERT.pdf" target="_blank" rel="noopener" >LEER MAS</a>
+                        <a href="http://andes.center/wp-content/uploads/2018/04/ASHS_28-2018-4_PIMBERT.pdf" target="_blank" rel="noopener" >READ MORE</a>
                     </div>
                    
                 </CardsHome>

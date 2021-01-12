@@ -3,16 +3,13 @@ import {connect, css, styled } from "frontity";
 import missionImg from '../static/images/mision.jpeg';
 import visionImg from '../static/images/vision.jpeg';
 
+
 export const MarginTopContainer = styled.div`
     margin-top: 14vh;
-
-    @media(max-width: 768px) {
-        margin-top: 10vh;
-    }
 `;
 
 export const Title = styled.span`
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     line-height: 2;
  
@@ -20,18 +17,17 @@ export const Title = styled.span`
         font-size: 2.5rem;
     }
 `
-export const SubTitle = styled.h2 `
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;   
-    font-size: 2.8rem;
+export const SubTitle = styled.h2`
+
+    font-size: 2.2rem;
     font-weight: 400;
     line-height: 1;
     letter-spacing: 3px;
     margin: 2rem 0 2rem 0;
-
+ 
     @media(min-width: 768px) {
         font-size: 5rem;
+        flex-wrap: nowrap;
     }
 `
 
@@ -48,6 +44,7 @@ export const HeadContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    overflow-wrap: break-word;
 `;
 
 export const SectionContainer = styled.div`
@@ -113,19 +110,19 @@ const Filosofia = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>ABOUT</Title>
-                <SubTitle>Nuestra mision<br></br> vision y objetivos</SubTitle>
+                <SubTitle>Our Mission<br></br> Vision &amp; Goals</SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionContainer>
                 <SubSectionContainer>
                     <div>
-                        <h3>Nuestra Misión</h3>
-                        <p>Nuestra misión es impulsar un enfoque de conservación y desarrollo basado en los derechos a través de la implementación de Territorios Bioculturales, un modelo que se ha implementado con éxito en el Parque de la Papa. 
-                        <br></br>Este modelo creativamente une el ancestral principio andino y filosofía de bienestar, Sumaq Kawsay, a la ciencia moderna y a las metodologías de investigación para promover sistemas agrarios resilentes por su biodiversidad. Además promovemos el desarrollo endógeno y la reducción de la pobreza. Este trabajo se realiza en comunidades sustentables indígenas establecidas en los andes peruanos basados en sus propias capacidades y recursos mediante estrategias locales de desarrollo.</p>
+                        <h3>Our Mission</h3>
+                        <p>Our mission is to promote a rights-based approach to conservation and development through the implementation of Biocultural Territories, a model that has been successfully implemented in the Potato Park.  
+                        <br></br>This model creatively links the ancient Andean principle and philosophy of well-being, Sumaq Kawsay, to modern science and research methodologies to promote resilient agrarian systems for biodiversity. Furthermore, we promote endogenous development and poverty reduction. This work is carried out in indigenous communities established in the Peruvian Andes based on their own capacities and resources through local development strategies.</p>
 
-                        <h3>Nuestra Visión</h3>
-                        <p>Nuestra visión es crear capacidades locales y respuestas estratégicas de base ante los efectos socio-económicos, culturales, ecológicos y de políticas del proceso de globalización sobre las comunidades locales, así como la protección de sus recursos, conocimientos y los derechos asociados a estos recursos.</p>
+                        <h3>Our Vision</h3>
+                        <p>Our vision is to create local capacities and strategic responses to the socio-economic, cultural, ecological and political effects of the globalization process on local communities, as well as the protection of their resources, knowledge and the rights associated with these resources.</p>
                     </div>
                 
                     <ImageStyle src={visionImg} />
@@ -133,12 +130,12 @@ const Filosofia = ({state}) => {
 
                 <SubSectionContainer>
                     <div>
-                        <h3>Nuestros Objetivos</h3>
+                        <h3>Our Objectives</h3>
                         <ul>
-                            <li>La búsqueda del buen vivir en todas sus dimensiones a través la defensa, promoción y celebración de la diversidad en sus diferentes manifestaciones sociales, naturales, bioculturales y espirituales en términos de ideas, conocimientos y otras formas de autoexpresión.</li>
-                            <br></br><li>El establecimiento y difusión al nivel global de modelos innovadores de desarrollo comunal sostenible y territorial capaces de resolver los desafíos ambientales, sociales y culturales que las comunidades rurales se enfrenta.</li>
-                            <br></br><li>La generación de políticas regionales, nacionales e internacionales que privilegian las voces locales y marginados en la promoción de la conservación biocultural y en las áreas relacionadas con el desarrollo sostenible.</li>
-                            <br></br><li>La creación de un movimiento de solidaridad global de organizaciones, actores y comunidades locales vinculadas a través de redes de cooperación y descubrimiento colectivo Sur-Sur y Sur-Norte, para desarrollar alternativas y respuestas creativas a los desafíos globales.</li>
+                            <li>The search for Sumaq Kawsay in all its dimensions through the defense, promotion, and celebration of diversity in its different social, natural, biocultural, and spiritual manifestations in terms of ideas, knowledge, and other forms of self-expression.</li>
+                            <br></br><li>The establishment and dissemination at the global level of innovative models for sustainable development of territories and communities  which are capable of solving the environmental, social, and cultural challenges that rural communities face.</li>
+                            <br></br><li>The generation of regional, national, and international policies that privilege local and marginalized voices in promoting biocultural conservation and in areas related to sustainable development.</li>
+                            <br></br><li>The creation of a global solidarity movement of organizations, actors, and local communities, linked through South-South and South-North networks of cooperation and collective discovery, to develop alternatives and creative responses to global challenges.</li>
                         </ul>
                     </div>
 

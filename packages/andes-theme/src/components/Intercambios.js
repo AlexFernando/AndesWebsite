@@ -7,10 +7,10 @@ const Intercambios = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Intercambios
+                    Exchanges
                 </Title>
                 <SubTitle>
-                    Capacitaciones <br></br> Aprende con nosotros
+                    Formation <br></br> Learn with us
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>

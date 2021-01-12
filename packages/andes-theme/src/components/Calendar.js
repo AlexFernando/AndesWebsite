@@ -116,7 +116,7 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
 
     return ( 
       <MyCalendar>  
-      <h1>{`FECHA DE HOY : ${today}`}</h1>
+      <h1>{`CURRENT DAY : ${today}`}</h1>
       <Frame>
         
         <Header>

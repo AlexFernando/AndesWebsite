@@ -41,25 +41,26 @@ const Politica = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Incidencias Política
+                    Political Impact
                 </Title>
                 <SubTitle>
-                    Transgénicos <br></br> Biopiratería
+                    Transgenics <br></br> Biopiracy
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionContainer>
                 <MainParagraph>
-                    ANDES integra asuntos de ética y justicia social y ambiental al trabajo, tales como, el derecho a la tierra, protocolos bioculturales, derechos intelectuales de propiedad, y la negociación de intereses comunes en procesos locales, nacionales e internacionales.
+                    ANDES integrates matter of ethics and social and environmental justice to work, such as the right to land, biocultural protocols, intellectual property rights, and the negotiation of common interests in local, national and international processes.
                 </MainParagraph>
                 
                 <p>
-                    Nuestro enfoque es el empoderamiento de las voces locales y de los marginados en propuestas de conservación biocultural y desarrollo sostenible, así como la defensa y promoción de los derechos humanos y los derechos de la Pachamama.  Asimismo, ANDES promueve los derechos de los pueblos indígenas a los recursos naturales y territorios, a sus expresiones culturales, prácticas y conocimientos tradicionales.
+                Our approach is the empowerment of local voices and the marginalized in proposals for biocultural conservation and sustainable development, as well as the defense and promotion of human rights and the rights of the Pachamama. Likewise, ANDES promotes the rights of indigenous peoples to natural resources and territories, to their cultural expressions, practices and traditional knowledge.
                 </p> 
 
                 <p>
-                    ANDES promueve y participa en la creación de un movimiento de solidaridad global de organizaciones, actores y comunidades locales vinculadas a través de redes de cooperación y descubrimiento colectivo Sur-Sur y Sur-Norte, para desarrollar alternativas y respuestas creativas a los desafíos globales como el cambio climático y la pérdida de la diversidad biológica y cultural. Como parte de este impulso, ANDES participa activamente en fora internacional, como la Convenio sobre la Diversidad Biológica y la Declaración de las Naciones Unidas sobre los derechos de los Pueblos Indígenas (UNDRIP).
+                    
+ANDES promotes and participates in the creation of a global solidarity movement of organizations, actors and local communities linked through networks of South-South and South-North cooperation and collective discovery, to develop alternatives and creative responses to global challenges such as climate change and the loss of biological and cultural diversity. As part of this drive, ANDES actively participates in international fora, such as the Convention on Biological Diversity and the United Nations Declaration on the Rights of Indigenous Peoples (UNDRIP).                   
                 </p>
 
              
@@ -69,10 +70,10 @@ const Politica = ({state}) => {
 
                     <SectionText>
                         <div>
-                            <h1>Rechazando transgénicos en Perú</h1>
+                            <h1>Rejecting Transgenics in Peru</h1>
 
                             <p>
-                            La asociación ANDES, junto con la asociación de las comunidades del Parque de la Papa, han firmado una declaración en contra de los transgénicos en Perú.
+                                Asociación ANDES, along with the Association of the Communities of the Potato Park, has signed a declaration against transgenics in Peru.
                             </p>
                             <div>
                                 <a href="https://www.servindi.org/actualidad/24/06/2020/senor-vizcarra-el-pueblo-peruano-rechaza-los-transgenicos" target="_blank" rel="noopener" >LEER HISTORIA</a>
@@ -98,16 +99,16 @@ const Politica = ({state}) => {
                 </div>
 
                 <div>  
-                    <h1>18 de Octubre del 2020</h1>              
-                    <p>Carta Abierta al Señor Presidente de la Republica - Ampliacion de la moratoratia a producción de transgénicos</p>
+                    <h1>October 18, 2020</h1>              
+                    <p>Open Letter to the President of the Republic of Peru - Extension of moratoratia to production of transgenics</p>
                     <div>
-                        <a href="https://andes.org.pe/wp-content/uploads/2020/10/Carta-Abierta-al-Presidente-de-Peru-Ampliacion-de-la-moratoratia-a-transgenicos-18-10-20.pdf" target="_blank" rel="noopener">LEER MAS</a>
+                        <a href="https://andes.org.pe/wp-content/uploads/2020/10/Carta-Abierta-al-Presidente-de-Peru-Ampliacion-de-la-moratoratia-a-transgenicos-18-10-20.pdf" target="_blank" rel="noopener">READ MORE</a>
                     </div>
                 </div>
 
                 <div>  
-                    <h1>20 de Octubre del 2020</h1>              
-                    <p>Congreso amplía moratoria a producción de transgénicos hasta el 2035.</p>
+                    <h1>Octubre 20, 2020</h1>              
+                    <p>Congress extends moratorium on GM production until 2035.</p>
                     <div>
                         <a href="https://larepublica.pe/economia/2020/10/20/congreso-amplia-moratoria-a-transgenicos-hasta-diciembre-del-2035/?fbclid=IwAR16fczjYrejroXMDUpPQaTJ4pQZ4VP0nSpAGcDRZXbF5KNzdrWSDU9-0FA" target="_blank" rel="noopener">LEER MAS</a>
                     </div>

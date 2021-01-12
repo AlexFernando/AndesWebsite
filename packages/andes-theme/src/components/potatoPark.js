@@ -10,6 +10,10 @@ export const SectionContainer = styled.div`
     flex-direction: column;
     padding: 0rem 2rem 2rem 2rem;
 
+    @media(max-width: 768px) {
+        padding: 0 1rem 0 1rem;
+    }
+
     p {
         padding: 2rem 25rem 0 4rem;
         line-height: 1.5;
@@ -51,13 +55,16 @@ export const Card = styled.div`
     flex-direction: column;
     flex-basis: 33.33%;
     flex-grow: 1;
-    
     align-items: center;
     background-color: #eaeade;
     line-height: 1.2;
     margin: 2rem;
     border-radius: 1rem;
     padding-bottom: 1.5rem;
+
+    @media (max-width: 768px){
+        margin: 1rem 0 1rem 0;
+    }
 
     img {
         max-width: 100%;
@@ -91,35 +98,32 @@ const PotatoPark = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Parque de la Papa - Pisaq
+                    Potato Park - Pisaq
                 </Title>
                 <SubTitle>
-                    El Sistema Ayllu<br></br>Innovaciones Bioculturales
+                    The Ayllu System<br></br>Biocultural innovations
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionContainer>
                 <MainParagraph>
-                    El Parque de la Papa está ubicado en el distrito de Pisac, aproximadamente a 40 kilómetros de la ciudad de Cusco (Perú), en el Valle Sagrado de los Incas. Cubriendo una superficie de 9280 hectáreas y ubicada en una altura entre 3400 y 4600 metros arriba del nivel del mar.
+                    The Potato Park is located in the Pisac district, approximately 40 kilometers from the city of Cusco (Peru), in the Sacred Valley of the Incas. Covering an area of ​​9280 hectares and located at a height between 3400 and 4600 meters above sea level.
                 </MainParagraph>
                 
                 <p>
-                    El parque esta administrado colectivamente por seis comunidades indígenas (Quechua) – Amaru, Chahuaytire, Cuyo Grande, Pampallacta, Paru Paru y Sacaca – con el apoyo de la asociación ANDES. Dentro de su territorio, los seis comunidades conserven más de 1300 papas nativas. Se cuenta también tres especies silvestres de la papa, cuales  son como los abuelos de la papa cultivada.
+                    The park is collectively managed by five indigenous Quechua communities – Amaru, Chawaytire, Pampallacta, Paru Paru and Sacaca – with the support of the ANDES. Within their territory, the communities conserve more than 1,300 varieties of native potatoes. There are also three crop wild relatives of potato, which are like the grandparents of cultivated potatoes.
                 </p> 
 
-                <p>
-                    El Parque de la Papa no es solamente una iniciativa de conservación de varias variedades de papas. Es, sobre todo, un territorio bio cultural dedicado a la conservación del patrimonio de seis comunidades indígenas que viven acá: no solamente cientos de variedades cultivadas pero igualmente las especies silvestres emparentadas, el paisaje y sus elementos que incluyen también conocimientos, tradiciones, innovaciones y la cosmovisión de los más de 6000 habitantes.
-                </p>
-
+            
                 <CardsContainer>
                     <Card>
                         <img src={imgInnovacioneBio} />
 
-                        <h3>Innovaciones bioculturales en el Parque de la Papa</h3>
+                        <h3>Biocultural innovations in the Potato Park</h3>
 
                         <span>
-                            El Parque de la Papa no es solamente una iniciativa de conservación de varias variedades de papas. Es, sobre todo, un territorio bio cultural dedicado a la conservación del patrimonio de seis comunidades indígenas que viven en la zona
+                        The Potato Park is not just an initiative to conserve varieties of potatoes. It is, above all, a biocultural territory dedicated to the conservation of the heritage of the indigenous communities that live there. 
                         </span>
 
                         <a href="http://andes.center/wp-content/uploads/2018/07/G03917.pdf" target="_blank" rel="noopener" >LEER MAS</a>
@@ -129,10 +133,10 @@ const PotatoPark = ({state}) => {
                     <Card>
                         <img src={imgSistemaAyllu} />
 
-                        <h3>El sistema Ayllu en el Parque de la Papa</h3>
+                        <h3>The Ayllu System of the Potato Park</h3>
 
                         <span>
-                    El Parque de la Papa no es solamente una iniciativa de conservación de varias variedades de papas. Es, sobre todo, un territorio bio cultural dedicado a la conservación del patrimonio de seis comunidades indígenas que viven en la zona
+                            Not only hundreds of cultivated potato varieties but also the related wild species, the landscape and all its elements which include the knowledge, traditions, innovations, and worldview of the more than 6,000 inhabitants.
                         </span>
 
                         <a href="https://satoyama-initiative.org/old/the-ayllu-system-of-the-potato-park/" target="_blank" rel="noopener" >LEER MAS</a>
@@ -141,10 +145,10 @@ const PotatoPark = ({state}) => {
                     <Card>
                         <img src={imgAgricultores} />
 
-                        <h3>Agricultores Peruanos puede salvar el planeta</h3>
+                        <h3>Peruvian Farmers could Save the Planet</h3>
 
                         <span>
-                            El Parque de la Papa no es solamente una iniciativa de conservación de varias variedades de papas. Es, sobre todo, un territorio bio cultural dedicado a la conservación del patrimonio de seis comunidades indígenas que viven en la zona
+                            Not only hundreds of cultivated potato varieties but also the related wild species, the landscape and all its elements which include the knowledge, traditions, innovations, and worldview of the more than 6,000 inhabitants.
                         </span>
 
                         <a href="https://modernfarmer.com/2019/12/how-peruvian-potatoes-might-be-key-to-feeding-the-planet/" target="_blank" rel="noopener" >LEER MAS</a>

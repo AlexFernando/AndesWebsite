@@ -2,9 +2,11 @@ import React, {useState, useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import Link from './Link';
 
 
 const ContainerNav = styled.nav`
+
   display: flex;
   width: 100%;
   height: 6vh;
@@ -16,44 +18,60 @@ const ContainerNav = styled.nav`
   color: #fff;
   z-index: 3;
 
-  a{
-    cursor: pointer;
-    text-decoration: none;
-    color: #fff;    
-  }
-  p {
-      font-style: italic;
-      margin-left: 2rem;
-  }
-
-  span {
-      margin-right: 1rem;
-  }
-
 
   @media (max-width: 768px) {
-      position: relative;
+    display: none;
   }
-`
 
-const SecondaryNavbar = ({actions, setNavOpen, navOpen}) => {
-
-    const handleClick = e => {
-
-        e.preventDefault();
-        actions.router.set("/searchbar");
-
+    p {
+        font-style: italic;
+        margin-left: 2rem;
     }
 
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        a {
+            display: flex;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            margin-right: 2rem;
+
+
+            span {      
+                margin-right: 1rem;
+                font-size: 1.2rem;
+    
+            }
+        }
+
+    }
+`
+
+const SecondaryNavbar = ({state, actions, setNavOpen, navOpen}) => {
+
+    let myLink = state.router.link;
+    let linkSpanish = "/es"+ myLink;
+    
     return ( 
 
         <ContainerNav>
-            <p>"Juntos hacia el Sumaq Kawsay"</p>
+            <p>"Together towards to Sumaq Kawsay"</p>
 
-            <a href="/searchbar">
-                <span>Search</span>
-                <FontAwesomeIcon css={css`font-size: 1.2rem; margin-right: 2rem;`}icon={faSearch}/>
-            </a>
+            <div>
+                <Link href={myLink}>ENGLISH</Link>
+                <Link href={linkSpanish}>ESPAÑOL</Link>
+                
+                <a href="/searchbar">
+                    <span>Search</span>
+                    <FontAwesomeIcon css={css`font-size: 1.2rem;`}icon={faSearch}/>
+                </a>
+            </div>
+                
         </ContainerNav >
 
      );

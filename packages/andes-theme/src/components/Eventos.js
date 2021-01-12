@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {connect, styled, css} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, SectionContainer, MarginTopContainer} from './Filosofia';
 
-import {dataEvents} from '../data/dataEvents';
+import {dataEvents} from '../data/dataEventsEnglish';
 
 import Calendar from './Calendar';
 
@@ -81,10 +81,10 @@ const Eventos = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Eventos
+                    Events
                 </Title>
                 <SubTitle>
-                    Participa con nosotros
+                    Take part of our Events
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
@@ -96,7 +96,7 @@ const Eventos = ({state}) => {
                     isEvent ? 
                         filtered.map( event => (    
                             <EventContainer>
-                                <h1>ANDES - Eventos</h1>
+                                <h1>ANDES - Events</h1>
                                 <img  src = {event.urlImage} />
                                 
                                 <h3>{event.title}</h3>
@@ -108,7 +108,7 @@ const Eventos = ({state}) => {
                     <>
                     
                     <EventContainer>
-                        <h1>Lo mas reciente</h1>
+                        <h1>The Latest</h1>
                         
                         <img  src = {dataEvents[0].urlImage} />
                         <h3>{dataEvents[0].title}</h3>

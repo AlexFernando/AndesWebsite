@@ -22,6 +22,7 @@ const TextoImagen = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-content: flex-start;
+    overflow-wrap: break-word;
    
     @media(min-width: 768px) {
         height: 573px;
@@ -30,7 +31,7 @@ const TextoImagen = styled.div`
 
     h1 {
         text-transform: uppercase;
-        font-size: 2.5rem;
+        font-size: 2rem;
         letter-spacing: 4px;
         margin-top: 5rem;
 
@@ -41,7 +42,7 @@ const TextoImagen = styled.div`
     }
 
     p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-top: 0;
         margin-bottom: 2rem;
         line-height: 1.8;
@@ -147,10 +148,10 @@ const BgImage = () => {
             <MarginTopContainer>
                 <Content>
                     <TextoImagen>
-                        <h1>25 Aniversario de la Asociación ANDES </h1>
-                        <p>Únete a la celebración de 25 años de trabajo por salvaguardar el patrimonio biocultural</p>
+                        <h1>25 ANNIVERSARY OF THE ANDES ASSOCIATION</h1>
+                        <p>Join us, to the celebration of 25 years safeguarding the biocultural heritage</p>
                         <div>
-                            <Link href="/aniversariopersonas">Saber Mas</Link>
+                            <Link href="/aniversariopersonas">Get More</Link>
                         </div>           
                     </TextoImagen>
                 </Content>

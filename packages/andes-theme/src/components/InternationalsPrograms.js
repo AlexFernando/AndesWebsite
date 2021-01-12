@@ -11,17 +11,17 @@ const InternationalPrograms = () => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Programas y redes internacionales
+                    International Programs and Networks
                 </Title>
                 <SubTitle>
-                    Redes, Alianzas y Proyectos<br></br>Andes con el Mundo
+                    Networks, Alliances y Projets<br></br>ANDES to the World
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionContainer>
                 <p>
-                Además de los proyectos en Perú, ANDES trabaja internacionalmente a través de varias redes, alianzas y proyectos centrados en el cambio climático, los derechos indígenas y las políticas.
+                    In addition to projects in Peru, ANDES works internationally with a variety of networks, alliances and projects focused on climate change, indigenous rights, and political advocacy.
                 </p> 
 
                  
@@ -32,10 +32,10 @@ const InternationalPrograms = () => {
                         <h3>Indigenous Peoples Biocultural Climate Change Assessment Initiative (IPCCA)</h3>
 
                         <span>
-                            ANDES actúa como la secretaría de la Evaluación del Cambio Climático de los Pueblos Indígenas, cuyo objetivo es integrar las perspectivas y experiencias indígenas en la toma de decisiones mundiales para la adaptación y la resiliencia al cambio climático.
+                            ANDES acts as the secretariat for the IPCCA, whose objective is the integration of indigenous perspectives and experiences in global decision-making processes related to adaptation and resilience to climate change.
                         </span>
 
-                        <a href="https://ipcca.info/" target="_blank" rel="noopener" >Ver Proyecto</a>
+                        <a href="https://ipcca.info/" target="_blank" rel="noopener" >View Project</a>
                     </Card>
 
 
@@ -45,22 +45,22 @@ const InternationalPrograms = () => {
                         <h3>International Network of Mountain Indigenous Peoples (INMIP)</h3>
 
                         <span>
-                            ANDES actúa como secretaría de la Red Internacional de Pueblos Indígenas de Montaña, que se centra en la protección de los derechos bioculturales en los centros mundiales de origen de cultivos. Actualmente, la red está trabajando hacia la creación de una red global de "Food Neighborhoods."
+                        ANDES acts as the secretariat for INMIP, and international network which focuses on the protection of biocultural rights in global centers of crop origin and diversity. Currently, the network is working towards the creation of a global network of "Food Neighborhoods."
                         </span>
 
-                        <a href="https://inmip.net/" target="_blank" rel="noopener" >Ver Proyecto</a>
+                        <a href="https://inmip.net/" target="_blank" rel="noopener" >View Project</a>
                     </Card>
 
                     <Card>
                         <img src={imgNativePotato} />
 
-                        <h3>Almacenamiento de semillas de papa nativas en la banco de semillas internacional, Svalbard</h3>
+                        <h3>Storage of native potato seeds in the International Seed Vault, Svalbard</h3>
 
                         <span>
-                        En 2016, los agricultores del Parque de la Papa en colaboración con ANDES llevaron sus semillas a la colección en el banco mundial de semillas en Svalbard, para protegerlas para toda la humanidad.
+                            In 2016, the farmers of the Potato Park, in collaboration with ANDES, brought their collection of native potato seeds to the International Seed Vault in Svalbard, in order to protect them for the benefit of all humanity.
                         </span>
 
-                        <a href="https://vimeo.com/200658165" target="_blank" rel="noopener" >Ver Proyecto</a>
+                        <a href="https://vimeo.com/200658165" target="_blank" rel="noopener" >View Project</a>
                     </Card>
                 </CardsContainer>
             </SectionContainer>

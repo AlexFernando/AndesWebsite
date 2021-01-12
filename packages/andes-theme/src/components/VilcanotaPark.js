@@ -12,21 +12,20 @@ const VilcanotaPark = () => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Parque Espiritual de Vilcanota
+                    The Spiritual Park of Vilcanota
                 </Title>
                 <SubTitle>
-                    Hotspot de biodiversidad<br></br>Cultura Milenaria
+                    Biodiversity hotspot<br></br>Milenary Culture
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionContainer>
                 <p>
-                ¿Cuál es la relación entre la espiritualidad, un ecosistema saludable y la lucha contra la pobreza? En las provincias de Canchis, Quispicanchi y Paucartambo del departamento de Cusco, las comunidades indígenas locales creen que la incorporación de las prácticas espirituales debe ser un aspecto fundamental de las políticas de protección y de desarrollo que las afecten.<br></br><br></br>
+                
+                What is the relationship between spirituality, a healthy ecosystem, and the fight against poverty? In the Canchis, Quispicanchis, and Paucartambo provinces of Cusco, local indigenous communities believe that spiritual practices should be a fundamental aspect of protection policies and development.<br></br><br></br>
 
-                Ubicado en una región reconocida como hotspot de biodiversidad y hogar de una cultura milenaria y poco influenciada por el exterior como la de los Q’eros, las comunidades han decidido enfrentar la erosión de su cultura y su medio ambiente, estableciendo un área especial de conservación. El Parque Espiritual Vilcanota está dedicado a preservar en su integridad los valores espirituales y ecológicos de los pueblos Quechua. Este es el primer Sitio Natural Sagrado del Perú, un modelo que reconoce y promueve los valores Quechua reconociendo su importancia per se y para la conservación y al uso sostenible de la biodiversidad.<br></br><br></br>
-
-                    Utilizando una perspectiva de sistemas, este proyecto busca incidir en las relaciones de los sistemas alimentarios a nivel local y  mundial y promueve la participación activa de la población rural pobre para la gobernabilidad política inclusiva. La atención se centra en el conocimiento y las experiencias de los pueblos indígenas y las comunidades de pequeños agricultores como actores claves para identificar los retos que plantea el cambio climático y crear respuestas adecuadas.
+                Located in a region recognized as a biodiversity hotspot and home to an ancient culture that has experienced little influence from the outside, like the community of Q’eros, the communities have decided to fight the erosion of their culture and their environment, establishing a special conservation area. The Vilcanota Spiritual Park is dedicated to preserving the integrity of the spiritual and ecological values ​​of the resident Quechua peoples. This is the first Sacred Natural Site of Peru, a model that recognizes and promotes Quechua values and recognizes their inherent importance for the conservation and sustainable use of biodiversity.<br></br><br></br>
                 </p> 
 
                  
@@ -34,10 +33,10 @@ const VilcanotaPark = () => {
                     <Card>
                         <img src={vilcanotaFirst} />
 
-                        <h3>El Carácter Sagrado Del Área</h3>
+                        <h3>The Sacred Nature of the Area</h3>
 
                         <span>
-                            El paisaje natural de la región Vilcanota ha sido protegido por mucho tiempo por las comunidades mismas a través de sus prácticas culturales y su incorporación en los sistemas cosmológicos que otorgan a elementos biológicos significado espiritual y simbólico. Sitios de valor espiritual (como grutas, montañas, ríos, lagos, hasta ecosistemas enteros) han permanecido en su estado natural o casi natural debido a las restricciones de acceso que estas creencias implican. Así, los sitios naturales sagrados, con poca inferencia por parte de la actividad humana, proveen santuarios para especies amenazadas y podrían servir como piscinas genéticas potenciales, para recuperar ecosistemas degradados.
+                        The natural landscape of the Vilcanota region has long been protected by the communities themselves through their cultural practices and their incorporation into cosmological systems that give biological elements spiritual and symbolic meaning. Sites of spiritual value (such as caves, mountains, rivers, lakes, and even entire ecosystems) have remained in their natural or almost natural state due to the access restrictions that these beliefs imply. Thus, sacred natural sites, with little interference from human activity, provide sanctuaries for threatened species and could serve as potential genetic pools to recover degraded ecosystems.
                         </span>
 
                     </Card>
@@ -46,10 +45,10 @@ const VilcanotaPark = () => {
                     <Card>
                         <img src={vilcanotaSecond} />
 
-                        <h3>Un Sitio Natural Sagrado</h3>
+                        <h3>A Natural Sacred Area</h3>
 
                         <span>
-                            Partiendo del hecho que los ecosistemas no pueden ser entendidos, conservados ni manejados sin el mantenimiento de las culturas que las han modificado, creado y recreado y como respuesta a las amenazas y cambios externos, en día 6 de Diciembre de 2004, las comunidades Quechua de Q’eros y Ausangate crearon el Parque Espiritual Vilcanota como el primer Sitio Natural Sagrado del Perú. Este modelo de protección reconoce que la diversidad biológica y cultural se halla en una relación de mutua dependencia y reforzamiento, y que ambos son esenciales para la continuidad tanto de los sistemas sociales como ecológicos. Esta iniciativa, liderada por las comunidades mismas, está siendo implementada con ayuda de agencias gubernamentales como el CONAM y el INRENA.
+                            Based on the fact that ecosystems cannot be understood, conserved, or managed without maintaining the cultures that have modified, created, and recreated them throughout history, and in response to external threats and changes, on December 6, 2004, the Quechua communities of Q’eros and Ausangate created the Vilcanota Spiritual Park as the first Sacred Natural Site in Peru. This model of protection recognizes that biological and cultural diversity is in a relationship of mutual dependence and reinforcement, and that both are essential for the continuity of both social and ecological systems. This initiative, led by the communities themselves, is being implemented with the help of government agencies such as CONAM and INRENA.
                         </span>
 
                     </Card>
@@ -60,7 +59,7 @@ const VilcanotaPark = () => {
                         <h3> un Área de Patrimonio Bio-cultural Indígena</h3>
 
                         <span>
-                        Así mismo, cuenta con el apoyo de organizaciones internacionales como el IIED (Internacional Institute for Environment and Development) del Reino Unido. Su manejo se halla en manos del comité Pro-Parque Espiritual Vilcanota con apoyo de la Asociación ANDES. Este manejo se basa completamente en sistemas de gobernanza local. Las comunidades del Parque forman la Asamblea General del Comité PRO – PARQUE ESPIRITUAL DEL VILCANOTA, que es la instancia de toma de decisiones. Cada comunidad es representada en el Comité por sus respectivos Presidentes Comunales. Los presidentes comunales más el Alcalde del Centro Poblado Menor de Tinki eligen a la Junta Directiva del Comité Pro Parque Espiritual que se constituye en la instancia de gestión, cuyo personería jurídica está inscrita en los registros públicos de Cusco. Esta organización fue fundada un 31 de enero del año 2003 en el Centro Poblado de Tinki con la participación de más 150 delegados campesinos y su primer presidente es actualmente el Alcalde Campesino del mencionado centro poblado.
+                            Likewise, it has the support of international organizations such as the IIED (International Institute for Environment and Development) of the United Kingdom. Its management is in the hands of the Pro-Parque Espiritual Vilcanota committee with the support of ANDES. This management is entirely based on local governance systems. The communities of the Park form the General Assembly of the PRO-PARQUE ESPIRITUAL DEL VILCANOTA Committee, which is the decision-making body. Each community is represented on the Committee by their respective Community Presidents. The communal presidents plus the Mayor of the Centro Poblado of Tinki elect the Board of Directors of the Pro-Parque Espiritual Committee that constitutes the management body, whose legal status is registered in the public records of Cusco. This organization was founded on January 31, 2003 in Tinki with the participation of more than 150 delegates and its first president is currently the Mayor of Tinki.
                         </span>
 
                     </Card>

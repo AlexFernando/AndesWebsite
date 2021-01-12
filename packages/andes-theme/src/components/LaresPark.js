@@ -11,21 +11,21 @@ const LaresPark = () => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Parque de Maíz - Lares
+                Chalakuy Park - Lares
                 </Title>
                 <SubTitle>
-                    Agro biodiversidad<br></br>Mercados de Trueque
+                    Agrobiodiversity<br></br>Barter Markets
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionContainer>
                 <p>
-                    Lares es un distrito de Perú ubicado al lado del Valle Sagrado de los Incas. El valle de Lares abarca un territorio que se extiende desde la cuenca del Amazonas hasta las montañas de montaña, con una altitud de aproximadamente 1000 m.s.n.m a casi 5000 m.s.n.m. La geografía altamente variada del área imparte una amplia variedad de hábitats, lo que lleva a una notable diversidad de especies de plantas, tanto cultivadas como silvestres. A pesar de esta rica diversidad de especies, Lares es uno de los distritos más pobres del Perú y su población lucha con algunos de los porcentajes más altos de problemas de salud relacionados con la nutrición en el país.<br></br><br></br>
+                    Lares is a district of Peru located next to the Sacred Valley of the Incas. The Lares Valley encompasses a territory that stretches from the Amazon basin to the Andes mountains, with an altitudinal range of approximately 1000 meters above sea level to almost 5000 meters above sea level. The highly varied geography of the area imparts a wide variety of habitats, leading to a remarkable diversity of plant species, both cultivated and wild. Despite this rich diversity of species, Lares is one of the poorest districts in Peru and its population struggles with some of the highest percentages of nutrition-related health problems in the country.<br></br><br></br>
 
-                    El proyecto en Lares se centra en escalonamiento, lo que se refiere a extender, replicar, adaptar y mantener políticas, proyectos y programas exitosos en diferentes partes en un espacio y tiempo determinados para tener mayor impacto. En el caso de Lares, el escalonamiento es del manejo de la biodiversidad asociada a los conocimientos ancestrales y leyes consuetudinarias tomando aprendizajes obtenidos en el Parque de la Papa y adaptándolos a la realidad de Lares. En Lares hay más amplitud de cultivos locales por sus diversos pisos ecológicos lo que permite recabar datos sobre el impacto del cambio climático y la adaptabilidad de diferentes cultivos nativos, incluyendo maíz, haba, café, cacao, palta y naranja, además de las variedades de la papa.<br></br><br></br>
+                    The project in Lares focuses on scaling, which refers to extending, replicating, adapting, and maintaining successful policies, projects and, programs in a given space and time to create greater impact. In the case of Lares, the scaling focuses on the management of the biodiversity associated with ancestral knowledge and customary laws, taking lessons learned in the Potato Park and adapting them to the reality of Lares. In Lares there is a wider breadth of local crops due to its various ecological niches, which allow data to be collected on the impact of climate change and the adaptability of different native crops, including corn, broad beans, coffee, cocoa, avocado and orange, in addition to varieties of native potato.<br></br><br></br>
 
-                    Utilizando una perspectiva de sistemas, este proyecto busca incidir en las relaciones de los sistemas alimentarios a nivel local y  mundial y promueve la participación activa de la población rural pobre para la gobernabilidad política inclusiva. La atención se centra en el conocimiento y las experiencias de los pueblos indígenas y las comunidades de pequeños agricultores como actores claves para identificar los retos que plantea el cambio climático y crear respuestas adecuadas.
+                    Using a systems perspective, this project seeks to influence the relationships of food systems at the local and global levels and promotes the active participation of the rural poor for inclusive political governance. The focus is on the knowledge and experiences of indigenous peoples and small farmer communities as key actors in identifying the challenges of climate change and creating appropriate responses.
                 </p> 
 
                  
@@ -33,38 +33,38 @@ const LaresPark = () => {
                     <Card>
                         <img src={parqueLaresbiodiversidad} />
 
-                        <h3>Uso de biodiversidad local para enfrentar anemia</h3>
+                        <h3>Using biodiversity to confront anemia</h3>
 
                         <span>
-                        En Lares, estamos investigando el potencial de las especies silvestres y subutilizadas para mejorar la nutrición comunitaria. Lares tiene una de las mayores incidencias de anemia de cualquier región del Perú, por lo que nuestros técnicos locales están trabajando arduamente para mantener saludables a sus comunidades.
+                            In Lares, we are researching the potential of wild and underutilized species to improve community nutrition. Lares has one of the highest rates of anemia of any region in Peru, which is why our local experts are working hard to help maintain health in their communities.
                         </span>
 
-                        <a href="http://andes.center/wp-content/uploads/2020/01/Neglected-and-Underutilized-Species-for-improved-diets_Briefing-note.pdf" target="_blank" rel="noopener" >LEER MAS</a>
+                        <a href="http://andes.center/wp-content/uploads/2020/01/Neglected-and-Underutilized-Species-for-improved-diets_Briefing-note.pdf" target="_blank" rel="noopener" >READ MORE</a>
                     </Card>
 
 
                     <Card>
                         <img src={parqueLaresmercados} />
 
-                        <h3>Mercados del Trueque en Lares</h3>
+                        <h3>Barter Markets in Lares</h3>
 
                         <span>
-                            Trueque, o intercambio, ha sido una estrategia importante para diversificar las dietas y garantizar la seguridad alimentaria en Perú durante siglos, pero la globalización y las políticas neoliberales han llevado a la desaparición generalizada de los mercados de trueque. Sin embargo, en el Valle de Lares, la tradición del trueque sigue siendo fuerte, y estamos trabajando activamente para conservar estos mercados locales.
+                            Barter and exchange have been an important strategy to diversify diets and guarantee food security in Peru for centuries, but globalization and neoliberal policies have led to the widespread disappearance of barter markets. However, in the Lares Valley, the tradition of barter remains strong, and we are actively working to preserve these local markets
                         </span>
 
-                        <a href="https://ddd.uab.cat/search?f=title&p=La%20Multidimensionalidad%20de%20los%20sistemas%20locales%20de%20alimentaci%C3%B3n%20en%20los%20Andes%20peruanos%20los%20chalayplasa%20del%20Valle%20de%20Lares%20%28Cusco%29%20/&sc=1&ln=ca" target="_blank" rel="noopener" >LEER MAS</a>
+                        <a href="https://ddd.uab.cat/search?f=title&p=La%20Multidimensionalidad%20de%20los%20sistemas%20locales%20de%20alimentaci%C3%B3n%20en%20los%20Andes%20peruanos%20los%20chalayplasa%20del%20Valle%20de%20Lares%20%28Cusco%29%20/&sc=1&ln=ca" target="_blank" rel="noopener" >READ MORE</a>
                     </Card>
 
                     <Card>
                         <img src={parqueLaresCocinando} />
 
-                        <h3>Cocinando con la agrobiodiversidad de Lares</h3>
+                        <h3>Cooking with Agrobiodiversity in Lares</h3>
 
                         <span>
-                            Este libro de cocina sirve como un recurso para los miembros de la comunidad en Lares y como una fuente de información e inspiración para las comunidades de todo el Perú. ¡El enfoque en ingredientes locales, tanto cultivados como silvestres, crea recetas innovadoras, saludables y deliciosas! 
+                            This cookbook serves as a resources for the members of the communities of Lares and as a source of information and inspiration for communities in all of Peru. The focus on local ingredients, both cultivated and wild, creates recipes that are innovative, healhty, and tasty!
                         </span>
 
-                        <a href="https://oxfam.app.box.com/s/bvmc0byvzeklexqbo8l4jz3nyvjg8rhh" target="_blank" rel="noopener" >LEER MAS</a>
+                        <a href="https://oxfam.app.box.com/s/bvmc0byvzeklexqbo8l4jz3nyvjg8rhh" target="_blank" rel="noopener" >READ MORE</a>
                     </Card>
                 </CardsContainer>
             </SectionContainer>
