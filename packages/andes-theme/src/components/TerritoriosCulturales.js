@@ -104,30 +104,24 @@ const TerritoriosCulturales = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Territorios Bioculturales
+                    Biocultural Territories
                 </Title>
                 <SubTitle>
-                    Desarrollo endógeno <br></br> Conservación de la biodiversidad
+                    Endogenous development <br></br> Conservation of biodiversity
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionContainer>
                 <MainParagraph>
-                    Mosaicos de uso de la tierra que abarcan tenencia de la tierra tradicional y indígena, sistemas de producción e intercambio, 
-                    identidad cultural, organización comunitaria y objetivos simultáneos de desarrollo endógeno y conservación de la biodiversidad.
+                    Land use mosaics encompassing traditional and indigenous land tenure, production and exchange systems, cultural identity, community organization, and simultaneous objectives of endogenous development and biodiversity conservation.
                 </MainParagraph>
                 <p>
-                    La Asociación ANDES, en colaboración con comunidades indígenas en Perú y en todo el mundo,
-                    ha trabajado durante las últimas décadas para definir, expandir y proteger los territorios 
-                    del patrimonio biocultural. 
+                    Asociación ANDES, in collaboration with indigenous communities in Peru and around the world, has worked during the last several decades to define, expand, and protect biocultural heritage territories. 
                 </p>
 
                 <p>
-                    A través de los intercambios de aprendizaje facilitados por la 
-                    Red Internacional de Pueblos Indígenas de Montaña (INMIP), las comunidades indígenas en países 
-                    que van desde Kenia hasta la India y Kirguistán han trabajado para implementar el modelo de 
-                    herencia biocultural.
+                    Through learning exchanges facilitated by the International Network of Mountain Indigenous Peoples (INMIP), indigenous communities in countries ranging from Kenya to India to Kyrgyzstan have worked to implement the biocultural heritage model.
                 </p>
             </SectionContainer>
 
@@ -136,24 +130,27 @@ const TerritoriosCulturales = ({state}) => {
                 <InfoItem>
                     
                     <FontAwesomeIconStyled icon={faQuestionCircle}/>
-                    <h3>¿POR QUÉ?</h3>
+                    <h3>WHY?</h3>
                     <p>
-                    La erosión actual de  la genética y la diversidad cultural es sin precedentes, y se pone cada vez más difícil para comunidades alrededor del mundo para enfrentar los impactos adversos del cambio climático, los amenazas al seguridad alimentaria,  y la escasez del agua. 
+                        The current erosion of genetic and cultural diversity is unprecedented, and it is becoming increasingly difficult for communities around the world to cope with the adverse impacts of climate change, threats to food security, and water scarcity.                    
                     </p>
-                    <p>Territorios del patrimonio biocultural, que utilizan la gestión integrada del paisaje, ofrecen un modelo claro para adaptarse al cambio.</p>
+                    
+                    <p>
+                        Biocultural heritage territories, which use integrated landscape management, offer a clear model for adapting to change.
+                    </p>
                 </InfoItem>
                 <VerticalBorder></VerticalBorder>
                 
                 <InfoItem>
                     <FontAwesomeIconStyled icon={faListAlt}/>
                     
-                    <h3>NUESTRAS AMBICIONES</h3>
+                    <h3>OUR AMBITIONS</h3>
 
                     <ul>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Conservar la agrobiodiversidad</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Fortelecer la seguridad alimentaria</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Mejorar medios de vida</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Proteger el patrimonio biocultural</li> 
+                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Conserve agrobiodiversity</li>
+                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Strengthen food security</li>
+                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Improve livelihoods</li>
+                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Protect biocultural heritage</li> 
                     </ul>
 
                 </InfoItem>
@@ -162,17 +159,17 @@ const TerritoriosCulturales = ({state}) => {
                 
                     <FontAwesomeIconStyled icon={faLeaf}/>
                     
-                    <h3>AREAS DE IMPACTO</h3>
+                    <h3>Areas of impact</h3>
                 
                     <ul>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Agrobiodiversidad</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Diversidad Cultural</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Pobreza y Desigualdad</li>
+                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Agrobiodiversity</li>
+                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Cultural diversity</li>
+                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Poverty and inequality</li>
                     </ul>
                 </InfoItem>
             </BriefSection>
 
-            <SubSectionTitle>Casos de Estudio</SubSectionTitle>
+            <SubSectionTitle>Case Studies</SubSectionTitle>
             <CardsContainer>
                 <Card>
                     <img src={applepark} />
@@ -180,7 +177,7 @@ const TerritoriosCulturales = ({state}) => {
                     <h3>Parque de manazana y Parque de Trigo, Tajikistan</h3>
 
                     <span>
-                    Descubre la historia de la conservacion de Descubra la historia de cómo los agricultores indígenas en Tayikistán están implementando el modelo de patrimonio biocultural para proteger su diversidad de trigo y manzana. El centro de origen de estos dos cultivos de importancia mundial se encuentra en las tierras de Asia Central de estos agricultores.
+                        Discover the story of how indigenous farmers in Tajikistan are implementing the biocultural heritage model to protect their diversity of wheat and apple. The center of origin for these two world-important crops is in the Central Asian lands of these farmers.
                     </span>
 
                     <a href="https://andes.org.pe/wp-content/uploads/2020/07/Apple-and-Wheat-Park-Case-Study.pdf" target="_blank" rel="noopener" >Ver Estudio</a>
@@ -189,17 +186,17 @@ const TerritoriosCulturales = ({state}) => {
                 <Card>
                     <img src={parquedemaiz} />
 
-                    <h3>Parque de Maiz, Peru</h3>
+                    <h3>Maize Park, Peru</h3>
 
                     <span>
-                    Descubre la historia de la conservacion de Descubra la historia de cómo los agricultores indígenas en Tayikistán están implementando el modelo de patrimonio biocultural para proteger su diversidad de trigo y manzana. El centro de origen de estos dos cultivos de importancia mundial se encuentra en las tierras de Asia Central de estos agricultores.
+                        Discover the story of how indigenous farmers in Tajikistan are implementing the biocultural heritage model to protect their diversity of wheat and apple. The center of origin for these two world-important crops is in the Central Asian lands of these farmers.
                     </span>
 
                     <a href="http://andes.org.pe/wp-content/uploads/2020/03/Maize-Park-Case-Study.pdf" target="_blank" rel="noopener" >Ver Estudio</a>
                 </Card>
             </CardsContainer>
 
-            <SubSectionTitle>Recursos adicionales</SubSectionTitle>
+            <SubSectionTitle>Additional Resources</SubSectionTitle>
             
             <AditionalContainer>
                 <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={territorio} /></a>

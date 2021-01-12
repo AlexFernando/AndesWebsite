@@ -17,11 +17,48 @@ export default {
           isHomePage: true,
         },
 
+        "/es/": {
+          isReady: true,
+          isFetching: false,
+          isBackgroundImageSpanish: true,
+          isHomePageSpanish: true,
+        },
+
+
+        "/philosophy/": {
+          isReady: true,
+          isFetching: false,
+          isPhilosophy: true,
+        },
+
+        "/es/philosophy/": {
+          isReady: true,
+          isFetching: false,
+          isPhilosophySpanish: true,
+        },
 
         "/filosofia/": {
           isReady: true,
           isFetching: false,
           isPhilosophy: true,
+        },
+
+        "/es/filosofia/": {
+          isReady: true,
+          isFetching: false,
+          isPhilosophySpanish: true,
+        },
+
+        "/people/": {
+          isReady: true,
+          isFetching: false,
+          isStuff: true,
+        },
+
+        "/es/people/": {
+          isReady: true,
+          isFetching: false,
+          isStuffSpanish: true,
         },
 
         "/personas/": {
@@ -30,10 +67,34 @@ export default {
           isStuff: true,
         },
 
+        "/es/personas/": {
+          isReady: true,
+          isFetching: false,
+          isStuffSpanish: true,
+        },
+
         "/searchbar/": {
           isReady: true,
           isFetching: false,
           isSearchBar: true,
+        },
+
+        "/es/searchbar/": {
+          isReady: true,
+          isFetching: false,
+          isSearchBarSpanish: true,
+        },
+
+        "/bioculturalterritories/": {
+          isReady: true,
+          isFetching: false,
+          isTerritorios: true,
+        },
+
+        "/es/bioculturalterritories/": {
+          isReady: true,
+          isFetching: false,
+          isTerritoriosSpanish: true,
         },
 
         "/territoriosbioculturales/": {
@@ -42,10 +103,35 @@ export default {
           isTerritorios: true,
         },
 
+        "/es/territoriosbioculturales/": {
+          isReady: true,
+          isFetching: false,
+          isTerritoriosSpanish: true,
+        },
+
+
         "/investigacion/": {
           isReady: true,
           isFetching: false,
           isInvestigacion: true,
+        },
+
+        "/es/investigacion/": {
+          isReady: true,
+          isFetching: false,
+          isInvestigacionSpanish: true,
+        },
+
+        "/advocacyandpolitics/": {
+          isReady: true,
+          isFetching: false,
+          isPolitica: true,
+        },
+
+        "/es/advocacyandpolitics/": {
+          isReady: true,
+          isFetching: false,
+          isPoliticaSpanish: true,
         },
 
         "/incidenciaspoliticas/": {
@@ -54,10 +140,45 @@ export default {
           isPolitica: true,
         },
 
+        "/es/incidenciaspoliticas/": {
+          isReady: true,
+          isFetching: false,
+          isPoliticaSpanish: true,
+        },
+
+        "/potatopark-pisac/": {
+          isReady: true,
+          isFetching: false,
+          isPotatoPark: true,
+        },
+
+        "/es/potatopark-pisac/": {
+          isReady: true,
+          isFetching: false,
+          isPotatoParkSpanish: true,
+        },
+
         "/parquedelapapa-pisac/": {
           isReady: true,
           isFetching: false,
           isPotatoPark: true,
+        },
+
+        "/es/parquedelapapa-pisac/": {
+          isReady: true,
+          isFetching: false,
+          isPotatoParkSpanish: true,
+        },
+
+        "/chalakuypark-lares/": {
+          isReady: true,
+          isFetching: false,
+          isLaresPark: true,
+        },
+        "/es/chalakuypark-lares/": {
+          isReady: true,
+          isFetching: false,
+          isLaresParkSpanish: true,
         },
 
         "/parquedemaiz-lares/": {
@@ -65,23 +186,66 @@ export default {
           isFetching: false,
           isLaresPark: true,
         },
+        "/es/parquedemaiz-lares/": {
+          isReady: true,
+          isFetching: false,
+          isLaresParkSpanish: true,
+        },
+
+        "/spiritualpark-vilcanota/": {
+          isReady: true,
+          isFetching: false,
+          isVilcanotaPark: true,
+        },
+        "/es/spiritualpark-vilcanota/": {
+          isReady: true,
+          isFetching: false,
+          isVilcanotaParkSpanish: true,
+        },
 
         "/parqueespiritual-vilcanota/": {
           isReady: true,
           isFetching: false,
           isVilcanotaPark: true,
         },
+        "/es/parqueespiritual-vilcanota/": {
+          isReady: true,
+          isFetching: false,
+          isVilcanotaParkSpanish: true,
+        },
 
-        "/programasyredesinternacionales/": {
+        "/internationalprogramsandnetworks/": {
           isReady: true,
           isFetching: false,
           isInternationalsPrograms: true,
         },
-
-        "/cursos/": {
+        "/es/internationalprogramsandnetworks/": {
           isReady: true,
           isFetching: false,
-          isCursos: true,
+          isInternationalsProgramsSpanish: true,
+        },
+
+        "/programasyredesinternacionale/": {
+          isReady: true,
+          isFetching: false,
+          isInternationalsPrograms: true,
+        },
+        "/es/programasyredesinternacionales/": {
+          isReady: true,
+          isFetching: false,
+          isInternationalsProgramsSpanish: true,
+        },
+
+        "/whoweare/": {
+          isReady: true,
+          isFetching: false,
+          isNosotrosYachay: true,
+        },
+
+        "/es/whoweare/": {
+          isReady: true,
+          isFetching: false,
+          isNosotrosYachaySpanish: true,
         },
 
         "/quienessomos/": {
@@ -90,10 +254,69 @@ export default {
           isNosotrosYachay: true,
         },
 
+        "/es/quienessomos/": {
+          isReady: true,
+          isFetching: false,
+          isNosotrosYachaySpanish: true,
+        },
+
+        "/courses/": {
+          isReady: true,
+          isFetching: false,
+          isCursos: true,
+        },
+
+        "/es/courses/": {
+          isReady: true,
+          isFetching: false,
+          isCursosSpanish: true,
+        },
+
+        "/cursos/": {
+          isReady: true,
+          isFetching: false,
+          isCursos: true,
+        },
+
+        "/es/cursos/": {
+          isReady: true,
+          isFetching: false,
+          isCursosSpanish: true,
+        },
+
+        "/intershipandvolunteering/": {
+          isReady: true,
+          isFetching: false,
+          isPasantias: true,
+        },
+
+        "/es/intershipandvolunteering/": {
+          isReady: true,
+          isFetching: false,
+          isPasantiasSpanish: true,
+        },
+
         "/pasantias/": {
           isReady: true,
           isFetching: false,
           isPasantias: true,
+        },
+        "/es/pasantias/": {
+          isReady: true,
+          isFetching: false,
+          isPasantiasSpanish: true,
+        },
+
+        "/exchanges/": {
+          isReady: true,
+          isFetching: false,
+          isIntercambios: true,
+        },
+
+        "/es/exchanges/": {
+          isReady: true,
+          isFetching: false,
+          isIntercambiosSpanish: true,
         },
 
         "/intercambios/": {
@@ -102,10 +325,46 @@ export default {
           isIntercambios: true,
         },
 
+        "/es/intercambios/": {
+          isReady: true,
+          isFetching: false,
+          isIntercambiosSpanish: true,
+        },
+
+        "/toolkit/": {
+          isReady: true,
+          isFetching: false,
+          isToolkit: true,
+        },
+
+        "/es/toolkit/": {
+          isReady: true,
+          isFetching: false,
+          isToolkitSpanish: true,
+        },
+
         "/cajadeherramientas/": {
           isReady: true,
           isFetching: false,
           isToolkit: true,
+        },
+
+        "/es/cajadeherramientas/": {
+          isReady: true,
+          isFetching: false,
+          isToolkitSpanish: true,
+        },
+
+        "/publications/": {
+          isReady: true,
+          isFetching: false,
+          isPublicaciones: true,
+        },        
+
+        "/es/publications/": {
+          isReady: true,
+          isFetching: false,
+          isPublicacionesSpanish: true,
         },
 
         "/publicaciones/": {
@@ -114,10 +373,46 @@ export default {
           isPublicaciones: true,
         },        
 
+        "/es/publicaciones/": {
+          isReady: true,
+          isFetching: false,
+          isPublicacionesSpanish: true,
+        },
+
+        "/relevantnews/": {
+          isReady: true,
+          isFetching: false,
+          isNoticiasRelevantes: true,
+        },
+
+        "/es/relevantnews/": {
+          isReady: true,
+          isFetching: false,
+          isNoticiasRelevantesSpanish: true,
+        },
+
         "/noticiasrelevantes/": {
           isReady: true,
           isFetching: false,
           isNoticiasRelevantes: true,
+        },
+
+        "/es/noticiasrelevantes/": {
+          isReady: true,
+          isFetching: false,
+          isNoticiasRelevantesSpanish: true,
+        },
+
+        "/events/": {
+          isReady: true,
+          isFetching: false,
+          isEventos: true,
+        },
+
+        "/es/events/": {
+          isReady: true,
+          isFetching: false,
+          isEventosSpanish: true,
         },
 
         "/eventos/": {
@@ -126,10 +421,23 @@ export default {
           isEventos: true,
         },
 
+        "/es/eventos/": {
+          isReady: true,
+          isFetching: false,
+          isEventosSpanish: true,
+        },
+
+
         "/aniversariopersonas/": {
           isReady: true,
           isFetching: false,
           isAniversarioPersonas: true,
+        },
+
+        "/es/aniversariopersonas/": {
+          isReady: true,
+          isFetching: false,
+          isAniversarioPersonasSpanish: true,
         },
 
         "/aniversarioproyectos/": {
@@ -138,10 +446,22 @@ export default {
           isAniversarioProyectos: true,
         },
 
+        "/es/aniversarioproyectos/": {
+          isReady: true,
+          isFetching: false,
+          isAniversarioProyectosSpanish: true,
+        },
+
         "/aniversariopublicaciones/": {
           isReady: true,
           isFetching: false,
           isAniversarioPublicaciones: true,
+        },
+
+        "/es/aniversariopublicaciones/": {
+          isReady: true,
+          isFetching: false,
+          isAniversarioPublicacionesSpanish: true,
         },
       },
     },

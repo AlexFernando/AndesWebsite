@@ -17,7 +17,7 @@ export const dataNews = [
     {
         url: "",
         titulo: "Cómo el Parque de la Papa del Perú podría evitar la crisis alimentaria mundial",
-        content: "El parque agrícola alto en los Andes conserva la experiencia para criar cepas aptas para un clima cambiante. Para los pueblos indígenas, las semillas son más que alimentos: son miembros de su familia",
+        content: "El parque agrícola alto en los Andes conserva la experiencia para criar cepas aptas para un clima cambiante.",
         urlImage: `${papaCrisis}`,
         fecha : "Noviembre 1, 2020"
     },

@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from "frontity";
+import {connect, styled} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {ContainerBlocks, BlockInfo} from './Pasantias';
 import {SectionContainer, MainParagraph} from './potatoPark';
@@ -12,23 +12,28 @@ import curso1 from '../static/images/curso1.jpg'
 
 import curso2 from '../static/images/curso2.jpg'
 
+const SpanStyled = styled.span`
+    font-style: italic;
+    font-weight: 700;
+    margin-right: .5rem;
+`;
+
 const Cursos = ({state}) => {
     return ( 
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Cursos
+                    Courses
                 </Title>
                 <SubTitle>
-                    Capacitaciones <br></br> Aprende con nosotros
+                    Formation <br></br> Learn with us
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionContainer>
                 <MainParagraph>
-                    La Pluriversidad Yachay Kuychi ofrece una variedad de programas innovadores y adaptables para pueblos indígenas, académicos, investigadores, formuladores de políticas y otros. 
-                        
+                    The Yachay Kuychi Pluriversity offers a range of innovative and adaptable programs for indigenous peoples, academics, researchers, policy makers and others. The programs include:                       
                 </MainParagraph>
             
             </SectionContainer>
@@ -40,12 +45,12 @@ const Cursos = ({state}) => {
 
                     <div>
                         <ul>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Los programas de investigación-acción participativa sobre “food neighborhoods”, patrimonio biocultural, cambio climático, sistemas agrícolas tradicionales, cultivos subutilizados, nutrición y otros, son facilitados por líderes comunitarios, poseedores de conocimientos indígenas y científicos capacitados formalmente.</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Escuelas de campo para agricultores, donde los agricultores participan directamente en estudios de campo, desarrollan comprensión conceptual y habilidades prácticas específicas en agroecología y gestión del agua, y otros temas de interés identificados por los participantes.</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Las zonas de aprendizaje por contacto crean entornos seguros y colaborativos donde diferentes generaciones, géneros y culturas se unen para aprender unos de otros temas específicos</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>El Programa de Pasantías y Voluntariado ayuda a construir capacidad local e internacional, estableciendo alianzas y redes como fuerzas para el cambio social</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>El desarrollo de plataformas de políticas es una forma de facilitar la comunicación y la coordinación dentro de los procesos e instituciones de políticas complejos a nivel local, nacional, regional e internacional.</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Se ofrecen cursos personalizados y de interés especial en el lugar para el interés general y el desarrollo profesional.</li> 
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>Participatory Action-research Programs </SpanStyled> on Food Neighborhoodsbiocultural heritage, climate change, traditional agricultural systems, underutilized crops, nutrition, and others, are facilitated by community leaders, indigenous knowledge holders and formally trained scientists.</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>Farmer Field Schools</SpanStyled> where farmers are directly engaged in field studies, develop conceptual understanding and specific hands-on skills in agroecology and water management, and other topics of interest identified by participants.</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>Contact learning zones </SpanStyled> create safe and collaborative environments where different generations, genders, and cultures come together to learn from one another specific topics</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>The internship and Volunteer Program </SpanStyled> helps to build local and international capacity, establishing alliances and networks as forces for social change.</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>Policy platform development</SpanStyled> is a way to facilitate communication and coordination within complex policy processes and institutions at the local, national, regional and international levels</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>Custom and Special Interest Courses</SpanStyled> are offered on-site for general interest and professional development.</li> 
                         </ul>
                     </div>
                     
@@ -56,11 +61,11 @@ const Cursos = ({state}) => {
                     <div>
                         <h2>Detalles</h2>
                         <p>
-                            Los facilitadores del curso son profesionales formados formalmente y expertos en conocimientos indígenas. Los «kits de herramientas» de los cursos para instructores son una colección dinámica y en constante evolución de métodos e instrumentos, abiertos a revisión y ampliación. Estos conjuntos de herramientas se extraen de, e integran creativamente, una variedad de fuentes: herramientas prehispánicas, los métodos de investigación de acción participativa, Internet y tecnologías inalámbricas, entre otras.
+                        Course facilitators are both formally educated professionals and Indigenous knowledge experts. Course ‘toolkits’ for instructors are a dynamic and constantly evolving collection of methods and instruments, open to revision and augmentation. These toolkits are drawn from, and creatively integrate, a variety of sources: pre-Hispanic tools, the methods of participatory action research, and Internet and wireless technologies, among others.
                         </p>
 
                         <p>
-                            Previamente se han organizado intercambios y cursos para líderes empresariales indígenas de Nueva Zelanda, formuladores de políticas de México, científicos de la papa y formuladores de políticas de todo el mundo, y varios grupos universitarios de Perú, México, Chile y Estados Unidos.
+                            Exchanges and courses have previously been organized for Indigenous business leaders from New Zealand, policy makers from Mexico, Potato scientists and policy makers from around the world, and several university groups from Peru, Mexico, Chile, and USA. 
                         </p>
                     </div>
                     

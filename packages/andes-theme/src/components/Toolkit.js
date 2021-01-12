@@ -8,10 +8,10 @@ const Toolkit = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Caja de Herramientas
+                    Toolkit 
                 </Title>
                 <SubTitle>
-                    Nuestras <br></br> Herramientas
+                    Knowledge <br></br> Portal
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>

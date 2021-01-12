@@ -1,8 +1,9 @@
 const settings = {
+  
   "name": "andes",
   "state": {
     "frontity": {
-      "url": "https://2019-developers.sevilla.wordcamp.org/wp-json",
+      "url": "https://andescusco.info",
       "title": "Andes Website",
       "description": "A website for the ONG Andes"
     }
@@ -16,7 +17,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "https://2019-developers.sevilla.wordcamp.org/wp-json"
+          "api": "https://andescusco.info/wp-json"
         }
       }
     },

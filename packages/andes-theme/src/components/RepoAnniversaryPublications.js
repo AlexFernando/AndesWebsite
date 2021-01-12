@@ -162,7 +162,7 @@ const RepoAnniversaryPublications = () => {
                     </InputBar>
                 
                     <ButtonAction  onClick={handleSubmit}>
-                            <LinkButton href="/publicaciones">BUSCAR</LinkButton>
+                            <LinkButton href="/publicaciones">SEARCH</LinkButton>
                     </ButtonAction>
                 </SearchBar>
             </SectionContainer>

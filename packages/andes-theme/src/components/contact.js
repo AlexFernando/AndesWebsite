@@ -125,7 +125,7 @@ const Contact = () => {
     return ( 
         <ContactContainer>
             <ContactElement>
-                <h2>Impulsando un enfoque de conservación <br></br> y desarrollo basado en los derechos <br></br> a través  de la implementación <br></br> de Territorios Bioculturales</h2>
+                <h2>Promoting a conservation and development approach <br></br>rigths-based <br></br> through the implementation <br></br> of Biocultural Territories</h2>
             
                 <ul>
                         <li><a href="https://www.facebook.com/AsociacionparalaNaturalezayDesarrolloSostenible/" alt="Share on Twitter" aria-label="Link to Facebook" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faFacebookSquare}/></a></li>
@@ -135,15 +135,15 @@ const Contact = () => {
                 </ul>
 
                 <ul>
-                    <li><FontAwesomeIconStyled icon={faMapMarkedAlt}/>Asociacion Andes</li>
+                    <li><FontAwesomeIconStyled icon={faMapMarkedAlt}/>ANDES Asociation</li>
                    
-                    <li><FontAwesomeIconStyled icon={faStreetView}/>Calle Ciro Alegria H-13, Urb. Santa Monica - Wanchaq</li>
+                    <li><FontAwesomeIconStyled icon={faStreetView}/>Ciro Alegria H-13, Street, Urb. Santa Monica - Wanchaq</li>
                 
-                    <li> <FontAwesomeIconStyled icon={faMailBulk}/>Casilla Postal Nº 567, Cusco - Peru </li>
+                    <li> <FontAwesomeIconStyled icon={faMailBulk}/>Postal Code Nº 567, Cusco - Peru </li>
                 </ul>
             </ContactElement>
             <ContactForm>
-                <h3>Contacto</h3>
+                <h3>Contact</h3>
                 
                 <form>
                     <div>

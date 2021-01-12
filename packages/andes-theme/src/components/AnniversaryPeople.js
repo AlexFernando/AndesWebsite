@@ -32,52 +32,54 @@ const AnniversayPeople = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                 25 Personas Clave
+                 25 People Clave
                 </Title>
                 <SubTitle>
-                    Celebrando<br></br> el 25th Aniversario
+                    Celebrating<br></br> the 25th Anniversary
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionText>
             <div>  
-                <h1>ANDES Celebra sus 25 Años</h1>              
-                <p>Como parte de las celebraciones de nuestro 25 aniversario, ANDES desea agradecer a todos los
-que han contribuido al desarrollo institucional, la investigación colaborativa y el intercambio de
-conocimientos de ANDES. Agradecemos el aliento de los socios a lo largo del camino y
-esperamos continuar nuestras asociaciones a medida que avanzamos con la implementación de
-Yachay Kuychi Pluriversity. Hay demasiadas personas para poder nombrarlas aquí, pero hemos
-elegido destacar a 25 personas influyentes de los 25 años de historia de ANDES.</p>
-              
+                <h1>ANDES Celebrates 25 Years</h1>              
+                <p> As part of our 25th anniversary celebrations, ANDES would like to thank 
+                    everyone who has contributed to institutional development, collaborative research 
+                    and knowledge sharing. We appreciate the encouragement of partners along the way 
+                    and look forward to continuing our partnerships as we move forward with the 
+                    implementation of Yachay Kuychi Pluriversity. There are too many people to name here, 
+                    but we have chosen to highlight 25 influencers from ANDES's 25-year history.
+                </p>
             </div>
             </SectionText>
 
             <SectionText>
                 <div>
-                    <h1>Conoce a los cofundadores de ANDES</h1>
+                    <h1>Meet the co-founders of ANDES</h1>
                     <p>
-                        Alejandro Argumedo y Cesar Argumedo crecieron en el centro de los Andes en Perú con sus 4
-                        hermanos. Después de la secundaria, Alejandro estudió agronomía en la Universidad McGill en 
-                        Montreal, Canadá, y Cesar estudió zootecnología en la Universidad San Antonio Abad de Cusco,
-                        Perú.
+                        Alejandro Argumedo and Cesar Argumedo grew up in the center of the Andes in Peru with their 4
+                        brothers. After high school, Alejandro studied agronomy at McGill University in
+                        Montreal, Canada, and Cesar studied zootechnology at the San Antonio Abad University of Cusco,
+                        Peru.
                     </p>
 
                     <p>
-                        En 1995, Alejandro y Cesar registraron la Asociación para la Naturaleza y el Desarrollo
-                        Sostenible (ANDES) en Cusco. Durante los primeros años, la organización funcionó con fondos
-                        muy limitados y poco personal. Sin embargo, en este período se desarrollaron importantes
-                        relaciones que los llevaron al establecimiento del icónico Parque de la Papa por 6 comunidades
-                        indígenas con la guía de ANDES. Este trabajo continúa proporcionando lecciones importantes y
-                        un modelo para gran parte del trabajo actual de las organizaciones.
+                        In 1995, Alejandro and Cesar registered the Association for Nature and Development
+                        Sustainable (ANDES) in Cusco. During the first years, the organization operated with funds
+                        very limited and understaffed. However, during this period important
+                        relationships that led to the establishment of the iconic Potato Park by 6 communities
+                        indigenous people with the ANDES guide. This work continues to provide important lessons and
+                        a model for most of the current work in organizations.
                     </p>
                     <h3>Alejandro Argumedo</h3> 
-                        <p>Recientemente dejó su puesto de Director en ANDES para ocupar
-                            un puesto en la Fundación Swift. Continúa brindando liderazgo a ANDES como miembro
-                            de la Junta Directiva.</p>
+                        <p>
+                            He recently left his position as Director at ANDES to occupy
+                            a position at the Swift Foundation. Continue to provide leadership to ANDES as a member
+                            of the Board of Directors.
+                        </p>
 
                     <h3>Cesar Argumedo</h3> 
-                        <p>Continúa desempeñándose como Director de ANDES.</p>    
+                        <p>He continues to work as Director of ANDES</p>    
                     
                 </div>
                 
@@ -87,15 +89,16 @@ elegido destacar a 25 personas influyentes de los 25 años de historia de ANDES.
             <SectionImage>
                 <SectionText>
                     <div>
-                        <h1>El equipo directivo de ANDES también incluye dos asociadas de hace mucho tiempo.</h1>
+                        <h1>ANDES's management team also includes two long-time associates.</h1>
                         
                         <h3>Tammy Stenner</h3> 
-                            <p>Ha desempeñado un papel de apoyo a los directores de ANDES desde
-                                sus inicios. También es coordinadora del Programa de Pluriversidad Yachay Kuychi..</p>
+                            <p>He has played a support role for ANDES directors since
+                            the beginning. She is also the coordinator of the Yachay Kuychi 
+                            Pluriversity Program.</p>
 
                         <h3>Carolina Ichillumpa</h3> 
-                            <p>Se incorporó a ANDES en 2002 como contadora. Es la Jefa de
-                                Administración y Finanzas.</p>    
+                            <p>She joined ANDES in 2002 as an accountant. She is the Head of
+                                Administration and finance..</p>    
                         
                     </div>
                     
@@ -106,14 +109,16 @@ elegido destacar a 25 personas influyentes de los 25 años de historia de ANDES.
             
             <SectionText>
                 <div>
-                    <h1>La gestión cuidadosa y transparente de las finanzas y los activos de ANDES infunde
-                        confianza en los socios. Este importante trabajo es apoyado actualmente por</h1>
+                    <h1>
+                        ANDES 'careful and transparent management of finances and assets infuses
+                        trust in partners. This important work is currently supported by
+                    </h1>
 
                         <TextContainer>
-                            <h3>Ruth Zuloaga<span> - Contadora</span></h3> 
-                            <h3>Ysabel Moron <span> - Asistente de oficina</span></h3> 
-                            <h3>Arascelly Heredia<span> - Especialista en TIC</span></h3> 
-                            <h3>Enrque Granados<span> - Coordinador de Logística</span></h3> 
+                            <h3>Ruth Zuloaga<span> - Accountant</span></h3> 
+                            <h3>Ysabel Moron <span> - Office Assistant</span></h3> 
+                            <h3>Arascelly Heredia<span> - TIC Specialist</span></h3> 
+                            <h3>Enrque Granados<span> - Logistics manager</span></h3> 
                         </TextContainer>
                 </div>
             </SectionText>
@@ -122,19 +127,20 @@ elegido destacar a 25 personas influyentes de los 25 años de historia de ANDES.
                 <SectionText>
 
                     <div>
-                        <h1>ANDES se enfoca en la investigación con y para comunidades indígenas. Nuestro personal
-                            de campo incluye expertos con educación universitaria y poseedores de conocimientos
-                            tradicionales, que aportan diversas perspectivas y experiencias a problemas complejos.
-                            Estos expertos incluyen actualmente:</h1>
+                        <h1>
+                            ANDES focuses on research with and for indigenous communities. Our staff
+                            field includes experts with university education and knowledge holders
+                            traditional, who bring diverse perspectives and experiences to complex problems.
+                            These experts currently include:</h1>
 
                             <TextContainer>
-                                <h3>Jessica Villacorta<span> - Agrónoma</span></h3> 
-                                <h3>Ricardo Pacco Chipa<span> - Coordinador de campo</span></h3> 
-                                <h3>Mariano Sutta Apocusi<span> - Experto local</span></h3> 
-                                <h3>Lino Manani Huarka<span> - Guardián de la Papa</span></h3> 
-                                <h3>Aniceto Ccoyo Ccoyo<span> - Experto local</span></h3> 
-                                <h3>Victor Oblitas<span> - Experto local </span></h3> 
-                                <h3>Cass Madden<span> -  Investigadora</span></h3> 
+                                <h3>Jessica Villacorta<span> - Agronomist</span></h3> 
+                                <h3>Ricardo Pacco Chipa<span> - Field coordinator</span></h3> 
+                                <h3>Mariano Sutta Apocusi<span> - Local expert</span></h3> 
+                                <h3>Lino Manani Huarka<span> - Potato Guardian</span></h3> 
+                                <h3>Aniceto Ccoyo Ccoyo<span> - Local expert</span></h3> 
+                                <h3>Victor Oblitas<span> - Local expert </span></h3> 
+                                <h3>Cass Madden<span> -  Researcher</span></h3> 
                             </TextContainer>
                     </div>
                 </SectionText>
@@ -145,14 +151,14 @@ elegido destacar a 25 personas influyentes de los 25 años de historia de ANDES.
             <SectionText>
 
                 <div>
-                    <h1>La Junta Directiva tiene representación internacional, con personas bien calificadas y
-                        experimentadas que brindan una guía y un apoyo invaluable a ANDES.</h1>
+                    <h1>The Board of Directors has international representation, with well-qualified people and
+                        experienced professionals who provide invaluable guidance and support to ANDES.</h1>
 
                         <TextContainer>
-                            <h3>Carlos Loret de Mola<span> - Presidente de la Asociación Cusichaca, ex Ministro de Medio Ambiente en Perú.</span></h3> 
-                            <h3>Carlos Amat y Leon<span> - Profesor de la Universidad del Pacífico, ex Ministro de Agricultura, Perú.</span></h3> 
-                            <h3>Michel Pimbert<span> - Profesor de la Universidad de Coventry, Director Ejecutivo del Centro de Agroecología, Agua y Resiliencia</span></h3> 
-                            <h3>Yiching Song,<span> - Investigadora principal, Centro Chino de Política Agrícola (CCAP), Profesor, Universidad Agrícola China</span></h3> 
+                            <h3>Carlos Loret de Mola<span> - President of the Cusichaca Association, former Minister of the Environment in Peru.</span></h3> 
+                            <h3>Carlos Amat y Leon<span> - Professor at the Universidad del Pacífico, former Minister of Agriculture, Peru.</span></h3> 
+                            <h3>Michel Pimbert<span> - Professor at Coventry University, Executive Director of the Center for Agroecology, Water and Resilience</span></h3> 
+                            <h3>Yiching Song,<span> - Principal Investigator, China Center for Agricultural Policy (CCAP), Professor, China Agricultural University</span></h3> 
                         </TextContainer>
                 </div>
             </SectionText>
@@ -161,21 +167,23 @@ elegido destacar a 25 personas influyentes de los 25 años de historia de ANDES.
                 <SectionText>
 
                     <div>
-                        <h1>ANDES cuenta con las contribuciones de una increíble red internacional de socios para el
-                            apoyo financiero y técnico. Algunos ejemplos son:</h1>
+                        <h1>
+                            ANDES has the contributions of an incredible international network of partners for the
+                            financial and technical support. Some examples are:
+                        </h1>
 
                             <TextContainer>
-                                <h3>Krystyna Swiderska<p> - Investigadora principal de agricultura y agrobiodiversidad en el
-                                Instituto Internacional para el Medio Ambiente y el Desarrollo (IIED), es una
-                                colaboradora de ANDES desde hace mucho tiempo, apoyando la recaudación de
-                                fondos, la investigación colaborativa y las publicaciones.</p></h3> 
-                                                            <h3>Sonja Swift<p> - Y la Fundación Swift han brindado un valioso apoyo a ANDES para el
-                                desarrollo institucional, la investigación de acción y el desarrollo de políticas, y han
-                                contribuido generosamente al establecimiento del nuevo sitio de Pluriversidad en el
-                                Valle Sagrado.</p></h3> 
-                                                            <h3>Gigi Manicad<p> - Brindó apoyo técnico y financiero profesional y reflexivo a ANDES
-                                durante su tiempo en Oxfam-Novib, y esperamos continuar con la colaboración a
-                                través de Pluriversity.</p></h3> 
+                                <h3>Krystyna Swiderska<p> - Principal Investigator of Agriculture and Agrobiodiversity at the
+                                International Institute for Environment and Development (IIED), is a
+                                ANDES collaborator for a long time, supporting the collection of
+                                funds, collaborative research and publications.</p></h3> 
+                                                            <h3>Sonja Swift<p> - And the Swift Foundation have provided valuable support to ANDES for the
+                                institutional development, action research and policy development, and have
+                                generously contributed to the establishment of the new Pluriversity site in the
+                                Sacred Valley.</p></h3> 
+                                                            <h3>Gigi Manicad<p> - Provided professional and thoughtful technical and financial support to ANDES
+                                during his time at Oxfam-Novib, and we look forward to continuing our collaboration with
+                                through Pluriversity.</p></h3> 
                                 
                             </TextContainer>
                     </div>
@@ -186,19 +194,19 @@ elegido destacar a 25 personas influyentes de los 25 años de historia de ANDES.
             
             <SectionText>
                 <div>
-                    <h1>Con un activo Programa de Pasantías y Voluntariados, ANDES da la bienvenida a
-                    estudiantes de todo el mundo, quienes realizan investigaciones sobre diversos temas,
-                    incluyendo justicia social y ambiental, sistemas alimentarios indígenas, conservación de
-                    la biodiversidad y ecoturismo.</h1>
+                    <h1>With an active Internship and Volunteer Program, ANDES welcomes
+                    students from around the world, who conduct research on various topics,
+                    including social and environmental justice, indigenous food systems, conservation of
+                    biodiversity and ecotourism.</h1>
 
                     <TextContainer>
-                        <h3>Neus Marti<p> - (España) realizó una investigación de postgrado sobre los Mercados de
-                            Trueque de Lares y ha realizado diversas consultorías con ANDES. Participará
-                            activamente en el desarrollo de la programación en Yachay Kuychi Pluriversity.</p></h3> 
-                        <h3>Ewen Dano <p> - (Francia) completó recientemente una investigación de posgrado sobre
-                            cultivos infrautilizados en el valle de Lares.</p></h3> 
-                        <h3>Melissa Loza<p> - (EE. UU.) Llegó como voluntaria en sus vacaciones de verano durante la
-                            universidad.</p></h3> 
+                        <h3>Neus Marti<p> - (Spain) carried out a postgraduate research on the Markets of
+                            Trueque de Lares and has done various consultancies with ANDES. Will participate
+                            actively in the development of programming at Yachay Kuychi Pluriversity.</p></h3> 
+                        <h3>Ewen Dano <p> - (France) recently completed a postgraduate research on
+                            underutilized crops in the Lares valley.</p></h3> 
+                        <h3>Melissa Loza<p> - (USA) She came as a volunteer on her summer vacation during the
+                            college.</p></h3> 
                         
                     </TextContainer>
                 </div>

@@ -9,26 +9,27 @@ const AnniversaryPublications = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                 25 Publicaciones
+                 25 Publications
                 </Title>
                 <SubTitle>
-                    Celebrando<br></br> el 25th Aniversario
+                    Celebrating <br></br> the 25th Anniversary
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionText>
             <div>  
-                <h1>ANDES Celebra sus 25 Años</h1>              
-                <p>Como parte de las celebraciones de nuestro 25 aniversario, nos gustaría compartir algunos de los
-resultados de nuestras investigaciones a través de publicaciones que, por supuesto, solo son posibles
-gracias a las importantes contribuciones de nuestros socios. Le recomendamos consultar las
-numerosas publicaciones en el sitio web de ANDES. Si no está familiarizado con el trabajo de
-ANDES y se pregunta por dónde empezar, aquí hay 25 sugerencias.</p>
-<h1>25 Publications</h1>
+                <h1>ANDES Celebrates 25 th Anniversary</h1>             
+                <p> As part of our 25th anniversary celebrations, we would like to share some of the
+                    results of our investigations through publications which, of course, are only possible
+                    thanks to the important contributions of our partners. We recommend you consult the
+                    numerous publications on the ANDES website. If you are not familiar with the work of
+                    ANDES and wondering where to start, here are 25 suggestions</p>
+                
+                <h1>25 Publications</h1>
                 <p>
-                    Las publicaciones de ANDES son a menudo el resultado de investigaciones colaborativas
-                    con y para las comunidades indígenas de los Andes.
+                    ANDES publications are often the result of collaborative research
+                    with and for the indigenous communities of the Andes.
                 </p> 
               
             </div>

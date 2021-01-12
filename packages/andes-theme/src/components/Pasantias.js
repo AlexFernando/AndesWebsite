@@ -86,38 +86,33 @@ const Pasantias = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Pasantías
+                    Internships
                 </Title>
                 <SubTitle>
-                    Voluntariados <br></br> Aprende con nosotros
+                    Volunteering <br></br> Learn with us
                 </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionContainer>
                 <MainParagraph>
-                    La Asociación ANDES está guiada por la misión de crear capacidades locales y respuestas estratégicas
-                    para enfrentar los efectos socioeconómicos, culturales, ecológicos y políticos de los cambios globales en
-                    los pueblos indígenas. Nuestro objetivo es proteger y promover el patrimonio biocultural de los pueblos
-                    indígenas y los derechos tradicionales sobre los recursos asociados con ellos. ANDES prevé el bienestar
-                    humano en comunidades indígenas sostenibles, basado en el respeto a los derechos humanos, la
-                    diversidad cultural y la democracia participativa.
+                    Asociación ANDES is guided by a mission of creating local capacities and strategic responses to confront the socioeconomic,
+                    cultural, ecological, and political effects of global changes on indigenous peoples and local communities. We aim to protect
+                    and promote the biocultural heritage of indigenous peoples and the traditional resource rights associated with them. ANDES 
+                    envisions human well-being in sustainable indigenous communities, based on the respect for human rights, cultural diversity, and participatory democracy.
                 </MainParagraph>
                 <p>
-                    El trabajo de ANDES con las comunidades del Parque
-                    de la Papa ha ayudado a generar un impulso global detrás de la creación y protección de territorios de
-                    patrimonio biocultural y “Food Neighborhoods”, salvaguardando la agrobiodiversidad y los recursos
-                    culturales de los pueblos indígenas de todo el mundo. ANDES también se enfoca en la diversidad
-                    epistemológica y la educación innovadora, que actualmente se está desarrollando a través de la Yachay
-                    Kuychi Pluriversidad, una iniciativa educativa que tiene como objetivo crear enfoques holísticos para el
-                    aprendizaje y colaboraciones entre la ciencia occidental y el conocimiento indígena.
+                    ANDES’s work with the communities of the Parque de la Papa [Potato Park] has 
+                    helped to create global momentum behind the creation and protection of biocultural heritage territories and Food 
+                    Neighborhoods, safeguarding the agrobiodiversity and cultural resources of indigenous peoples around the world. ANDES also
+                    focuses on epistemological diversity and innovative education for indigenous and non-indigenous peoples alike, currently
+                    being developed through the Yachay Kuychi Pluriversity, an education initiative which aims to create holistic approaches to
+                    learning and collaborations between western science and indigenous knowledge.
                 </p>
 
                 <p>
-                    Finalmente, ANDES
-                    actúa como la Secretaría de la Red Internacional de Pueblos Indígenas de las Montañas (INMIP),
-                    trabajando para conectar comunidades de todo el mundo para enfrentar los desafíos urgentes e
-                    intersectantes del cambio climático, la seguridad alimentaria y los derechos humanos.
+                    Finally, ANDES acts as the Secretariat for the International Network of Mountain Indigenous Peoples (INMIP), working to connect communities from around the
+                    world to confront the urgent and intersecting challenges of climate change, food security, and human rights.
                 </p>
             </SectionContainer>
 
@@ -128,27 +123,27 @@ const Pasantias = ({state}) => {
 
                     <div>
                         <h2>
-                            VOLUNTARIADOS
+                            VOLUNTEER ROLES
                         </h2>
 
                         <p>
-                            ANDES, INMIP y la Yachay Kuychi Pluriversidad dependen del apoyo de personal y voluntarios
-                            apasionados y comprometidos para lograr su misión. Los voluntarios pueden apoyar el trabajo continuo
-                            de estas organizaciones de diversas formas, que incluyen:
+                            ANDES, INMIP, and the Yachay Kuychi Pluriversity depend on the support of passionate and committed
+                            staff and volunteers to achieve their mission. Volunteers can support the ongoing work of these
+                            organizations in a variety of ways, including::
                         </p>
                         <p>
-                            Voluntarios de eventos: roles de voluntarios a corto plazo diseñados para apoyar un evento específico.
+                            Event volunteers: short term volunteer roles designed to support a specific event.
                         </p>
                         
                         <p>
-                            Voluntarios de la organización: roles que suelen durar de 3 a 6 meses durante los cuales el voluntario
-                            apoya las operaciones diarias de la organización.
+                            Organization volunteers: roles typically lasting 3-6 months during which the volunteer supports the day-
+                            to-day operations of the organization .
                         </p>
 
                         <p>
-                            Voluntarios de comunicaciones: roles que generalmente duran de 3 a 6 meses durante los cuales el
-                            voluntario apoya las comunicaciones y el alcance de la organización, incluidas las redes sociales, los
-                            materiales para publicación y el mantenimiento del sitio web.
+                            Communications volunteers: roles typically lasting 3-6 months during which the volunteer supports the
+                            communications and outreach of the organization, including social media, materials for publication, and
+                            web maintenance and design.
                         </p>
                     </div>
                     
@@ -157,15 +152,15 @@ const Pasantias = ({state}) => {
                 <BlockInfo>
 
                     <div>
-                        <h2>PASANTIAS</h2>
+                        <h2>INTERSHIPS</h2>
                         
-                        <p> Para las personas que esperan desarrollar proyectos de investigación independientes mientras
-                            adquieren habilidades profesionales, ANDES ofrece oportunidades de pasantías. Los pasantes deben
-                            estar actualmente inscritos en un programa universitario acreditado a nivel de pregrado o posgrado, y
-                            deben desarrollar una propuesta de investigación relacionada con los temas y proyectos clave de
-                            ANDES, INMIP y / o la Pluriversidad. Quienes completen la investigación deben cumplir con la obligación
-                            de trabajar en colaboración con las comunidades indígenas, obtener el consentimiento en todos los
-                            pasos del proceso y compartir activamente sus resultados con las comunidades asociadas.
+                        <p> 
+                        For individuals hoping to develop independent research projects while gaining professional skills,
+                        ANDES offers internship opportunities. Interns should be currently enrolled in an accredited university
+                        program at the undergraduate or graduate level, and should develop a research proposal related to
+                        the key themes and projects of ANDES, INMIP, and/or the Pluriversity. Those completing research must
+                        fulfill an obligation to work in collaboration with indigenous communities, obtaining consent at all
+                        steps of the process and actively sharing their results with partner communities.
                         </p>
                     </div>
 
@@ -177,43 +172,38 @@ const Pasantias = ({state}) => {
                     <img src={pasantia3} />
 
                     <div>
-                        <h3>UNA PASANTIA CON ANDES OFRECE UNA OPORTUNIDAD INCREÍBLE PARA ESTUDIANTES Y
-                            PROFESIONALES DE TODOS LOS NIVELES PARA:</h3>
+                        <h3>A PLACEMENT WITH ANDES OFFERS AN AMAZING OPPORTUNITY FOR STUDENTS AND PROFESSIONALS OF ALL LEVELS TO:</h3>
                         
                         <ul>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Trabajar en colaboración con las comunidades indígenas</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Participar en investigaciones innovadoras y creativas</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Trabajar desde un enfoque holístico y transdisciplinario</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Recibir formación profesional y académica en el contexto de una pequeña ONG dirigida por indígenas</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Mejorar las habilidades del idioma español y / o quechua</li> 
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Work closely with Indigenous Communities</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Engage in innovative and creative research</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Work from a holistic and transdisciplinary approach</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Receive professional and academic formation in the context of a small, indigenous-run NGO</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Improve Spanish and/or Quechua language skills</li> 
                         </ul>
                     </div>
                 </BlockInfo>
 
                 
                 <BlockInfo>
-                    <div>
-                        <h2>PARA SOLICITAR UNA PASANTIA CON ANDES</h2>
-                        
-                        <h3>CALIFICACIONES DESEADAS</h3>
+                    <div>                        
+                        <h3>DESIRED QUALIFICATIONS</h3>
                         
                         <p>
-                            Tenemos una fuerte preferencia por los voluntarios que hablan español e inglés con fluidez; los
-                            candidatos deben al menos manejar el español a un nivel básico.
+                            We have a strong preference for volunteers who speak fluent Spanish and English; candidates must at
+                            least manage Spanish at a basic level.
                         </p>
 
                         <p>
-                            Es esencial que los voluntarios tengan fuertes habilidades de comunicación verbal y escrita.
+                            It is essential that volunteers have strong written and verbal communication skills.
                         </p>
                 
                         <p>
-                            Los solicitantes deben haber demostrado interés en las áreas en las que trabajan ANDES, INMIP y
-                            Pluriversity.
+                            Applicants should have demonstrated interest in the areas in which ANDES, INMIP, and the Pluriversity work.
                         </p>
 
                         <p>
-                            Los solicitantes deben tener motivación propia y sentirse cómodos trabajando tanto de forma
-                            independiente como en equipo.
+                            Applicants should be self-motivated and must be comfortable working both independently and as part of a team.
                         </p>
                     </div>
 
@@ -225,24 +215,27 @@ const Pasantias = ({state}) => {
                     <img src={pasantia5} />
 
                     <div>
-                        <span>“El voluntariado para ANDES fue una experiencia increíble,</span>
+                        <span>“Volunteering for ANDES was such an amazing experience,</span>
                         <p>
-                            ¡definitivamente aliente a cualquier persona interesada en la biodiversidad y los derechos indígenas a
-                            postularse! Una pasantía con ANDES va más allá del voluntariado: es una verdadera oportunidad
-                            profesional para trabajar con una ONG y las comunidades locales.
+                            I would
+                            definitely encourage anyone with an interest in biodiversity and Indigenous
+                            rights to apply! An internship with ANDES goes beyond voluntourism—it is a
+                            real profesional opportunity to work with an NGO and local communities.
                         </p>
+
                         <p>
-                            Fue una experiencia inmersiva y reveladora que me dio una comprensión más profunda de la
-                            colaboración responsable y recíproca con los grupos indígenas ”.
+                            It was an immersive and eye opening experience which gave me a deeper understaning of responsible and reciprocal collaboration with indigenous groups.”
                         </p>
-                        <strong>- Jessica, ex investigadora voluntaria de ANDES</strong>
+                        
+                        <strong>- Jessica, Former ANDES Volunteer Researcher</strong>
                     </div>
                 </BlockInfo>
 
                 <BlockInfo>
                     <p>
-                        Para solicitar un puesto de voluntario o pasantía con ANDES, INMIP o la Pluriversidad, envíe un CV
-                        actualizado y una declaración de interés a Tammy Stenner a: tammy@andes.org.pe
+                        To apply for a volunteer or internship role with ANDES, INMIP, or the Pluriversity,
+                        please send an up-to-date CV and a statement of interest to Tammy Stenner at:
+                        tammy@andes.org.pe
                     </p>
                 </BlockInfo>
 

@@ -72,23 +72,23 @@ const Staff = ({state}) => {
         
         <MarginTopContainer>
             <HeadContainer>
-                <Title>Nuestro Personal</Title>
-                    <SubTitle>Hard work & Vision <br></br> Commitment <br></br>Experience</SubTitle>
+                <Title>Our Staff</Title>
+                    <SubTitle>Hard work &amp; Vision <br></br> Commitment <br></br>Experience</SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 
             <SubSection>
                 <TextContainer>
-                    <h2>Dirección Ejecutiva</h2>
+                    <h2>Management</h2>
                     
-                        <h3>Cesar Argumedo <br></br><span> - Director Administrativo</span></h3> 
-                        <p>Cesar es uno de los fundadores de ANDES. Anteriormente, ha trabajado en programas de investigación y desarrollo con la cooperación Suiza y Cultural Survival. Tiene el título de Ingeniero Zootecnista otorgado por la Universidad Nacional San Antonio Abad de Cusco.</p>    
+                        <h3>Cesar Argumedo <br></br><span> - Administrative Director</span></h3> 
+                        <p>Cesar is one of the founders of ANDES. Previously, he worked in research and development programs with the Swiss Government and Cultural Survival cooperation. He has a degree in Zootechnical Engineering awarded by the National University San Antonio Abad of Cusco.</p>    
 
-                        <h3>Alejandro Argumedo <span> <br></br> - Director de Programas</span></h3> 
-                        <p>Alejandro es uno de los fundadores de ANDES y fundador y coordinador de Indigenous Peoples Biocultural Climate Change Assessment Initiative (IPCCA). Colabora con varios redes de comunidades indígenas que promueven la biodiversidad y el manejo sostenible de los recursos naturales.</p>
+                        <h3>Alejandro Argumedo <span> <br></br> -  Director of Programs</span></h3> 
+                        <p>Alejandro is one of the founders of ANDES and founder and coordinator of the Indigenous Peoples Biocultural Climate Change Assessment Initiative (IPCCA). He collaborates with various networks of indigenous communities that promote biodiversity and the sustainable management of natural resources.</p>
 
-                        <h3>Tammy Stenner <span> <br></br> - Asistente Ejecutiva</span></h3>  
-                        <p>Tammy es Asistente Ejecutiva en ANDES. Ha trabajado en investigaciones, coordinación de proyectos y apoyo administrativo desde 1995. También trabaja en la educación adulta y los estudios de desarrollo internacional en Canadá.</p>
+                        <h3>Tammy Stenner <span> <br></br> - Managing Director</span></h3>  
+                        <p>Tammy is the managing director at ANDES. She has worked in research, project coordination, and administrative support since 1995. She also works in adult education and international development studies in Canada.</p>
                     
                 </TextContainer>
 
@@ -101,17 +101,17 @@ const Staff = ({state}) => {
                 <TextContainer>
                     <h2>Administración</h2>
                     
-                        <h3>Carolina Ichillumpa <br></br><span> - Administradora General</span></h3> 
-                        <p>Carolina es contadora de profesión y ocupación con experiencia de 18 años de trabajo en organismos no gubernamentales y organismos sin fines de lucro. Desempeña el cargo de Contadora y Administradora en la Asociación ANDES.</p>    
+                        <h3>Carolina Ichillumpa <br></br><span> -  General Administrator</span></h3> 
+                        <p>Carolina is an accountant by profession and occupation with 18 years experience working in non-governmental and non-profit organizations. She holds the position of Accountant and Administrator at ANDES.</p>    
 
-                        <h3>Ruth Zuloaga<span> <br></br> - Contadora</span></h3> 
-                        <p>Ruth nació en la Provincia de Quispicanchis, departamento de Cusco. Trabaja con ANDES desde 2008.</p>
+                        <h3>Ruth Zuloaga<span> <br></br> - Accountant</span></h3> 
+                        <p>Ruth was born in the Province of Quispicanchis in Cusco. She has worked with ANDES since 2008.  </p>
 
-                        <h3>Ysabell Morón<span> <br></br> - Asistente Contable y Administrativo</span></h3>  
-                        <p>Ysabell nació en Arequipa. Desde enero 2013 está trabajando con ANDES como Asistente Contable.</p>
+                        <h3>Ysabell Morón<span> <br></br> - Assistant to the administration     </span></h3>  
+                        <p>Ysabell was born in Arequipa. She has worked as a financial assistant at ANDES since 2013. </p>
 
-                        <h3>Jhon Edison Ccoyo Ccana<span> <br></br> - Administrador del Parque de la Papa</span></h3>  
-                        <p>Jhon nació en la comunidad de Amaru, Parque de la Papa. Trabaja con ANDES desde 2018.</p>                        
+                        <h3>Jhon Edison Ccoyo Ccana<span> <br></br> - Administrator of the Potato Park </span></h3>  
+                        <p>Jhon was born in the community of Amaru in the Potato Park. He has worked with ANDES since 2018. </p>                        
                 
                 </TextContainer>
 
@@ -122,13 +122,13 @@ const Staff = ({state}) => {
             <SubSection>
 
                 <TextContainer>
-                    <h2>Servicios de Apoyo Básico</h2>
+                    <h2>Support Services</h2>
                     
-                        <h3>Arascely Heredia<br></br><span> - Especialista en Comunicaciones Tecnológicas</span></h3> 
-                        <p>Arascely tiene 18 años de trabajando con ANDES como especialista en comunicaciones tecnológicas. Estudió en el Instituto Tecnológico KHIPU, Computación e Informática e Ingeniería de Sistemas en la Universidad Andina del Cusco. Actualmente trabaja en área de Comunicaciones Administrando Redes y Sistemas de información.</p>    
+                        <h3>Arascely Heredia<br></br><span> - Specialist in communications technology</span></h3> 
+                        <p>Arascely has worked with ANDES for 18 years as a communications specialist. She studied Computation at the Instituto Tecnológico KHIPU and systems engineering at the Universidad Andina del Cusco. </p>    
 
-                        <h3>Kike Granados, Coordinador Logístico <span> <br></br> - Coordinador Técnico Audiovisual Audiovisual</span></h3> 
-                        <p>Kike tiene 18 años trabajando con ANDES en los temas de logística, filmación, y edición de videos.  Actualmente, Kike estudia sistema de información geografía e ingeniería ambiental con el fin de contribuir a la investigación del cambio climático y al desarrollo sostenible de los recursos naturales.</p>
+                        <h3>Kike Granados, Coordinador Logístico <span> <br></br> -  Logistics coordinator and audiovisual technician</span></h3> 
+                        <p>Kike has worked with ANDES for 18 years in the areas of logistics, film-making, and editting of digital media. Currently, Kike is studying geographic information systems (GIS) and environmental engineering with the goal of contributing to research about climate change and sustainable development of natural resources. </p>
                 </TextContainer>
 
                 <ImageSection src = {imgResearch} />
@@ -138,23 +138,22 @@ const Staff = ({state}) => {
             <SubSection>
 
                 <TextContainer>
-                    <h2>Personal de Programas </h2>
+                    <h2>Program Staff </h2>
                     
-                        <h3>Jessica Villacorta Villacorta<br></br><span> - Agrónoma</span></h3> 
-                        <p>Jessica se graduó como ingeniero agrónomo de la Universidad Nacional San Antonio Abad del Cusco. Inició su trabajo en ANDES en marzo 2015 en el proyecto de Innovación de Pequeños Agricultores para la Resiliencia (SIFOR), un proyecto de investigación del cambio climático, la conservación de la papa nativa y el mejoramiento participativo en escuelas de campo.</p>    
+                        <h3>Jessica Villacorta Villacorta<br></br><span> - Agronomist</span></h3> 
+                        <p>Jessica graduated from the Universidad Nacional San Antonio Abad de Cusco as an agronomist. She began working with ANDES in March of 2015 on the Smallholder Innovation for Resilience (SIFOR) project, which focused on cilmate change research, native potato conservation, and participatory plant breeding in farmer field schools. Jessica supports all field activities related to crop conservation. </p>    
 
-                        <h3>Oscar Ramos<span> <br></br> - Agrónomo</span></h3> 
+                        <h3>Oscar Ramos<span> <br></br> - Agronomist</span></h3> 
                         <p>Oscar se graduó como ingeniero agrónomo de la Universidad Nacional de San Antonio Abad del Cusco. Inició su trabajo en ANDES en marzo 2015 en los proyectos de SD=HS y de SIFOR. Trabaja en el plan de conservación de papa y del mejoramiento participativo de maíz y papas en Lares.</p>
 
-                        <h3>Ricardo Pacco Chipa<br></br><span> - Coordinador Local</span></h3> 
-                        <p>Ricardo es líder de la comunidad Quechua de Paru Paru, una de las comunidades del Parque de la Papa. Ha trabajado de técnico local desde 2002 y participa en redes de comunidades indígenas. Actualmente, es Coordinador Local del proyecto SD=HS en el distrito de Lares.</p>    
+                        <h3>Ricardo Pacco Chipa<br></br><span> - Local Coordinator</span></h3> 
+                        <p>Ricardo is a leader from the Quechua community of Paru Paru, one of the communities that makes up the Potato Park. He began working with ANDES in 2002 as a local expert in his community and has been an active participant in indigenous networks. Currently, he works as the coordinator for the Parque Chalakuy in Lares, supporting the implementation of all field activities and acting as the main point of contact between the communities and ANDES.</p>    
 
-                        <h3>Cass Madden<span> <br></br> - Investigadora y Coordinadora, INMIP</span></h3> 
-                        <p>Cass se graduó de The School for International Training (SIT) con su maestría en cambio climático y sustentabilidad global. Trabaja en la investigación de Food Neighborhoods para escalar el modelo de conservación biocultural implementado en el Parque de la Papa. </p>
+                        <h3>Cass Madden<span> <br></br> - Researcher and Coordinator, INMIP </span></h3> 
+                        <p>Cass graduated from The School for International Training (SIT) with an M.A. in Climate Change and Global Sustainability. She works in the area of research related to Food Neighborhoods with the goal of creating scalable models for biocultural conservation based on the Potato Park and the Parque Chalakuy. She also acts as the coordinator for the International Network of Mountain Indigenous Peoples (INMIP). </p>
 
-
-                        <h3>Hannah Argumedo Stenner<span> <br></br> - Asistente de Proyectos en Campo</span></h3> 
-                        <p>Hannah se graduó como trabajadora social de Ryerson University en Canada. Trabaja en la coordinación de actividades de jovenes en el Parque de la Papa. </p>
+                        <h3>Hannah Argumedo Stenner<span> <br></br> - Field project assistant</span></h3> 
+                        <p>Hannah graduated from Ryerson University in Canada with a degree in social work. She supports the ANDES team in the implementation of projects in the Potato Park and in Lares. </p>
                 </TextContainer>
 
                 <ImageSection src = {imgNoticias} />

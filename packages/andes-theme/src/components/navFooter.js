@@ -41,7 +41,7 @@ const NavFooter = () => {
             <LinkStyled 
                 href={'/'}
                 activeClassName="pagina-actual"
-            >Accesibility</LinkStyled>
+            >Accesibilidad</LinkStyled>
 
             <LinkStyled 
                 href={'/'}
