@@ -34,9 +34,6 @@ const AnniversayPeople = ({state}) => {
                 <Title>
                  25 Personas Clave
                 </Title>
-                <SubTitle>
-                    Celebrando<br></br> el 25th Aniversario
-                </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 

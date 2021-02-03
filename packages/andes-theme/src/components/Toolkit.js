@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect, styled} from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, SectionContainer, MarginTopContainer} from './Filosofia';
+import {HeadContainer, Title, Separator, MarginTopContainer} from './Filosofia';
 import ToolkitLogic from './ToolkitLogic';
 
 const Toolkit = ({state}) => {
@@ -10,10 +10,9 @@ const Toolkit = ({state}) => {
                 <Title>
                     Toolkit 
                 </Title>
-                <SubTitle>
-                    Knowledge <br></br> Portal
-                </SubTitle>
+               
                 <Separator></Separator>
+               
             </HeadContainer>
 
 

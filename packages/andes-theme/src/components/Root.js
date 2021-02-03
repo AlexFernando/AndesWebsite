@@ -56,7 +56,8 @@ import ToolkitSpanish from '../components-spanish/Toolkit';
 import AnniversaryPeopleSpanish from '../components-spanish/AnniversaryPeople';
 import AnniversaryProjectsSpanish from '../components-spanish/AnniversaryProjects';
 import AnniversaryPublicationsSpanish from '../components-spanish/AnniversaryPublications';
-
+import StayInTouch from "../components/stayInTouch";
+import FormularioContacto from '../components-spanish/formularioContacto';
 
 const Root = ({ state }) => {
 
@@ -64,7 +65,7 @@ const Root = ({ state }) => {
 
     let link = state.router.link;
 
-    let regex = /\/es\//;
+    let regex = /\/es\-/;
 
     let spanishLanguage = false;
 
@@ -86,17 +87,13 @@ const Root = ({ state }) => {
                         font-family: 'Lato', sans-serif;
                         overflow-x: hidden;
                         width: 100%;
-                        height: 100%;
+                        /*height: 100%;*/
                     }
 
                 
                    /* * {
                         border: 1px solid #f00 !important;
                     } */
-                     
-                    
-                  
-                
 
                     p {
                         font-family: 'Lato', sans-serif;
@@ -183,6 +180,11 @@ const Root = ({ state }) => {
                 {data.isAniversarioPublicaciones && <AnniversaryPublications/>}
                 {data.isAniversarioPublicacionesSpanish && <AnniversaryPublicationsSpanish/>}
 
+                {state.router.link === "/stayintouch/" && data.isPage && <StayInTouch/>}
+                
+                
+                {state.router.link === "/es-stayintouch/" && data.isPage &&  <FormularioContacto/>}
+                
             {spanishLanguage ? <ContactSpanish /> : <Contact />}
             
             {spanishLanguage ? <FooterSpanish title={"Andes"} /> : <Footer title={"Andes"}/>}

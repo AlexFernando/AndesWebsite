@@ -5,6 +5,9 @@ import {SectionContainer, MainParagraph, CardsContainer, Card} from './potatoPar
 import transgenicos from '../static/images/transgenicos.jpg';
 import {SectionText} from './HomePage';
 
+import {faListAlt, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIconList, FontAwesomeIconStyled} from './TerritoriosCulturales';
+
 export const FixedCard = styled.div`
     display: flex;
     flex-direction: column;
@@ -25,6 +28,36 @@ export const FixedCard = styled.div`
     }
 `;
 
+const SectionInfoList = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0;
+
+    h3 {
+        color: #44841a;
+        font-size: 1.5rem;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        @media (max-width: 768px){
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        li {
+            list-style: none;
+            font-size: 1.2rem;
+            margin-bottom: .8rem;
+        }
+    }
+`
+
 const IframeStyled = styled.iframe`
     width:490px; 
     height:280px;
@@ -43,10 +76,11 @@ const Politica = ({state}) => {
                 <Title>
                     Incidencias Política
                 </Title>
+                <Separator></Separator>
                 <SubTitle>
                     Transgénicos <br></br> Biopiratería
                 </SubTitle>
-                <Separator></Separator>
+          
             </HeadContainer>
 
             <SectionContainer>
@@ -54,33 +88,66 @@ const Politica = ({state}) => {
                     ANDES integra asuntos de ética y justicia social y ambiental al trabajo, tales como, el derecho a la tierra, protocolos bioculturales, derechos intelectuales de propiedad, y la negociación de intereses comunes en procesos locales, nacionales e internacionales.
                 </MainParagraph>
                 
-                <p>
-                    Nuestro enfoque es el empoderamiento de las voces locales y de los marginados en propuestas de conservación biocultural y desarrollo sostenible, así como la defensa y promoción de los derechos humanos y los derechos de la Pachamama.  Asimismo, ANDES promueve los derechos de los pueblos indígenas a los recursos naturales y territorios, a sus expresiones culturales, prácticas y conocimientos tradicionales.
-                </p> 
-
-                <p>
-                    ANDES promueve y participa en la creación de un movimiento de solidaridad global de organizaciones, actores y comunidades locales vinculadas a través de redes de cooperación y descubrimiento colectivo Sur-Sur y Sur-Norte, para desarrollar alternativas y respuestas creativas a los desafíos globales como el cambio climático y la pérdida de la diversidad biológica y cultural. Como parte de este impulso, ANDES participa activamente en fora internacional, como la Convenio sobre la Diversidad Biológica y la Declaración de las Naciones Unidas sobre los derechos de los Pueblos Indígenas (UNDRIP).
-                </p>
-
-             
-                <FixedCard>
+                <SectionInfoList>
+                    <FontAwesomeIconStyled icon={faListAlt}/>
                     
-                    <img src={transgenicos}/>
+                    <h3>NUESTRAS PRIORIDADES</h3>
 
-                    <SectionText>
-                        <div>
-                            <h1>Rechazando transgénicos en Perú</h1>
+                    <div>
+                        <ul>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Derechos indígenas</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Derechos de la Pachamama</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Protección de territorios y paisajes</li> 
+                        </ul>
 
-                            <p>
-                            La asociación ANDES, junto con la asociación de las comunidades del Parque de la Papa, han firmado una declaración en contra de los transgénicos en Perú.
-                            </p>
-                            <div>
-                                <a href="https://www.servindi.org/actualidad/24/06/2020/senor-vizcarra-el-pueblo-peruano-rechaza-los-transgenicos" target="_blank" rel="noopener" >LEER HISTORIA</a>
-                            </div>
-                        </div>
-                    </SectionText>
-                </FixedCard>
-       
+                        <ul>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Biopiratería</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Propiedad Intelectual</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Transgénicos</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Cambio climático</li> 
+                        </ul>
+
+                        <ul>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Soberanía de semillas</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Seguridad Alimentaria</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Conservación de la diversidad biocultural</li>
+                        </ul>
+                    </div>
+                </SectionInfoList>
+                
+             
+            <CardsContainer>
+                
+                <Card>
+                    <img src={transgenicos} />
+
+                    <h3>Rechazando transgénicos en Perú</h3>
+
+                    <span>
+                        La asociación ANDES, junto con la asociación de las comunidades del Parque de la Papa, han firmado una declaración en contra de los transgénicos en Perú.
+                    </span>
+
+                    <div>
+                        <a href="https://www.servindi.org/actualidad/24/06/2020/senor-vizcarra-el-pueblo-peruano-rechaza-los-transgenicos" target="_blank" rel="noopener" >LEER HISTORIA</a>
+                    </div>
+                </Card>
+         
+                <Card>
+                    <img src={transgenicos} />
+
+                    <h3>Rechazando transgénicos en Perú</h3>
+
+                    <span>
+                        La asociación ANDES, junto con la asociación de las comunidades del Parque de la Papa, han firmado una declaración en contra de los transgénicos en Perú.
+                    </span>
+
+                    <div>
+                        <a href="https://www.servindi.org/actualidad/24/06/2020/senor-vizcarra-el-pueblo-peruano-rechaza-los-transgenicos" target="_blank" rel="noopener" >LEER HISTORIA</a>
+                    </div>
+                </Card>
+
+            </CardsContainer>
+
 
             </SectionContainer>
 

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {connect, css, styled } from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer, SectionContainer} from './Filosofia';
+import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {dataPublications} from '../data/dataPublicacionesGeneral';
-import {SearchBar, InputBar, PostStyled, NotFoundContainer } from './SearchBar';
+import {SearchBar, InputBar, NotFoundContainer } from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
@@ -39,8 +39,9 @@ export const PublicationCard = styled.div`
     }
     
     img {
-        max-width: 20%; 
-        margin-right: 1rem;  
+        max-width: 40%;
+        margin-right: 1rem;
+        align-self:center;  
 
         @media(max-width: 768px) {
             max-width: 50%;
@@ -58,7 +59,9 @@ const MatchPublication = styled.div`
     display: flex;
     margin: 3rem 10rem 0 10rem;
     cursor: pointer;
-
+    justify-content: center;
+    align-items: center;
+    
     @media(max-width: 768px) {
             margin: 1rem;
         }
@@ -74,13 +77,13 @@ const MatchPublication = styled.div`
     }
 
     img {
-        max-width: 20%; 
-        margin-right: 1rem;  
+        max-width: 20%;
+        margin-right: 1rem;
+        align-self:center;   
 
         @media(max-width: 768px) {
-            max-width: 30%;
+            max-width: 40%;
         }
-
     }
 
     div {
@@ -91,17 +94,28 @@ const MatchPublication = styled.div`
             font-size: 1.1rem;
             margin-bottom: 0;
             color: #000;
+
+            @media(max-width: 768px) {
+                font-size: .9rem;
+            }
         }
         
         span {
             font-size: .9rem;
             color: #545454;
             margin-top: 0;
+
+            @media(max-width: 768px) {
+                font-size: .7rem;
+            }
         }
 
         p {
             color: #545454;
             font-size: 1rem;
+            @media(max-width: 768px) {
+                font-size: .8rem;
+            }
         }
     }
 
@@ -127,11 +141,11 @@ const Publicaciones = () => {
         e.preventDefault();
 
      
-        const results = dataPublications.filter( publication => publication.Title.toLowerCase().includes(searchTerm.toLowerCase()));
+        const results = dataPublications.filter( publication => publication.Title.toLowerCase().includes(searchTerm.toLowerCase()) || publication.author.toLowerCase().includes(searchTerm.toLowerCase()));
      
         setSearchResults(results);
 
-        console.log(results);
+        console.log("los matchs: ", results);
 
         console.log("searchTerm ", searchTerm);
        
@@ -157,7 +171,7 @@ const Publicaciones = () => {
                 <Separator></Separator>
             </HeadContainer>
 
-            <SectionContainer>
+      
                 <SearchBar>
                     <InputBar>
                         <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
@@ -176,8 +190,7 @@ const Publicaciones = () => {
                             <LinkButton href="/publicaciones">SEARCH</LinkButton>
                     </ButtonAction>
                 </SearchBar>
-            </SectionContainer>
-
+      
             <SectionPublications>
 
                 {/** first render */}

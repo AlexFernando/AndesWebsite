@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {connect, css, styled } from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer, SectionContainer} from './Filosofia';
+import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {dataPublications} from '../data/dataPublicaciones';
 import {SearchBar, InputBar, PostStyled, NotFoundContainer } from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -146,7 +146,7 @@ const RepoAnniversaryPublications = () => {
     return (
         
         <MarginTopContainer>
-            <SectionContainer>
+       
                 <SearchBar>
                     <InputBar>
                         <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
@@ -165,8 +165,7 @@ const RepoAnniversaryPublications = () => {
                             <LinkButton href="/publicaciones">BUSCAR</LinkButton>
                     </ButtonAction>
                 </SearchBar>
-            </SectionContainer>
-
+       
             <SectionPublications>
 
                 {/** first render */}

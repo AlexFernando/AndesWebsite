@@ -1,13 +1,12 @@
 import React from "react";
 import { connect, styled } from "frontity";
 
-const Anchor = styled.button`
+const Anchor = styled.a`
   display: flex;
     justify-content: center;
     background-color: #f07723 ;
     align-items: center;
-    padding: 1.5rem;
-    height: 30px;
+    padding: 1rem ;
     border: 1px solid #fff;
     border-radius: 5px;
     font-weight: bold;
@@ -21,7 +20,6 @@ const Anchor = styled.button`
     
 
     @media(min-width: 768px) {
-        flex-basis: 20%;
         margin-bottom: 0rem;
     }
 
@@ -33,7 +31,7 @@ const Anchor = styled.button`
 
 const LinkButtonHome = ({ href, actions, children }) => {
   return (
-    <button>
+
       <Anchor
         href={href}
         onClick={event => {
@@ -43,7 +41,7 @@ const LinkButtonHome = ({ href, actions, children }) => {
       >
         {children}
       </Anchor>
-    </button>
+
   );
 };
 

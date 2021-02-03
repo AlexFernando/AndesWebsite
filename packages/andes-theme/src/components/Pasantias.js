@@ -88,10 +88,11 @@ const Pasantias = ({state}) => {
                 <Title>
                     Internships
                 </Title>
+                <Separator></Separator>
                 <SubTitle>
                     Volunteering <br></br> Learn with us
                 </SubTitle>
-                <Separator></Separator>
+               
             </HeadContainer>
 
             <SectionContainer>

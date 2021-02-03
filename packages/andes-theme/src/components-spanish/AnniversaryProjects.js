@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect, css, styled } from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
+import {HeadContainer, Title, Separator, MarginTopContainer} from './Filosofia';
 import parquepapa from '../static/images/parquepapa.jpg';
 import Krystyna from '../static/images/Krystynascaled.jpeg';
 import papaGMrechazo from '../static/images/news/papaGMrechazo.jpg'
@@ -79,9 +79,6 @@ const AnniversaryProjects = ({state}) => {
                 <Title>
                 25 PROYECTOS, INTERCAMBIOS Y CAMPAÑAS
                 </Title>
-                <SubTitle>
-                    Celebrando<br></br> el 25th Aniversario
-                </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 

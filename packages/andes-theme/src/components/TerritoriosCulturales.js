@@ -106,10 +106,11 @@ const TerritoriosCulturales = ({state}) => {
                 <Title>
                     Biocultural Territories
                 </Title>
+                <Separator></Separator>
                 <SubTitle>
                     Endogenous development <br></br> Conservation of biodiversity
                 </SubTitle>
-                <Separator></Separator>
+            
             </HeadContainer>
 
             <SectionContainer>

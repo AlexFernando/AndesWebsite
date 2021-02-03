@@ -11,12 +11,13 @@ const InternationalPrograms = () => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    International Programs and Networks
+                    International Programs &amp; Networks
                 </Title>
-                <SubTitle>
-                    Networks, Alliances y Projets<br></br>ANDES to the World
-                </SubTitle>
                 <Separator></Separator>
+                <SubTitle>
+                   ANDES to the World.
+                </SubTitle>
+              
             </HeadContainer>
 
             <SectionContainer>

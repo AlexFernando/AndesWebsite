@@ -88,10 +88,11 @@ const Pasantias = ({state}) => {
                 <Title>
                     Pasantías
                 </Title>
-                <SubTitle>
-                    Voluntariados <br></br> Aprende con nosotros
-                </SubTitle>
                 <Separator></Separator>
+                <SubTitle>
+                    Voluntariados, aprende con nosotros.
+                </SubTitle>
+                
             </HeadContainer>
 
             <SectionContainer>

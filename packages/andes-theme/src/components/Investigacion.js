@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, SectionContainer, MarginTopContainer} from './Filosofia';
+import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 
 
 const Investigacion = ({state}) => {
@@ -10,10 +10,11 @@ const Investigacion = ({state}) => {
                 <Title>
                     Investigacion
                 </Title>
+                <Separator></Separator>
                 <SubTitle>
                     Cambio climático <br></br> Escuelas de Campo
                 </SubTitle>
-                <Separator></Separator>
+                
             </HeadContainer>
         </MarginTopContainer>
     );

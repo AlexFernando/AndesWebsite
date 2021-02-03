@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {connect, styled, css} from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, SectionContainer, MarginTopContainer} from './Filosofia';
+import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 
 import {dataEvents} from '../data/dataEvents';
 
@@ -83,10 +83,11 @@ const Eventos = ({state}) => {
                 <Title>
                     Eventos
                 </Title>
+                <Separator></Separator>
                 <SubTitle>
                     Participa con nosotros
                 </SubTitle>
-                <Separator></Separator>
+      
             </HeadContainer>
 
                 <SectionEvent>

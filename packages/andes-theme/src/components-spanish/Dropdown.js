@@ -5,21 +5,48 @@ import Link from "./Link";
 
 
 const DropDownBox = styled.div`
-  display: flex;
-  flex-direction: column;  
-  width: 100%;
-  z-index: 3;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1 0 100%; /**new line */
+    width: 100%;
+    top: 12vh;
+    z-index: 3;
+  
+  @media(min-width: 319px) and (max-width: 361px) {
+    justify-content: center;
+  }
  
   @media(min-width: 768px) {
-    position: fixed;
-    top: 18vh;
+ 
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    position: fixed;
+    
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
     background-color: #fff;
     border: 1px solid #e5e5e5;
+    margin-top: 0;
+
+    top: 18vh;
   }
+
+
 `
 
 export const VerticalBorder = styled.div `
@@ -31,8 +58,18 @@ export const VerticalBorder = styled.div `
 `
 
 const ListContainer = styled.ul`
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  flex: 1 0 100%;
+  
+ 
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;  
   text-decoration: none;
   padding-left: 0;
 
@@ -55,14 +92,15 @@ const ListStyle = styled.li`
     font-weight: 700;
     margin-bottom: 1rem;
   }
-
-  
 `
 const ImageStyle = styled.img`
   
   display:none;
   
   @media(min-width: 768px) {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       height:140px; 
       width: 220px;
@@ -77,6 +115,7 @@ const ButtonStyled = styled.button`
     color: #000;
     font-size: 1rem;
 `;
+
 
 const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitle =null, options2 = null, ImageNav = null, thirdTitle =null, options3 = null}) => {
 
@@ -121,7 +160,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitl
               {options.map(opt => (
                     <>
                       <ListStyle key={opt}>
-                        <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}><Link href={`/es/${opt.toLowerCase().replace(/\s/g, "")}`}>{opt}</Link></ButtonStyled>
+                        <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}><Link href={`/es-${opt.toLowerCase().replace(/\s/g, "")}`}>{opt}</Link></ButtonStyled>
                       </ListStyle>
                       <Border />
                     </>
@@ -139,7 +178,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitl
                               <>
                               <ListStyle key={opt2}>
                                 <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}>
-                                  <Link href={`/es/${opt2.toLowerCase().replace(/\s/g, "")}`}>{opt2}</Link>  
+                                  <Link href={`/es-${opt2.toLowerCase().replace(/\s/g, "")}`}>{opt2}</Link>  
                                 </ButtonStyled>                                
                               </ListStyle>
                               <Border />
@@ -162,7 +201,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitl
                               <>
                               <ListStyle key={opt3}>
                                 <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}>
-                                  <Link href={`/es/${opt3.toLowerCase().replace(/\s/g, "")}`}>{opt3}</Link>  
+                                  <Link href={`/es-${opt3.toLowerCase().replace(/\s/g, "")}`}>{opt3}</Link>  
                                 </ButtonStyled>                                
                               </ListStyle>
                               <Border />

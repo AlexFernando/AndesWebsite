@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect, css, styled } from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
+import {HeadContainer, Title, Separator, MarginTopContainer} from './Filosofia';
 import {SectionText} from './HomePage';
 import RepoAnniversaryPublications from './RepoAnniversaryPublications';
 
@@ -11,9 +11,6 @@ const AnniversaryPublications = ({state}) => {
                 <Title>
                  25 Publicaciones
                 </Title>
-                <SubTitle>
-                    Celebrando<br></br> el 25th Aniversario
-                </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 

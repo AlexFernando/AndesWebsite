@@ -100,10 +100,11 @@ const PotatoPark = ({state}) => {
                 <Title>
                     Parque de la Papa - Pisaq
                 </Title>
+                <Separator></Separator>
                 <SubTitle>
                     El Sistema Ayllu<br></br>Innovaciones Bioculturales
                 </SubTitle>
-                <Separator></Separator>
+                
             </HeadContainer>
 
             <SectionContainer>

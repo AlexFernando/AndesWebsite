@@ -6,57 +6,81 @@ import Link from './Link';
 
 
 const ContainerNav = styled.nav`
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: flex;
+ width: 100%;
+ height: 6vh;
+ background-color: #44841a;
+ -webkit-box-pack: justify;
+     -ms-flex-pack: justify;
+         -webkit-justify-content: space-between;
+          justify-content: space-between;
+ -webkit-box-align: center;
+     -ms-flex-align: center;
+         -webkit-align-items: center;
+         align-items: center;
+ position: fixed;
+ top:0;
+ color: #fff;
+ z-index: 3;
 
-  display: flex;
-  width: 100%;
-  height: 6vh;
-  background-color: #44841a;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top:0;
-  color: #fff;
-  z-index: 3;
 
+ @media (max-width: 768px) {
+   display: none;
+ }
 
-  @media (max-width: 768px) {
-    display: none;
-  }
+   p {
+       font-style: italic;
+       margin-left: 2rem;
+   }
 
-    p {
-        font-style: italic;
-        margin-left: 2rem;
-    }
-
-    div {
+   div {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+       -webkit-box-pack: justify;
+           -ms-flex-pack: justify;
+               -webkit-justify-content: space-between;
+               justify-content: space-between;
+       -webkit-box-align: center;
+           -ms-flex-align: center;
+               -webkit-align-items: center;
+               align-items: center;
 
 
-        a {
-            display: flex;
-            cursor: pointer;
-            text-decoration: none;
-            color: #fff;
-            margin-right: 2rem;
+       a {
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: -webkit-flex;
+           display: flex;
+           cursor: pointer;
+           text-decoration: none;
+           color: #fff;
+           margin-right: 2rem;
 
 
-            span {      
-                margin-right: 1rem;
-                font-size: 1.2rem;
-    
-            }
-        }
+           span {      
+               margin-right: 1rem;
+               font-size: 1.2rem;
+   
+           }
+       }
 
-    }
+   }
 `
 
 const SecondaryNavbar = ({state, actions, setNavOpen, navOpen}) => {
 
     let myLink = state.router.link;
-    let linkSpanish = "/es"+ myLink;
-    
+    let myNewLink = "";
+    if(myLink.indexOf("/") > -1) {
+        myNewLink = myLink.replace("/","-")
+    }
+    let linkSpanish = "/es"+ myNewLink;
+        
     return ( 
 
         <ContainerNav>

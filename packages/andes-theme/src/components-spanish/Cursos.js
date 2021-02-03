@@ -19,10 +19,11 @@ const Cursos = ({state}) => {
                 <Title>
                     Cursos
                 </Title>
-                <SubTitle>
-                    Capacitaciones <br></br> Aprende con nosotros
-                </SubTitle>
                 <Separator></Separator>
+                <SubTitle>
+                    Capacitaciones, aprende con nosotros.
+                </SubTitle>
+     
             </HeadContainer>
 
             <SectionContainer>

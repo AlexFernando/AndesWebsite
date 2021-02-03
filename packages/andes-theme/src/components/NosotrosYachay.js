@@ -20,13 +20,12 @@ const NosotrosYachay = ({state}) => {
                 <Title>
                     Yachay Kuychi
                 </Title>
-                <SubTitle>
-                    Biocultural<br></br>
-                    Education
-                </SubTitle>
                 <Separator></Separator>
+                <SubTitle>
+                    Biocultural Education
+                </SubTitle>
+                
             </HeadContainer>
-
 
             <SectionContainer>
                 <MainParagraph>

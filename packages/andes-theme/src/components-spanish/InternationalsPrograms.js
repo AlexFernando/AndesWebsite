@@ -13,10 +13,11 @@ const InternationalPrograms = () => {
                 <Title>
                     Programas y redes internacionales
                 </Title>
-                <SubTitle>
-                    Redes, Alianzas y Proyectos<br></br>Andes con el Mundo
-                </SubTitle>
                 <Separator></Separator>
+                <SubTitle>
+                    Andes para el Mundo
+                </SubTitle>
+              
             </HeadContainer>
 
             <SectionContainer>

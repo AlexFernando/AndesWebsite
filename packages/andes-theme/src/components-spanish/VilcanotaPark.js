@@ -14,10 +14,11 @@ const VilcanotaPark = () => {
                 <Title>
                     Parque Espiritual de Vilcanota
                 </Title>
+                <Separator></Separator>
                 <SubTitle>
                     Hotspot de biodiversidad<br></br>Cultura Milenaria
                 </SubTitle>
-                <Separator></Separator>
+              
             </HeadContainer>
 
             <SectionContainer>
