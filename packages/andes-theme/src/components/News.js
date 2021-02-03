@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {connect, css, styled } from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, SectionContainer, MarginTopContainer} from './Filosofia';
+import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {dataNews} from '../data/dataNewsEnglish';
 import {PostStyled} from './SearchBar';
 
@@ -13,8 +13,8 @@ const News = () => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>News</Title>
-                    <SubTitle>Relevant Informations<br></br> Real Stories</SubTitle>
                 <Separator></Separator>
+                <SubTitle>Relevant Information<br></br> Real Stories</SubTitle>
             </HeadContainer>
 
 

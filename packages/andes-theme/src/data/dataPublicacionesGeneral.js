@@ -42,14 +42,14 @@ export const dataPublications = [
     {
         "urlImage": `${p_2018_1}`,
         "Title": "Interspecies respect and Potato Conservation in the Peruvian cradle of domestication",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2018",
         "url": "http://andes.center/wp-content/uploads/2018/04/ASHS_28-2018-4_PIMBERT.pdf"
     },
     {
         "urlImage": `${p_2018_2}`,
         "Title": "Pimbert, M.P. 2018. Food Sovereignty and the regeneration of terraced landscapes. Annales. Series Historia and Sociologia, 28(4):779-794.",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2018",
         "url": "http://andes.center/wp-content/uploads/2018/04/ASHS_28-2018-4_PIMBERT.pdf"
     },
@@ -57,7 +57,7 @@ export const dataPublications = [
     {
         "urlImage": `${p_2018_3}`,
         "Title": "Biocultural heritage for resilient mountain communities",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2018",
         "url": "http://andes.center/wp-content/uploads/2018/04/14674IIED.pdf"
     },
@@ -65,7 +65,7 @@ export const dataPublications = [
     {
         "urlImage": `${p_2018_4}`,
         "Title": "New publication on seed banks",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2018",
         "url": "http://andes.center/wp-content/uploads/2018/04/Joining-forces-Vernooy-et-al-2018.pdf"
     },
@@ -73,7 +73,7 @@ export const dataPublications = [
     {
         "urlImage": `${p_2018_5}`,
         "Title": "GOVERNANÇA PARA A CONSERVAÇÃO DE UMA PAISAGEM",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2018",
         "url": "http://andes.center/wp-content/uploads/2018/04/Disserta%C3%A7%C3%A3o-VanesaRamos.pdf"
     },
@@ -81,7 +81,7 @@ export const dataPublications = [
     {
         "urlImage": `${p_2018_6}`,
         "Title": "Ecosystrem-based approaches to adaptation",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2018",
         "url": "http://andes.center/wp-content/uploads/2019/03/17619IIED.pdf"
     },
@@ -89,7 +89,7 @@ export const dataPublications = [
     {
         "urlImage": `${p_2017_1}`,
         "Title": "Resilient biocultural heritage landscapes for sustainable mountain development",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2017",
         "url": "http://andes.center/wp-content/uploads/2018/04/14670IIED.pdf"
     },
@@ -97,7 +97,7 @@ export const dataPublications = [
     {
         "urlImage": `${p_2017_2}`,
         "Title": "The power to exercise choice: implementing farmer’s rights to eradicate poverty and adapt to climate change",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2017",
         "url": "http://andes.center/wp-content/uploads/2018/04/GB7-Briefing-Note-final.pdf"
     },
@@ -105,7 +105,7 @@ export const dataPublications = [
     {
         "urlImage": `${p_2017_3}`,
         "Title": "Everyday experts: How people’s knowledge can transform the food system",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2017",
         "url": "http://andes.center/wp-content/uploads/2018/04/Everyday-Experts-complete.pdf"
     },
@@ -113,7 +113,7 @@ export const dataPublications = [
     {
         "urlImage": `${p_2017_4}`,
         "Title": "You can’t grow potatoes in the sky: Building resilience in the face of climate change in the Potato Park of Cuzco, Peru",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2017",
         "url": "http://andes.center/wp-content/uploads/2018/04/Sayre_et_al-2017-Culture_Agriculture_Food_and_Environment.pdf"
     },
@@ -121,7 +121,7 @@ export const dataPublications = [
     {
         "urlImage": `${p_2017_5}`,
         "Title": "Indigenous knowledge. Enhancing its contribution to natural resources management",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2017",
         "url": "http://andes.center/wp-content/uploads/2018/04/Andean_Cultural_Affirmation_and_Cultural.pdf"
     },
@@ -129,7 +129,7 @@ export const dataPublications = [
     {
         "urlImage": `${p_2017_6}`,
         "Title": "The impact of national seed laws on the functioning of small scale seed systems",
-        "autor": "Unknown",
+        "author": "Unknown",
         "date": "2017",
         "url": "http://andes.center/wp-content/uploads/2018/04/Seedlawstudy_Bert-Visser.pdf"
     },

@@ -32,11 +32,8 @@ const AnniversayPeople = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                 25 People Clave
+                    25 People 
                 </Title>
-                <SubTitle>
-                    Celebrating<br></br> the 25th Anniversary
-                </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 

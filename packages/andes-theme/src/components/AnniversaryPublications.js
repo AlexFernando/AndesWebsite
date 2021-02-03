@@ -11,9 +11,6 @@ const AnniversaryPublications = ({state}) => {
                 <Title>
                  25 Publications
                 </Title>
-                <SubTitle>
-                    Celebrating <br></br> the 25th Anniversary
-                </SubTitle>
                 <Separator></Separator>
             </HeadContainer>
 

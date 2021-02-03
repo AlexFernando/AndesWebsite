@@ -73,8 +73,8 @@ const Staff = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>Nuestro Personal</Title>
-                    <SubTitle>Trabajo & Visión <br></br> Compromiso <br></br>Experiencia</SubTitle>
                 <Separator></Separator>
+                  
             </HeadContainer>
 
             <SubSection>

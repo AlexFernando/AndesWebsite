@@ -17,7 +17,7 @@ export default {
           isHomePage: true,
         },
 
-        "/es/": {
+        "/es-/": {
           isReady: true,
           isFetching: false,
           isBackgroundImageSpanish: true,
@@ -31,7 +31,7 @@ export default {
           isPhilosophy: true,
         },
 
-        "/es/philosophy/": {
+        "/es-philosophy/": {
           isReady: true,
           isFetching: false,
           isPhilosophySpanish: true,
@@ -43,7 +43,7 @@ export default {
           isPhilosophy: true,
         },
 
-        "/es/filosofia/": {
+        "/es-filosofia/": {
           isReady: true,
           isFetching: false,
           isPhilosophySpanish: true,
@@ -55,7 +55,7 @@ export default {
           isStuff: true,
         },
 
-        "/es/people/": {
+        "/es-people/": {
           isReady: true,
           isFetching: false,
           isStuffSpanish: true,
@@ -67,7 +67,7 @@ export default {
           isStuff: true,
         },
 
-        "/es/personas/": {
+        "/es-personas/": {
           isReady: true,
           isFetching: false,
           isStuffSpanish: true,
@@ -79,7 +79,7 @@ export default {
           isSearchBar: true,
         },
 
-        "/es/searchbar/": {
+        "/es-searchbar/": {
           isReady: true,
           isFetching: false,
           isSearchBarSpanish: true,
@@ -91,7 +91,7 @@ export default {
           isTerritorios: true,
         },
 
-        "/es/bioculturalterritories/": {
+        "/es-bioculturalterritories/": {
           isReady: true,
           isFetching: false,
           isTerritoriosSpanish: true,
@@ -103,7 +103,7 @@ export default {
           isTerritorios: true,
         },
 
-        "/es/territoriosbioculturales/": {
+        "/es-territoriosbioculturales/": {
           isReady: true,
           isFetching: false,
           isTerritoriosSpanish: true,
@@ -116,7 +116,7 @@ export default {
           isInvestigacion: true,
         },
 
-        "/es/investigacion/": {
+        "/es-investigacion/": {
           isReady: true,
           isFetching: false,
           isInvestigacionSpanish: true,
@@ -128,7 +128,7 @@ export default {
           isPolitica: true,
         },
 
-        "/es/advocacyandpolitics/": {
+        "/es-advocacyandpolitics/": {
           isReady: true,
           isFetching: false,
           isPoliticaSpanish: true,
@@ -140,7 +140,7 @@ export default {
           isPolitica: true,
         },
 
-        "/es/incidenciaspoliticas/": {
+        "/es-incidenciaspoliticas/": {
           isReady: true,
           isFetching: false,
           isPoliticaSpanish: true,
@@ -152,7 +152,7 @@ export default {
           isPotatoPark: true,
         },
 
-        "/es/potatopark-pisac/": {
+        "/es-potatopark-pisac/": {
           isReady: true,
           isFetching: false,
           isPotatoParkSpanish: true,
@@ -164,7 +164,7 @@ export default {
           isPotatoPark: true,
         },
 
-        "/es/parquedelapapa-pisac/": {
+        "/es-parquedelapapa-pisac/": {
           isReady: true,
           isFetching: false,
           isPotatoParkSpanish: true,
@@ -175,7 +175,7 @@ export default {
           isFetching: false,
           isLaresPark: true,
         },
-        "/es/chalakuypark-lares/": {
+        "/es-chalakuypark-lares/": {
           isReady: true,
           isFetching: false,
           isLaresParkSpanish: true,
@@ -186,7 +186,7 @@ export default {
           isFetching: false,
           isLaresPark: true,
         },
-        "/es/parquedemaiz-lares/": {
+        "/es-parquedemaiz-lares/": {
           isReady: true,
           isFetching: false,
           isLaresParkSpanish: true,
@@ -197,7 +197,7 @@ export default {
           isFetching: false,
           isVilcanotaPark: true,
         },
-        "/es/spiritualpark-vilcanota/": {
+        "/es-spiritualpark-vilcanota/": {
           isReady: true,
           isFetching: false,
           isVilcanotaParkSpanish: true,
@@ -208,7 +208,7 @@ export default {
           isFetching: false,
           isVilcanotaPark: true,
         },
-        "/es/parqueespiritual-vilcanota/": {
+        "/es-parqueespiritual-vilcanota/": {
           isReady: true,
           isFetching: false,
           isVilcanotaParkSpanish: true,
@@ -219,7 +219,7 @@ export default {
           isFetching: false,
           isInternationalsPrograms: true,
         },
-        "/es/internationalprogramsandnetworks/": {
+        "/es-internationalprogramsandnetworks/": {
           isReady: true,
           isFetching: false,
           isInternationalsProgramsSpanish: true,
@@ -230,7 +230,7 @@ export default {
           isFetching: false,
           isInternationalsPrograms: true,
         },
-        "/es/programasyredesinternacionales/": {
+        "/es-programasyredesinternacionales/": {
           isReady: true,
           isFetching: false,
           isInternationalsProgramsSpanish: true,
@@ -242,7 +242,7 @@ export default {
           isNosotrosYachay: true,
         },
 
-        "/es/whoweare/": {
+        "/es-whoweare/": {
           isReady: true,
           isFetching: false,
           isNosotrosYachaySpanish: true,
@@ -254,7 +254,7 @@ export default {
           isNosotrosYachay: true,
         },
 
-        "/es/quienessomos/": {
+        "/es-quienessomos/": {
           isReady: true,
           isFetching: false,
           isNosotrosYachaySpanish: true,
@@ -266,7 +266,7 @@ export default {
           isCursos: true,
         },
 
-        "/es/courses/": {
+        "/es-courses/": {
           isReady: true,
           isFetching: false,
           isCursosSpanish: true,
@@ -278,7 +278,7 @@ export default {
           isCursos: true,
         },
 
-        "/es/cursos/": {
+        "/es-cursos/": {
           isReady: true,
           isFetching: false,
           isCursosSpanish: true,
@@ -290,7 +290,7 @@ export default {
           isPasantias: true,
         },
 
-        "/es/intershipandvolunteering/": {
+        "/es-intershipandvolunteering/": {
           isReady: true,
           isFetching: false,
           isPasantiasSpanish: true,
@@ -301,7 +301,7 @@ export default {
           isFetching: false,
           isPasantias: true,
         },
-        "/es/pasantias/": {
+        "/es-pasantias/": {
           isReady: true,
           isFetching: false,
           isPasantiasSpanish: true,
@@ -313,7 +313,7 @@ export default {
           isIntercambios: true,
         },
 
-        "/es/exchanges/": {
+        "/es-exchanges/": {
           isReady: true,
           isFetching: false,
           isIntercambiosSpanish: true,
@@ -325,7 +325,7 @@ export default {
           isIntercambios: true,
         },
 
-        "/es/intercambios/": {
+        "/es-intercambios/": {
           isReady: true,
           isFetching: false,
           isIntercambiosSpanish: true,
@@ -337,7 +337,7 @@ export default {
           isToolkit: true,
         },
 
-        "/es/toolkit/": {
+        "/es-toolkit/": {
           isReady: true,
           isFetching: false,
           isToolkitSpanish: true,
@@ -349,7 +349,7 @@ export default {
           isToolkit: true,
         },
 
-        "/es/cajadeherramientas/": {
+        "/es-cajadeherramientas/": {
           isReady: true,
           isFetching: false,
           isToolkitSpanish: true,
@@ -361,7 +361,7 @@ export default {
           isPublicaciones: true,
         },        
 
-        "/es/publications/": {
+        "/es-publications/": {
           isReady: true,
           isFetching: false,
           isPublicacionesSpanish: true,
@@ -373,7 +373,7 @@ export default {
           isPublicaciones: true,
         },        
 
-        "/es/publicaciones/": {
+        "/es-publicaciones/": {
           isReady: true,
           isFetching: false,
           isPublicacionesSpanish: true,
@@ -385,7 +385,7 @@ export default {
           isNoticiasRelevantes: true,
         },
 
-        "/es/relevantnews/": {
+        "/es-relevantnews/": {
           isReady: true,
           isFetching: false,
           isNoticiasRelevantesSpanish: true,
@@ -397,7 +397,7 @@ export default {
           isNoticiasRelevantes: true,
         },
 
-        "/es/noticiasrelevantes/": {
+        "/es-noticiasrelevantes/": {
           isReady: true,
           isFetching: false,
           isNoticiasRelevantesSpanish: true,
@@ -409,7 +409,7 @@ export default {
           isEventos: true,
         },
 
-        "/es/events/": {
+        "/es-events/": {
           isReady: true,
           isFetching: false,
           isEventosSpanish: true,
@@ -421,7 +421,7 @@ export default {
           isEventos: true,
         },
 
-        "/es/eventos/": {
+        "/es-eventos/": {
           isReady: true,
           isFetching: false,
           isEventosSpanish: true,
@@ -434,7 +434,7 @@ export default {
           isAniversarioPersonas: true,
         },
 
-        "/es/aniversariopersonas/": {
+        "/es-aniversariopersonas/": {
           isReady: true,
           isFetching: false,
           isAniversarioPersonasSpanish: true,
@@ -446,7 +446,7 @@ export default {
           isAniversarioProyectos: true,
         },
 
-        "/es/aniversarioproyectos/": {
+        "/es-aniversarioproyectos/": {
           isReady: true,
           isFetching: false,
           isAniversarioProyectosSpanish: true,
@@ -458,11 +458,13 @@ export default {
           isAniversarioPublicaciones: true,
         },
 
-        "/es/aniversariopublicaciones/": {
+        "/es-aniversariopublicaciones/": {
           isReady: true,
           isFetching: false,
           isAniversarioPublicacionesSpanish: true,
         },
+
+        
       },
     },
   },

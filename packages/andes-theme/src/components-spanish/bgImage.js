@@ -1,8 +1,6 @@
 import React from "react";
 import {connect, styled } from "frontity";
 import bgImage from "../static/images/link3.jpg";
-import LinkButton from "./LinkButton";
-import LinkButtonHome from './LinkButtonHome';
 import {MarginTopContainer} from './Filosofia';
 import Link from './Link';
 
@@ -151,7 +149,7 @@ const BgImage = () => {
                         <h1>25 Aniversario de la Asociación ANDES </h1>
                         <p>Únete a la celebración de 25 años de trabajo por salvaguardar el patrimonio biocultural</p>
                         <div>
-                            <Link href="/es/aniversariopersonas">Saber Mas</Link>
+                            <Link href="/es-aniversariopersonas">Saber Mas</Link>
                         </div>           
                     </TextoImagen>
                 </Content>

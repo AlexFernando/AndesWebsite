@@ -137,7 +137,7 @@ const Contact = () => {
                 <ul>
                     <li><FontAwesomeIconStyled icon={faMapMarkedAlt}/>Asociacion Andes</li>
                    
-                    <li><FontAwesomeIconStyled icon={faStreetView}/>Calle Ciro Alegria H-13, Urb. Santa Monica - Wanchaq</li>
+                    <li><FontAwesomeIconStyled icon={faStreetView}/>Urb. Santa Monica, Wanchaq, Cusco, Peru.</li>
                 
                     <li> <FontAwesomeIconStyled icon={faMailBulk}/>Casilla Postal Nº 567, Cusco - Peru </li>
                 </ul>

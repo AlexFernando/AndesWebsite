@@ -2,95 +2,135 @@ import React from 'react';
 import {connect, css, styled } from "frontity";
 import missionImg from '../static/images/mision.jpeg';
 import visionImg from '../static/images/vision.jpeg';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIconList} from './TerritoriosCulturales';
+
 
 export const MarginTopContainer = styled.div`
-    margin-top: 14vh;
+    margin-top: 12vh;
+
+    @media(min-width: 768px) {
+        margin-top: 16vh;
+    }
 `;
 
-export const Title = styled.span`
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    line-height: 2;
- 
-    @media(min-width: 768px) {
-        font-size: 2.5rem;
-    }
-`
-export const SubTitle = styled.h2`
+export const Title = styled.h2`
 
     font-size: 2.2rem;
     font-weight: 400;
     line-height: 1;
     letter-spacing: 3px;
     margin: 2rem 0 2rem 0;
+    text-transform: uppercase;
  
     @media(min-width: 768px) {
-        font-size: 5rem;
-        flex-wrap: nowrap;
+        font-size: 4rem;
     }
 `
+export const SubTitle = styled.span`
+    font-size: 1.5rem;
 
+    @media(min-width: 768px) {
+        font-size: 2.5rem;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    }
+`
 export const Separator = styled.span`
     display: block;
     width: 12rem;
     height: 12px;
-    margin-top: 1rem;
+    margin-top: .5rem;
     margin-bottom: 2rem;
     border-radius: 20px;
     background-color: #44841a;
+
+    @media(max-width: 768px) {
+        width: 6rem;
+        height: 8px;
+    }
 `
+
 export const HeadContainer = styled.div`
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+        flex-direction: column;
     padding: 2rem;
     overflow-wrap: break-word;
 `;
 
+
 export const SectionContainer = styled.div`
+    display: -webkit-box;  
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+   
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           flex-direction: column;
 
-    :nth-of-type(even) {
-        background-color: #f4f4f4;   
-    }
-    :nth-of-type(odd) {
-        background-color: #fff;   
-    } 
-`;
-
-export const SubSectionContainer = styled.div`
-
-    display: flex;
-    flex-direction: column;
     padding: 2rem;
-    
-    @media (min-width: 768px){
-        flex-direction: row;
-        padding: 0;
 
-        :nth-of-type(even) {
-            flex-direction: row-reverse;
-        }
+    span {
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
 
-        div {
-            padding: 0 3rem 0 3rem;
+    p {
+        @media (min-width: 768px){
+            width: 70%;
         }
+       
+        font-size: 1.2rem;
     }
 
     h3 {
-        text-align: center;
-        margin-top: 3rem;
-    }
-
-    ul {
-        padding: 0;
-    }
-
-    li {
-        list-style: none;
+        font-size: 1.4rem;
+        margin: 2rem 0 0 0;
     }
 `;
 
+const ObjetivesContent = styled.div`
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px){
+        flex-direction: column;
+    }
+
+
+    div {
+        padding: 0rem 1rem;
+
+        img {
+            @media (max-width: 768px){
+                max-width: 100%;
+                max-height: 100%;
+            }
+            max-width: 80%;
+            max-height: 80%;
+            align-self: center;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+    }
+`
 
 export const ImageStyle = styled.img`
     
@@ -106,44 +146,54 @@ export const ImageStyle = styled.img`
 
 const Filosofia = ({state}) => {
     return ( 
+
         <MarginTopContainer>
             <HeadContainer>
-                <Title>ABOUT</Title>
-                <SubTitle>Nuestra mision<br></br> vision y objetivos</SubTitle>
+                <Title>NOSOTROS</Title>
                 <Separator></Separator>
+                <SubTitle>Protegiendo los Terriotorios Bioculturales</SubTitle>
             </HeadContainer>
 
             <SectionContainer>
-                <SubSectionContainer>
-                    <div>
-                        <h3>Nuestra Misión</h3>
-                        <p>Nuestra misión es impulsar un enfoque de conservación y desarrollo basado en los derechos a través de la implementación de Territorios Bioculturales, un modelo que se ha implementado con éxito en el Parque de la Papa. 
-                        <br></br>Este modelo creativamente une el ancestral principio andino y filosofía de bienestar, Sumaq Kawsay, a la ciencia moderna y a las metodologías de investigación para promover sistemas agrarios resilentes por su biodiversidad. Además promovemos el desarrollo endógeno y la reducción de la pobreza. Este trabajo se realiza en comunidades sustentables indígenas establecidas en los andes peruanos basados en sus propias capacidades y recursos mediante estrategias locales de desarrollo.</p>
-
-                        <h3>Nuestra Visión</h3>
-                        <p>Nuestra visión es crear capacidades locales y respuestas estratégicas de base ante los efectos socio-económicos, culturales, ecológicos y de políticas del proceso de globalización sobre las comunidades locales, así como la protección de sus recursos, conocimientos y los derechos asociados a estos recursos.</p>
-                    </div>
+                <div>
+                    <p><span>Nuestra Misión : </span>Impulsar un enfoque de conservación y desarrollo sostenible
+                    basado en el principio Andino de Sumaq Kawsay a través de la implementación de 
+                    Territorios Bioculturales.</p>  
                 
-                    <ImageStyle src={visionImg} />
-                </SubSectionContainer>
+                    
+                    <p><span>Nuestra Visión : </span>Nuestra visión es crear capacidades locales y respuestas estratégicas de base 
+                    ante los efectos socio-económicos, culturales, ecológicos y de políticas del proceso de globalización sobre 
+                    las comunidades locales, así como la protección de sus recursos, conocimientos y los derechos asociados a estos recursos.</p>
+                </div>
 
-                <SubSectionContainer>
-                    <div>
-                        <h3>Nuestros Objetivos</h3>
-                        <ul>
-                            <li>La búsqueda del buen vivir en todas sus dimensiones a través la defensa, promoción y celebración de la diversidad en sus diferentes manifestaciones sociales, naturales, bioculturales y espirituales en términos de ideas, conocimientos y otras formas de autoexpresión.</li>
-                            <br></br><li>El establecimiento y difusión al nivel global de modelos innovadores de desarrollo comunal sostenible y territorial capaces de resolver los desafíos ambientales, sociales y culturales que las comunidades rurales se enfrenta.</li>
-                            <br></br><li>La generación de políticas regionales, nacionales e internacionales que privilegian las voces locales y marginados en la promoción de la conservación biocultural y en las áreas relacionadas con el desarrollo sostenible.</li>
-                            <br></br><li>La creación de un movimiento de solidaridad global de organizaciones, actores y comunidades locales vinculadas a través de redes de cooperación y descubrimiento colectivo Sur-Sur y Sur-Norte, para desarrollar alternativas y respuestas creativas a los desafíos globales.</li>
-                        </ul>
-                    </div>
+                <div>
+                    <h3>Our Objectives: </h3>                    
+                    
+                    <ObjetivesContent>
+                        <div>
+                            <ul>
+                                <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Defensa, promoción y celebración de la diversidad.  <br></br>biocultural</li>
+                                <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Desrrollo comunal sostenible.</li>
+                
+                            </ul>
 
-                    <ImageStyle src={missionImg} />
-                </SubSectionContainer>
+                            <img src={missionImg} />
+                        </div>                       
+                
+
+                        <div>
+                            <ul>
+                                <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Innovación para enfrentar el cambio climático.</li>
+                                <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Incidencia política para derechos indígenas.</li>
+                                <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Creación de redes solidarios.</li>          
+                            </ul>
+                            <img src={visionImg} />
+                        </div>
+                    </ObjetivesContent>
+                </div>
             </SectionContainer>
-            
-        </MarginTopContainer>
 
+        </MarginTopContainer>
     );
 }
  

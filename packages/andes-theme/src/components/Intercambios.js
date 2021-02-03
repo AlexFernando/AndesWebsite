@@ -9,10 +9,11 @@ const Intercambios = ({state}) => {
                 <Title>
                     Exchanges
                 </Title>
-                <SubTitle>
-                    Formation <br></br> Learn with us
-                </SubTitle>
                 <Separator></Separator>
+                <SubTitle>
+                    Formation, learn with us
+                </SubTitle>
+             
             </HeadContainer>
         </MarginTopContainer>
     );

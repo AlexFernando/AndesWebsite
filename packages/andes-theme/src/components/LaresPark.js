@@ -13,10 +13,11 @@ const LaresPark = () => {
                 <Title>
                 Chalakuy Park - Lares
                 </Title>
+                <Separator></Separator>
                 <SubTitle>
                     Agrobiodiversity<br></br>Barter Markets
                 </SubTitle>
-                <Separator></Separator>
+               
             </HeadContainer>
 
             <SectionContainer>

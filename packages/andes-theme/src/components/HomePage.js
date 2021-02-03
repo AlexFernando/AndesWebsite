@@ -9,59 +9,93 @@ import publicaciones25 from  "../static/images/publicaciones/the-culinary-sanctu
 import Link from './Link'
 
 export const SectionText = styled.div`
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    justify-content: center;
-    align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           -webkit-justify-content: center;
+           justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           -webkit-align-items: center;
+           align-items: center;
     padding: 3rem 2rem 1rem 2rem;
 
     @media(max-width: 768px) {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+                flex-direction: column;
         padding: 3rem 1rem 1rem 1rem;
     }
 
-    div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 1rem 2rem 1rem 2rem;
+   div {
+       display: -webkit-box;
+       display: -ms-flexbox;
+       display: -webkit-flex;
+       display: flex;
+       -webkit-box-pack: center;
+           -ms-flex-pack: center;
+       -webkit-justify-content: center;
+               justify-content: center;
+       -webkit-box-align: center;
+           -ms-flex-align: center;
+        -webkit-align-items: center;
+               align-items: center;
+       -webkit-box-orient: vertical;
+       -webkit-box-direction: normal;
+           -ms-flex-direction: column;
+       -webkit-flex-direction: column;
+               flex-direction: column;
+       padding: 1rem 2rem 1rem 2rem;
 
-        @media(max-width: 768px) {
-        
-            padding: 1rem;
-        }
+       @media(max-width: 768px) {
+           padding: 1rem;
+       }
 
-        h1 {
-            color: #44841a;
-            text-align: center;
-        }
+       h1 {
+           color: #44841a;
+           text-align: center;
+       }
 
-        p {
-            color: #545454;
-            font-size: 1.2rem;
-            margin-bottom: 0rem;
-            text-align: center;
-        }  
+       p {
+           color: #545454;
+           font-size: 1.2rem;
+           margin-bottom: 0rem;
+           text-align: center;
+       }  
 
 
-    div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-     
-        a {
-            text-decoration: none;
-            background-color: #f07723;
-            text-transform: uppercase;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-    }
-}
+       div {
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: -webkit-flex;
+           display: flex;
+           -webkit-box-pack: center;
+               -ms-flex-pack: center;
+           -webkit-justify-content: center;
+                   justify-content: center;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+           -webkit-align-items: center;
+                   align-items: center;
+       
+           a {
+               text-decoration: none;
+               background-color: #f07723;
+               text-transform: uppercase;
+               color: #fff;
+               padding: 1rem;
+               border-radius: 10px;
+               text-align: center;
+               margin-bottom: 2rem;
+               font-weight: 700;
+           }
+       }
+   }
 `;
 
 const SectionHomePage = styled.div` 
@@ -69,80 +103,128 @@ const SectionHomePage = styled.div`
 `;
 
 const CardsHomeContainer = styled.div`
+    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    justify-content: center;
-    align-items: center;
+
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+    -webkit-align-items: center;
+            align-items: center;
     padding: 2rem;
 
     @media (max-width: 768px){
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+                flex-direction: column;
         padding: 0rem;
     }
 `;
 
 const CardsHome = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 2rem;
-    flex-basis: 33.33%;
-    background-color: #fff;
-
-    @media (max-width: 768px){
-        margin: 1rem;
-    }
-
-    div {
-        position: relative;
-        img {
-            
-            width: 100%;
-        }
-        strong {
-            display: flex;
-            justify-content: center;
-            background-color: #f07723 ;
-            align-items: center;
-            position: absolute;
-            padding: .5rem;
-            border-radius: .5rem;
-            top: -.5rem;
-            left: -1.2rem;
-            font-size: .8rem;
-            color: #fff;
-            transform: rotate(-30deg);
-        }
-    }
-
-
-    h3 {
-        color: #44841a;
-        text-align: center;
-    }
-
+    display: -webkit-box;
+  
+  display: -ms-flexbox;
  
+  display: -webkit-flex;
+ 
+  display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           -webkit-flex-direction: column;
+           flex-direction: column;
+   margin: 1rem 2rem;
+   -ms-flex-preferred-size: 33.33%;
+       -webkit-flex-basis: 33.33%;
+           flex-basis: 33.33%;
+   background-color: #fff;
 
-    span {
-        padding: 1rem 1rem 2rem 1rem;
-        font-weight: 400;
-        font-size: 1rem;  
-        text-align: center;      
-    }
+   @media (max-width: 768px){
+       margin: 1rem;
+   }
 
-    div {
-        display: flex;
-        flex-basis: 50%;
-        justify-content: center;
-        margin-bottom: 1rem;
+   div {
+       position: relative;
+       img {
+           width: 100%;
+           align-self: center;
+           max-height: 40vh; /**new line image height */
+       }
+       strong {
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: -webkit-flex;
+           display: flex;
+           -webkit-box-pack: center;
+               -ms-flex-pack: center;
+                   -webkit-justify-content: center;
+                   justify-content: center;
+           background-color: #f07723 ;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   -webkit-align-items: center;
+                   align-items: center;
+           position: absolute;
+           padding: .5rem;
+           border-radius: .5rem;
+           top: -.5rem;
+           left: -1.2rem;
+           font-size: .8rem;
+           color: #fff;
+           -webkit-transform: rotate(-30deg);
+               -ms-transform: rotate(-30deg);
+                   transform: rotate(-30deg);
+       }
+   }
 
-        a {
-            text-decoration: none;
-            background-color: #44841a;
-            color: #fff;
-            padding: .8rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-    }
+
+   h3 {
+       color: #44841a;
+       text-align: center;
+   }
+
+
+
+   span {
+       padding: 1rem 1rem 2rem 1rem;
+       font-weight: 400;
+       font-size: 1rem;  
+       text-align: center;      
+   }
+
+   div {
+       display: -webkit-box;
+       display: -ms-flexbox;
+       display: -webkit-flex;
+       display: flex;
+       -ms-flex-preferred-size: 50%;
+       -webkit-flex-basis: 50%;
+               flex-basis: 50%;
+       -webkit-box-pack: center;
+           -ms-flex-pack: center;
+       -webkit-justify-content: center;
+               justify-content: center;
+       margin-bottom: 1rem;
+
+       a {
+           text-decoration: none;
+           background-color: #44841a;
+           color: #fff;
+           padding: .8rem;
+           border-radius: 10px;
+           text-align: center;
+       }
+   }
 `;
  
 const HomePage = ({state}) => {

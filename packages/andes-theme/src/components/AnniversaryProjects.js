@@ -77,12 +77,9 @@ const AnniversaryProjects = ({state}) => {
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                25 PROJECTS, EXCHANGES AND CAMPAIGNS
+                    25 PROJECTS, EXCHANGES AND CAMPAIGNS
                 </Title>
-                <SubTitle>
-                    Celebrating <br></br> the 25th Anniversary
-                </SubTitle>
-                <Separator></Separator>
+                <Separator></Separator>             
             </HeadContainer>
 
             <SectionContainer>

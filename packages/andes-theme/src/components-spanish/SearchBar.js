@@ -3,11 +3,28 @@ import {connect, css, styled } from "frontity";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
-import {SectionContainer} from './Filosofia';
 import LinkButton from "./LinkButton";
 import {dataNews} from '../data/dataNews';
 import {dataEvents} from '../data/dataEvents';
 import {dataPublications} from '../data/dataPublicaciones';
+
+const SectionContainer = styled.div`
+    display: -webkit-box;  
+    display: -ms-flexbox;
+    display: flex;
+   
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           flex-direction: column;
+
+    :nth-of-type(even) {
+        background-color: #f4f4f4;   
+    }
+    :nth-of-type(odd) {
+        background-color: #fff;   
+    } 
+`;
 
 
 export const SearchBar = styled.div`
@@ -163,7 +180,7 @@ const SearchBarComponent = ({state}) => {
 
         const events = dataEvents.filter(event => event.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
-        const publications = dataPublications.filter(event => event.Title.toLowerCase().includes(searchTerm.toLowerCase()));
+        const publications = dataPublications.filter(publication => publication.Title.toLowerCase().includes(searchTerm.toLowerCase()) || publication.author.toLowerCase().includes(searchTerm.toLowerCase()));
 
         console.log("eventos filtrados ", events);
 

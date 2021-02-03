@@ -20,11 +20,12 @@ const NosotrosYachay = ({state}) => {
                 <Title>
                     Yachay Kuychi
                 </Title>
+                <Separator></Separator>
                 <SubTitle>
-                    Educación <br></br>
+                    Educación 
                     Biocultural
                 </SubTitle>
-                <Separator></Separator>
+             
             </HeadContainer>
 
 

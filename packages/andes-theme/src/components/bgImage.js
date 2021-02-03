@@ -1,8 +1,6 @@
 import React from "react";
 import {connect, styled } from "frontity";
 import bgImage from "../static/images/link3.jpg";
-import LinkButton from "./LinkButton";
-import LinkButtonHome from './LinkButtonHome';
 import {MarginTopContainer} from './Filosofia';
 import Link from './Link';
 
