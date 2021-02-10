@@ -41,6 +41,8 @@ export const InfoItem = styled.div`
 
     p {
         line-height: 1.5;
+        padding: 0;
+        color: #000;
     }
     
     h3 {

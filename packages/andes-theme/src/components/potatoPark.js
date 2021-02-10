@@ -5,6 +5,12 @@ import imgAgricultores from '../static/images/parquepapa.jpg';
 import imgSistemaAyllu from '../static/images/parquepapa2.jpg';
 import imgInnovacioneBio from '../static/images/link4.jpeg';
 
+import {faListAlt, faArrowAltCircleRight, faMountain, faMale, faLanguage, faExclamationTriangle, faTractor, faSeedling, faHiking, faUtensils, faHands, faCarrot} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIconList, FontAwesomeIconStyled, BriefSection, InfoItem} from './TerritoriosCulturales';
+
+import { VerticalBorder } from './Dropdown';
+
+
 export const SectionContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -93,6 +99,33 @@ export const Card = styled.div`
     }
 `;
 
+const SectionInfoContainer = styled.div`
+    margin: 2rem 0;
+    h2{
+        text-align: center;
+    }
+`;
+
+const FastInfo = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    text-align: center;
+    margin: 4rem 0;
+
+    @media(max-width: 768px) {
+        flex-direction: column;
+
+        div {
+            margin: 1rem 0;
+        }
+    }
+
+    p {
+        color: #000;
+        padding: 0;
+    }
+`;
 const PotatoPark = ({state}) => {
     return ( 
         <MarginTopContainer>
@@ -109,12 +142,120 @@ const PotatoPark = ({state}) => {
 
             <SectionContainer>
                 <MainParagraph>
-                    The Potato Park is located in the Pisac district, approximately 40 kilometers from the city of Cusco (Peru), in the Sacred Valley of the Incas. Covering an area of ​​9280 hectares and located at a height between 3400 and 4600 meters above sea level.
+                    The Potato Park is not just a conservation initiative for various varieties of potatoes. It is, above all, a bio-cultural territory dedicated to the conservation of the heritage of six indigenous communities that live here: not only hundreds of cultivated varieties but also related wild species, the landscape and its elements that also include knowledge, traditions, innovations and the worldview of the more than 6000 inhabitants.
                 </MainParagraph>
                 
-                <p>
-                    The park is collectively managed by five indigenous Quechua communities – Amaru, Chawaytire, Pampallacta, Paru Paru and Sacaca – with the support of the ANDES. Within their territory, the communities conserve more than 1,300 varieties of native potatoes. There are also three crop wild relatives of potato, which are like the grandparents of cultivated potatoes.
-                </p> 
+                <SectionInfoContainer>
+                <FastInfo>
+                    <div>
+                        <FontAwesomeIconStyled icon={faMountain}/>
+                        <h3>Area</h3>
+                        <p>9820 Hectares</p>
+                    </div>
+
+                    <div>
+            
+                        <FontAwesomeIconStyled icon={faMale}/>
+                        <h3>Population</h3>
+                        <p>6000 inhabitants</p>
+                    </div>
+
+                    <div>
+                        <FontAwesomeIconStyled icon={faLanguage}/>
+                        <h3>Ethnicity</h3>
+                        <p>Quechua</p>
+                    </div>
+                    <div>
+                        <FontAwesomeIconStyled icon={faExclamationTriangle}/>
+                        <h3>Poverty</h3>
+                        <p>70% of the  indigenous <br></br>population of Cusco live in poverty condition</p>
+                    </div>
+                </FastInfo>
+
+                </SectionInfoContainer>
+
+
+                <BriefSection>
+
+                    <InfoItem>
+                        
+                        <FontAwesomeIconStyled icon={faListAlt}/>
+                        <h3>Ecosistema/Ecología</h3>
+                        <p>
+                            Height between 3200 and 5000 meters above sea level
+                        </p>
+                        <p>
+Mixed use of soils, including rotational fields (muyuys), permanent cultivation fields (chacras), native shrubs and forests, non-native forests, grazing areas, lakes, rivers and wetlands</p>
+                    </InfoItem>
+                    <VerticalBorder></VerticalBorder>
+
+                    <InfoItem>
+                        <FontAwesomeIconStyled icon={faListAlt}/>
+                        
+                        <h3>Biological and Genetic Diversity</h3>
+
+                        <ul>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Various traditional crops such as tarwi, quinoa, kiwicha, corn, beans, olluco, oca.</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>1400 varieties of native potato and other Andean tubers</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Raising animals that provide meat (guinea pig, alpaca), sheep's wool, llama and alpaca; medicines.</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Microgenecenter of domestication. 3 species - wild potato.</li> 
+                        </ul>
+                    </InfoItem>
+                    <VerticalBorder></VerticalBorder>
+                    <InfoItem>
+
+                        <FontAwesomeIconStyled icon={faListAlt}/>
+                    
+                        <h3>Comunidades</h3>
+
+                        <ul>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Cuyo Grande</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Sacaca</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Chawaytire</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Amaru</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Pampallaqta</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Paru Paru</li>
+                        </ul>
+                    </InfoItem>
+                </BriefSection>
+
+                <SectionInfoContainer>
+                    <h2>Economical Activities</h2>
+
+                        <FastInfo>
+                            <div>
+                                <FontAwesomeIconStyled icon={faTractor}/>
+                                <h3>Agriculture</h3>
+                            </div>
+
+                            <div>
+                    
+                                <FontAwesomeIconStyled icon={faSeedling}/>
+                                <h3>Seed company</h3>
+                            </div>
+
+                            <div>
+                                <FontAwesomeIconStyled icon={faHiking}/>
+                                <h3>Agro-ecoturism</h3>
+                            </div>
+                        </FastInfo>
+
+                        <FastInfo>
+                            <div>
+                                <FontAwesomeIconStyled icon={faUtensils}/>
+                                <h3>Gastronomy</h3>
+                            </div>
+
+                            <div>
+                                <FontAwesomeIconStyled icon={faHands}/>
+                                <h3>Crafts</h3>
+                            </div>
+                            <div>
+                                <FontAwesomeIconStyled icon={faCarrot}/>
+                                <h3>Natural Products</h3>
+                            </div>
+                        </FastInfo>
+                </SectionInfoContainer>
 
             
                 <CardsContainer>
