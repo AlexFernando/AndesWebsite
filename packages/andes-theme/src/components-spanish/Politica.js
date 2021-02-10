@@ -114,8 +114,7 @@ const Politica = ({state}) => {
                         </ul>
                     </div>
                 </SectionInfoList>
-                
-             
+          
             <CardsContainer>
                 
                 <Card>

@@ -5,6 +5,12 @@ import imgAgricultores from '../static/images/parquepapa.jpg';
 import imgSistemaAyllu from '../static/images/parquepapa2.jpg';
 import imgInnovacioneBio from '../static/images/link4.jpeg';
 
+import {faListAlt, faArrowAltCircleRight, faMountain, faMale, faLanguage, faExclamationTriangle, faTractor, faSeedling, faHiking, faUtensils, faHands, faCarrot} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIconList, FontAwesomeIconStyled, BriefSection, InfoItem} from './TerritoriosCulturales';
+
+import { VerticalBorder } from './Dropdown';
+
+
 export const SectionContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -93,6 +99,34 @@ export const Card = styled.div`
     }
 `;
 
+const SectionInfoContainer = styled.div`
+    margin: 2rem 0;
+    h2{
+        text-align: center;
+    }
+`;
+
+const FastInfo = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    text-align: center;
+    margin: 4rem 0;
+
+    @media(max-width: 768px) {
+        flex-direction: column;
+
+        div {
+            margin: 1rem 0;
+        }
+    }
+
+    p {
+        color: #000;
+        padding: 0;
+    }
+`;
+
 const PotatoPark = ({state}) => {
     return ( 
         <MarginTopContainer>
@@ -109,17 +143,126 @@ const PotatoPark = ({state}) => {
 
             <SectionContainer>
                 <MainParagraph>
-                    El Parque de la Papa está ubicado en el distrito de Pisac, aproximadamente a 40 kilómetros de la ciudad de Cusco (Perú), en el Valle Sagrado de los Incas. Cubriendo una superficie de 9280 hectáreas y ubicada en una altura entre 3400 y 4600 metros arriba del nivel del mar.
+                    El Parque de la Papa no es solamente una iniciativa de conservación de varias variedades de papas. 
+                    Es, sobre todo, un territorio bio cultural dedicado a la conservación del patrimonio de seis comunidades 
+                    indígenas que viven aquí: no solamente cientos de variedades cultivadas pero igualmente las especies silvestres 
+                    emparentadas, el paisaje y sus elementos que incluyen también conocimientos, tradiciones, innovaciones y la cosmovisión 
+                    de los más de 6000 habitantes.
                 </MainParagraph>
+
+               
+                <SectionInfoContainer>
+     
+
+                <FastInfo>
+                    <div>
+                        <FontAwesomeIconStyled icon={faMountain}/>
+                        <h3>Area</h3>
+                        <p>9820 Hectáreas</p>
+                    </div>
+
+                    <div>
+            
+                        <FontAwesomeIconStyled icon={faMale}/>
+                        <h3>Población</h3>
+                        <p>6000 habitantes</p>
+                    </div>
+
+                    <div>
+                        <FontAwesomeIconStyled icon={faLanguage}/>
+                        <h3>Etnia</h3>
+                        <p>Quechua</p>
+                    </div>
+                    <div>
+                        <FontAwesomeIconStyled icon={faExclamationTriangle}/>
+                        <h3>Pobreza</h3>
+                        <p>70% de la población <br></br>indígena de Cusco vive en pobreza</p>
+                    </div>
+                </FastInfo>
+
+                </SectionInfoContainer>
+
+                <BriefSection>
+
+                    <InfoItem>
+                        
+                        <FontAwesomeIconStyled icon={faListAlt}/>
+                        <h3>Ecosistema/Ecología</h3>
+                        <p>
+                            Altura entre 3200 y 5000 metros sobre el nivel del mar
+                        </p>
+                        <p>Uso mixto de suelos, inclutendo campos rotacional (muyuys), campos de cultivo permanente(chacras), arbustos y bosques nativos, bosque no-nativos, areas de pastoreo, lagos, ríos y humedales</p>
+                    </InfoItem>
+                    <VerticalBorder></VerticalBorder>
+
+                    <InfoItem>
+                        <FontAwesomeIconStyled icon={faListAlt}/>
+                        
+                        <h3>Diversidad Biológica y Genética</h3>
+
+                        <ul>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Diversos cultivos tradicionales como tarwi, quinoa, kiwicha, maíz, habas, olluca, oca.</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>1400 variedades de papa nativa y otros tubérculos andinos</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Crianza de animales proveedores de carne (cuy, alpaca), lana de oveja, llama y alpaca; medicinas.</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Microgenocentro de domesticación. 3 especies - silvestres de papa.</li> 
+                        </ul>
+                    </InfoItem>
+                    <VerticalBorder></VerticalBorder>
+                    <InfoItem>
+
+                        <FontAwesomeIconStyled icon={faListAlt}/>
+                    
+                        <h3>Comunidades</h3>
+
+                        <ul>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Cuyo Grande</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Sacaca</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Chawaytire</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Amaru</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Pampallaqta</li>
+                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Paru Paru</li>
+                        </ul>
+                    </InfoItem>
+                </BriefSection>
+
+                <SectionInfoContainer>
+                    <h2>Actividades económicas</h2>
+
+                        <FastInfo>
+                            <div>
+                                <FontAwesomeIconStyled icon={faTractor}/>
+                                <h3>Agricultura</h3>
+                            </div>
+
+                            <div>
+                    
+                                <FontAwesomeIconStyled icon={faSeedling}/>
+                                <h3>Empresa de semillas</h3>
+                            </div>
+
+                            <div>
+                                <FontAwesomeIconStyled icon={faHiking}/>
+                                <h3>Agro-ecoturismo</h3>
+                            </div>
+                        </FastInfo>
+
+                        <FastInfo>
+                            <div>
+                                <FontAwesomeIconStyled icon={faUtensils}/>
+                                <h3>Gastronomía</h3>
+                            </div>
+
+                            <div>
+                                <FontAwesomeIconStyled icon={faHands}/>
+                                <h3>Artesanía</h3>
+                            </div>
+                            <div>
+                                <FontAwesomeIconStyled icon={faCarrot}/>
+                                <h3>Productos Naturales</h3>
+                            </div>
+                        </FastInfo>
+                </SectionInfoContainer>
                 
-                <p>
-                    El parque esta administrado colectivamente por seis comunidades indígenas (Quechua) – Amaru, Chahuaytire, Cuyo Grande, Pampallacta, Paru Paru y Sacaca – con el apoyo de la asociación ANDES. Dentro de su territorio, los seis comunidades conserven más de 1300 papas nativas. Se cuenta también tres especies silvestres de la papa, cuales  son como los abuelos de la papa cultivada.
-                </p> 
-
-                <p>
-                    El Parque de la Papa no es solamente una iniciativa de conservación de varias variedades de papas. Es, sobre todo, un territorio bio cultural dedicado a la conservación del patrimonio de seis comunidades indígenas que viven acá: no solamente cientos de variedades cultivadas pero igualmente las especies silvestres emparentadas, el paisaje y sus elementos que incluyen también conocimientos, tradiciones, innovaciones y la cosmovisión de los más de 6000 habitantes.
-                </p>
-
                 <CardsContainer>
                     <Card>
                         <img src={imgInnovacioneBio} />
