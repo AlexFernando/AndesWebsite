@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {connect, styled, css} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-
-import {dataEvents} from '../data/dataEventsEnglish';
-
+import FeaturedImage from './FeaturedImage';
 import Calendar from './Calendar';
+import Loading from './Loading';
 
 const SectionEvent = styled.div`
     display: flex;
@@ -50,33 +49,48 @@ export const EventContainer = styled.div`
     }
 `;
 
-const Eventos = ({state}) => {
+const Eventos = ({state, actions}) => {
 
-    const [isEvent, setIsEvent] = useState(false)
-    const [id, setId] = useState(null);
+    useEffect( () => {
+        actions.source.fetch("/search")
+     }, [])
 
-    const eventDay = [];
+   const data = state.source.get('/search');
 
-    const eventMonth = [];
+   const [isEvent, setIsEvent] = useState(false)
+   const [id, setId] = useState(null);
 
-    const eventYear = [];
+   const eventDay = [];
 
-    const idArray = [];
-    
-      //Cada vez que se haga un cambio en category el useEffect se vuelve a ejecutar
+   const eventMonth = [];
+
+   const eventYear = [];
+
+   const idArray = [];
+
+   let arrayOfEvents = [];
+
    
-    dataEvents.map( event => {
-        const arrayDate = event.date.split("-");
-        eventDay.push(parseInt(arrayDate[0]))
-        eventMonth.push(parseInt(arrayDate[1])-1)
-        eventYear.push(parseInt(arrayDate[2]))
-        idArray.push(event.id)
-    })
+   if(data.isReady) {
 
-    const filtered = dataEvents.filter(event => event.id === id)
-  
+       data.items.map( ({id}) => {
 
-    console.log(filtered);
+           const singleSearch = state.source.singlesearch[id];
+           
+           if(singleSearch.typeofpublication[0] === 4) {
+               
+                arrayOfEvents.push(singleSearch);
+                const arrayDate = singleSearch.acf.date.split("-");
+                eventDay.push(parseInt(arrayDate[0]))
+                eventMonth.push(parseInt(arrayDate[1])-1)
+                eventYear.push(parseInt(arrayDate[2]))
+                idArray.push(singleSearch.id)
+           }
+       })
+   }
+
+   const filtered = arrayOfEvents.filter(event => event.id === id)
+ 
     return ( 
         <MarginTopContainer>
             <HeadContainer>
@@ -87,48 +101,57 @@ const Eventos = ({state}) => {
                 <SubTitle>
                     Take part of our events
                 </SubTitle>
-              
+      
             </HeadContainer>
 
+            {
+                data.isReady ?
                 <SectionEvent>
-
+                
+                    {
+        
+                        isEvent ?
+        
+                            filtered.map( event => (    
+                                <EventContainer key={event.id}>
+                                    <h1>ANDES - Events</h1>
+                                    <FeaturedImage imgID = {event.featured_media} element = "event"/>
+            
+                                    <h3>{event.title.rendered}</h3>
                                 
-                {
-                    isEvent ? 
-                        filtered.map( event => (    
+                                    <p>Date : <span dangerouslySetInnerHTML={ {__html: event.excerpt.rendered}}></span>
+                                    </p>
+                                </EventContainer>   
+                            )) 
+        
+                        :
+        
+                        <>
+                            
                             <EventContainer>
-                                <h1>ANDES - Events</h1>
-                                <img  src = {event.urlImage} />
-                                
-                                <h3>{event.title}</h3>
-                                <p>{event.dateString}</p>
-                            </EventContainer>   
-                    )) 
-                    
-                    :  
-                    <>
-                    
-                    <EventContainer>
-                        <h1>The Latest</h1>
-                        
-                        <img  src = {dataEvents[0].urlImage} />
-                        <h3>{dataEvents[0].title}</h3>
-                        <p>{dataEvents[0].dateString}</p>
-                    </EventContainer>
-                    </>
-                }
-
-                <Calendar 
-                    eventDay = {eventDay} 
-                    eventMonth = {eventMonth} 
-                    eventYear = {eventYear} 
-                    setIsEvent = {setIsEvent}
-                    setId = {setId}
-                    idArray = {idArray}
-                />
-
-
+                                <h1>The Latest</h1>
+                                <FeaturedImage imgID = {arrayOfEvents[0].featured_media} element = "event"/>
+                                <h3>{arrayOfEvents[0].title.rendered}</h3>
+                                <p dangerouslySetInnerHTML={ {__html: arrayOfEvents[0].excerpt.rendered}}></p>
+                            </EventContainer>
+                        </>
+        
+        
+                   
+                    }
+        
+                        <Calendar 
+                            eventDay = {eventDay} 
+                            eventMonth = {eventMonth} 
+                            eventYear = {eventYear} 
+                            setIsEvent = {setIsEvent}
+                            setId = {setId}
+                            idArray = {idArray}
+                        />
                 </SectionEvent>
+        
+                : <Loading />
+            }    
 
 
 

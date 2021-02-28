@@ -284,11 +284,11 @@ const Menu =  () => {
                     setNavOpen = {setNavbarOpen}
                     open = {openAboutMobile}
                     setOpen = {setOpenAboutMobile}
-                    options={["Quienes somos?", "Filosofia", "Personas"]}
+                    options={["Quienes somos?", "Philosophy*Filosofia", "People*Personas"]}
                     secondTitle = {'Qué Hacemos?'}
-                    options2={["Territorios Bioculturales", "Incidencias Politicas"]}
+                    options2={["Biocultural Territories*Territorios Bioculturales", "Advocay and Politics*Incidencias Politicas"]}
                     thirdTitle = {["Dónde trabajamos?"]}
-                    options3={["Parque de la Papa - Pisac", "Parque de Maiz - Lares", "Parque Espiritual - Vilcanota", "Programas y Redes Internacionales"]}
+                    options3={["Potato Park - Pisac*Parque de la Papa - Pisac", "Chalakuy Park - Lares*Parque de Maiz - Lares", "Spiritual Park - Vilcanota*Parque Espiritual - Vilcanota", "International Programs and Networks*Programas y Redes Internacionales"]}
                   /> 
             
 
@@ -307,28 +307,28 @@ const Menu =  () => {
                     setNavOpen = {setNavbarOpen}
                     open = {openResearchMobile}
                     setOpen = {setOpenResearchMObile}
-                    options = {["Yachay Kuychi", "Quienes somos?"]}
+                    options = {["Yachay Kuychi", "Who We Are*Quienes somos?"]}
                     secondTitle = {'Qué Hacemos?'}
-                    options2 = {["Cursos", "Pasantias", "Intercambios"]}
+                    options2 = {["Courses*Cursos", "Intership and Volunteering*Pasantias", "Exchanges*Intercambios"]}
                     thirdTitle = {"Utilidades"}
-                    options3 = {["Caja de herramientas"]}
+                    options3 = {["Toolkit*Caja de herramientas"]}
                   />
 
                   : null
               } 
 
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
-              <Link href="/es-publicaciones">Publicaciones</Link>
+              <Link href="/es-publications">Publicaciones</Link>
           </Button>
           <Border />
 
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
-            <Link href= "/es-noticiasrelevantes">Noticias</Link>
+            <Link href= "/es-news">Noticias</Link>
           </Button> 
           <Border />
           
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}> 
-            <Link href= "/es-eventos">Eventos</Link>
+            <Link href= "/es-events">Eventos</Link>
           </Button> 
           <Border />
 
@@ -347,9 +347,9 @@ const Menu =  () => {
         <Navbox open>
           <Button onClick={() => setOpenAbout(!openAbout)}>ANDES</Button> 
           <Button onClick={() => setOpenResearch(!openResearch)}>PLURIVERSIDAD</Button> 
-          <Button><Link href="/es-publicaciones">PUBLICACIONES</Link></Button> 
-          <Button><Link href= "/es-noticiasrelevantes">NOTICIAS</Link></Button> 
-          <Button> <Link href= "/es-eventos">EVENTOS</Link></Button> 
+          <Button><Link href="/es-publications">PUBLICACIONES</Link></Button> 
+          <Button><Link href= "/es-news">NOTICIAS</Link></Button> 
+          <Button> <Link href= "/es-events">EVENTOS</Link></Button> 
           <LinkButtonHome href="/es-stayintouch/">CONTACTO</LinkButtonHome>
         </Navbox>
       )}
@@ -361,11 +361,11 @@ const Menu =  () => {
       <Dropdown
         open = {openAbout}
         setOpen = {setOpenAbout}
-        options={["Quienes somos?", "Filosofia", "Personas"]}
+        options={["Quienes somos?", "Philosophy*Filosofia", "People*Personas"]}
         secondTitle = {'Que hacemos?'}
-        options2={["Territorios Bioculturales", "Incidencias Politicas"]}
+        options2={["Biocultural Territories*Territorios Bioculturales", "Advocacy and Politics*Incidencias Politicas"]}
         thirdTitle = {["Dónde trabajamos?"]}
-        options3={["Parque de la Papa - Pisac", "Parque de Maiz - Lares", "Parque Espiritual - Vilcanota", "Programas y Redes Internacionales"]}
+        options3={["Potato Park - Pisac*Parque de la Papa - Pisac", "Chalakuy Park - Lares*Parque de Maiz - Lares", "Spiritual Park - Vilcanota*Parque Espiritual - Vilcanota", "International Programs and Networks*Programas y Redes Internacionales"]}
         ImageNav = {imgAndes}
       />  : null
     }
@@ -374,21 +374,12 @@ const Menu =  () => {
       <Dropdown
         open = {openResearch}
         setOpen = {setOpenResearch}
-        options = {["Yachay Kuychi", "Quienes somos?"]}
+        options = {["Yachay Kuychi", "Who We Are*Quienes somos?"]}
         secondTitle = {'Qué Hacemos?'}
-        options2 = {["Cursos", "Pasantias", "Intercambios"]}
+        options2 = {["Courses*Cursos", "Intership and Volunteering*Pasantias", "Exchanges*Intercambios"]}
         thirdTitle =  {"Utilidades"}
-        options3 = {["Caja de herramientas"]}
+        options3 = {["Toolkit*Caja de herramientas"]}
         ImageNav = {imgPluriculturalidad}
-      />  : null
-    }
-
-    {openEventos ? 
-      <Dropdown
-        open = {openEventos}
-        setOpen = {setOpenEventos}
-        options={["Publicaciones","Bibliografía", "Videos", "Fotos"]}
-        ImageNav = {imgNoticias}
       />  : null
     }
   </>

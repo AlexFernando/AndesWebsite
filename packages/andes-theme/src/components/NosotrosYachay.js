@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect, css} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionContainer, CardsContainer, Card , MainParagraph} from './potatoPark';
@@ -12,59 +12,109 @@ import { faLightbulb, faListAlt, faArrowAltCircleRight, faPeopleCarry } from '@f
 import imgResearch from '../static/images/homenews.jpeg';
 import transgenicos from '../static/images/transgenicos.jpg';
 import potatoPark from '../static/images/link4.jpeg';
+import Loading from './Loading';
 
-const NosotrosYachay = ({state}) => {
+const NosotrosYachay = ({state, actions}) => {
+
+    useEffect( () => {
+            
+        if(state.theme.lang === "en") {
+            actions.source.fetch("/whoweare")
+            actions.source.fetch("/cardpersona/")
+        }
+
+        else {
+            actions.source.fetch("/es-whoweare")
+            actions.source.fetch("/cardpersona/")
+        }
+    }, [])
+
+
+    const pageYachay = state.theme.lang === "en" ? state.source.page[443] : state.source.page[417]
+
+    const data = state.source.get('/cardpersona');
+
+    let cardYachayArr = [];
+
+    if(data.isReady) {
+
+        data.items.map(({id}) => { 
+                
+                if(state.theme.lang === "en") {
+
+                    if(state.source.cardpersona[id].typeofcardpersona[0] === 34) {
+                        cardYachayArr.push(state.source.cardpersona[id])
+                    }
+                }
+
+                else {
+                    if(state.source.cardpersona[id].typeofcardpersona[0] === 35) {
+                        cardYachayArr.push(state.source.cardpersona[id])
+                    }
+                }
+            }
+        )
+    }
+
+    let arrayList = pageYachay.acf.info_list_two.split('*');
+    arrayList.shift();
+
     return ( 
+
+        <>
+        {typeof pageYachay === "undefined" ? <Loading />
+        
+        :
+
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Yachay Kuychi
+                    {pageYachay.acf.title}
                 </Title>
                 <Separator></Separator>
                 <SubTitle>
-                    Biocultural Education
+                    {pageYachay.acf.subtitle}
                 </SubTitle>
                 
             </HeadContainer>
 
             <SectionContainer>
                 <MainParagraph>
-                    The Yachay Kuychi (Rainbow of Knowledges) Pluriversity was established by Association ANDES in the Sacred Valley of the Incas, near Cusco, Peru in 2020. It is an international, intercultural education and research institution, and a center of excellence on indigenous food systems and biocultural landscapes.  We believe that education can change the world.                
+                    {pageYachay.acf.main_title}                
                 </MainParagraph>
                 
                 <p>
-                    The Yachay Kuychi Pluriversity acknowledges historical and ongoing colonialism, and seeks greater justice in the global food system by taking a decolonizing and emancipatory approach. The Pluriversity is grounded in the fundamental interrelationship of lands, languages, and peoples, and transcends common disciplinary divisions. This is a horizontal, decolonizing, transdisciplinary, and biocultural model of education.
+                    {pageYachay.acf.paragraph_one}
                 </p> 
 
                 <FixedCard>
                     
-                    <img src={transgenicos}/>
+                    <img src={pageYachay.acf.section_image_1.sizes.medium_large} />
+                                    
 
                     <SectionText>
                         <div>
-                            <h1>Latin American School for Food Systems Resilience (ALLSA)</h1>
+                            <h1>{pageYachay.acf.section_text_1}</h1>
 
-                            <p>
-                                In September 2019, ALLSA worked in coordination with the Yachay Kuychi Pluriversity to host a learning exchange in Cusco Peru
-                            </p>
+                            <p>{pageYachay.acf.section_description_1}</p>
                             <div>
-                                <a href="https://www.globalenvironments.org/latin-american-school-for-food-systems-resilience/ " target="_blank" rel="noopener" >READ HISTORY</a>
+                                <a href= {pageYachay.acf.section_link_button_1} target="_blank" rel="noopener" >READ HISTORY</a>
                             </div>
                         </div>
                     </SectionText>
                 </FixedCard>
             </SectionContainer>
 
-            <h2 css= {css`text-align: center; color: #44841a; font-size: 2rem;`} >BIOCULTURAL EDUCATION</h2>
+            <h2 css= {css`text-align: center; color: #44841a; font-size: 2rem;`} >{pageYachay.acf.info_main_title}</h2>
 
             <BriefSection>
 
                 <InfoItem>
                     
                     <FontAwesomeIconStyled icon={faLightbulb}/>
-                    <h3>OBJECTIVE</h3>
+                        <h3>{pageYachay.acf.info_title_one}</h3>
                     <p>
-                        The Pluriversity aims to address contemporary and future global challenges through the incorporation of Indigenous ways of knowing and doing in agrobiodiversity and land use decision-making, policy, and practice.
+                        {pageYachay.acf.info_paragraph_one}
                     </p>
                 
                 </InfoItem>
@@ -73,16 +123,18 @@ const NosotrosYachay = ({state}) => {
                 <InfoItem>
                     <FontAwesomeIconStyled icon={faListAlt}/>
                     
-                    <h3>PRINCIPLES</h3>
+                    <h3>{pageYachay.acf.info_title_two}</h3>
 
                     <ul>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Indigenous world view, knowledge and practices</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Social and Environmental justice</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Feminist Theory</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Political-Ecology</li> 
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Solidarity Economy</li> 
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Participatory Curriculum Development</li> 
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Multiple Literacies Approaches</li> 
+                        
+                        {arrayList.map( item => {
+
+                                return(
+                                    <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{item}</li>
+                                )
+                            })
+                        }
+
                     </ul>
 
                 </InfoItem>
@@ -90,62 +142,65 @@ const NosotrosYachay = ({state}) => {
                 <InfoItem>
                     
                     <FontAwesomeIconStyled icon={faPeopleCarry}/>
-                    <h3>IMPACT</h3>
+                    <h3>{pageYachay.acf.info_title_three}</h3>
                     <p>
-                        At the local level, it will support innovation in food crop neighborhood communities as they diversify their economies, enact food sovereignty, build resilience of their terrestrial and water systems; and pursue their sustainability goals.
+                        {pageYachay.acf.info_paragraph_three}
                     </p>
                 
                 </InfoItem>
             </BriefSection>
 
-            <SubSection>
-                <TextContainer>
-                    <h2>Program Team</h2>
 
-                        <br></br> 
-                        <h3>Tammy Stenner<br></br><span> - Asociación ANDES</span></h3> 
-                        <br></br> 
+            
+            {data.isReady ?
+                    
+                    <>
+                        {cardYachayArr.reverse().map( cardYachay => {
 
-                        <h3>Alejandro Arguemdo<span> <br></br> - Swift Foundation</span></h3> 
-                        <br></br>
+                            let arrayNames = cardYachay.acf.list_staff_names.split("*");
+                            let arrayDescription = cardYachay.acf.list_staff_description.split("*");
 
-                        <h3>Michel Pimbert<span> <br></br> - Coventry University, Centre for Agroecology, Water and Resilience</span></h3>  
-               
-                </TextContainer>
-                <ImageSection src = {imgResearch} />
-                
-            </SubSection>
+                            arrayNames.shift();
+                            arrayDescription.shift();
 
-            <SubSection>
-                <TextContainer>
-                    <h2>Facilitators</h2>
+                                return (
 
-                        <br></br> 
-                        <h3>Mariano Sutta Apocusi <span> - Potato Park</span></h3> 
-                        <br></br> 
-                     
-                        <h3>Aniceto Ccoyo Ccoyo <span>  - Potato Park</span></h3> 
-                        <br></br> 
-                   
-                        <h3>Ricardino Paco Condori <span>  - Potato Park</span></h3>  
-                        <br></br> 
+                                    <SubSection>
+                                        <TextContainer>
+                                                <h2>{cardYachay.acf.area_division}</h2>
 
-                        <h3>Ricardo Pacco<span>  -  Asociación ANDES</span></h3>  
-                        <br></br> 
-                   
-                        <h3>Sonia Ttito Quispe <span>  - Chalakuy Park</span></h3>  
-                        <br></br> 
-                   
-                        <h3>Victor Oblitas <span> <br></br> - Chalakuy Park</span></h3>  
-                   
+                                                {arrayNames.map( (item, index) => {
+
+                                                    return(
+                                                        <>
+                                                            <br></br>
+                                                            <h3>{item} <br></br><span> {arrayDescription[index]}</span></h3> 
+                                                            
+                                                        </>
+                                                    )
+                                                })
+                                                
+                                                }
+
+                                        </TextContainer>
                         
-                </TextContainer>
+                                        
+                                        <ImageSection src={cardYachay.acf.image_card.sizes.medium_large} />
+                                    
+                                    
+                                    </SubSection>
+                                )
+                            })
+                        }
 
-                <ImageSection src = {potatoPark} />
-                
-            </SubSection>
+                    </>
+                    
+                    : null
+
+                }
         </MarginTopContainer>
-
+        }
+        </>
 
     );
 }

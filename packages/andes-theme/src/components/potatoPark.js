@@ -1,15 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import imgAgricultores from '../static/images/parquepapa.jpg';
-import imgSistemaAyllu from '../static/images/parquepapa2.jpg';
-import imgInnovacioneBio from '../static/images/link4.jpeg';
 
 import {faListAlt, faArrowAltCircleRight, faMountain, faMale, faLanguage, faExclamationTriangle, faTractor, faSeedling, faHiking, faUtensils, faHands, faCarrot} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIconList, FontAwesomeIconStyled, BriefSection, InfoItem} from './TerritoriosCulturales';
 
 import { VerticalBorder } from './Dropdown';
 
+import Loading from './Loading';
 
 export const SectionContainer = styled.div`
     display: flex;
@@ -83,8 +81,8 @@ export const Card = styled.div`
         padding: 0 1rem 0 1rem;
     }
 
-    span {
-        padding: 1rem 1rem 2rem 1rem;
+    p {
+        padding: 0rem 1rem 1rem 1rem;
         font-weight: 400;
         font-size: 1rem;
         color: #545454;
@@ -108,10 +106,17 @@ const SectionInfoContainer = styled.div`
 
 const FastInfo = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-content: center;
     text-align: center;
     margin: 4rem 0;
+
+    @media(min-width: 768px) {
+        div {
+            flex-basis: 25%;
+        }
+    }
+
 
     @media(max-width: 768px) {
         flex-direction: column;
@@ -126,50 +131,111 @@ const FastInfo = styled.div`
         padding: 0;
     }
 `;
-const PotatoPark = ({state}) => {
+const PotatoPark = ({state, actions}) => {
+
+    useEffect( () => {
+        
+        if(state.theme.lang === "en") {
+            actions.source.fetch("/potatopark-pisac")
+        }
+
+        else {
+            actions.source.fetch("/es-potatopark-pisac")
+        }
+    }, [])
+
+    let FirstArrayOfIcons = [faMountain, faMale, faLanguage, faExclamationTriangle];
+    let SecondArrayOfIcons = [faTractor, faSeedling, faHiking, faUtensils, faHands, faCarrot];
+
+    const pagePotatoPark = state.theme.lang === "en" ? state.source.page[303] : state.source.page[283]
+
+    const data = state.source.get('/cardimage');
+
+    let cardImagesArr = [];
+
+    
+    if(data.isReady) {
+        
+        data.items.map(({id}) => { 
+                
+                if(state.theme.lang === "en") {
+                    if(state.source.cardimage[id].filterbypage[0] === 27) {
+                        cardImagesArr.push(state.source.cardimage[id])
+                    }
+                }
+
+                else {
+                    if(state.source.cardimage[id].filterbypage[0] === 28) {
+                        cardImagesArr.push(state.source.cardimage[id])
+                    }
+                }
+            }
+        )
+    }
+
+    let dataTitleList = [];
+    let dataTextList = [];
+    let infoListOne = [];
+    let infoListTwo = [];
+    let listActivities = [];
+
+
+    if(typeof pagePotatoPark !== "undefined") {
+
+        dataTitleList = pagePotatoPark.acf.data_titles_list.split("*");
+        dataTitleList.shift();
+    
+        dataTextList = pagePotatoPark.acf.data_text_list.split("*");
+        dataTextList.shift();
+    
+        infoListOne = pagePotatoPark.acf.info_list_1.split("*");
+        infoListOne.shift();
+    
+        infoListTwo = pagePotatoPark.acf.info_list_2.split("*");
+        infoListTwo.shift();
+    
+        listActivities = pagePotatoPark.acf.list_activities.split("*");
+        listActivities.shift();
+    }
+
     return ( 
+       
+        <>
+        {typeof pagePotatoPark === "undefined" ? <Loading />
+        
+        :
+        
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Potato Park - Pisaq
+                    {pagePotatoPark.acf.title}
                 </Title>
                 <Separator></Separator>
                 <SubTitle>
-                    The Ayllu System<br></br>Biocultural innovations
+                    {pagePotatoPark.acf.subtitle}
                 </SubTitle>
             
             </HeadContainer>
 
             <SectionContainer>
                 <MainParagraph>
-                    The Potato Park is not just a conservation initiative for various varieties of potatoes. It is, above all, a bio-cultural territory dedicated to the conservation of the heritage of six indigenous communities that live here: not only hundreds of cultivated varieties but also related wild species, the landscape and its elements that also include knowledge, traditions, innovations and the worldview of the more than 6000 inhabitants.
+                    {pagePotatoPark.acf.main_text}
                 </MainParagraph>
                 
                 <SectionInfoContainer>
                 <FastInfo>
-                    <div>
-                        <FontAwesomeIconStyled icon={faMountain}/>
-                        <h3>Area</h3>
-                        <p>9820 Hectares</p>
-                    </div>
-
-                    <div>
+                    {
+                        dataTitleList.map( (itemTitleList , index)  => {
+                            return(
+                                <div>
+                                    <FontAwesomeIconStyled icon={FirstArrayOfIcons[index]}/>
+                                    <h3>{itemTitleList}</h3>
+                                    <p>{dataTextList[index]}</p>
+                                </div>
+                            )
+                        }) 
+                    }
             
-                        <FontAwesomeIconStyled icon={faMale}/>
-                        <h3>Population</h3>
-                        <p>6000 inhabitants</p>
-                    </div>
-
-                    <div>
-                        <FontAwesomeIconStyled icon={faLanguage}/>
-                        <h3>Ethnicity</h3>
-                        <p>Quechua</p>
-                    </div>
-                    <div>
-                        <FontAwesomeIconStyled icon={faExclamationTriangle}/>
-                        <h3>Poverty</h3>
-                        <p>70% of the  indigenous <br></br>population of Cusco live in poverty condition</p>
-                    </div>
                 </FastInfo>
 
                 </SectionInfoContainer>
@@ -180,25 +246,23 @@ const PotatoPark = ({state}) => {
                     <InfoItem>
                         
                         <FontAwesomeIconStyled icon={faListAlt}/>
-                        <h3>Ecosistema/Ecología</h3>
-                        <p>
-                            Height between 3200 and 5000 meters above sea level
-                        </p>
-                        <p>
-Mixed use of soils, including rotational fields (muyuys), permanent cultivation fields (chacras), native shrubs and forests, non-native forests, grazing areas, lakes, rivers and wetlands</p>
+                            <h3>{pagePotatoPark.acf.info_title_1}</h3>
+                            <p>{pagePotatoPark.acf.info_paragraph}</p>
                     </InfoItem>
                     <VerticalBorder></VerticalBorder>
 
                     <InfoItem>
                         <FontAwesomeIconStyled icon={faListAlt}/>
                         
-                        <h3>Biological and Genetic Diversity</h3>
+                        <h3>{pagePotatoPark.acf.info_title_2}</h3>
 
                         <ul>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Various traditional crops such as tarwi, quinoa, kiwicha, corn, beans, olluco, oca.</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>1400 varieties of native potato and other Andean tubers</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Raising animals that provide meat (guinea pig, alpaca), sheep's wool, llama and alpaca; medicines.</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Microgenecenter of domestication. 3 species - wild potato.</li> 
+                            {infoListOne.map( listItem => {
+                                    return(
+                                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{listItem}</li>      
+                                    )
+                                }) 
+                            }
                         </ul>
                     </InfoItem>
                     <VerticalBorder></VerticalBorder>
@@ -206,99 +270,75 @@ Mixed use of soils, including rotational fields (muyuys), permanent cultivation 
 
                         <FontAwesomeIconStyled icon={faListAlt}/>
                     
-                        <h3>Comunidades</h3>
+                        <h3>{pagePotatoPark.acf.info_title_3}</h3>
 
                         <ul>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Cuyo Grande</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Sacaca</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Chawaytire</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Amaru</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Pampallaqta</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Paru Paru</li>
+                            {infoListTwo.map( listItem => {
+                                    return(
+                                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{listItem}</li>      
+                                    )
+                                }) 
+                            }
                         </ul>
                     </InfoItem>
                 </BriefSection>
 
                 <SectionInfoContainer>
-                    <h2>Economical Activities</h2>
+                    <h2>{pagePotatoPark.acf.title_activities}</h2>
 
                         <FastInfo>
-                            <div>
-                                <FontAwesomeIconStyled icon={faTractor}/>
-                                <h3>Agriculture</h3>
-                            </div>
-
-                            <div>
-                    
-                                <FontAwesomeIconStyled icon={faSeedling}/>
-                                <h3>Seed company</h3>
-                            </div>
-
-                            <div>
-                                <FontAwesomeIconStyled icon={faHiking}/>
-                                <h3>Agro-ecoturism</h3>
-                            </div>
+                            {
+                                listActivities.map( (itemTitleList , index)  => {
+                                    return(
+                                        <div>
+                                            <FontAwesomeIconStyled icon={SecondArrayOfIcons[index]}/>
+                                            <h3>{itemTitleList}</h3>
+                                        </div>
+                                    )
+                                }) 
+                            }
                         </FastInfo>
 
-                        <FastInfo>
-                            <div>
-                                <FontAwesomeIconStyled icon={faUtensils}/>
-                                <h3>Gastronomy</h3>
-                            </div>
-
-                            <div>
-                                <FontAwesomeIconStyled icon={faHands}/>
-                                <h3>Crafts</h3>
-                            </div>
-                            <div>
-                                <FontAwesomeIconStyled icon={faCarrot}/>
-                                <h3>Natural Products</h3>
-                            </div>
-                        </FastInfo>
                 </SectionInfoContainer>
 
             
                 <CardsContainer>
-                    <Card>
-                        <img src={imgInnovacioneBio} />
+                    {data.isReady ?
+                    
+                        <>
+                            {cardImagesArr.reverse().map( cardImages => {
+                                
 
-                        <h3>Biocultural innovations in the Potato Park</h3>
+                                return(
 
-                        <span>
-                        The Potato Park is not just an initiative to conserve varieties of potatoes. It is, above all, a biocultural territory dedicated to the conservation of the heritage of the indigenous communities that live there. 
-                        </span>
+                                    <Card>
+                                        
+                                        <img src={cardImages.acf.image_card.sizes.medium_large}/>
+                                        
+                                        <h3>{cardImages.title.rendered}</h3>
+                                        <p dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
+                                    
+                                        </p>
 
-                        <a href="http://andes.center/wp-content/uploads/2018/07/G03917.pdf" target="_blank" rel="noopener" >LEER MAS</a>
-                    </Card>
+                                        <a href={  cardImages.acf.link_card} >READ MORE</a>
+                                        
+                                    </Card>
+                                )
+                            })}
 
+                        </>
+                        
+                        : null
 
-                    <Card>
-                        <img src={imgSistemaAyllu} />
+                    }
 
-                        <h3>The Ayllu System of the Potato Park</h3>
-
-                        <span>
-                            Not only hundreds of cultivated potato varieties but also the related wild species, the landscape and all its elements which include the knowledge, traditions, innovations, and worldview of the more than 6,000 inhabitants.
-                        </span>
-
-                        <a href="https://satoyama-initiative.org/old/the-ayllu-system-of-the-potato-park/" target="_blank" rel="noopener" >LEER MAS</a>
-                    </Card>
-
-                    <Card>
-                        <img src={imgAgricultores} />
-
-                        <h3>Peruvian Farmers could Save the Planet</h3>
-
-                        <span>
-                            Not only hundreds of cultivated potato varieties but also the related wild species, the landscape and all its elements which include the knowledge, traditions, innovations, and worldview of the more than 6,000 inhabitants.
-                        </span>
-
-                        <a href="https://modernfarmer.com/2019/12/how-peruvian-potatoes-might-be-key-to-feeding-the-planet/" target="_blank" rel="noopener" >LEER MAS</a>
-                    </Card>
                 </CardsContainer>
             </SectionContainer>
             
         </MarginTopContainer>
+                        
+        }
+       </>
     );
 }
  
