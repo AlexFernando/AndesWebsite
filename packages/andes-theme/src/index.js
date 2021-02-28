@@ -19,59 +19,11 @@ export default {
 
         "/es-/": {
           isReady: true,
-          isFetching: false,
-          isBackgroundImageSpanish: true,
+          isFetching: false,  
+         
           isHomePageSpanish: true,
         },
 
-
-        "/philosophy/": {
-          isReady: true,
-          isFetching: false,
-          isPhilosophy: true,
-        },
-
-        "/es-philosophy/": {
-          isReady: true,
-          isFetching: false,
-          isPhilosophySpanish: true,
-        },
-
-        "/filosofia/": {
-          isReady: true,
-          isFetching: false,
-          isPhilosophy: true,
-        },
-
-        "/es-filosofia/": {
-          isReady: true,
-          isFetching: false,
-          isPhilosophySpanish: true,
-        },
-
-        "/people/": {
-          isReady: true,
-          isFetching: false,
-          isStuff: true,
-        },
-
-        "/es-people/": {
-          isReady: true,
-          isFetching: false,
-          isStuffSpanish: true,
-        },
-
-        "/personas/": {
-          isReady: true,
-          isFetching: false,
-          isStuff: true,
-        },
-
-        "/es-personas/": {
-          isReady: true,
-          isFetching: false,
-          isStuffSpanish: true,
-        },
 
         "/searchbar/": {
           isReady: true,
@@ -83,30 +35,6 @@ export default {
           isReady: true,
           isFetching: false,
           isSearchBarSpanish: true,
-        },
-
-        "/bioculturalterritories/": {
-          isReady: true,
-          isFetching: false,
-          isTerritorios: true,
-        },
-
-        "/es-bioculturalterritories/": {
-          isReady: true,
-          isFetching: false,
-          isTerritoriosSpanish: true,
-        },
-
-        "/territoriosbioculturales/": {
-          isReady: true,
-          isFetching: false,
-          isTerritorios: true,
-        },
-
-        "/es-territoriosbioculturales/": {
-          isReady: true,
-          isFetching: false,
-          isTerritoriosSpanish: true,
         },
 
 
@@ -146,107 +74,6 @@ export default {
           isPoliticaSpanish: true,
         },
 
-        "/potatopark-pisac/": {
-          isReady: true,
-          isFetching: false,
-          isPotatoPark: true,
-        },
-
-        "/es-potatopark-pisac/": {
-          isReady: true,
-          isFetching: false,
-          isPotatoParkSpanish: true,
-        },
-
-        "/parquedelapapa-pisac/": {
-          isReady: true,
-          isFetching: false,
-          isPotatoPark: true,
-        },
-
-        "/es-parquedelapapa-pisac/": {
-          isReady: true,
-          isFetching: false,
-          isPotatoParkSpanish: true,
-        },
-
-        "/chalakuypark-lares/": {
-          isReady: true,
-          isFetching: false,
-          isLaresPark: true,
-        },
-        "/es-chalakuypark-lares/": {
-          isReady: true,
-          isFetching: false,
-          isLaresParkSpanish: true,
-        },
-
-        "/parquedemaiz-lares/": {
-          isReady: true,
-          isFetching: false,
-          isLaresPark: true,
-        },
-        "/es-parquedemaiz-lares/": {
-          isReady: true,
-          isFetching: false,
-          isLaresParkSpanish: true,
-        },
-
-        "/spiritualpark-vilcanota/": {
-          isReady: true,
-          isFetching: false,
-          isVilcanotaPark: true,
-        },
-        "/es-spiritualpark-vilcanota/": {
-          isReady: true,
-          isFetching: false,
-          isVilcanotaParkSpanish: true,
-        },
-
-        "/parqueespiritual-vilcanota/": {
-          isReady: true,
-          isFetching: false,
-          isVilcanotaPark: true,
-        },
-        "/es-parqueespiritual-vilcanota/": {
-          isReady: true,
-          isFetching: false,
-          isVilcanotaParkSpanish: true,
-        },
-
-        "/internationalprogramsandnetworks/": {
-          isReady: true,
-          isFetching: false,
-          isInternationalsPrograms: true,
-        },
-        "/es-internationalprogramsandnetworks/": {
-          isReady: true,
-          isFetching: false,
-          isInternationalsProgramsSpanish: true,
-        },
-
-        "/programasyredesinternacionale/": {
-          isReady: true,
-          isFetching: false,
-          isInternationalsPrograms: true,
-        },
-        "/es-programasyredesinternacionales/": {
-          isReady: true,
-          isFetching: false,
-          isInternationalsProgramsSpanish: true,
-        },
-
-        "/whoweare/": {
-          isReady: true,
-          isFetching: false,
-          isNosotrosYachay: true,
-        },
-
-        "/es-whoweare/": {
-          isReady: true,
-          isFetching: false,
-          isNosotrosYachaySpanish: true,
-        },
 
         "/quienessomos/": {
           isReady: true,
@@ -258,53 +85,6 @@ export default {
           isReady: true,
           isFetching: false,
           isNosotrosYachaySpanish: true,
-        },
-
-        "/courses/": {
-          isReady: true,
-          isFetching: false,
-          isCursos: true,
-        },
-
-        "/es-courses/": {
-          isReady: true,
-          isFetching: false,
-          isCursosSpanish: true,
-        },
-
-        "/cursos/": {
-          isReady: true,
-          isFetching: false,
-          isCursos: true,
-        },
-
-        "/es-cursos/": {
-          isReady: true,
-          isFetching: false,
-          isCursosSpanish: true,
-        },
-
-        "/intershipandvolunteering/": {
-          isReady: true,
-          isFetching: false,
-          isPasantias: true,
-        },
-
-        "/es-intershipandvolunteering/": {
-          isReady: true,
-          isFetching: false,
-          isPasantiasSpanish: true,
-        },
-
-        "/pasantias/": {
-          isReady: true,
-          isFetching: false,
-          isPasantias: true,
-        },
-        "/es-pasantias/": {
-          isReady: true,
-          isFetching: false,
-          isPasantiasSpanish: true,
         },
 
         "/exchanges/": {
@@ -379,13 +159,13 @@ export default {
           isPublicacionesSpanish: true,
         },
 
-        "/relevantnews/": {
+        "/news/": {
           isReady: true,
           isFetching: false,
           isNoticiasRelevantes: true,
         },
 
-        "/es-relevantnews/": {
+        "/es-news/": {
           isReady: true,
           isFetching: false,
           isNoticiasRelevantesSpanish: true,

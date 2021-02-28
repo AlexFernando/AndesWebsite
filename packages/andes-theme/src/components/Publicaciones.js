@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect, css, styled } from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import {dataPublications} from '../data/dataPublicacionesGeneral';
+import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer, SectionContainer} from './Filosofia';
 import {SearchBar, InputBar, NotFoundContainer } from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
 import LinkButton from "./LinkButton";
+
+import FeaturedImage from './FeaturedImage';
+import Loading from './Loading';
 
 const SectionPublications = styled.div`
     display: flex;
@@ -37,6 +39,17 @@ export const PublicationCard = styled.div`
         text-decoration: none;
         display: flex;
     }
+
+
+    h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            color: #000;
+
+            @media(max-width: 768px) {
+                font-size: .9rem;
+            }
+        }
     
     img {
         max-width: 40%;
@@ -52,78 +65,47 @@ export const PublicationCard = styled.div`
     p {
         color: #545454;
         line-height: 1.3;
-    }
-`;
-
-const MatchPublication = styled.div`
-    display: flex;
-    margin: 3rem 10rem 0 10rem;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    
-    @media(max-width: 768px) {
-            margin: 1rem;
-        }
-
-    &:hover{
-        background-color: #dbdbdb;
-        padding: 1rem;
-    }
-
-    a {
-        text-decoration: none;
-        display: flex;
-    }
-
-    img {
-        max-width: 20%;
-        margin-right: 1rem;
-        align-self:center;   
+        font-weight: 700;
+        font-size: 1.1rem;
 
         @media(max-width: 768px) {
-            max-width: 40%;
+            font-size: .9rem;
         }
     }
 
-    div {
-        display: flex;
-        flex-direction: column;
-
-        h3 {
+    span {
             font-size: 1.1rem;
-            margin-bottom: 0;
-            color: #000;
+            margin-top: 0;
 
             @media(max-width: 768px) {
                 font-size: .9rem;
             }
         }
-        
-        span {
-            font-size: .9rem;
-            color: #545454;
-            margin-top: 0;
-
-            @media(max-width: 768px) {
-                font-size: .7rem;
-            }
-        }
-
-        p {
-            color: #545454;
-            font-size: 1rem;
-            @media(max-width: 768px) {
-                font-size: .8rem;
-            }
-        }
-    }
-
-
 `;
 
-const Publicaciones = () => {
 
+const Publicaciones = ({state, actions}) => {
+
+    useEffect( () => {
+        actions.source.fetch("/search")
+     }, [])
+
+    const data = state.source.get('/search');
+
+    let publications = [];
+
+    //filling the array of publications
+    if(data.isReady) {
+        
+        data.items.map( ({id}) => {
+            if(state.source.singlesearch[id].typeofpublication[0] === 3) {
+                publications.push(state.source.singlesearch[id]);
+            }
+            
+        })
+    } 
+    //sorting the taking the recent year first
+    publications.sort((a, b) => (a.acf.date < b.acf.date) ? 1 : -1)
 
     const [searchTerm, setSearchTerm] = useState("");
     
@@ -133,33 +115,26 @@ const Publicaciones = () => {
 
     const handleChange = event => {
        setSearchTerm(event.target.value);
-       
     };
 
     const handleSubmit = e => {
 
         e.preventDefault();
-
-     
-        const results = dataPublications.filter( publication => publication.Title.toLowerCase().includes(searchTerm.toLowerCase()) || publication.author.toLowerCase().includes(searchTerm.toLowerCase()));
+        
+        const results = publications.filter( publication => publication.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()) || publication.acf.author.toLowerCase().includes(searchTerm.toLowerCase()));
      
         setSearchResults(results);
-
-        console.log("los matchs: ", results);
-
-        console.log("searchTerm ", searchTerm);
-       
 
         if(results.length === 0 && searchTerm) {
             setAlternativeTerm(searchTerm);
         }
 
-
         setSearchTerm("")
     };
 
+
     return (
-        
+        <>
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
@@ -171,96 +146,112 @@ const Publicaciones = () => {
                 <Separator></Separator>
             </HeadContainer>
 
-      
-                <SearchBar>
-                    <InputBar>
-                        <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
-
-                            <input 
-                                type="text"
-                                placeholder="What are you searching for?"
-                                value={searchTerm}
-                                onChange={handleChange}
-                            />
-                
-                    
-                    </InputBar>
-                
-                    <ButtonAction  onClick={handleSubmit}>
-                            <LinkButton href="/publicaciones">SEARCH</LinkButton>
-                    </ButtonAction>
-                </SearchBar>
-      
-            <SectionPublications>
-
-                {/** first render */}
-                { searchResults.length === 0 && alternativeTerm === "" ?
-                    
-                    Object.keys(dataPublications).map( publication => 
-                        <>
-                        {console.log(dataPublications[publication].url)}
-                        <PublicationCard>
-                            <a href={`${dataPublications[publication].url}`} target="_blank" rel="noopener">
-                                <img src={dataPublications[publication].urlImage} />
-                                <p>{dataPublications[publication].Title}</p>
-                            </a> 
-                            
-                        </PublicationCard>
-                        </>
-                    )
-                    : null
-                }
-
-                {/** match with some element  */}
-                
-                {    
-                    searchResults.length > 0 ?
-                      
-                        Object.keys(searchResults).map( publication => 
-                            <>
-                            {console.log("match")}
-                            <MatchPublication>
-
-                            <a href={`${searchResults[publication].url}`} target="_blank" rel="noopener">
-                                <img src={searchResults[publication].urlImage} />
-                                <div>
-                                    <h3>{searchResults[publication].Title}</h3>
-                                    <span>Autor: {searchResults[publication].author}</span>
-                                    <p>{searchResults[publication].date}</p>
-                                    <p></p>
-                                </div>
-                             </a>  
-                            </MatchPublication>
-                            </>
-                        )
-
-                        : null
-                      
-                }
-
-
-                {/** If we can't find a term */}
-                
-                {alternativeTerm!=="" && searchResults.length === 0 ?
-                    
-                    <>
-                    {console.log("not found")}
-                    <NotFoundContainer>
-                        <h2>Oops!</h2> 
-                            
-                        <h3>We coudn't find any content related to the word "{alternativeTerm}"</h3>
-
-                        <p>Plase use another term of search</p>
-
-                        <p>Thank you.</p>
-                    </NotFoundContainer> 
-                    </>
-                    :null
-                }
-
-            </SectionPublications>
         </MarginTopContainer>
 
+        <SectionContainer>
+            <SearchBar>
+                <InputBar>
+                    <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
+
+                        <input 
+                            type="text"
+                            placeholder="What are you searching for?"
+                            value={searchTerm}
+                            onChange={handleChange}
+                        />
+                </InputBar>
+            
+                <ButtonAction  onClick={handleSubmit}>
+                    <LinkButton href="/publications">SEARCH</LinkButton>
+                </ButtonAction>
+            </SearchBar>
+        </SectionContainer>
+
+        {data.isReady ? 
+        <SectionPublications>
+
+            {searchResults.length === 0 && alternativeTerm === "" ?
+                
+                publications.map( publication => {
+
+                    return (
+                        
+                        <PublicationCard key = {publication.id}>
+                            <a href={publication.meta._links_to} target="_blank" rel="noopener noreferrer">
+                              <FeaturedImage imgID = {publication.featured_media} element = "publication"/>
+
+                              <div>
+                                <h3>{publication.title.rendered}</h3>
+
+                                <p>Author : 
+                                    <span dangerouslySetInnerHTML={ {__html: publication.acf.author}}></span>
+                                </p>
+                            
+                                <p>Date : 
+                                    <span dangerouslySetInnerHTML={ {__html: publication.acf.date}}></span>
+                                </p>
+                              </div>           
+                            </a>
+                        </PublicationCard>
+                    )
+                })
+
+                :null
+            }
+
+            {/** match with some element  */}
+            
+            {    
+                searchResults.length > 0 ?
+                   
+                    searchResults.map( publication => {
+                    
+                        return (
+                       
+                            <PublicationCard key = {publication.id}>
+                                <a href={publication.meta._links_to} target="_blank" rel="noopener noreferrer">
+                                    <FeaturedImage imgID = {publication.featured_media} element = "publication"/>
+    
+                                    <div>
+                                    <h3>{publication.title.rendered}</h3>
+                                    <p>Author : 
+                                        <span dangerouslySetInnerHTML={ {__html: publication.acf.author}}></span>
+                                    </p>
+                            
+                                    <p>Date : 
+                                        <span dangerouslySetInnerHTML={ {__html: publication.acf.date}}></span>
+                                    </p>
+                                    </div>           
+                                </a>
+                            </PublicationCard>
+                        )
+                    })
+  
+                  :null                    
+            }
+
+            {/** If we can't find a term */}
+                
+            {alternativeTerm!=="" && searchResults.length === 0 ?
+                    
+                <>
+                <NotFoundContainer>
+                    <h2>Oops!</h2> 
+                        
+                    <h3>We coudn't find any content related to the word "{alternativeTerm}"</h3>
+
+                    <p>Plase use another term of search</p>
+
+                    <p>Thank you.</p>
+                </NotFoundContainer> 
+                </>
+                :null
+            }
+
+        </SectionPublications>
+        : <Loading />
+        }
+        </>
        
     );
 }

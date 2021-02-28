@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
 import LinkButton from "./LinkButton";
-import {dataNews} from '../data/dataNewsEnglish';
-import {dataEvents} from '../data/dataEventsEnglish';
-import {dataPublications} from '../data/dataPublicaciones';
+
+import FeaturedImage from './FeaturedImage';
+import Loading from './Loading';
 
 const SectionContainer = styled.div`
     display: -webkit-box;  
@@ -151,9 +151,21 @@ export const NotFoundContainer = styled.div`
     }
 `
 
-const SearchBarComponent = ({state}) => {
+const SearchBarComponent = ({state, actions}) => {
 
-    const [viewAll , setViewAll] = useState(false);
+    useEffect( () => {
+        actions.source.fetch("/search")
+     }, [])
+
+    const data = state.source.get('/search');
+
+    let publications = [];
+
+    if(data.isReady) {
+        data.items.map( ({id}) => {
+            publications.push(state.source.singlesearch[id]);
+        })
+    }
 
     const [searchTerm, setSearchTerm] = useState("");
     
@@ -163,30 +175,28 @@ const SearchBarComponent = ({state}) => {
 
     const handleChange = event => {
        setSearchTerm(event.target.value);
-       
     };
 
     const handleSubmit = e => {
 
         e.preventDefault();
-  
-        const news = dataNews.filter(person => person.titulo.toLowerCase().includes(searchTerm.toLowerCase()) || person.content.toLowerCase().includes(searchTerm.toLowerCase()));
-
-        const events = dataEvents.filter(event => event.title.toLowerCase().includes(searchTerm.toLowerCase()));
-
-        const publications = dataPublications.filter(publication => publication.Title.toLowerCase().includes(searchTerm.toLowerCase()) || publication.author.toLowerCase().includes(searchTerm.toLowerCase()));
-
-        const results = [...news, ...events, ...publications]
+        
+        const results = publications.filter( publication => publication.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()));
      
         setSearchResults(results);
+
+        console.log("resultados", searchResults);
 
         if(results.length === 0 && searchTerm) {
             setAlternativeTerm(searchTerm);
         }
 
         setSearchTerm("")
+
+  
     };
-    
+
+ 
     return ( 
 
 
@@ -208,112 +218,135 @@ const SearchBarComponent = ({state}) => {
                 </InputBar>
             
                 <ButtonAction  onClick={handleSubmit}>
-                        <LinkButton href="/searchbar">BUSCAR</LinkButton>
+                        <LinkButton href="/searchbar">SEARCH</LinkButton>
                 </ButtonAction>
             </SearchBar>
             
-            { searchResults.length === 0 && alternativeTerm === "" ?
+            
+            {data.isReady ? 
+            
+                <>
+                {searchResults.length === 0 && alternativeTerm === "" ?
+                    
+                    data.items.map( ({id}) => {
 
-                dataNews.map(item => (
-                    <PostStyled>
-
-                        <a href={`${item.url}`} target="_blank" rel="noopener">
-                            <img src={item.urlImage}/>
-                            
-                            <div>
-                                <h3>{item.titulo}</h3>
-                                <p>{item.content}</p>
-                                <strong>Fecha:</strong>
-                                &nbsp;&nbsp;
-                                <span>{item.fecha}</span>
-                            </div>
-                        </a>
+                        const publications = state.source.singlesearch[id]
+    
+                        return (
+                            <>
                         
-                    </PostStyled>
-                ))
+                            {publications.typeofpublication[0] === 3 ?
 
-                : null
-            }
+                                <PostStyled key = {id}>
+                                    <a href={publications.meta._links_to} target="_blank" rel="noopener noreferrer">
+                                    <FeaturedImage imgID = {publications.featured_media} element = "singlesearch"/>
+        
+                                    <div>
+                                        <h3>{publications.title.rendered}</h3>
+        
+                                        <p>Author : 
+                                            <span dangerouslySetInnerHTML={ {__html: publications.acf.author}}></span>
+                                        </p>
+                                    
+                                        <p>Date : 
+                                            <span dangerouslySetInnerHTML={ {__html: publications.acf.date}}></span>
+                                        </p>
+                                    </div>           
+                                    </a>
+                                </PostStyled>
 
-            { searchResults.length === 0 && alternativeTerm === "" ?
+                            : 
 
-                dataPublications.map(item => (
-                    <PostStyled>
-                        <a href={`${item.url}`} target="_blank" rel="noopener">
-                            <img src={item.urlImage} />
-                            
-                            <div>
-                                <h3>{item.Title}</h3>
-                                <span>Autor: {item.author}</span>
-                                <br></br>
-                                <span>{item.date}</span>
-                            </div>
-                        </a>  
-                    </PostStyled>
-                ))
+                                <PostStyled key = {id}>
+                                    <a href={publications.meta._links_to} target="_blank" rel="noopener noreferrer">
+                                    <FeaturedImage imgID = {publications.featured_media} element = "singlesearch"/>
 
-                : null
-            }
-
-            { searchResults.length === 0 && alternativeTerm === "" ?
-
-                dataEvents.map(item => (
-                    <PostStyled>
-                        <a href="/eventos">
-                            <img src={item.urlImage}/>
-                            
-                            <div>
-                                <h3>{item.title}</h3>
-                                <strong>Fecha:</strong>
-                                &nbsp;&nbsp;
-                                <span>{item.date}</span>
-                            </div>
-                        </a>
-                    </PostStyled>
-                ))
-
-                : null
-            }
-
-            {    
-                searchResults.map(item => (
-                    <PostStyled>
-                        <a href={`${item.url}`} target="_blank" rel="noopener">
-                            <img src={item.urlImage}/>
-                            
-                            <div>
-                                <h3>{item.titulo}</h3>
-                                <h3>{item.Title}</h3>
-                                <h3>{item.title}</h3>
-                                <p>{item.content}</p>
-                                <p>{item.author}</p>
-                                <span>
-                                    <strong>Fecha:</strong>
-                                    &nbsp;&nbsp;
-                                    {item.fecha}
-                                    {item.date}
-                                </span>
-                            </div>
-                            
-                        </a>
-                    </PostStyled>
-                ))
-            }
-
-            {alternativeTerm!=="" && searchResults.length === 0 ?
-                <NotFoundContainer>
-                    <h2>Oops!</h2> 
+                                    <div>
+                                        <h3>{publications.title.rendered}</h3>
+  
+                                        <p>Date : 
+                                            <span dangerouslySetInnerHTML={ {__html: publications.acf.date}}></span>
+                                        </p>
+                                    </div>           
+                                    </a>
+                                </PostStyled>
                         
-                    <h3>We coudn't find any content related to the word "{alternativeTerm}"</h3>
+                            }
+                            </>
+                        )
+                    })
+    
 
-                    <p>Plase use another term of search</p>
+                    :null 
+                }
+              
 
-                    <p>Thank you.</p>
-                </NotFoundContainer> 
+                {searchResults.map(item => (
+
+                    <>
+                    {item.typeofpublication[0] === 3 ? 
+                    
+                        <PostStyled key = {item.id}>
+                            <a href={item.meta._links_to} target="_blank" rel="noopener noreferrer">
+                            <FeaturedImage imgID = {item.featured_media} element = "singlesearch"/>
+
+                            <div>
+                                <h3>{item.title.rendered}</h3>
+
+                                <p>Author : 
+                                    <span dangerouslySetInnerHTML={ {__html: item.acf.author}}></span>
+                                </p>
+                            
+                                <p>Date : 
+                                    <span dangerouslySetInnerHTML={ {__html: item.acf.date}}></span>
+                                </p>
+                            </div>           
+                            </a>
+                        </PostStyled>
+
+                        :
+                        
+                        <PostStyled key = {item.id}>
+                            <a href={item.meta._links_to} target="_blank" rel="noopener noreferrer">
+                            <FeaturedImage imgID = {item.featured_media} element = "singlesearch"/>
+
+                            <div>
+                                <h3>{item.title.rendered}</h3>
+                            
+                                <p>Date : 
+                                    <span dangerouslySetInnerHTML={ {__html: item.acf.date}}></span>
+                                </p>
+                            </div>           
+                            </a>
+                        </PostStyled>
+                    }
+
+                    </>
+                ))
                 
-                :null
+                }
+
+                {alternativeTerm!=="" && searchResults.length === 0 ?
+                    <NotFoundContainer>
+                        <h2>Oops!</h2> 
+                            
+                        <h3>We coudn't find any content related to the word "{alternativeTerm}"</h3>
+
+                        <p>Plase use another term of search</p>
+
+                        <p>Thank you.</p>
+                    </NotFoundContainer> 
+                    
+                    :null
+                }
+                </>
+
+
+
+                : <Loading />
             }
 
+        
         </SectionContainer>
      );
 }

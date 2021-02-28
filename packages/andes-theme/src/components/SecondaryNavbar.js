@@ -80,15 +80,15 @@ const SecondaryNavbar = ({state, actions, setNavOpen, navOpen}) => {
         myNewLink = myLink.replace("/","-")
     }
     let linkSpanish = "/es"+ myNewLink;
-        
+
     return ( 
 
         <ContainerNav>
             <p>"Together towards to Sumaq Kawsay"</p>
 
             <div>
-                <Link href={myLink}>ENGLISH</Link>
-                <Link href={linkSpanish}>ESPAÑOL</Link>
+                <a href={myLink}>ENGLISH</a>
+                <a href={linkSpanish}>ESPAÑOL</a>
                 
                 <a href="/searchbar">
                     <span>Search</span>

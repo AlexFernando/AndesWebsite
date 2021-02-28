@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionContainer, CardsContainer, Card, MainParagraph} from './potatoPark';
@@ -10,8 +10,6 @@ import applepark from '../static/images/applePark.jpg';
 import territorio from '../static/images/territoriobio.png';
 import territorio2 from '../static/images/territoriobio2.png';
 import territorio3 from '../static/images/territoriobio3.jpg';
-
-
 
 export const SubSectionTitle = styled.h2`
        color: #44841a;
@@ -101,30 +99,77 @@ const AditionalContainer = styled.div`
     }
 `;
 
-const TerritoriosCulturales = ({state}) => {
+const TerritoriosCulturales = ({state,actions}) => {
+
+    useEffect( () => {
+        
+        if(state.theme.lang === "en") {
+            actions.source.fetch("/bioculturalterritories")
+        }
+
+        else {
+            actions.source.fetch("/es-bioculturalterritories")
+        }
+    }, [])
+
+    const pageBiocultural = state.theme.lang === "en" ? state.source.page[262] : state.source.page[269]
+
+    const data = state.source.get('/cardimage');
+  
+
+    let cardImagesArr = [];
+
+    
+    if(data.isReady) {
+        
+        data.items.map(({id}) => { 
+                
+
+                if(state.theme.lang === "en") {
+                    if(state.source.cardimage[id].filterbypage[0] === 26) {
+                        cardImagesArr.push(state.source.cardimage[id])
+                    }
+                }
+
+                else {
+                    if(state.source.cardimage[id].filterbypage[0] === 27) {
+                        cardImagesArr.push(state.source.cardimage[id])
+                    }
+                }
+            }
+        )
+    }
+
+    const listArrOne = pageBiocultural.acf.info2_list.split("*");
+    listArrOne.shift();
+
+    const listArrTwo = pageBiocultural.acf.info3_list.split("*");
+    listArrTwo.shift();
+
     return ( 
+      
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Biocultural Territories
+                    {pageBiocultural.acf.title}
                 </Title>
                 <Separator></Separator>
                 <SubTitle>
-                    Endogenous development <br></br> Conservation of biodiversity
+                    {pageBiocultural.acf.subtitle}
                 </SubTitle>
             
             </HeadContainer>
 
             <SectionContainer>
                 <MainParagraph>
-                    Land use mosaics encompassing traditional and indigenous land tenure, production and exchange systems, cultural identity, community organization, and simultaneous objectives of endogenous development and biodiversity conservation.
+                    {pageBiocultural.acf.main_text}
                 </MainParagraph>
                 <p>
-                    Asociación ANDES, in collaboration with indigenous communities in Peru and around the world, has worked during the last several decades to define, expand, and protect biocultural heritage territories. 
+                    {pageBiocultural.acf.second_text} 
                 </p>
 
                 <p>
-                    Through learning exchanges facilitated by the International Network of Mountain Indigenous Peoples (INMIP), indigenous communities in countries ranging from Kenya to India to Kyrgyzstan have worked to implement the biocultural heritage model.
+                    {pageBiocultural.acf.thrid_text}
                 </p>
             </SectionContainer>
 
@@ -133,13 +178,9 @@ const TerritoriosCulturales = ({state}) => {
                 <InfoItem>
                     
                     <FontAwesomeIconStyled icon={faQuestionCircle}/>
-                    <h3>WHY?</h3>
+                    <h3>{pageBiocultural.acf.info1_title}</h3>
                     <p>
-                        The current erosion of genetic and cultural diversity is unprecedented, and it is becoming increasingly difficult for communities around the world to cope with the adverse impacts of climate change, threats to food security, and water scarcity.                    
-                    </p>
-                    
-                    <p>
-                        Biocultural heritage territories, which use integrated landscape management, offer a clear model for adapting to change.
+                        {pageBiocultural.acf.info1_paragraph}                    
                     </p>
                 </InfoItem>
                 <VerticalBorder></VerticalBorder>
@@ -147,13 +188,17 @@ const TerritoriosCulturales = ({state}) => {
                 <InfoItem>
                     <FontAwesomeIconStyled icon={faListAlt}/>
                     
-                    <h3>OUR AMBITIONS</h3>
+                    <h3>{pageBiocultural.acf.info2_title}</h3>
 
                     <ul>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Conserve agrobiodiversity</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Strengthen food security</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Improve livelihoods</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Protect biocultural heritage</li> 
+
+                        {listArrOne.map( listItem => {
+                                return(
+                                    <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{listItem}</li>      
+                                )
+                            }) 
+                        }
+    
                     </ul>
 
                 </InfoItem>
@@ -162,55 +207,68 @@ const TerritoriosCulturales = ({state}) => {
                 
                     <FontAwesomeIconStyled icon={faLeaf}/>
                     
-                    <h3>Areas of impact</h3>
+                    <h3>{pageBiocultural.acf.info3_title}</h3>
                 
                     <ul>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Agrobiodiversity</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Cultural diversity</li>
-                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Poverty and inequality</li>
+                        {listArrTwo.map( listItem => {
+                                return(
+                                    <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{listItem}</li>      
+                                )
+                            }) 
+                        }
                     </ul>
                 </InfoItem>
             </BriefSection>
 
             <SubSectionTitle>Case Studies</SubSectionTitle>
             <CardsContainer>
-                <Card>
-                    <img src={applepark} />
 
-                    <h3>Parque de manazana y Parque de Trigo, Tajikistan</h3>
+            {data.isReady ?
+                
+                <>
+                {cardImagesArr.reverse().map( cardImages => {
+                    
 
-                    <span>
-                        Discover the story of how indigenous farmers in Tajikistan are implementing the biocultural heritage model to protect their diversity of wheat and apple. The center of origin for these two world-important crops is in the Central Asian lands of these farmers.
-                    </span>
+                    return(
 
-                    <a href="https://andes.org.pe/wp-content/uploads/2020/07/Apple-and-Wheat-Park-Case-Study.pdf" target="_blank" rel="noopener" >Ver Estudio</a>
-                </Card>
+                    <Card>
+                        
+                        <h3>{cardImages.title.rendered}</h3>
 
-                <Card>
-                    <img src={parquedemaiz} />
+                        <img src={cardImages.acf.image_card.sizes.medium_large}/>
+  
+                        <span dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
+                    
+                        </span>
 
-                    <h3>Maize Park, Peru</h3>
+                    
 
-                    <span>
-                        Discover the story of how indigenous farmers in Tajikistan are implementing the biocultural heritage model to protect their diversity of wheat and apple. The center of origin for these two world-important crops is in the Central Asian lands of these farmers.
-                    </span>
+                        <a href={  cardImages.acf.link_card} >READ MORE</a>
+                        
+                    </Card>
+                    )
+                })}
 
-                    <a href="http://andes.org.pe/wp-content/uploads/2020/03/Maize-Park-Case-Study.pdf" target="_blank" rel="noopener" >Ver Estudio</a>
-                </Card>
+                </>
+            : null
+
+            }
+
             </CardsContainer>
 
-            <SubSectionTitle>Additional Resources</SubSectionTitle>
+            <SubSectionTitle>{pageBiocultural.acf.additional_resources_title}</SubSectionTitle>
             
             <AditionalContainer>
-                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={territorio} /></a>
+                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={pageBiocultural.acf.img_additional_1.sizes.medium}/></a>
             
-                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={territorio2} /></a>
+                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={pageBiocultural.acf.img_additional_2.sizes.medium}/></a>
             
-                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={territorio3} /></a>
+                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={pageBiocultural.acf.img_additional_3.sizes.medium}/></a>
             
-                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={parquedemaiz} /></a>
+                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={pageBiocultural.acf.img_additional_4.sizes.medium}/></a>
             </AditionalContainer>
         </MarginTopContainer>
+ 
     );
 }
  

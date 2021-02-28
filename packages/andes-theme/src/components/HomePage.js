@@ -1,12 +1,82 @@
 import React from 'react';
 import {connect, styled } from "frontity";
-import imgResearch from '../static//images/link2.jpg';
-import homeNews from '../static/images/homenews.jpeg';
-import potatoPark from '../static/images/1.jpeg';
-import personas25 from '../static/images/FotogrupalANDESytecnicosscaled.jpg'
-import proyectos25 from '../static/images/parquepapa.jpg'
-import publicaciones25 from  "../static/images/publicaciones/the-culinary-sanctuary-of-the-potato-park.png"
-import Link from './Link'
+import {MarginTopContainer} from './Filosofia';
+import Link from './Link';
+import Loading from './Loading';
+
+const Content = styled.div`  
+    background-image: url("https://en.andescusco.info/wp-content/uploads/2021/02/link3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+`
+const TextoImagen = styled.div`
+    background-image: linear-gradient(to top, rgba(34,49,63, .5), rgba(34, 49, 63, .6));
+    color: #FFF;
+    display: flex;
+    padding: 1.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+    overflow-wrap: break-word;
+   
+    @media(min-width: 768px) {
+        height: 573px;
+        padding: 6rem;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 4px;
+        margin-top: 5rem;
+
+        @media(min-width: 768px) {
+            font-size: 4.5rem;
+            margin-right: 20rem;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        font-family: 'Montserrat', sans-serif;
+
+        @media(min-width: 768px) {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            margin-right: 10rem;
+        }
+    }
+
+        div {
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                background-color: #f07723;
+                text-transform: uppercase;
+                color: #fff;
+                padding: 1.2rem 2.2rem;
+                border-radius: 10px;
+                text-align: center;
+                margin-bottom: 2rem;
+                font-weight: 700;
+                font-size: 1.2rem;
+
+                &:hover {
+                    background-color: #F05523;
+                    transition: all 0.4s;
+                }
+            }
+
+    }    
+`
 
 export const SectionText = styled.div`
     display: -webkit-box;
@@ -187,13 +257,10 @@ const CardsHome = styled.div`
        }
    }
 
-
    h3 {
        color: #44841a;
        text-align: center;
    }
-
-
 
    span {
        padding: 1rem 1rem 2rem 1rem;
@@ -227,159 +294,159 @@ const CardsHome = styled.div`
    }
 `;
  
-const HomePage = ({state}) => {
-    return ( 
-        <>
-        <SectionText>
-            <div>  
-                <h1>Welcome to ANDES</h1>              
-                <p>
-                ANDES actively works on issues of biodiversity conservation, indigenous rights, and sustainable development. Furthermore, we promote the horizontal exchange of experiences and policies which value traditional and indigenous knowledge and contribute to the global dialogue on climate change.
-                </p>
+const HomePage = ({state, actions, libraries}) => {
 
-                <div>
-                    <Link href="/filosofia">Explore</Link>
+    const pageHome = state.source.page[69];
+
+    const data = state.source.get('/cardimage');
+
+    let cardImagesArr = [];
+
+    
+    if(data.isReady) {
+        
+        data.items.map(({id}) => { 
+                if(state.theme.lang === "en") {
+                    if(state.source.cardimage[id].filterbypage[0] === 25) {
+                        cardImagesArr.push(state.source.cardimage[id])
+                    }
+                }
+
+                else {
+                    if(state.source.cardimage[id].filterbypage[0] === 26) {
+                        cardImagesArr.push(state.source.cardimage[id])
+                    }
+                }
+            }
+        )
+    }
+   
+    return (        
+        <>
+            {typeof pageHome === "undefined" ? <Loading /> : 
+            <>
+            <MarginTopContainer>
+                <Content>
+                    <TextoImagen>
+                        <h1 dangerouslySetInnerHTML={ {__html: pageHome.acf.home_title}}></h1>
+                        <p dangerouslySetInnerHTML={ {__html: pageHome.acf.home_slogan}}></p>
+                        <div>
+                            <Link href={pageHome.acf.home_button_getmore}>Get More</Link>
+                        </div>           
+                    </TextoImagen>
+                </Content>
+            </MarginTopContainer>
+            <SectionText>
+                <div>  
+                    <h1>{pageHome.acf.section1_title}</h1>              
+                    <p>
+                        {pageHome.acf.section1_textcontent}
+                    </p>
+
+                    <div>
+                        <Link href={pageHome.acf.section1_button_explore}>Explore</Link>
+                    </div>
                 </div>
-            </div>
-        </SectionText>
+            </SectionText>
+
 
         <SectionHomePage>
-            <CardsHomeContainer>
-                <CardsHome>
-                    <div>
-                    <img src={personas25} />
-                    </div>
-               
-                    <h3>25 PEOPLE</h3>
-                             
-                    <span>
-                        As part of our 25th anniversary celebrations, ANDES would like to thank everyone who has contributed to institutional development, collaborative research and knowledge sharing.
-                    </span>
-                    <div>
-                        <Link href="/aniversariopersonas" >READ MORE</Link>
-                    </div>
- 
-                </CardsHome>
-                <CardsHome>
-                    <div>
-                        <img src={proyectos25} />
-                    </div>
-               
-               
-                    <h3>25 PROJETS, EXCHANGES Y CAMPAINGS</h3>
+        <CardsHomeContainer>
+            {data.isReady ?
+                
+                    <>
+                    {cardImagesArr.slice(0,3).reverse().map( cardImages => {
                         
-                    <span>
-                        We would like to share some of the results of the past projects, campaigns and events of ANDES, which, of course, are only possible thanks to the important contributions of our partners.                   
-                    </span>
-                    
-                    <div>
-                        <Link href="/aniversarioproyectos" >READ MORE</Link>
-                    </div>
-                   
-                </CardsHome>
 
-                <CardsHome>
-                    <div>
-                        <img src={publicaciones25} />
-                    </div>
+                        return(
 
+                        <CardsHome>
+                            <div>
+                                <img src={cardImages.acf.image_card.sizes.medium_large}/>
+                            </div>
                     
-                    <h3>25 PUBLICATIONS</h3>
-                   
-                    <span>
-                        We would like to share some of the results of our research through publications which, of course, are only possible thanks to the important contributions of our partners.
-                    </span>
-                    
-                    <div>
-                        <Link href="/aniversariopublicaciones" >READ MORE</Link>
-                    </div>
-                   
-                </CardsHome>
+                            <h3>{cardImages.title.rendered}</h3>
+                                    
+                            <span dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
+                        
+                            </span>
+
+                            <div>
+                                <Link href={  cardImages.acf.link_card} >READ MORE</Link>
+                            </div>
+        
+                        </CardsHome>
+                        )
+                    })}
+
+                    </>
+                : null
+
+            }
             </CardsHomeContainer>
-        </SectionHomePage>       
 
-        <SectionText>
+            </SectionHomePage>       
+
+            <SectionText>
             <div>  
-                <h1>Pluriversity - Yachay Kuychi</h1>              
+                <h1>{pageHome.acf.section31_title}</h1>              
                 <p>
-                    The Yachay Kuychi Pluriversity (Rainbow of Knowledge), is an international institution of intercultural education and research, and a center of excellence in indigenous food systems and biocultural landscapes
+                    {pageHome.acf.section31_textcontent}
                 </p>
                 
                 <div>
-                    <Link href="/quienessomos">LEARN</Link>
+                    <Link href={pageHome.acf.section31_buttonlearn}>LEARN</Link>
                 </div>
             </div>
 
             <div>  
-                <h1>Potato Park</h1>              
+                <h1>{pageHome.acf.section32_title}</h1>              
                 <p>
-                    The Potato Park is located in the Pisac district, approximately 40 kilometers from the city of Cusco (Peru), in the Sacred Valley of the Incas. Covering an area of ​​9280 hectares and located at a height between 3400 and 4600 meters above sea level.
+                    {pageHome.acf.section32_textcontent}
                 </p>
                 <div>
-                    <Link href="/parquedelapapa-pisac">LEARN</Link>
+                    <Link href={pageHome.acf.section32_buttonlearn}>LEARN</Link>
                 </div>
             </div>
         </SectionText>
 
-
         <SectionHomePage>
-            <CardsHomeContainer>
-                <CardsHome>
-                    <div>
-                    <img src={homeNews} />
-                    <strong>News</strong>
-                    </div>
-                        <h3>Indigenous Resilience</h3>
-                        <span>
-                            From the Mongolian Steppes to the Andean Mountains
-                        </span>
-                    <div>
-                        <a href="https://www.culturalsurvival.org/publications/cultural-survival-quarterly/indigenous-resilience-mongolian-steppes-andean-mountains" target="_blank" rel="noopener" >READ MORE</a>
-                    </div>
- 
-                </CardsHome>
-                <CardsHome>
-                    <div>
-                        <img src={imgResearch} />
-                        <strong>Event</strong>
-                    </div>
-               
-               
-                    <h3>Anniversary ANDES</h3>
+        <CardsHomeContainer>
+            {data.isReady ?    
+                    <>
+                    {cardImagesArr.slice(3,6).reverse().map( cardImages => {
                         
-                    <span>
-                        Join us, to the celebration of 25 years safeguarding the biocultural heritage
-                    </span>
-                    
-                    <div>
-                        <a href="/" >READ MORE</a>
-                    </div>
-                   
-                </CardsHome>
+                        return(
 
-                <CardsHome>
-                    <div>
-                        <img src={potatoPark} />
-                        <strong>Publication</strong>
-                    </div>
-
-                    
-                    <h3>Research</h3>
-                   
-                    <span>
-                        Interspecies respect and Potato Conservation in the Peruvian cradle of domestication
-                    </span>
-                    
-                    <div>
-                        <a href="http://andes.center/wp-content/uploads/2018/04/ASHS_28-2018-4_PIMBERT.pdf" target="_blank" rel="noopener" >READ MORE</a>
-                    </div>
-                   
+                        <CardsHome>
+                        <div>
+                            <img src={cardImages.acf.image_card.sizes.medium_large}/>
+                            <strong>{cardImages.acf.tag_card}</strong>
+                        </div>
+                
+                        <h3>{cardImages.title.rendered}</h3>
+                                
+                                <span dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
+                              
+                                </span>
+                        <div>
+                            <Link href={  cardImages.acf.link_card} >READ MORE</Link>
+                        </div>
+    
                 </CardsHome>
+                        )
+                    })}
+
+                    </>
+                : null
+
+            }
             </CardsHomeContainer>
-        </SectionHomePage>
-
+            </SectionHomePage>       
+                </>
+            } 
         </>
-    );
+    )
 }
  
 export default connect(HomePage);

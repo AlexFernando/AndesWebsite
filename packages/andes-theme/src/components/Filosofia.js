@@ -1,10 +1,7 @@
 import React from 'react';
 import {connect, css, styled } from "frontity";
-import missionImg from '../static/images/mision.jpeg';
-import visionImg from '../static/images/vision.jpeg';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIconList} from './TerritoriosCulturales';
-
 
 export const MarginTopContainer = styled.div`
     margin-top: 12vh;
@@ -142,27 +139,30 @@ export const ImageStyle = styled.img`
     }
 `
 
-const Filosofia = ({state}) => {
+const Filosofia = ({state, actions}) => {
+    
+    const pagePhilosophy = state.theme.lang === "en" ? state.source.page[172] : state.source.page[192];
+
+    const objectivesArr = pagePhilosophy.acf.objectives.split("*");
+
+    objectivesArr.shift();
+
     return ( 
+
         <MarginTopContainer>
             <HeadContainer>
-                <Title>ABOUT</Title>
+                <Title>{pagePhilosophy.acf.title}</Title>
                 <Separator></Separator>
              
-                <SubTitle>Safeguarding the Biocultural Territories</SubTitle>       
+                <SubTitle>{pagePhilosophy.acf.subtitle}</SubTitle>       
             </HeadContainer>
 
             <SectionContainer>
 
                     <div>
-                        <p><span>Our Mission : </span>Promote a conservation and sustainable development approach
-                        based on the Andean principle of Sumaq Kawsay through the implementation 
-                        of Biocultural Territories.</p>  
+                        <p><span>Our Mission : </span>{pagePhilosophy.acf.mission}</p>  
                        
-                        
-                        <p><span>Our Vision : </span>Create local capacities and strategic responses to the 
-                        socio-economic, cultural, ecological and political effects of the globalization process 
-                        on local communities, as well as the protection of their resources, knowledge and the rights associated with these resources.</p>
+                        <p><span>Our Vision : </span>{pagePhilosophy.acf.vision}</p>
                     </div>
         
                     <div>
@@ -170,22 +170,28 @@ const Filosofia = ({state}) => {
                         <ObjetivesContent>
                             <div>
                                 <ul>
-                                    <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Defense, promotion and celebration of biocultural <br></br>diversity</li>
-                                    <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Sustainable community development</li>
-                      
+                                    {objectivesArr.slice(0,2).map( objetive => {
+                                            return(
+                                                <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{objetive}</li>      
+                                            )
+                                        }) 
+                                    }
                                 </ul>
 
-                                <img src={missionImg} />
+                                <img src={pagePhilosophy.acf.image_one.sizes.medium_large} />
                             </div>                       
                        
 
                             <div>
                                 <ul>
-                                    <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Innovation to face climate change</li>
-                                    <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Political advocacy for indigenous rights</li>
-                                    <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Creation of solidarity networks</li>          
+                                    {objectivesArr.slice(2, objectivesArr.length).map( objetive => {
+                                            return(
+                                                <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{objetive}</li>      
+                                            )
+                                        }) 
+                                    }
                                 </ul>
-                                <img src={visionImg} />
+                                <img src={pagePhilosophy.acf.image_two.sizes.medium_large} />
                             </div>
                         </ObjetivesContent>
                     </div>

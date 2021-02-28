@@ -1,15 +1,19 @@
-import React, {useState, useEffect} from 'react';
-import {connect, css, styled } from "frontity";
+import React, {useEffect} from 'react';
+import {connect} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import {dataNews} from '../data/dataNewsEnglish';
 import {PostStyled} from './SearchBar';
+import Loading from './Loading';
+import FeaturedImage from './FeaturedImage';
 
-const News = () => {
+const News = ({state, actions}) => {
 
+    useEffect( () => {
+        actions.source.fetch("/search")
+    }, [])
 
+    const data = state.source.get('/search');
 
     return ( 
-
         <MarginTopContainer>
             <HeadContainer>
                 <Title>News</Title>
@@ -17,26 +21,53 @@ const News = () => {
                 <SubTitle>Relevant Information<br></br> Real Stories</SubTitle>
             </HeadContainer>
 
+        {data.isReady ?
+        <>
 
-            {    
-                dataNews.map(item => (
-                    <PostStyled>
-                        <a href={`${item.url}`} target="_blank" rel="noopener">
-                            <img src={item.urlImage}/>
-                            <div>
-                                <h3>{item.titulo}</h3>
-                                <p>{item.content}</p>
-                                <strong>Date:</strong>
-                                &nbsp;&nbsp;
-                                <span>{item.fecha}</span>
-                            </div>
-                        </a>
-                    </PostStyled>
-                ))
+            {
+                data.items.map( ({id}) => {
+
+                const singleSearch = state.source.singlesearch[id];
+
+                let typeOfPublication = false;
+                
+                if(singleSearch.typeofpublication[0] === 2) {
+                    typeOfPublication = true;
+                }
+
+                    return (
+
+                    <>
+                            { typeOfPublication ? 
+                            <PostStyled key = {id}>
+                                
+                                <a href={singleSearch.meta._links_to} target="_blank" rel="noopener noreferrer">
+                                <FeaturedImage imgID = {singleSearch.featured_media} element = "singlesearch"/>
+
+                                <div>
+                                    <h3>{singleSearch.title.rendered}</h3>
+                                    <div dangerouslySetInnerHTML={{ __html: singleSearch.content.rendered}}></div>
+                               
+                                 
+                                    <p>Date : 
+                                    <span dangerouslySetInnerHTML={ {__html: singleSearch.acf.date}}></span>
+                                    </p>
+                                </div>           
+                                </a>
+                            </PostStyled>
+                            : null
+                            }
+                        
+                    </>
+                    )
+                })
             }
+        </>
+
+        : <Loading />
+        }
+
         </MarginTopContainer>
-
-
     );
 }
  

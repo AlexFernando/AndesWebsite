@@ -298,7 +298,7 @@ const Menu =  () => {
                     setNavOpen = {setNavbarOpen}
                     open = {openResearchMobile}
                     setOpen = {setOpenResearchMObile}
-                    options = {["Yachay Kuychi", "Who We Are?"]}
+                    options = {["Yachay Kuychi", "Who We Are"]}
                     secondTitle = {'What We Do?'}
                     options2 = {["Courses", "Intership and Volunteering", "Exchanges"]}
                     thirdTitle = {"Utilities"}
@@ -314,7 +314,7 @@ const Menu =  () => {
           <Border />
 
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
-            <Link href= "/relevantnews">News</Link>
+            <Link href= "/news">News</Link>
           </Button> 
           <Border />
           
@@ -336,7 +336,7 @@ const Menu =  () => {
           <Button onClick={() => setOpenAbout(!openAbout)}>ANDES</Button> 
           <Button onClick={() => setOpenResearch(!openResearch)}>PLURIVERSITY</Button> 
           <Button><Link href="/publications">PUBLICATIONS</Link></Button> 
-          <Button><Link href= "/relevantnews">NEWS</Link></Button> 
+          <Button><Link href= "/news">NEWS</Link></Button> 
           <Button> <Link href= "/events">EVENTS</Link></Button> 
 
           <LinkButtonHome href="/stayintouch">CONTACT</LinkButtonHome>
@@ -364,7 +364,7 @@ const Menu =  () => {
       <Dropdown
         open = {openResearch}
         setOpen = {setOpenResearch}
-        options = {["Yachay Kuychi", "Who We Are?"]}
+        options = {["Yachay Kuychi", "Who We Are"]}
         secondTitle = {'What We Do?'}
         options2 = {["Courses", "Intership and Volunteering", "Exchanges"]}
         thirdTitle =  {"Utilities"}

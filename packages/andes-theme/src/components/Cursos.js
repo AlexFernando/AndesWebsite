@@ -1,16 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect, styled} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {ContainerBlocks, BlockInfo} from './Pasantias';
 import {SectionContainer, MainParagraph} from './potatoPark';
+import Loading from './Loading';
 
 // font awesome icons
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIconList} from './TerritoriosCulturales'
-
-import curso1 from '../static/images/curso1.jpg'
-
-import curso2 from '../static/images/curso2.jpg'
 
 const SpanStyled = styled.span`
     font-style: italic;
@@ -18,64 +15,126 @@ const SpanStyled = styled.span`
     margin-right: .5rem;
 `;
 
-const Cursos = ({state}) => {
+const Cursos = ({state, actions}) => {
+
+    useEffect( () => {
+            
+        if(state.theme.lang === "en") {
+            actions.source.fetch("/courses")
+            actions.source.fetch("/cardintership/")
+        }
+
+        else {
+            actions.source.fetch("/es-courses")
+            actions.source.fetch("/cardintership/")
+        }
+    }, [])
+
+
+    const pageCourses = state.theme.lang === "en" ? state.source.page[423] : state.source.page[413]
+
+    const data = state.source.get('/cardintership');
+
+    let cardCoursesArr = [];
+
+    if(data.isReady) {
+
+        data.items.map(({id}) => { 
+                
+                if(state.theme.lang === "en") {
+
+                    if(state.source.cardintership[id].typeofintershipcard[0] === 31) {
+                        cardCoursesArr.push(state.source.cardintership[id])
+                    }
+                }
+
+                else {
+                    if(state.source.cardintership[id].typeofintershipcard[0] === 32) {
+                        cardCoursesArr.push(state.source.cardintership[id])
+                    }
+                }
+            }
+        )
+    }
+
     return ( 
+
+        <>
+        {typeof pageCourses === "undefined" ? <Loading />
+        
+        :
+
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Courses
+                    {pageCourses.acf.title}
                 </Title>
                 <Separator></Separator>
                 <SubTitle>
-                    Formation, learn with us.
+                    {pageCourses.acf.subtitle}
                 </SubTitle>
                 
             </HeadContainer>
 
             <SectionContainer>
                 <MainParagraph>
-                    The Yachay Kuychi Pluriversity offers a range of innovative and adaptable programs for indigenous peoples, academics, researchers, policy makers and others. The programs include:                       
+                    {pageCourses.acf.main_text}    
                 </MainParagraph>
             
             </SectionContainer>
 
             <ContainerBlocks>
-                <BlockInfo>
 
-                    <img src={curso2} />
-
-                    <div>
-                        <ul>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>Participatory Action-research Programs </SpanStyled> on Food Neighborhoodsbiocultural heritage, climate change, traditional agricultural systems, underutilized crops, nutrition, and others, are facilitated by community leaders, indigenous knowledge holders and formally trained scientists.</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>Farmer Field Schools</SpanStyled> where farmers are directly engaged in field studies, develop conceptual understanding and specific hands-on skills in agroecology and water management, and other topics of interest identified by participants.</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>Contact learning zones </SpanStyled> create safe and collaborative environments where different generations, genders, and cultures come together to learn from one another specific topics</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>The internship and Volunteer Program </SpanStyled> helps to build local and international capacity, establishing alliances and networks as forces for social change.</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>Policy platform development</SpanStyled> is a way to facilitate communication and coordination within complex policy processes and institutions at the local, national, regional and international levels</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>Custom and Special Interest Courses</SpanStyled> are offered on-site for general interest and professional development.</li> 
-                        </ul>
-                    </div>
+            {data.isReady ?
                     
-                </BlockInfo>
+                    <>
+                        {cardCoursesArr.reverse().map( cardIntership => {
 
-                <BlockInfo>
+                            let arrayParagraphs = cardIntership.acf.list_paragraphs.split("*");
+                            let arrayTitles = cardIntership.acf.title_list.split("*");
 
-                    <div>
-                        <h2>Detalles</h2>
-                        <p>
-                        Course facilitators are both formally educated professionals and Indigenous knowledge experts. Course ‘toolkits’ for instructors are a dynamic and constantly evolving collection of methods and instruments, open to revision and augmentation. These toolkits are drawn from, and creatively integrate, a variety of sources: pre-Hispanic tools, the methods of participatory action research, and Internet and wireless technologies, among others.
-                        </p>
+                            if(arrayParagraphs.length > 1) {
+                                arrayParagraphs.shift()
+                            }
 
-                        <p>
-                            Exchanges and courses have previously been organized for Indigenous business leaders from New Zealand, policy makers from Mexico, Potato scientists and policy makers from around the world, and several university groups from Peru, Mexico, Chile, and USA. 
-                        </p>
-                    </div>
+                            if(arrayTitles.length > 1) {
+                                arrayTitles.shift()
+                            }
+                        
+                            return(
+
+                                <BlockInfo>
+                                    <div>
+                                        <h2>{cardIntership.acf.title}</h2>
+
+                                        {
+                                            arrayParagraphs.map( (item, index) => {
+                      
+                                                return (
+                                                    <li><FontAwesomeIconList icon={faArrowAltCircleRight}/><SpanStyled>{arrayTitles[index]}</SpanStyled> {item}</li> 
+                                                )
+                         
+                                            })
+                                        }
+                                        
+                                    </div>
+                                    
+                                    
+                                    <img src={cardIntership.acf.image_card.sizes.medium_large}/>
+                                    
+                                </BlockInfo>
+                            )
+                        })}
+
+                    </>
                     
+                    : null
 
-                    <img src={curso1} />
-                </BlockInfo>
-
+                }
             </ContainerBlocks>
         </MarginTopContainer>
+        }
+        </>
     );
 }
  
