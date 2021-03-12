@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "5502b24b85bfeee5cc4f",
+  "hash": "db71f0b1a9d4452873c7",
   "publicPath": "/static/",
   "outputPath": "/home/alexf/react_2020/andes/build/static",
   "assetsByChunkName": {
@@ -12,7 +12,7 @@
   "assets": [
     {
       "name": "andes-headless-english.module.js",
-      "size": 12420106,
+      "size": 11755164,
       "chunks": [
         "andes-headless-english"
       ],
@@ -20,12 +20,11 @@
         "andes-headless-english"
       ],
       "info": {},
-      "emitted": false,
-      "isOverSizeLimit": true
+      "emitted": false
     },
     {
       "name": "andes-headless-spanish.module.js",
-      "size": 12420106,
+      "size": 11755164,
       "chunks": [
         "andes-headless-spanish"
       ],
@@ -33,28 +32,11 @@
         "andes-headless-spanish"
       ],
       "info": {},
-      "emitted": false,
-      "isOverSizeLimit": true
+      "emitted": false
     },
     {
       "name": "images/1.jpeg",
       "size": 89365,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Ayni_ayllu_yanantin_chanincha.png",
-      "size": 127190,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Building_transdisciplinarity_for_managing_complexity.png",
-      "size": 98450,
       "chunks": [],
       "chunkNames": [],
       "info": {},
@@ -77,70 +59,6 @@
       "emitted": false
     },
     {
-      "name": "images/Climate-Change-Indigenous-population.jpg",
-      "size": 84731,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Climate_change_social_learning_case_study.png",
-      "size": 173846,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/CocinandoconlaAgrobiodiversidaddeLares_LibrodeRecetas.png",
-      "size": 183550,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Conservation_planning_Ecotourism_design_Hettler.png",
-      "size": 121617,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Criar_dejarse_criar_Madden.png",
-      "size": 86224,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Decolonization_as_relocalization_grey.png",
-      "size": 123500,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Escalating_tensions_greenwoodsanchez.png",
-      "size": 124025,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Estudio_de_linea_de_base_agrobiodiversidad.png",
-      "size": 80433,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
       "name": "images/FotogrupalANDESytecnicosscaled.jpg",
       "size": 107870,
       "chunks": [],
@@ -157,14 +75,6 @@
       "emitted": false
     },
     {
-      "name": "images/Governanca_para_a_conservacao_ramos.png",
-      "size": 61787,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
       "name": "images/II-Andean-Cosmovision-as-Conceptual-Framework.jpg",
       "size": 91716,
       "chunks": [],
@@ -175,22 +85,6 @@
     {
       "name": "images/II-Educacion-Biocultural-Cosmovision-Andina.jpg",
       "size": 92920,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Indigenous_claims_native_crops.png",
-      "size": 134993,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Interspecies_respect_peruvian_cradle_of_domestication.png",
-      "size": 39554,
       "chunks": [],
       "chunkNames": [],
       "info": {},
@@ -229,70 +123,6 @@
       "emitted": false
     },
     {
-      "name": "images/Papa_alimento_ancestral_para_el_futuro.png",
-      "size": 103367,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Plantes_et_savoirs_dano.png",
-      "size": 131738,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Resilient_farming_systems_in_times_of_uncertainty.png",
-      "size": 98676,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Situating_in_situ.png",
-      "size": 151777,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Social_Economy_based_microenterprises_cheong.png",
-      "size": 276751,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/Thriving_biodiversity_perus_potato_park.png",
-      "size": 167480,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/TraditionalResourceRightsandIndigenousPeopleintheAndes.png",
-      "size": 122540,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/You_cant_grow_potatoes_in_the_sky.png",
-      "size": 155707,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
       "name": "images/agrobiodiversidad.jpg",
       "size": 158670,
       "chunks": [],
@@ -317,22 +147,6 @@
       "emitted": false
     },
     {
-      "name": "images/bioculturalHeritagePeru.png",
-      "size": 31733,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/bioculturalHeritagesInnovationsPotatosParkj.png",
-      "size": 33641,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
       "name": "images/estudioparquemaiz.png",
       "size": 80401,
       "chunks": [],
@@ -343,14 +157,6 @@
     {
       "name": "images/fao-manual-semillas.png",
       "size": 85020,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/homenews.jpeg",
-      "size": 100430,
       "chunks": [],
       "chunkNames": [],
       "info": {},
@@ -469,30 +275,6 @@
       "emitted": false
     },
     {
-      "name": "images/programas1.jpeg",
-      "size": 72286,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/programas2.jpg",
-      "size": 203269,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/programas3.jpg",
-      "size": 57717,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
       "name": "images/territoriobio.png",
       "size": 140082,
       "chunks": [],
@@ -517,24 +299,8 @@
       "emitted": false
     },
     {
-      "name": "images/the-culinary-sanctuary-of-the-potato-park.png",
-      "size": 127903,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
       "name": "images/the-potato.png",
       "size": 120749,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "images/transgenicos.jpg",
-      "size": 83389,
       "chunks": [],
       "chunkNames": [],
       "info": {},

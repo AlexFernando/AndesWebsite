@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect, css, styled } from "frontity";
-import {MarginTopContainer} from './Filosofia';
-import {dataPublications} from '../data/dataPublicaciones';
+import {MarginTopContainer, SectionContainer} from './Filosofia';
 import {SearchBar, InputBar, PostStyled, NotFoundContainer } from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
 import LinkButton from "./LinkButton";
+
+import FeaturedImage from './FeaturedImage';
+import Loading from "./Loading";
 
 const SectionPublications = styled.div`
     display: flex;
@@ -37,10 +39,22 @@ export const PublicationCard = styled.div`
         text-decoration: none;
         display: flex;
     }
+
+
+    h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            color: #000;
+
+            @media(max-width: 768px) {
+                font-size: .9rem;
+            }
+        }
     
     img {
-        max-width: 20%; 
-        margin-right: 1rem;  
+        max-width: 40%;
+        margin-right: 1rem;
+        align-self:center;  
 
         @media(max-width: 768px) {
             max-width: 50%;
@@ -51,64 +65,52 @@ export const PublicationCard = styled.div`
     p {
         color: #545454;
         line-height: 1.3;
-    }
-`;
-
-const MatchPublication = styled.div`
-    display: flex;
-    margin: 3rem 10rem 0 10rem;
-    cursor: pointer;
-
-    @media(max-width: 768px) {
-            margin: 1rem;
-        }
-
-    &:hover{
-        background-color: #dbdbdb;
-        padding: 1rem;
-    }
-
-    a {
-        text-decoration: none;
-        display: flex;
-    }
-
-    img {
-        max-width: 20%; 
-        margin-right: 1rem;  
+        font-weight: 700;
+        font-size: 1.1rem;
 
         @media(max-width: 768px) {
-            max-width: 30%;
-        }
-
-    }
-
-    div {
-        display: flex;
-        flex-direction: column;
-
-        h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0;
-            color: #000;
-        }
-        
-        span {
             font-size: .9rem;
-            color: #545454;
-            margin-top: 0;
-        }
-
-        p {
-            color: #545454;
-            font-size: 1rem;
         }
     }
 
+    span {
+            font-size: 1.1rem;
+            margin-top: 0;
 
+            @media(max-width: 768px) {
+                font-size: .9rem;
+            }
+        }
 `;
 
-const RepoAnniversaryPublications = () => {
+const RepoAnniversaryPublications = ({state, actions}) => {
+
+    useEffect( () => {
+
+        if(state.theme.lang === "en") {
+            actions.source.fetch("/search")
+        }
+
+        else {
+            actions.source.fetch("/es-search")
+        }
+     }, [])
+
+    const data = state.theme.lang === "en" ? state.source.get('/search') : state.source.get('/es-search');
+
+    let publications = [];
+
+    //filling the array of publications
+    if(data.isReady) {
+        
+        data.items.map( ({id}) => {
+            if(state.source.singlesearch[id].typeofpublication.length > 1) {
+                publications.push(state.source.singlesearch[id]);
+            }
+        })
+    } 
+    //sorting the taking the recent year first
+    publications.sort((a, b) => (a.acf.date < b.acf.date) ? 1 : -1)
 
     const [searchTerm, setSearchTerm] = useState("");
     
@@ -118,123 +120,131 @@ const RepoAnniversaryPublications = () => {
 
     const handleChange = event => {
        setSearchTerm(event.target.value);
-       
     };
 
     const handleSubmit = e => {
 
         e.preventDefault();
-
-     
-        const results = dataPublications.filter( publication => publication.Title.toLowerCase().includes(searchTerm.toLowerCase()));
+        
+        const results = publications.filter( publication => publication.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()) || publication.acf.author.toLowerCase().includes(searchTerm.toLowerCase()));
      
         setSearchResults(results);
-
-        console.log(results);
-
-        console.log("searchTerm ", searchTerm);
-       
 
         if(results.length === 0 && searchTerm) {
             setAlternativeTerm(searchTerm);
         }
 
-
         setSearchTerm("")
     };
+
 
     return (
         
         <MarginTopContainer>
           
-                <SearchBar>
-                    <InputBar>
-                        <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
+          <SectionContainer>
+            <SearchBar>
+                <InputBar>
+                    <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
 
-                            <input 
-                                type="text"
-                                placeholder="What are you searching for?"
-                                value={searchTerm}
-                                onChange={handleChange}
-                            />
+                        <input 
+                            type="text"
+                            placeholder="What are you searching for?"
+                            value={searchTerm}
+                            onChange={handleChange}
+                        />
+                </InputBar>
+            
+                <ButtonAction  onClick={handleSubmit}>
+                    <LinkButton href="/publications">SEARCH</LinkButton>
+                </ButtonAction>
+            </SearchBar>
+        </SectionContainer>
+
+        {data.isReady ? 
+        <SectionPublications>
+
+            {searchResults.length === 0 && alternativeTerm === "" ?
                 
-                    
-                    </InputBar>
-                
-                    <ButtonAction  onClick={handleSubmit}>
-                            <LinkButton href="/publicaciones">SEARCH</LinkButton>
-                    </ButtonAction>
-                </SearchBar>
-    
+                publications.map( publication => {
 
-            <SectionPublications>
+                    return (
+                        
+                        <PublicationCard key = {publication.id}>
+                            <a href={publication.meta._links_to} target="_blank" rel="noopener noreferrer">
+                              <FeaturedImage imgID = {publication.featured_media} element = "publication"/>
 
-                {/** first render */}
-                { searchResults.length === 0 && alternativeTerm === "" ?
-                    
-                    Object.keys(dataPublications).map( publication => 
-                        <>
-                        {console.log(dataPublications[publication].url)}
-                        <PublicationCard>
-                            <a href={`${dataPublications[publication].url}`} target="_blank" rel="noopener">
-                                <img src={dataPublications[publication].urlImage} />
-                                <p>{dataPublications[publication].Title}</p>
-                            </a> 
+                              <div>
+                                <h3>{publication.title.rendered}</h3>
+
+                                <p>Author : 
+                                    <span dangerouslySetInnerHTML={ {__html: publication.acf.author}}></span>
+                                </p>
                             
+                                <p>Date : 
+                                    <span dangerouslySetInnerHTML={ {__html: publication.acf.date}}></span>
+                                </p>
+                              </div>           
+                            </a>
                         </PublicationCard>
-                        </>
                     )
-                    : null
-                }
+                })
 
-                {/** match with some element  */}
-                
-                {    
-                    searchResults.length > 0 ?
-                      
-                        Object.keys(searchResults).map( publication => 
-                            <>
-                            {console.log("match")}
-                            <MatchPublication>
+                :null
+            }
 
-                            <a href={`${searchResults[publication].url}`} target="_blank" rel="noopener">
-                                <img src={searchResults[publication].urlImage} />
-                                <div>
-                                    <h3>{searchResults[publication].Title}</h3>
-                                    <span>Autor: {searchResults[publication].author}</span>
-                                    <p>{searchResults[publication].date}</p>
-                                    <p></p>
-                                </div>
-                             </a>  
-                            </MatchPublication>
-                            </>
-                        )
-
-                        : null
-                      
-                }
-
-
-                {/** If we can't find a term */}
-                
-                {alternativeTerm!=="" && searchResults.length === 0 ?
+            {/** match with some element  */}
+            
+            {    
+                searchResults.length > 0 ?
+                   
+                    searchResults.map( publication => {
                     
-                    <>
-                    {console.log("not found")}
-                    <NotFoundContainer>
-                        <h2>Oops!</h2> 
+                        return (
+                       
+                            <PublicationCard key = {publication.id}>
+                                <a href={publication.meta._links_to} target="_blank" rel="noopener noreferrer">
+                                    <FeaturedImage imgID = {publication.featured_media} element = "publication"/>
+    
+                                    <div>
+                                    <h3>{publication.title.rendered}</h3>
+                                    <p>Author : 
+                                        <span dangerouslySetInnerHTML={ {__html: publication.acf.author}}></span>
+                                    </p>
                             
-                        <h3>We coudn't find any content related to the word "{alternativeTerm}"</h3>
+                                    <p>Date : 
+                                        <span dangerouslySetInnerHTML={ {__html: publication.acf.date}}></span>
+                                    </p>
+                                    </div>           
+                                </a>
+                            </PublicationCard>
+                        )
+                    })
+  
+                  :null                    
+            }
 
-                        <p>Plase use another term of search</p>
+            {/** If we can't find a term */}
+                
+            {alternativeTerm!=="" && searchResults.length === 0 ?
+                    
+                <>
+                <NotFoundContainer>
+                    <h2>Oops!</h2> 
+                        
+                    <h3>We coudn't find any content related to the word "{alternativeTerm}"</h3>
 
-                        <p>Thank you.</p>
-                    </NotFoundContainer> 
-                    </>
-                    :null
-                }
+                    <p>Plase use another term of search</p>
 
-            </SectionPublications>
+                    <p>Thank you.</p>
+                </NotFoundContainer> 
+                </>
+                :null
+            }
+
+        </SectionPublications>
+        : <Loading />
+        }
         </MarginTopContainer>
 
        

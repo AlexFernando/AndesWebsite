@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect, styled} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionContainer, MainParagraph, CardsContainer, Card} from './potatoPark'
-import transgenicos from '../static/images/transgenicos.jpg';
+
 import {SectionText} from './HomePage';
 
 import {faListAlt, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIconList, FontAwesomeIconStyled} from './TerritoriosCulturales';
-
+import {readMore} from './Root';
 
 export const FixedCard = styled.div`
     display: flex;
@@ -49,6 +49,7 @@ const SectionInfoList = styled.div`
         @media (max-width: 768px){
             flex-direction: column;
             justify-content: center;
+            
         }
 
         li {
@@ -70,80 +71,149 @@ const IframeStyled = styled.iframe`
     } 
 `;
 
-const Politica = ({state}) => {
-    return ( 
+const Politica = ({state, actions}) => {
+
+    useEffect( () => {
+        
+        if(state.theme.lang === "en") {
+            actions.source.fetch("/advocacyandpolitics")
+        }
+
+        else {
+            actions.source.fetch("/es-advocacyandpolitics")
+        }
+    }, [])
+   
+    const pagePolitics = state.theme.lang === "en" ? state.source.page[467] : state.source.page[419]
+
+    const data = state.source.get('/cardimage');
+
+    let cardImagesArr = [];
+
+    if(data.isReady) {
+        
+        data.items.map(({id}) => { 
+                
+                if(state.theme.lang === "en") {
+                    if(state.source.cardimage[id].filterbypage[0] === 35) {
+                        cardImagesArr.push(state.source.cardimage[id])
+                    }
+                }
+
+                else {
+                    if(state.source.cardimage[id].filterbypage[0] === 36) {
+                        cardImagesArr.push(state.source.cardimage[id])
+                    }
+                }
+            }
+        )
+    }
+
+    let listInfo = [];
+
+    if(typeof pagePolitics !== "undefined") {
+
+        listInfo = pagePolitics.acf.info_list.split("*");
+        listInfo.shift();
+    }
+
+
+    return (
+        
+        <>
+        {typeof pagePolitics === "undefined" ? <Loading />
+        
+        :
+        
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    Political Impact
+                    {pagePolitics.acf.title}
                 </Title>
                 <Separator></Separator>
                 <SubTitle>
-                    Transgenics <br></br> Biopiracy
+                    {pagePolitics.acf.subtitle}
                 </SubTitle>
                 
             </HeadContainer>
 
             <SectionContainer>
                 <MainParagraph>
-                    ANDES integrates matter of ethics and social and environmental justice to work, such as the right to land, biocultural protocols, intellectual property rights, and the negotiation of common interests in local, national and international processes.
+                    {pagePolitics.acf.main_text}
                 </MainParagraph>
 
                 <SectionInfoList>
                     <FontAwesomeIconStyled icon={faListAlt}/>
                     
-                    <h3>OUR PRIORITIES</h3>
+                    <h3>{pagePolitics.acf.info_title}</h3>
 
                     <div>
                         <ul>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Indigenous rights</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Rights of the Pachamama</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Protection of territories and landscapes</li> 
+                            {
+                                listInfo.slice(0, listInfo.length/3 ).map( item => {
+                                    return(
+                                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{item}</li>
+                                    )
+                                })
+                            }
+
+                            
                         </ul>
 
                         <ul>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Biopiracy</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Intellectual property</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Transgenics</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Climate Change</li> 
+                            {
+                                listInfo.slice(listInfo.length/3, listInfo.length/2 + 1 ).map( item => {
+                                    return(
+                                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{item}</li>
+                                    )
+                                })
+                            }
+
+                            
                         </ul>
 
                         <ul>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Seed sovereignty</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Food Safety</li>
-                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>Conservation of biocultural diversity</li>
+                            {
+                                listInfo.slice(listInfo.length/2 + 1 , listInfo.length ).map( item => {
+                                    return(
+                                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{item}</li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                 </SectionInfoList>
 
                 <CardsContainer>  
-                    <Card>
-                        <img src={transgenicos} />
+                {data.isReady ?
+                    
+                    <>
+                        {cardImagesArr.reverse().map( cardImages => {
+                            
 
-                        <h3>Rejecting Transgenics in Peru</h3>
+                            return(
 
-                        <span>
-                            Asociación ANDES, along with the Association of the Communities of the Potato Park, has signed a declaration against transgenics in Peru.
-                        </span>
+                                <Card>
+                                    
+                                    <img src={cardImages.acf.image_card.sizes.medium_large}/>
+                                    
+                                    <h3>{cardImages.title.rendered}</h3>
+                                    <p dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
+                                
+                                    </p>
 
-                        <div>
-                            <a href="https://www.servindi.org/actualidad/24/06/2020/senor-vizcarra-el-pueblo-peruano-rechaza-los-transgenicos" target="_blank" rel="noopener" >LEER HISTORIA</a>
-                        </div>
-                    </Card>
+                                    <a href={  cardImages.acf.link_card} >{readMore}</a>
+                                    
+                                </Card>
+                            )
+                        })}
 
-                    <Card>
-                        <img src={transgenicos} />
+                    </>
+                    
+                    : null
 
-                        <h3>Rejecting Transgenics in Peru</h3>
+                }
 
-                        <span>
-                            Asociación ANDES, along with the Association of the Communities of the Potato Park, has signed a declaration against transgenics in Peru.
-                        </span>
-
-                        <div>
-                            <a href="https://www.servindi.org/actualidad/24/06/2020/senor-vizcarra-el-pueblo-peruano-rechaza-los-transgenicos" target="_blank" rel="noopener" >LEER HISTORIA</a>
-                        </div>
-                    </Card>
                 </CardsContainer>
                     
             </SectionContainer>
@@ -152,33 +222,35 @@ const Politica = ({state}) => {
 
                 <div>  
                     <IframeStyled
-
                         src="https://www.youtube.com/embed/79alPG6G5uc" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen 
                     >
+                        
                     </IframeStyled>
                 </div>
 
                 <div>  
-                    <h1>October 18, 2020</h1>              
-                    <p>Open Letter to the President of the Republic of Peru - Extension of moratoratia to production of transgenics</p>
+                    <h1>{pagePolitics.acf.news_title_one}</h1>              
+                    <p>{pagePolitics.acf.description_news_one}</p>
                     <div>
-                        <a href="https://andes.org.pe/wp-content/uploads/2020/10/Carta-Abierta-al-Presidente-de-Peru-Ampliacion-de-la-moratoratia-a-transgenicos-18-10-20.pdf" target="_blank" rel="noopener">READ MORE</a>
+                        <a href={pagePolitics.acf.link_file_news_one} target="_blank" rel="noopener">{readMore}</a>
                     </div>
                 </div>
 
                 <div>  
-                    <h1>Octubre 20, 2020</h1>              
-                    <p>Congress extends moratorium on GM production until 2035.</p>
+                    <h1>{pagePolitics.acf.news_title_two}</h1>              
+                    <p>{pagePolitics.acf.description_news_two}</p>
                     <div>
-                        <a href="https://larepublica.pe/economia/2020/10/20/congreso-amplia-moratoria-a-transgenicos-hasta-diciembre-del-2035/?fbclid=IwAR16fczjYrejroXMDUpPQaTJ4pQZ4VP0nSpAGcDRZXbF5KNzdrWSDU9-0FA" target="_blank" rel="noopener">LEER MAS</a>
+                        <a href={pagePolitics.acf.link_file_news_two} target="_blank" rel="noopener">{readMore}</a>
                     </div>
                 </div>
             </SectionText>
 
         </MarginTopContainer>
+        }
+        </>
     );
 }
  

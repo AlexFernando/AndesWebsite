@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionText} from './HomePage';
@@ -6,14 +6,21 @@ import {TextContainer} from './Stuff';
 import groupAndes from '../static/images/FotogrupalANDESytecnicosscaled.jpg';
 import groupLares from '../static/images/FotogrupalLarescaled.jpg';
 import Krystyna from '../static/images/Krystynascaled.jpeg';
-
+import Loading from './Loading';
 
 export const SectionImage = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 2rem 0 0;
-    background-color: #eaeaea;
+
+    &:nth-child(odd) {
+        background-color: #eaeaea;
+    }
+
+    &:nth-child(even) {
+        background-color: #fff;
+    }
 
     @media(max-width: 768px) {
         flex-direction: column;
@@ -26,190 +33,150 @@ export const Images = styled.img`
     max-height: 100%;
 `
 
-const AnniversayPeople = ({state}) => {
+const AnniversayPeople = ({state, actions}) => {
+
+
+    useEffect( () => {
+            
+        if(state.theme.lang === "en") {
+            actions.source.fetch("/aniversariopersonas")
+            actions.source.fetch("/cardpersona/")
+        }
+
+        else {
+            actions.source.fetch("/es-aniversariopersonas")
+            actions.source.fetch("/cardpersona/")
+        }
+    }, [])
+
+
+    const pageAnnivPeople = state.theme.lang === "en" ? state.source.page[503] : state.source.page[489]
+
+    const data = state.source.get('/cardpersona');
+
+    let cardAnnivPeopleArr = [];
+
+    if(data.isReady) {
+
+        data.items.map(({id}) => { 
+                
+                if(state.theme.lang === "en") {
+
+                    if(state.source.cardpersona[id].typeofcardpersona[0] === 36) {
+                        cardAnnivPeopleArr.push(state.source.cardpersona[id])
+                    }
+                }
+
+                else {
+                    if(state.source.cardpersona[id].typeofcardpersona[0] === 37) {
+                        cardAnnivPeopleArr.push(state.source.cardpersona[id])
+                    }
+                }
+            }
+        )
+    }       
+
+    console.log("cardAnniv: ", cardAnnivPeopleArr);
+
     return ( 
 
+        <>
+        {typeof pageAnnivPeople === "undefined" ? <Loading />
+        
+        :
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    25 People 
+                    {pageAnnivPeople.acf.title}
                 </Title>
                 <Separator></Separator>
             </HeadContainer>
 
             <SectionText>
             <div>  
-                <h1>ANDES Celebrates 25 Years</h1>              
-                <p> As part of our 25th anniversary celebrations, ANDES would like to thank 
-                    everyone who has contributed to institutional development, collaborative research 
-                    and knowledge sharing. We appreciate the encouragement of partners along the way 
-                    and look forward to continuing our partnerships as we move forward with the 
-                    implementation of Yachay Kuychi Pluriversity. There are too many people to name here, 
-                    but we have chosen to highlight 25 influencers from ANDES's 25-year history.
+                <h1>{pageAnnivPeople.acf.title_paragraph_one}</h1>              
+                <p> {pageAnnivPeople.acf.text_paragraph_one}
                 </p>
             </div>
             </SectionText>
 
             <SectionText>
-                <div>
-                    <h1>Meet the co-founders of ANDES</h1>
-                    <p>
-                        Alejandro Argumedo and Cesar Argumedo grew up in the center of the Andes in Peru with their 4
-                        brothers. After high school, Alejandro studied agronomy at McGill University in
-                        Montreal, Canada, and Cesar studied zootechnology at the San Antonio Abad University of Cusco,
-                        Peru.
-                    </p>
+            <div>  
+                <h1>{pageAnnivPeople.acf.title_paragraph_two}</h1>              
+                <p> {pageAnnivPeople.acf.text_paragraph_two}
+                </p>
+            </div>
+            </SectionText>
 
-                    <p>
-                        In 1995, Alejandro and Cesar registered the Association for Nature and Development
-                        Sustainable (ANDES) in Cusco. During the first years, the organization operated with funds
-                        very limited and understaffed. However, during this period important
-                        relationships that led to the establishment of the iconic Potato Park by 6 communities
-                        indigenous people with the ANDES guide. This work continues to provide important lessons and
-                        a model for most of the current work in organizations.
-                    </p>
-                    <h3>Alejandro Argumedo</h3> 
-                        <p>
-                            He recently left his position as Director at ANDES to occupy
-                            a position at the Swift Foundation. Continue to provide leadership to ANDES as a member
-                            of the Board of Directors.
-                        </p>
+            
 
-                    <h3>Cesar Argumedo</h3> 
-                        <p>He continues to work as Director of ANDES</p>    
+            {data.isReady ?
                     
-                </div>
-                
-            </SectionText>
+                    <>
+                        {cardAnnivPeopleArr.reverse().map( cardAnnivPeople => {
+
+                            let arrayNames = cardAnnivPeople.acf.list_staff_names.split("*");
+                            let arrayProfession = cardAnnivPeople.acf.list_staff_profession.split("*");
+                            let arrayDescription = cardAnnivPeople.acf.list_staff_description.split("*");
+
+                            arrayNames.shift();
+                            arrayDescription.shift();
+                            arrayProfession.shift();
+
+                                return (
+
+                                    <SectionImage>
+                                        <SectionText>
+                                            <div>
+                                                <h2>{cardAnnivPeople.acf.area_division}</h2>
+                                                <TextContainer>
+                                                {arrayNames.map( (item, index) => {
+                                                    
+                                                    return(
+                                                    
+                                                            <>
+                                                                <h3>{item} <span> - {arrayProfession[index]}</span></h3> 
+                                                                {arrayDescription.length > 0 ?
+                                                                    <p>{arrayDescription[index]}</p>
+                                                                    : null
+                                                                }
+                                                            </>
+                                                    )
+
+                                                })
 
 
-            <SectionImage>
-                <SectionText>
-                    <div>
-                        <h1>ANDES's management team also includes two long-time associates.</h1>
-                        
-                        <h3>Tammy Stenner</h3> 
-                            <p>He has played a support role for ANDES directors since
-                            the beginning. She is also the coordinator of the Yachay Kuychi 
-                            Pluriversity Program.</p>
+                                                }
+                                                </TextContainer>
+                                                
 
-                        <h3>Carolina Ichillumpa</h3> 
-                            <p>She joined ANDES in 2002 as an accountant. She is the Head of
-                                Administration and finance..</p>    
-                        
-                    </div>
+                                            </div>
+                                        </SectionText>
+                                        {cardAnnivPeople.acf.image_card !== false ? 
+            
+
+                                                <Images src={cardAnnivPeople.acf.image_card.sizes.medium_large} />
+
+                                    
+                                            : null
+
+                                        }
+
+                                    </SectionImage>
+                                )
+                            })
+                        }
+
+                    </>
                     
-                </SectionText>
+                    : null
 
-                <Images src={groupAndes} />
-            </SectionImage>
+                }
+
             
-            <SectionText>
-                <div>
-                    <h1>
-                        ANDES 'careful and transparent management of finances and assets infuses
-                        trust in partners. This important work is currently supported by
-                    </h1>
-
-                        <TextContainer>
-                            <h3>Ruth Zuloaga<span> - Accountant</span></h3> 
-                            <h3>Ysabel Moron <span> - Office Assistant</span></h3> 
-                            <h3>Arascelly Heredia<span> - TIC Specialist</span></h3> 
-                            <h3>Enrque Granados<span> - Logistics manager</span></h3> 
-                        </TextContainer>
-                </div>
-            </SectionText>
-
-            <SectionImage>
-                <SectionText>
-
-                    <div>
-                        <h1>
-                            ANDES focuses on research with and for indigenous communities. Our staff
-                            field includes experts with university education and knowledge holders
-                            traditional, who bring diverse perspectives and experiences to complex problems.
-                            These experts currently include:</h1>
-
-                            <TextContainer>
-                                <h3>Jessica Villacorta<span> - Agronomist</span></h3> 
-                                <h3>Ricardo Pacco Chipa<span> - Field coordinator</span></h3> 
-                                <h3>Mariano Sutta Apocusi<span> - Local expert</span></h3> 
-                                <h3>Lino Manani Huarka<span> - Potato Guardian</span></h3> 
-                                <h3>Aniceto Ccoyo Ccoyo<span> - Local expert</span></h3> 
-                                <h3>Victor Oblitas<span> - Local expert </span></h3> 
-                                <h3>Cass Madden<span> -  Researcher</span></h3> 
-                            </TextContainer>
-                    </div>
-                </SectionText>
-
-                <Images src={groupLares}/>
-            </SectionImage>
-
-            <SectionText>
-
-                <div>
-                    <h1>The Board of Directors has international representation, with well-qualified people and
-                        experienced professionals who provide invaluable guidance and support to ANDES.</h1>
-
-                        <TextContainer>
-                            <h3>Carlos Loret de Mola<span> - President of the Cusichaca Association, former Minister of the Environment in Peru.</span></h3> 
-                            <h3>Carlos Amat y Leon<span> - Professor at the Universidad del Pacífico, former Minister of Agriculture, Peru.</span></h3> 
-                            <h3>Michel Pimbert<span> - Professor at Coventry University, Executive Director of the Center for Agroecology, Water and Resilience</span></h3> 
-                            <h3>Yiching Song,<span> - Principal Investigator, China Center for Agricultural Policy (CCAP), Professor, China Agricultural University</span></h3> 
-                        </TextContainer>
-                </div>
-            </SectionText>
-            
-            <SectionImage>
-                <SectionText>
-
-                    <div>
-                        <h1>
-                            ANDES has the contributions of an incredible international network of partners for the
-                            financial and technical support. Some examples are:
-                        </h1>
-
-                            <TextContainer>
-                                <h3>Krystyna Swiderska<p> - Principal Investigator of Agriculture and Agrobiodiversity at the
-                                International Institute for Environment and Development (IIED), is a
-                                ANDES collaborator for a long time, supporting the collection of
-                                funds, collaborative research and publications.</p></h3> 
-                                                            <h3>Sonja Swift<p> - And the Swift Foundation have provided valuable support to ANDES for the
-                                institutional development, action research and policy development, and have
-                                generously contributed to the establishment of the new Pluriversity site in the
-                                Sacred Valley.</p></h3> 
-                                                            <h3>Gigi Manicad<p> - Provided professional and thoughtful technical and financial support to ANDES
-                                during his time at Oxfam-Novib, and we look forward to continuing our collaboration with
-                                through Pluriversity.</p></h3> 
-                                
-                            </TextContainer>
-                    </div>
-                </SectionText>
-
-                <Images src={Krystyna} />
-            </SectionImage>
-            
-            <SectionText>
-                <div>
-                    <h1>With an active Internship and Volunteer Program, ANDES welcomes
-                    students from around the world, who conduct research on various topics,
-                    including social and environmental justice, indigenous food systems, conservation of
-                    biodiversity and ecotourism.</h1>
-
-                    <TextContainer>
-                        <h3>Neus Marti<p> - (Spain) carried out a postgraduate research on the Markets of
-                            Trueque de Lares and has done various consultancies with ANDES. Will participate
-                            actively in the development of programming at Yachay Kuychi Pluriversity.</p></h3> 
-                        <h3>Ewen Dano <p> - (France) recently completed a postgraduate research on
-                            underutilized crops in the Lares valley.</p></h3> 
-                        <h3>Melissa Loza<p> - (USA) She came as a volunteer on her summer vacation during the
-                            college.</p></h3> 
-                        
-                    </TextContainer>
-                </div>
-            </SectionText>
-
         </MarginTopContainer>
+        }
+        </>
     );
 }
  

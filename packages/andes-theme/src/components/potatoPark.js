@@ -9,6 +9,8 @@ import { VerticalBorder } from './Dropdown';
 
 import Loading from './Loading';
 
+import {readMore} from './Root'
+
 export const SectionContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -320,7 +322,7 @@ const PotatoPark = ({state, actions}) => {
                                     
                                         </p>
 
-                                        <a href={  cardImages.acf.link_card} >READ MORE</a>
+                                        <a href={  cardImages.acf.link_card} >{readMore}</a>
                                         
                                     </Card>
                                 )

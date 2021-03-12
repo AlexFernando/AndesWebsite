@@ -38,23 +38,23 @@ import MenuSpanish from '../components-spanish/Menu';
 import FooterSpanish from '../components-spanish/footer';
 import ContactSpanish from '../components-spanish/contact';
 import InvestigacionSpanish from '../components-spanish/Investigacion';
-import PoliticaSpanish from '../components-spanish/Politica';
 import PublicacionesSpanish from '../components-spanish/Publicaciones';
 import NewsSpanish from '../components-spanish/News';
 import EventosSpanish from '../components-spanish/Eventos';
 import IntercambiosSpanish from '../components-spanish/Intercambios';
 import ToolkitSpanish from '../components-spanish/Toolkit';
-import AnniversaryPeopleSpanish from '../components-spanish/AnniversaryPeople';
-import AnniversaryProjectsSpanish from '../components-spanish/AnniversaryProjects';
-import AnniversaryPublicationsSpanish from '../components-spanish/AnniversaryPublications';
-
 import FormularioContacto from '../components-spanish/formularioContacto';
 
 
+export let readMore = '';
+export let getMore = '';
+export let learn = '';
+export let explore = '';
+
+ 
 const Root = ({ state, actions }) => {
 
     const data = state.source.get(state.router.link);
-
     
         useEffect( () => {
             if( state.theme.lang === "en") {
@@ -62,6 +62,10 @@ const Root = ({ state, actions }) => {
                 actions.source.fetch("/home")
                 actions.source.fetch("/cardimage/")
                 actions.source.fetch("/philosophy")
+                readMore = 'READ MORE'
+                getMore = 'GET MORE'
+                learn = 'LEARN'
+                explore = 'EXPLORE'
             }
 
             else if (state.theme.lang === "es") {
@@ -69,6 +73,10 @@ const Root = ({ state, actions }) => {
                 actions.source.fetch("/home-es")
                 actions.source.fetch("/es-philosophy")
                 actions.source.fetch("/cardimage")
+                readMore = 'LEER MÁS'
+                getMore = 'SABER MÁS'
+                learn = 'CONOCER'
+                explore = 'EXPLORAR'
             }
           
           }, [])
@@ -131,7 +139,7 @@ const Root = ({ state, actions }) => {
 
                 {data.isInvestigacion && <Investigacion />}
 
-                {data.isPolitica && <Politica />}
+                {data.id === 467 && <Politica />}
 
                 {data.id === 303 && <PotatoPark />}
 
@@ -155,11 +163,11 @@ const Root = ({ state, actions }) => {
 
                 {data.isToolkit && <Toolkit />}
 
-                {data.isAniversarioPersonas && <AnniversaryPeople />}
+                {data.id === 503 && <AnniversaryPeople />}
 
-                {data.isAniversarioProyectos && <AnniversaryProjects/>}
+                {data.id === 526 && <AnniversaryProjects/>}
 
-                {data.isAniversarioPublicaciones && <AnniversaryPublications/>}
+                {data.id === 530 && <AnniversaryPublications/>}
 
                 {state.router.link === "/stayintouch/" && data.isPage && <StayInTouch/>}
                 
@@ -189,7 +197,7 @@ const Root = ({ state, actions }) => {
 
                 {data.isInvestigacionSpanish && <InvestigacionSpanish />}
 
-                {data.isPoliticaSpanish && <PoliticaSpanish />}
+                {data.id === 419 && <Politica />}
 
                 {data.id === 283 && <PotatoPark />}
 
@@ -213,11 +221,11 @@ const Root = ({ state, actions }) => {
 
                 {data.isToolkitSpanish && <ToolkitSpanish />}
 
-                {data.isAniversarioPersonasSpanish && <AnniversaryPeopleSpanish />}
+                {data.id === 489 && <AnniversaryPeople />}
 
-                {data.isAniversarioProyectosSpanish && <AnniversaryProjectsSpanish/>}
+                {data.id === 491 && <AnniversaryProjects/>}
 
-                {data.isAniversarioPublicacionesSpanish && <AnniversaryPublicationsSpanish/>}
+                {data.id === 493 && <AnniversaryPublications/>}
 
                 {state.router.link === "/es-stayintouch/" && data.isPage &&  <FormularioContacto/>}
                 

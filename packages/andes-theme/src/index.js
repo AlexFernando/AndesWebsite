@@ -20,7 +20,6 @@ export default {
         "/es-/": {
           isReady: true,
           isFetching: false,  
-         
           isHomePageSpanish: true,
         },
 
@@ -48,43 +47,6 @@ export default {
           isReady: true,
           isFetching: false,
           isInvestigacionSpanish: true,
-        },
-
-        "/advocacyandpolitics/": {
-          isReady: true,
-          isFetching: false,
-          isPolitica: true,
-        },
-
-        "/es-advocacyandpolitics/": {
-          isReady: true,
-          isFetching: false,
-          isPoliticaSpanish: true,
-        },
-
-        "/incidenciaspoliticas/": {
-          isReady: true,
-          isFetching: false,
-          isPolitica: true,
-        },
-
-        "/es-incidenciaspoliticas/": {
-          isReady: true,
-          isFetching: false,
-          isPoliticaSpanish: true,
-        },
-
-
-        "/quienessomos/": {
-          isReady: true,
-          isFetching: false,
-          isNosotrosYachay: true,
-        },
-
-        "/es-quienessomos/": {
-          isReady: true,
-          isFetching: false,
-          isNosotrosYachaySpanish: true,
         },
 
         "/exchanges/": {
@@ -123,18 +85,6 @@ export default {
           isToolkitSpanish: true,
         },
 
-        "/cajadeherramientas/": {
-          isReady: true,
-          isFetching: false,
-          isToolkit: true,
-        },
-
-        "/es-cajadeherramientas/": {
-          isReady: true,
-          isFetching: false,
-          isToolkitSpanish: true,
-        },
-
         "/publications/": {
           isReady: true,
           isFetching: false,
@@ -147,18 +97,7 @@ export default {
           isPublicacionesSpanish: true,
         },
 
-        "/publicaciones/": {
-          isReady: true,
-          isFetching: false,
-          isPublicaciones: true,
-        },        
-
-        "/es-publicaciones/": {
-          isReady: true,
-          isFetching: false,
-          isPublicacionesSpanish: true,
-        },
-
+  
         "/news/": {
           isReady: true,
           isFetching: false,
@@ -171,18 +110,7 @@ export default {
           isNoticiasRelevantesSpanish: true,
         },
 
-        "/noticiasrelevantes/": {
-          isReady: true,
-          isFetching: false,
-          isNoticiasRelevantes: true,
-        },
-
-        "/es-noticiasrelevantes/": {
-          isReady: true,
-          isFetching: false,
-          isNoticiasRelevantesSpanish: true,
-        },
-
+  
         "/events/": {
           isReady: true,
           isFetching: false,
@@ -194,57 +122,6 @@ export default {
           isFetching: false,
           isEventosSpanish: true,
         },
-
-        "/eventos/": {
-          isReady: true,
-          isFetching: false,
-          isEventos: true,
-        },
-
-        "/es-eventos/": {
-          isReady: true,
-          isFetching: false,
-          isEventosSpanish: true,
-        },
-
-
-        "/aniversariopersonas/": {
-          isReady: true,
-          isFetching: false,
-          isAniversarioPersonas: true,
-        },
-
-        "/es-aniversariopersonas/": {
-          isReady: true,
-          isFetching: false,
-          isAniversarioPersonasSpanish: true,
-        },
-
-        "/aniversarioproyectos/": {
-          isReady: true,
-          isFetching: false,
-          isAniversarioProyectos: true,
-        },
-
-        "/es-aniversarioproyectos/": {
-          isReady: true,
-          isFetching: false,
-          isAniversarioProyectosSpanish: true,
-        },
-
-        "/aniversariopublicaciones/": {
-          isReady: true,
-          isFetching: false,
-          isAniversarioPublicaciones: true,
-        },
-
-        "/es-aniversariopublicaciones/": {
-          isReady: true,
-          isFetching: false,
-          isAniversarioPublicacionesSpanish: true,
-        },
-
-        
       },
     },
   },

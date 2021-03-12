@@ -98,14 +98,13 @@ const Publicaciones = ({state, actions}) => {
     if(data.isReady) {
         
         data.items.map( ({id}) => {
-            if(state.source.singlesearch[id].typeofpublication[0] === 3) {
+            if(state.source.singlesearch[id].typeofpublication[0] === 3 || state.source.singlesearch[id].typeofpublication[1] === 3) {
                 publications.push(state.source.singlesearch[id]);
             }
-            
         })
     } 
     //sorting the taking the recent year first
-    publications.sort((a, b) => (a.acf.date < b.acf.date) ? 1 : -1)
+    publications.sort((a, b) => (a.acf.author > b.acf.author) ? 1 : -1)
 
     const [searchTerm, setSearchTerm] = useState("");
     
@@ -121,8 +120,26 @@ const Publicaciones = ({state, actions}) => {
 
         e.preventDefault();
         
-        const results = publications.filter( publication => publication.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()) || publication.acf.author.toLowerCase().includes(searchTerm.toLowerCase()));
-     
+        const results = publications.filter( publication => {
+
+            let keywords = [];
+
+            let keywordCleaned = [];
+
+            if(publication.acf.keywords && publication.acf.keywords.length > 0){
+                keywords = publication.acf.keywords.split(',');
+            }
+
+            for( let i = 0 ; i < keywords.length ; i++) {
+                keywordCleaned.push(keywords[i].trim().toLowerCase());
+            }
+
+ 
+            return (
+                publication.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()) || publication.acf.author.toLowerCase().includes(searchTerm.toLowerCase()) || keywordCleaned.includes(searchTerm.toLowerCase())
+            );
+        })
+    
         setSearchResults(results);
 
         if(results.length === 0 && searchTerm) {

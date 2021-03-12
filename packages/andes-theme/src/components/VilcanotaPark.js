@@ -3,7 +3,7 @@ import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionContainer, CardsContainer, Card} from './potatoPark'
 import Loading from './Loading';
-
+import {readMore} from './Root';
 
 const VilcanotaPark = ({state, actions}) => {
 
@@ -84,7 +84,7 @@ const VilcanotaPark = ({state, actions}) => {
                                     
                                         </p>
 
-                                        <a href={  cardImages.acf.link_card} >READ MORE</a>
+                                        <a href={  cardImages.acf.link_card} >{readMore}</a>
                                         
                                     </Card>
                                 )

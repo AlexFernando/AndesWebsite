@@ -5,11 +5,7 @@ import {SectionContainer, CardsContainer, Card, MainParagraph} from './potatoPar
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle, faListAlt, faLeaf, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { VerticalBorder } from './Dropdown';
-import parquedemaiz from '../static/images/estudioparquemaiz.png';
-import applepark from '../static/images/applePark.jpg';
-import territorio from '../static/images/territoriobio.png';
-import territorio2 from '../static/images/territoriobio2.png';
-import territorio3 from '../static/images/territoriobio3.jpg';
+import { readMore } from './Root';
 
 export const SubSectionTitle = styled.h2`
        color: #44841a;
@@ -243,7 +239,7 @@ const TerritoriosCulturales = ({state,actions}) => {
 
                     
 
-                        <a href={  cardImages.acf.link_card} >READ MORE</a>
+                        <a href={  cardImages.acf.link_card} >{readMore}</a>
                         
                     </Card>
                     )

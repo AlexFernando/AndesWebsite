@@ -87,10 +87,10 @@ const settings = [
 //SPANISH SITE
 {
   "name": "andes-headless-spanish",
-  "match": [".*https?:\/\/andes-alexfernando.vercel.app\/es-(.*)?$"],
+  "match": [".*http?:\/\/localhost:3000\/es-(.*)?$"],
   "state": {
     "frontity": {
-      "url": "https://andes-alexfernando.vercel.app/es-",
+      "url": "http://localhost:3000/es-",
       "title": "Andes Spanish",
       "description": "Configuration for Spanish Site"
     },

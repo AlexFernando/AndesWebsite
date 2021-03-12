@@ -9,10 +9,9 @@ import {BriefSection, InfoItem, FontAwesomeIconList, FontAwesomeIconStyled } fro
 import { VerticalBorder } from './Dropdown';
 import { faLightbulb, faListAlt, faArrowAltCircleRight, faPeopleCarry } from '@fortawesome/free-solid-svg-icons';
 
-import imgResearch from '../static/images/homenews.jpeg';
-import transgenicos from '../static/images/transgenicos.jpg';
-import potatoPark from '../static/images/link4.jpeg';
 import Loading from './Loading';
+
+import {readMore} from './Root';
 
 const NosotrosYachay = ({state, actions}) => {
 
@@ -98,7 +97,7 @@ const NosotrosYachay = ({state, actions}) => {
 
                             <p>{pageYachay.acf.section_description_1}</p>
                             <div>
-                                <a href= {pageYachay.acf.section_link_button_1} target="_blank" rel="noopener" >READ HISTORY</a>
+                                <a href= {pageYachay.acf.section_link_button_1} target="_blank" rel="noopener" >{readMore}</a>
                             </div>
                         </div>
                     </SectionText>
