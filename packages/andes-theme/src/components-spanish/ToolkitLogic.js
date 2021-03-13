@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {connect, styled, css} from "frontity";
-import {dataToolkit} from '../data/dataToolkitEnglish';
+import {connect, styled} from "frontity";
 import useFilterSubcategories from '../hooks/useFilterSubcategories';
 import {NotFoundContainer} from './SearchBar'
 

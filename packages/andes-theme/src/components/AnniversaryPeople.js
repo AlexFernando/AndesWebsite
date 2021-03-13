@@ -3,9 +3,6 @@ import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionText} from './HomePage';
 import {TextContainer} from './Stuff';
-import groupAndes from '../static/images/FotogrupalANDESytecnicosscaled.jpg';
-import groupLares from '../static/images/FotogrupalLarescaled.jpg';
-import Krystyna from '../static/images/Krystynascaled.jpeg';
 import Loading from './Loading';
 
 export const SectionImage = styled.div`

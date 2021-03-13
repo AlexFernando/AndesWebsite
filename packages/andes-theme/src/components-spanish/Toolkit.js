@@ -1,6 +1,6 @@
 import React from 'react';
-import {connect, styled} from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
+import {connect} from "frontity";
+import {HeadContainer, Title, Separator, MarginTopContainer} from './Filosofia';
 import ToolkitLogic from './ToolkitLogic';
 
 const Toolkit = ({state}) => {

@@ -1,9 +1,6 @@
 import React, {useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import imgPluriculturalidad from '../static/images/link3.jpg';
-import imgResearch from '../static//images/link2.jpg';
-import imgNoticias from '../static/images/link4.jpeg';
 
 import Loading from './Loading';
 

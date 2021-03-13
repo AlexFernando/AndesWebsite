@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
-import Link from './Link';
-
 
 const ContainerNav = styled.nav`
  display: -webkit-box;

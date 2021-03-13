@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import {connect, css, styled } from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
+import {connect} from "frontity";
+import {HeadContainer, Title, Separator, MarginTopContainer} from './Filosofia';
 import {SectionText} from './HomePage';
 import RepoAnniversaryPublications from './RepoAnniversaryPublications';
 

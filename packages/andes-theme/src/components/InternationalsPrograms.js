@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {connect, css, styled } from "frontity";
+import {connect} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionContainer, CardsContainer, Card} from './potatoPark'
 import {readMore} from './Root'

@@ -1,11 +1,6 @@
 import React, {useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import parquepapa from '../static/images/parquepapa.jpg';
-import Krystyna from '../static/images/Krystynascaled.jpeg';
-import papaGMrechazo from '../static/images/news/papaGMrechazo.jpg'
-import agrobiodiversidad from '../static/images/news/agrobiodiversidad.jpg'
-import groupLares from '../static/images/FotogrupalLarescaled.jpg'
 import Link from "./Link";
 import Loading from './Loading';
 

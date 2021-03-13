@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {connect, css, styled } from "frontity";
+import {connect, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionContainer, CardsContainer, Card, MainParagraph} from './potatoPark';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import Dropdown from "./Dropdown";
-import {css, styled} from "frontity";
-import LinkButton from './LinkButton';
+import {styled} from "frontity";
 import Image from "@frontity/components/image";
 import logo from '../static/images/logoscaled.png';
 import imgAndes from '../static/images/1.jpeg';
 import imgPluriculturalidad from '../static/images/link3.jpg';
-import imgNoticias from '../static/images/link4.jpeg';
 import Link from "./Link";
 import LinkButtonHome  from './LinkButtonHome';
 import SecondaryNavbarMobile from './SecondaryNavbarMobile';

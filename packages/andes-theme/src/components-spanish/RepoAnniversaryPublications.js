@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {connect, css, styled } from "frontity";
-import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
+import {MarginTopContainer} from './Filosofia';
 import {dataPublications} from '../data/dataPublicaciones';
-import {SearchBar, InputBar, PostStyled, NotFoundContainer } from './SearchBar';
+import {SearchBar, InputBar, NotFoundContainer } from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';

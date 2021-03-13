@@ -1,5 +1,5 @@
 import React from 'react';
-import {css, styled} from "frontity";
+import {styled} from "frontity";
 import NavFooter from './navFooter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faInstagram, faYoutube, faFacebookSquare} from '@fortawesome/free-brands-svg-icons';

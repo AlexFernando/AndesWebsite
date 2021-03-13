@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import {MarginTopContainer, SectionContainer} from './Filosofia';
-import {SearchBar, InputBar, PostStyled, NotFoundContainer } from './SearchBar';
+import {SearchBar, InputBar, NotFoundContainer } from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';

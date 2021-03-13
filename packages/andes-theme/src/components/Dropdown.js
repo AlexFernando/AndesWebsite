@@ -1,11 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
-import {css, styled} from "frontity";
+import React, { useEffect, useRef } from "react";
+import {styled} from "frontity";
 import {Border} from './Menu';
 import Link from "./Link";
 
-
-const DropDownBox = styled.div`
-  
+const DropDownBox = styled.div`  
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -14,7 +12,6 @@ const DropDownBox = styled.div`
     top: 12vh;
     z-index: 5;
 
-  
   @media(min-width: 319px) and (max-width: 361px) {
     justify-content: center;
   }

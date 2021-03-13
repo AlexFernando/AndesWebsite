@@ -1,11 +1,9 @@
 import React from "react";
 import {connect, styled } from "frontity";
-import bgImage from "../static/images/link3.jpg";
 import {MarginTopContainer} from './Filosofia';
 import Link from './Link';
 
 const Content = styled.div`  
-    background-image: url(${bgImage});
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center center;

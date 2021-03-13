@@ -36,17 +36,17 @@ const NavFooter = () => {
             <LinkStyled
                 href={'/'}
                 activeClassName="pagina-actual"
-            >Jobs and Interships</LinkStyled>
+            >Pasantías</LinkStyled>
 
             <LinkStyled 
                 href={'/'}
                 activeClassName="pagina-actual"
-            >Accesibility</LinkStyled>
+            >Accesibilidad</LinkStyled>
 
             <LinkStyled 
                 href={'/'}
                 activeClassName="pagina-actual"
-            >Privacy Policy</LinkStyled>
+            >Política de Privacidad</LinkStyled>
         </Nav> 
     
         

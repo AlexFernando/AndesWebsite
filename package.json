@@ -26,7 +26,6 @@
     "@frontity/mars-theme": "./packages/mars-theme",
     "@frontity/tiny-router": "^1.2.3",
     "@frontity/wp-source": "^1.10.0",
-    "andes-spanish-theme": "file:packages/andes-spanish-theme",
     "andes-theme": "file:packages/andes-theme",
     "frontity": "^1.13.0",
     "frontity-contact-form-7": "^0.1.7"
