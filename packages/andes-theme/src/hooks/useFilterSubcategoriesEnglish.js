@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from 'react';
 import {styled} from "frontity";
-import {dataCategories} from '../data/categoriesEnglish';
 
 const Categories = styled.div`
     display: flex;
@@ -80,8 +79,6 @@ const useFilterSubcategories = () => {
         
         fetchMyAPI()
     }, []);
-
-    console.log("cat:" , categories);
 
     let realCategories = [];
     let realSubCategories = [];

@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect, css, styled } from "frontity";
+import {connect, styled } from "frontity";
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIconList} from './TerritoriosCulturales';
 

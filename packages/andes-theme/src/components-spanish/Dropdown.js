@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import {css, styled} from "frontity";
+import React, { useEffect, useRef } from "react";
+import {styled} from "frontity";
 import {Border} from './Menu';
 import Link from "./Link";
 

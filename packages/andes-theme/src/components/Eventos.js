@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {connect, styled, css} from "frontity";
+import {connect, styled} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import FeaturedImage from './FeaturedImage';
 import Calendar from './Calendar';

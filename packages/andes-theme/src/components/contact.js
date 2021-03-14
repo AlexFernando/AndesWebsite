@@ -1,5 +1,5 @@
 import React from 'react';
-import {css, styled } from "frontity";
+import {styled } from "frontity";
 import {faMapMarkedAlt, faStreetView, faMailBulk} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

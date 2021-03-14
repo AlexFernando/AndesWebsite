@@ -1,12 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import parquepapa from '../static/images/parquepapa.jpg';
-import Krystyna from '../static/images/Krystynascaled.jpeg';
-import papaGMrechazo from '../static/images/news/papaGMrechazo.jpg'
-import agrobiodiversidad from '../static/images/news/agrobiodiversidad.jpg'
-import groupLares from '../static/images/FotogrupalLarescaled.jpg'
 import Link from "./Link";
+import Loading from './Loading';
 
 export const SectionContainer = styled.div`
     display: flex;
@@ -71,175 +67,136 @@ export const Images = styled.img`
     max-height: 100%;
 `
 
-const AnniversaryProjects = ({state}) => {
+const AnniversaryProjects = ({state, actions}) => {
+
+
+    useEffect( () => {
+            
+        if(state.theme.lang === "en") {
+            actions.source.fetch("/anniversary-projets")
+            actions.source.fetch("/cardpersona/")
+        }
+
+        else {
+            actions.source.fetch("/es-anniversary-projets")
+            actions.source.fetch("/cardpersona/")
+        }
+    }, [])
+
+
+    const pageAnnivProjets = state.theme.lang === "en" ? state.source.page[526] : state.source.page[491]
+
+    const data = state.source.get('/cardpersona');
+
+    let cardAnnivProjetsArr = [];
+
+    if(data.isReady) {
+
+        data.items.map(({id}) => { 
+                
+                if(state.theme.lang === "en") {
+
+                    if(state.source.cardpersona[id].typeofcardpersona[0] === 37) {
+                        cardAnnivProjetsArr.push(state.source.cardpersona[id])
+                    }
+                }
+
+                else {
+                    if(state.source.cardpersona[id].typeofcardpersona[0] === 38) {
+                        cardAnnivProjetsArr.push(state.source.cardpersona[id])
+                    }
+                }
+            }
+        )
+    }       
+
+    console.log("cardAnniv: ", cardAnnivProjetsArr);
+
+
     return ( 
     
+        <>
+        {typeof pageAnnivProjets === "undefined" ? <Loading />
+        
+        :
         <MarginTopContainer>
             <HeadContainer>
                 <Title>
-                    25 PROJECTS, EXCHANGES AND CAMPAIGNS
+                    {pageAnnivProjets.acf.title}
                 </Title>
                 <Separator></Separator>             
             </HeadContainer>
 
             <SectionContainer>
             
-                    <h1>ANDES Celebrates 25 th Anniversary</h1>              
-                    <p> As part of our 25 th anniversary celebrations, we would like to share some of the results of
-                        ANDES’ past projects, campaigns and events, which, of course, are only possible thanks to
-                        important contributions by our partners. There have been too many actions to name them all,
-                        but here are a few of the highlights from ANDES’ 25-year history..</p>
+                    <h1>{pageAnnivProjets.acf.title_paragraph_one}</h1>              
+                    <p> {pageAnnivProjets.acf.text_paragraph_one}</p>
 
-                    <h1>25 projects, campaigns and exchanges</h1>
-                    <p>
-                        Supporting the establishment of Indigenous Biocultural Heritage Territories is a source of much
-                        pride at ANDES. We provide technical assistance, capacity building, fundraising, and forge
-                        alliances to support indigenous communities in the Andes and around the world to protect their
-                        landscapes, food systems, culture and rights.
-                    </p> 
+                    <h1>{pageAnnivProjets.acf.title_paragraph_two}</h1>              
+                    <p> {pageAnnivProjets.acf.text_paragraph_two}</p>
             
             </SectionContainer>
 
-
-            <SectionContainer>
-            
-                    <h1>Our colleagues in the Potato Park, Chalakuy Park, and Vilcanota Spiritual Park continue to
-                        inspire and motivate us in our work, and they are an inspiration for positive action around
-                        the world!
-                    </h1>
+            {data.isReady ?
                     
-                    <SectionProjectText>
-                        <div>
-                            <Link href="/parquedelapapa-pisac"><h3>1.- Potato Park</h3></Link>
-                            <Link href="/parquedemaiz-lares"><h3>2.- Chalakuy Park</h3></Link> 
-                            <Link href="/parqueespiritual-vilcanota/"><h3>3.-Spiritual Park of Vilcanota</h3></Link>  
-                        </div>
+                    <>
+                        {cardAnnivProjetsArr.reverse().map( cardAnnivProjet => {
 
-                        <div>
-                            <Images src={parquepapa}/>
-                        </div>
-                    </SectionProjectText>
-            
-            </SectionContainer>
+                            let arrayNames = cardAnnivProjet.acf.list_staff_names.split("*");
+                            let arrayDescription = cardAnnivProjet.acf.list_staff_description.split("*");
 
-
-            <SectionContainer>
-                
-                <h1>
-                    A key component of ANDES work is community-led action research, particularly with
-                    indigenous communities in the Andes and around the world. Our collaborative research
-                    and policy development focuses on links between local actions and global processes.
-                </h1>
-
-                
-                <SectionProjectText>
-                    <div>
-                        <a href="https://www.millenniumassessment.org/en/SGA.Peru.html" target="_blank" rel="noopener"><h3>4.- Millenium Ecosystem Assessment (UN)</h3></a>
-                        <h3>5.- Turismo Biocultural: conservación y uso sostenible dela agrobiodiversidad (INTERVITA, CARIPLO)</h3> 
-                        <a href="https://www.iied.org/sustaining-local-food-systems-agricultural-biodiversity" target="_blank" rel="noopener" ><h3>6.- Sustaining Local Food Systems, Agricultural Biodiversity and Livelihoods (IIED)</h3> </a> 
-                        <a href="https://www.iied.org/smallholder-innovation-for-resilience-sifor" target="_blank" rel="noopener"> <h3>7.- Smallholder Farmers Innovation for Resilience - SIFOR (IIED)</h3> </a>
-                        <h3>8.- Putting lessons into practice: Scaling up Peoples’ Biodiversity Management for Food Security (IFAD, OXFAM-NOVIB)</h3> 
-                        <a href="https://www.sdhsprogram.org/" target="_blank" rel="noopener"> <h3>9.- Sowing Diversity = Harvesting Security – SD=HS (OXFAM-NOVIB)</h3> </a> 
-                        <h3>10.- Employing Indigenous Knowledge to Advance Human Rights and Biocultural Heritage Security(HESP) </h3> 
-                    </div>
-
-                    <div>
-                        <Images src={groupLares}/>
-                    </div>
-                </SectionProjectText>
-                
-            </SectionContainer>
-
-
-            <SectionContainer>
-                <h1>
-                    Much of ANDES impact is a result of its innovative education programs, which bring
-                    together indigenous peoples, farmers, scientists, academics and policy makers to address
-                    complex problems, including climate change, indigenous food systems, biodiversity loss,
-                    and the rights of indigenous peoples and our mother earth.
-                </h1>
-
-                <SectionProjectText>
-                        <div>
-                            <Link href="/quienessomos"> <h3>11.- Pluriversidad Yachay Kuychi</h3></Link>
-                            
-                            <a href="https://pubs.iied.org/G01277/" target="_blank" rel="noopener">
-                                <h3>12.- Using video to document traditional knowledge: India – Peru Technical and Cultural Exchange</h3>
-                            </a>
-
-                            <a>
-                                <h3>13.- Latin America Regional Study: Impacts of Climate Change on Indigenous Peoples and Traditional Knowledge(WB, ESSA)</h3>
-                            </a>
-
-                            <a>
-                                <h3>14.- Biocultural Festival US – Peru musical acts</h3>
-                            </a>
-
-                            <a>
-                                <h3>15.- Latido de los Apus</h3>
-                            </a>
-
-                        </div>
-
-                        <div>
-                            <Images src={Krystyna} />
-                        </div>
-                </SectionProjectText>
-            </SectionContainer>
-
-            <SectionContainer>
-                    <h1>
-                        ANDES has also taken a leading role in international networks such as INMIP, IPCCA and
-                        ISE. The annual knowledge exchanges and Walking Workshops with members of the
-                        International Network of Indigenous Peoples (INMIP) have forged strong alliances and
-                        unified voices to raise awareness and influence policy at local, national and international
-                        levels.
-                    </h1>
-                <SectionProjectText>
-                    <div>
-                        <a><h3>16.- Indigenous Peoples Climate Change Assessment (IPCCA)</h3></a>
-
-                        <a><h3>17.- International Society of Ethnobiology (ISE)</h3></a>
-                            
-                        <a><h3>18.- INMIP Bhutan</h3></a>
+                            arrayNames.shift();
+                            arrayDescription.shift();
                         
-                        <a><h3>19.- INMIP China</h3></a>
+                                return (
 
-                        <a><h3>20.- INMIP Tajikistan</h3></a>
+                                    <SectionContainer>
+                                        <h1>{cardAnnivProjet.acf.area_division}</h1>
+                                        <SectionProjectText>
+                                            <div>
+                                          
+                                                {arrayNames.map( (item, index) => {
+                                                    
+                                                    return(
+                                                        <Link href={arrayDescription[index]}><h3>{item}</h3></Link>
+                                                                                                                
+                                                    )
 
-                        <a><h3>21.- INMIP Kyrgyzstan</h3></a>
+                                                })
 
-                        <a><h3>22.- INMIP Perú</h3></a>
-                    </div>
 
-                    <div>
-                        <Images src={papaGMrechazo} />
-                    </div>
-                </SectionProjectText>
-            </SectionContainer>
+                                                }
+                                                
 
-            <SectionContainer>
+                                            </div>
 
-                <h1>Finally, ANDES actively engages in public campaigns to influence policies that impact
-                    indigenous peoples, their food systems, rights and livelihoods.</h1>
+                                            <div>
+                                            {cardAnnivProjet.acf.image_card !== false ? 
+            
+                                                    <Images src={cardAnnivProjet.acf.image_card.sizes.medium_large} />
 
-                <SectionProjectText>
-                    <div>                 
-                        <a><h3>23.- Municipal Ordinance on GMOs</h3></a>
 
-                        <a><h3>24.- Campaign Against Biopiracy</h3></a>
+                                                : null
+                                                
+                                            }
+                                            </div>
+                                        </SectionProjectText>
 
-                        <a><h3>25.- Campaign against new gene editing tools</h3></a>
-                    </div>
 
-                    <div>
-                        <Images src={agrobiodiversidad} />
-                    </div>
-                </SectionProjectText>
-            </SectionContainer>
-                
+                                    </SectionContainer>
+                                )
+                            })
+                        }
+
+                    </>
+                    
+                    : null
+
+                }
+           
         </MarginTopContainer>
-        
+        }
+        </>
      );
 }
  

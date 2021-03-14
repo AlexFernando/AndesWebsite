@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {connect, css, styled } from "frontity";
+import {connect, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 
 import {faListAlt, faArrowAltCircleRight, faMountain, faMale, faLanguage, faExclamationTriangle, faTractor, faSeedling, faHiking, faUtensils, faHands, faCarrot} from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +8,8 @@ import {FontAwesomeIconList, FontAwesomeIconStyled, BriefSection, InfoItem} from
 import { VerticalBorder } from './Dropdown';
 
 import Loading from './Loading';
+
+import {readMore} from './Root'
 
 export const SectionContainer = styled.div`
     display: flex;
@@ -320,7 +322,7 @@ const PotatoPark = ({state, actions}) => {
                                     
                                         </p>
 
-                                        <a href={  cardImages.acf.link_card} >READ MORE</a>
+                                        <a href={  cardImages.acf.link_card} >{readMore}</a>
                                         
                                     </Card>
                                 )

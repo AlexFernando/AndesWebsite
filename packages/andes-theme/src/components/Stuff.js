@@ -1,9 +1,6 @@
 import React, {useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import imgPluriculturalidad from '../static/images/link3.jpg';
-import imgResearch from '../static//images/link2.jpg';
-import imgNoticias from '../static/images/link4.jpeg';
 
 import Loading from './Loading';
 
@@ -35,6 +32,7 @@ export const TextContainer = styled.div`
 
     display: flex;
     flex-direction: column;
+    margin: 0 0 1.5rem 0;
 
     h3 {
         margin: 0 0 .5rem 0;

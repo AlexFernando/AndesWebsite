@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import {connect, css, styled } from "frontity";
+import {connect} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionContainer, CardsContainer, Card} from './potatoPark'
 import Loading from './Loading';
+import {readMore} from './Root';
 
 const LaresPark = ({state, actions}) => {
-
 
     useEffect( () => {
         
@@ -17,7 +17,6 @@ const LaresPark = ({state, actions}) => {
             actions.source.fetch("/es-chalakuypark-lares")
         }
     }, [])
-
   
     const pageLaresPark = state.theme.lang === "en" ? state.source.page[330] : state.source.page[309]
 
@@ -88,7 +87,7 @@ const LaresPark = ({state, actions}) => {
                                     
                                         </p>
 
-                                        <a href={  cardImages.acf.link_card} >READ MORE</a>
+                                        <a href={  cardImages.acf.link_card} >{readMore}</a>
                                         
                                     </Card>
                                 )

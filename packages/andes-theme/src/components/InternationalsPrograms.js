@@ -1,11 +1,8 @@
 import React, {useEffect} from 'react';
-import {connect, css, styled } from "frontity";
+import {connect} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import {SectionContainer, CardsContainer, Card} from './potatoPark'
-import imgCambioClimatico from '../static/images/programas1.jpeg';
-import imgMountainsIndiginous from '../static/images/programas2.jpg';
-import imgNativePotato from '../static/images/programas3.jpg';
-
+import {readMore} from './Root'
 
 const InternationalPrograms = ({state, actions}) => {
 
@@ -86,7 +83,7 @@ const InternationalPrograms = ({state, actions}) => {
                                     
                                         </p>
 
-                                        <a href={  cardImages.acf.link_card} >READ MORE</a>
+                                        <a href={  cardImages.acf.link_card} >{readMore}</a>
                                         
                                     </Card>
                                 )

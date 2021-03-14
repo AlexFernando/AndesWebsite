@@ -6,7 +6,7 @@ const settings = [
  
   "state": {
     "frontity": {
-      "url": "https://andes-alexfernando.vercel.app/",
+      "url": "https://andes.org.pe/",
       "title": "Andes Website English",
       "description": "A website for the ONG Andes English Version"
     },
@@ -87,10 +87,10 @@ const settings = [
 //SPANISH SITE
 {
   "name": "andes-headless-spanish",
-  "match": [".*https?:\/\/andes-alexfernando.vercel.app\/es-(.*)?$"],
+  "match": [".*https?:\/\/andes.org.pe\/es-(.*)?$"],
   "state": {
     "frontity": {
-      "url": "https://andes-alexfernando.vercel.app/es-",
+      "url": "https://andes.org.pe/es-",
       "title": "Andes Spanish",
       "description": "Configuration for Spanish Site"
     },

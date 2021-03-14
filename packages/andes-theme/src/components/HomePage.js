@@ -3,6 +3,7 @@ import {connect, styled } from "frontity";
 import {MarginTopContainer} from './Filosofia';
 import Link from './Link';
 import Loading from './Loading';
+import {readMore, getMore, explore, learn} from './Root'
 
 const Content = styled.div`  
     background-image: url("https://en.andescusco.info/wp-content/uploads/2021/02/link3.jpg");
@@ -79,6 +80,7 @@ const TextoImagen = styled.div`
 `
 
 export const SectionText = styled.div`
+
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -126,7 +128,7 @@ export const SectionText = styled.div`
            padding: 1rem;
        }
 
-       h1 {
+       h1, h2 {
            color: #44841a;
            text-align: center;
        }
@@ -134,7 +136,7 @@ export const SectionText = styled.div`
        p {
            color: #545454;
            font-size: 1.2rem;
-           margin-bottom: 0rem;
+           margin-bottom: 1rem;
            text-align: center;
        }  
 
@@ -293,7 +295,7 @@ const CardsHome = styled.div`
        }
    }
 `;
- 
+
 const HomePage = ({state, actions, libraries}) => {
 
     const pageHome = state.source.page[69];
@@ -331,7 +333,7 @@ const HomePage = ({state, actions, libraries}) => {
                         <h1 dangerouslySetInnerHTML={ {__html: pageHome.acf.home_title}}></h1>
                         <p dangerouslySetInnerHTML={ {__html: pageHome.acf.home_slogan}}></p>
                         <div>
-                            <Link href={pageHome.acf.home_button_getmore}>Get More</Link>
+                            <Link href={pageHome.acf.home_button_getmore}>{getMore}</Link>
                         </div>           
                     </TextoImagen>
                 </Content>
@@ -344,7 +346,7 @@ const HomePage = ({state, actions, libraries}) => {
                     </p>
 
                     <div>
-                        <Link href={pageHome.acf.section1_button_explore}>Explore</Link>
+                        <Link href={pageHome.acf.section1_button_explore}>{explore}</Link>
                     </div>
                 </div>
             </SectionText>
@@ -372,7 +374,7 @@ const HomePage = ({state, actions, libraries}) => {
                             </span>
 
                             <div>
-                                <Link href={  cardImages.acf.link_card} >READ MORE</Link>
+                                <Link href={  cardImages.acf.link_card} >{readMore}</Link>
                             </div>
         
                         </CardsHome>
@@ -395,7 +397,7 @@ const HomePage = ({state, actions, libraries}) => {
                 </p>
                 
                 <div>
-                    <Link href={pageHome.acf.section31_buttonlearn}>LEARN</Link>
+                    <Link href={pageHome.acf.section31_button_learn}>{learn}</Link>
                 </div>
             </div>
 
@@ -405,7 +407,7 @@ const HomePage = ({state, actions, libraries}) => {
                     {pageHome.acf.section32_textcontent}
                 </p>
                 <div>
-                    <Link href={pageHome.acf.section32_buttonlearn}>LEARN</Link>
+                    <Link href={pageHome.acf.section32_button_learn}>{learn}</Link>
                 </div>
             </div>
         </SectionText>
@@ -430,7 +432,7 @@ const HomePage = ({state, actions, libraries}) => {
                               
                                 </span>
                         <div>
-                            <Link href={  cardImages.acf.link_card} >READ MORE</Link>
+                            <Link href={  cardImages.acf.link_card} >{readMore}</Link>
                         </div>
     
                 </CardsHome>
