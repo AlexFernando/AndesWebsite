@@ -1,6 +1,5 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {styled} from "frontity";
-import {dataCategories} from '../data/categories';
 
 const Categories = styled.div`
     display: flex;
@@ -67,14 +66,70 @@ const useFilterSubcategories = () => {
 
     const [allCategory, saveCategory] = useState('');
 
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+
+        async function fetchMyAPI() {
+            let response = await fetch('http://es.andescusco.info/wp-json/wp/v2/categories?per_page=100');
+    
+            response = await response.json();
+    
+            setCategories(response);
+            }
+            
+            fetchMyAPI()
+    }, []);
+
+
+    let realCategories = [];
+    let realSubCategories = [];
+
+    categories.map( category => {
+
+        if(category.parent === 0){
+
+            if(category.name !== "Uncategorized") {
+
+                const newData = {"id": category.id, "name": category.name, "subcategories": []};
+                realCategories.push(newData);
+            }
+        }
+    })
+
+
+
+    categories.map( category => {
+
+        if(category.parent !== 0){
+
+            if(category.name !== "Uncategorized") {
+
+                const newData = {"id": category.id, "name": category.name, "parent": category.parent};
+                realSubCategories.push(newData);
+            }
+        }
+    })
+
+
+    realSubCategories.map( subcategory => {
+        
+        for( var i = 0 ; i < realCategories.length; i++) {
+            realCategories[i]["number"] = i+1;
+            if( realCategories[i].id === subcategory.parent) {
+                realCategories[i]["subcategories"].push(subcategory.name);
+            }
+        }
+    })
+
     //porque parentesis y no llaves?
     const FilterSubcategoriesUI = () => (
 
         <Categories>
                 
-            {dataCategories.map(option => (
+            {realCategories.map(option => (
                 <>
-                <ButtonCategory onClick = { () => saveCategory(option.name)}><span>{option.id}.- {option.name}</span></ButtonCategory>
+                <ButtonCategory onClick = { () => saveCategory(option.name)}><span>{option.number}.- {option.name}</span></ButtonCategory>
                 {
                     option.subcategories.length > 0 ? option.subcategories.map( subCategorie => <ButtonSubCategory onClick = { () => saveCategory(subCategorie)}><p>{subCategorie}</p></ButtonSubCategory>) : null 
                 }

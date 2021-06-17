@@ -322,7 +322,7 @@ const PotatoPark = ({state, actions}) => {
                                     
                                         </p>
 
-                                        <a href={  cardImages.acf.link_card} >{readMore}</a>
+                                        <a href={cardImages.acf.link_card} target="_blank" rel="noopener noreferrer">{readMore}</a>
                                         
                                     </Card>
                                 )

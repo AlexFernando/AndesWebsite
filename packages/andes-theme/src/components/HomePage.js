@@ -6,7 +6,7 @@ import Loading from './Loading';
 import {readMore, getMore, explore, learn} from './Root'
 
 const Content = styled.div`  
-    background-image: url("https://en.andescusco.info/wp-content/uploads/2021/02/link3.jpg");
+    background-image: url(${props => props.background});
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center center;
@@ -328,12 +328,12 @@ const HomePage = ({state, actions, libraries}) => {
             {typeof pageHome === "undefined" ? <Loading /> : 
             <>
             <MarginTopContainer>
-                <Content>
-                    <TextoImagen>
+                <Content background = {pageHome.acf.image_background}>
+                    <TextoImagen >
                         <h1 dangerouslySetInnerHTML={ {__html: pageHome.acf.home_title}}></h1>
                         <p dangerouslySetInnerHTML={ {__html: pageHome.acf.home_slogan}}></p>
                         <div>
-                            <Link href={pageHome.acf.home_button_getmore}>{getMore}</Link>
+                            <a href={pageHome.acf.home_button_getmore} target="_blank">{getMore}</a>
                         </div>           
                     </TextoImagen>
                 </Content>
@@ -432,7 +432,7 @@ const HomePage = ({state, actions, libraries}) => {
                               
                                 </span>
                         <div>
-                            <Link href={  cardImages.acf.link_card} >{readMore}</Link>
+                            <a href={  cardImages.acf.link_card} target="_blank" rel="noopener noreferrer" >{readMore}</a>
                         </div>
     
                 </CardsHome>

@@ -55,6 +55,7 @@ export let explore = '';
 const Root = ({ state, actions }) => {
 
     const data = state.source.get(state.router.link);
+
     
         useEffect( () => {
             if( state.theme.lang === "en") {
@@ -80,7 +81,7 @@ const Root = ({ state, actions }) => {
             }
           
           }, [])
-      
+
     return (
         <>
             <Global

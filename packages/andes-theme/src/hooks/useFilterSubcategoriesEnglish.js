@@ -69,15 +69,16 @@ const useFilterSubcategories = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
+
         async function fetchMyAPI() {
-          let response = await fetch('http://en.andescusco.info/wp-json/wp/v2/categories?per_page=100');
-
-          response = await response.json();
-
-          setCategories(response);
-        }
-        
-        fetchMyAPI()
+            let response = await fetch('http://en.andescusco.info/wp-json/wp/v2/categories?per_page=100');
+    
+            response = await response.json();
+    
+            setCategories(response);
+            }
+            
+            fetchMyAPI()
     }, []);
 
     let realCategories = [];
@@ -119,8 +120,6 @@ const useFilterSubcategories = () => {
             }
         }
     })
-
-    console.log("real categories", realCategories)
 
     //porque parentesis y no llaves?
     const FilterSubcategoriesUI = () => (

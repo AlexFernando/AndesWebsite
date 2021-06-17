@@ -87,9 +87,7 @@ const ToolkitLogic = ({state, actions}) => {
 
     const data = state.source.get('/alltoolkit');
     const categories = state.source.category;
-    console.log("la data: ",data)
-    console.log("las categories: ", categories);
-
+ 
     //filling the array of publications
     let toolkitData = [];
 
@@ -102,16 +100,13 @@ const ToolkitLogic = ({state, actions}) => {
     } 
 
     if(categories && data.isReady){
-        console.log("vamos por las categorias")
-        console.log("toolkitdata: ", toolkitData)
 
         toolkitData.map( item => {
-            console.log("las categorias desdes toolki: ", item.categories[0])
-
+            
             if(item.categories.length === 1) {
               
                 let replaceCategory = categories[item.categories[0]].name;
-                console.log("categoria name: ", replaceCategory)
+            
                 item["category"] = replaceCategory;
                 item["subcategory"] = "";
             }
@@ -119,14 +114,12 @@ const ToolkitLogic = ({state, actions}) => {
             else if(item.categories.length === 2) {
                 let replaceCategory = categories[item.categories[1]].name;
                 let replaceSubCategory = categories[item.categories[0]].name;
-                console.log("categoria name: ", replaceCategory, " ", replaceSubCategory )
+            
                 item["category"] = replaceCategory;
                 item["subcategory"] = replaceSubCategory;
             }
         })
     }
-
-    console.log("toolkitdata: ", toolkitData)
 
     //sorting the taking the recent year first
     toolkitData.sort((a, b) => (a.acf.date < b.acf.date) ? 1 : -1)
@@ -135,14 +128,10 @@ const ToolkitLogic = ({state, actions}) => {
     useEffect( () => {
       
             if(allCategory !== "") {
-                console.log("cada categoria: ", allCategory);
-                const filter = toolkitData.filter(elemToolkit => elemToolkit.category === allCategory || elemToolkit.subcategory === allCategory)
-                console.log(filter);
+                const filter = toolkitData.filter(elemToolkit => elemToolkit.category === allCategory || elemToolkit.subcategory === allCategory)                
                 saveFiltered(filter);
             } 
     }, [allCategory])
-
-    console.log("filtered: ", filtered);
 
     return ( 
 
@@ -153,7 +142,6 @@ const ToolkitLogic = ({state, actions}) => {
                 {FilterSubcategoriesUI()}
          
                 { 
-                
                 
                 filtered.length === 0 && allCategory === "" ?
                         
