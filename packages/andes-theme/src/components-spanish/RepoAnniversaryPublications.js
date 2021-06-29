@@ -8,6 +8,8 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
 import LinkButton from "./LinkButton";
 
+import FeaturedImage from './FeaturedImage'
+
 const SectionPublications = styled.div`
     display: flex;
     align-items: center;
@@ -176,7 +178,7 @@ const RepoAnniversaryPublications = () => {
                         {console.log(dataPublications[publication].url)}
                         <PublicationCard>
                             <a href={`${dataPublications[publication].url}`} target="_blank" rel="noopener">
-                                <img src={dataPublications[publication].urlImage} />
+                                <FeaturedImage src={dataPublications[publication].urlImage} />
                                 <p>{dataPublications[publication].Title}</p>
                             </a> 
                             
@@ -197,7 +199,7 @@ const RepoAnniversaryPublications = () => {
                             <MatchPublication>
 
                             <a href={`${searchResults[publication].url}`} target="_blank" rel="noopener">
-                                <img src={searchResults[publication].urlImage} />
+                                <FeaturedImage src={searchResults[publication].urlImage} />
                                 <div>
                                     <h3>{searchResults[publication].Title}</h3>
                                     <span>Autor: {searchResults[publication].author}</span>

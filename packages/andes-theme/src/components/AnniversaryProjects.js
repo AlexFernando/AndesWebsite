@@ -3,6 +3,7 @@ import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
 import Link from "./Link";
 import Loading from './Loading';
+import Image from "@frontity/components/image";
 
 export const SectionContainer = styled.div`
     display: flex;
@@ -62,7 +63,7 @@ export const SectionProjectText = styled.div`
 `;
 
 
-export const Images = styled.img`
+export const Images = styled(Image)`
     max-width: 100%;
     max-height: 100%;
 `

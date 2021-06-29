@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect, styled} from "frontity";
+import Image from "@frontity/components/image";
 
 const FeaturedImage = ({state, imgID, element}) => {
     
@@ -9,7 +10,7 @@ const FeaturedImage = ({state, imgID, element}) => {
 
         return (
             <>
-                <img src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
+                <Image src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
             </>
         );
     }
@@ -17,7 +18,7 @@ const FeaturedImage = ({state, imgID, element}) => {
     else if (element === 'publication') {
         return  (
             <>
-                <img src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
+                <Image src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
             </>
         );
     }
@@ -25,7 +26,7 @@ const FeaturedImage = ({state, imgID, element}) => {
     else if (element === 'event') {
         return  (
             <>
-                <img src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
+                <Image src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
             </>
         );
     }
@@ -33,7 +34,7 @@ const FeaturedImage = ({state, imgID, element}) => {
     else if (element === 'singlesearch') {
         return  (
             <>
-                <img src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
+                <Image src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
             </>
         );
     }
@@ -41,7 +42,7 @@ const FeaturedImage = ({state, imgID, element}) => {
     else if (element === 'toolkit') {
         return  (
             <>
-                <img src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
+                <Image src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
             </>
         );
     }
@@ -49,7 +50,7 @@ const FeaturedImage = ({state, imgID, element}) => {
     else {
         return  (
             <>
-                <img src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
+                <Image src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
             </>
         );
     }

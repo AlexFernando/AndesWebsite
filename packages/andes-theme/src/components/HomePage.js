@@ -5,6 +5,8 @@ import Link from './Link';
 import Loading from './Loading';
 import {readMore, getMore, explore, learn} from './Root'
 
+import Image from "@frontity/components/image";
+
 const Content = styled.div`  
     background-image: url(${props => props.background});
     background-repeat: no-repeat;
@@ -227,11 +229,7 @@ const CardsHome = styled.div`
 
    div {
        position: relative;
-       img {
-           width: 100%;
-           align-self: center;
-           max-height: 40vh; /**new line image height */
-       }
+       
        strong {
            display: -webkit-box;
            display: -ms-flexbox;
@@ -295,6 +293,14 @@ const CardsHome = styled.div`
        }
    }
 `;
+
+const ImageCardHome = styled(Image)`
+
+    width: 100%;
+    align-self: center;
+    max-height: 40vh; /**new line image height */
+       
+`
 
 const HomePage = ({state, actions, libraries}) => {
 
@@ -364,7 +370,7 @@ const HomePage = ({state, actions, libraries}) => {
 
                         <CardsHome>
                             <div>
-                                <img src={cardImages.acf.image_card.sizes.medium_large}/>
+                                <ImageCardHome src={cardImages.acf.image_card.sizes.medium_large}/>
                             </div>
                     
                             <h3>{cardImages.title.rendered}</h3>
@@ -422,7 +428,7 @@ const HomePage = ({state, actions, libraries}) => {
 
                         <CardsHome>
                         <div>
-                            <img src={cardImages.acf.image_card.sizes.medium_large}/>
+                            <ImageCardHome src={cardImages.acf.image_card.sizes.medium_large}/>
                             <strong>{cardImages.acf.tag_card}</strong>
                         </div>
                 

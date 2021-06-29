@@ -3,6 +3,8 @@ import {styled} from "frontity";
 import {Border} from './Menu';
 import Link from "./Link";
 
+import Image from "@frontity/components/image";
+
 const DropDownBox = styled.div`  
     display: flex;
     flex-direction: column;
@@ -91,7 +93,7 @@ const ListStyle = styled.li`
     margin-bottom: 1rem;
   }
 `
-const ImageStyle = styled.img`
+const ImageStyle = styled(Image)`
   
   display:none;
   

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import {SectionContainer, CardsContainer, Card} from './potatoPark'
+import {SectionContainer, CardsContainer, Card, ImagePotatoPark} from './potatoPark'
 import Loading from './Loading';
 import {readMore} from './Root';
 
@@ -80,7 +80,7 @@ const LaresPark = ({state, actions}) => {
 
                                     <Card>
                                         
-                                        <img src={cardImages.acf.image_card.sizes.medium_large}/>
+                                        <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/>
                                         
                                         <h3>{cardImages.title.rendered}</h3>
                                         <p dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>

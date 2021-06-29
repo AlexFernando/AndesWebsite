@@ -3,6 +3,8 @@ import {connect, styled } from "frontity";
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIconList} from './TerritoriosCulturales';
 
+import Image from "@frontity/components/image";
+
 export const MarginTopContainer = styled.div`
     margin-top: 12vh;
 
@@ -106,16 +108,6 @@ const ObjetivesContent = styled.div`
     div {
         padding: 0rem 1rem;
 
-        img {
-            @media (max-width: 768px){
-                max-width: 100%;
-                max-height: 100%;
-            }
-            max-width: 80%;
-            max-height: 80%;
-            align-self: center;
-        }
-
         ul {
             padding: 0;
         }
@@ -127,6 +119,19 @@ const ObjetivesContent = styled.div`
         }
     }
 `
+
+export const ImagePhilosophy = styled(Image)`
+    
+    @media (
+        max-width: 768px){
+        max-width: 100%;
+        max-height: 100%;
+    }
+    max-width: 80%;
+    max-height: 80%;
+    align-self: center;
+`
+
 export const ImageStyle = styled.img`
     
     max-height: 100%; 
@@ -178,7 +183,7 @@ const Filosofia = ({state, actions}) => {
                                     }
                                 </ul>
 
-                                <img src={pagePhilosophy.acf.image_one.sizes.medium_large} />
+                                <ImagePhilosophy src={pagePhilosophy.acf.image_one.sizes.medium_large} />
                             </div>                       
                        
 
@@ -191,7 +196,7 @@ const Filosofia = ({state, actions}) => {
                                         }) 
                                     }
                                 </ul>
-                                <img src={pagePhilosophy.acf.image_two.sizes.medium_large} />
+                                <ImagePhilosophy src={pagePhilosophy.acf.image_two.sizes.medium_large} />
                             </div>
                         </ObjetivesContent>
                     </div>

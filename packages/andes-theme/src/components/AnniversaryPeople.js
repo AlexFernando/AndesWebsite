@@ -4,6 +4,7 @@ import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './F
 import {SectionText} from './HomePage';
 import {TextContainer} from './Stuff';
 import Loading from './Loading';
+import Image from "@frontity/components/image";
 
 export const SectionImage = styled.div`
     display: flex;
@@ -25,7 +26,7 @@ export const SectionImage = styled.div`
     }
 `;
 
-export const Images = styled.img`
+export const Images = styled(Image)`
     max-width: 100%;
     max-height: 100%;
 `
