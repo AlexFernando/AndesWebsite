@@ -4,6 +4,8 @@ import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './F
 
 import Loading from './Loading';
 
+import Image from "@frontity/components/image";
+
 export const SubSection = styled.div`
     display: flex;
     flex-direction: column-reverse;
@@ -52,7 +54,7 @@ export const TextContainer = styled.div`
     } 
 `;
 
-export const ImageSection = styled.img`
+export const ImageSection = styled(Image)`
     max-width: 100%;
     max-height: 100%;
     border-radius: 5px;
@@ -107,8 +109,6 @@ const Staff = ({state, actions}) => {
             }
         )
     }
-
-    console.log("cards: ", cardStuffArr);
 
 
     return ( 

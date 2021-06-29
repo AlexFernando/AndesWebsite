@@ -1,11 +1,13 @@
 import React, {useEffect} from 'react';
 import {connect, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import {SectionContainer, CardsContainer, Card, MainParagraph} from './potatoPark';
+import {SectionContainer, CardsContainer, Card, MainParagraph, ImagePotatoPark} from './potatoPark';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle, faListAlt, faLeaf, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { VerticalBorder } from './Dropdown';
 import { readMore } from './Root';
+
+import Image from "@frontity/components/image";
 
 export const SubSectionTitle = styled.h2`
        color: #44841a;
@@ -89,11 +91,12 @@ const AditionalContainer = styled.div`
         }
 
     }
-    img {
-        max-width: 100%;
-        max-height: 20vh;
-    }
 `;
+
+const AditionalContainerImage = styled(Image)`
+    max-width: 100%;
+    max-height: 20vh;
+`
 
 const TerritoriosCulturales = ({state,actions}) => {
 
@@ -231,7 +234,7 @@ const TerritoriosCulturales = ({state,actions}) => {
                         
                         <h3>{cardImages.title.rendered}</h3>
 
-                        <img src={cardImages.acf.image_card.sizes.medium_large}/>
+                        <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/>
   
                         <span dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
                     
@@ -255,13 +258,13 @@ const TerritoriosCulturales = ({state,actions}) => {
             <SubSectionTitle>{pageBiocultural.acf.additional_resources_title}</SubSectionTitle>
             
             <AditionalContainer>
-                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={pageBiocultural.acf.img_additional_1.sizes.medium}/></a>
+                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><AditionalContainerImage src={pageBiocultural.acf.img_additional_1.sizes.medium}/></a>
             
-                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={pageBiocultural.acf.img_additional_2.sizes.medium}/></a>
+                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><AditionalContainerImage src={pageBiocultural.acf.img_additional_2.sizes.medium}/></a>
             
-                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={pageBiocultural.acf.img_additional_3.sizes.medium}/></a>
+                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><AditionalContainerImage src={pageBiocultural.acf.img_additional_3.sizes.medium}/></a>
             
-                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><img src={pageBiocultural.acf.img_additional_4.sizes.medium}/></a>
+                <a href="https://www.iied.org/" target="_blank" rel="noopener" ><AditionalContainerImage src={pageBiocultural.acf.img_additional_4.sizes.medium}/></a>
             </AditionalContainer>
         </MarginTopContainer>
  

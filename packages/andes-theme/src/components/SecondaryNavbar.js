@@ -82,7 +82,7 @@ const SecondaryNavbar = ({state, actions, setNavOpen, navOpen}) => {
     return ( 
 
         <ContainerNav>
-            <p>"Together towards to Sumaq Kawsay"</p>
+            <p>"Together towards Sumaq Kawsay"</p>
 
             <div>
                 <a href={myLink}>ENGLISH</a>

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect, styled} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import {ContainerBlocks, BlockInfo} from './Pasantias';
+import {ContainerBlocks, BlockInfo, ImageIntership} from './Pasantias';
 import {SectionContainer, MainParagraph} from './potatoPark';
 import Loading from './Loading';
 
@@ -120,7 +120,7 @@ const Cursos = ({state, actions}) => {
                                     </div>
                                     
                                     
-                                    <img src={cardIntership.acf.image_card.sizes.medium_large}/>
+                                    <ImageIntership src={cardIntership.acf.image_card.sizes.medium_large}/>
                                     
                                 </BlockInfo>
                             )

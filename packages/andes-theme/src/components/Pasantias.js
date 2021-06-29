@@ -8,9 +8,26 @@ import Loading from './Loading';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIconList} from './TerritoriosCulturales'
 
+import Image from "@frontity/components/image";
+
 export const ContainerBlocks = styled.div`
  
 `;
+
+export const ImageIntership = styled(Image)`
+    flex-basis: 30%;
+    object-fit: contain;
+    width: 240px;
+    height: 320px;
+
+    @media(max-width: 768px) {
+            width: 100%;
+            height: 100%;
+            margin: 1rem 0;
+        
+    }
+`;
+
 export const BlockInfo = styled.div`
 
     display: flex;
@@ -27,20 +44,6 @@ export const BlockInfo = styled.div`
     
     :nth-of-type(even){
         background-color: #333333;
-    }
-
-    img {
-        flex-basis: 30%;
-        object-fit: contain;
-        width: 240px;
-        height: 320px;
-
-        @media(max-width: 768px) {
-                width: 100%;
-                height: 100%;
-                margin: 1rem 0;
-            
-        }
     }
 
     div {
@@ -175,7 +178,7 @@ const Pasantias = ({state , actions}) => {
                                     </div>
                                     
                                     
-                                    <img src={cardIntership.acf.image_card.sizes.medium_large}/>
+                                    <ImageIntership src={cardIntership.acf.image_card.sizes.medium_large}/>
                                     
                                 </BlockInfo>
                             )

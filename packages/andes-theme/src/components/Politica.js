@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect, styled} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import {SectionContainer, MainParagraph, CardsContainer, Card} from './potatoPark'
+import {SectionContainer, MainParagraph, CardsContainer, Card, ImagePotatoPark} from './potatoPark'
 
 import {SectionText} from './HomePage';
 
@@ -195,7 +195,7 @@ const Politica = ({state, actions}) => {
 
                                 <Card>
                                     
-                                    <img src={cardImages.acf.image_card.sizes.medium_large}/>
+                                    <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/>
                                     
                                     <h3>{cardImages.title.rendered}</h3>
                                     <p dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>

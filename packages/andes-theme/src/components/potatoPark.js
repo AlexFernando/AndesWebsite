@@ -9,7 +9,9 @@ import { VerticalBorder } from './Dropdown';
 
 import Loading from './Loading';
 
-import {readMore} from './Root'
+import {readMore} from './Root';
+
+import Image from "@frontity/components/image";
 
 export const SectionContainer = styled.div`
     display: flex;
@@ -72,12 +74,6 @@ export const Card = styled.div`
         margin: 1rem 0 1rem 0;
     }
 
-    img {
-        max-width: 100%;
-        max-height: 100%;
-        border-radius: 1rem 1rem 0 0;        
-    }
-
     h3 {
         color: #44841a;
         padding: 0 1rem 0 1rem;
@@ -98,6 +94,12 @@ export const Card = styled.div`
         border-radius: 10px;
     }
 `;
+
+export const ImagePotatoPark = styled(Image)`
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1rem 1rem 0 0;   
+`
 
 const SectionInfoContainer = styled.div`
     margin: 2rem 0;
@@ -315,7 +317,7 @@ const PotatoPark = ({state, actions}) => {
 
                                     <Card>
                                         
-                                        <img src={cardImages.acf.image_card.sizes.medium_large}/>
+                                        <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/>
                                         
                                         <h3>{cardImages.title.rendered}</h3>
                                         <p dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>

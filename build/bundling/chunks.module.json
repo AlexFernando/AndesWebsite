@@ -1,0 +1,117 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.2",
+  "hash": "afccf0ed60e325ef4a78",
+  "publicPath": "/static/",
+  "outputPath": "/home/alexf/Documents/react_projects/AndesWebsite/build/static",
+  "assetsByChunkName": {
+    "andes-headless-english": "andes-headless-english.module.js",
+    "andes-headless-spanish": "andes-headless-spanish.module.js"
+  },
+  "assets": [
+    {
+      "name": "andes-headless-english.module.js",
+      "size": 11534191,
+      "chunks": [
+        "andes-headless-english"
+      ],
+      "chunkNames": [
+        "andes-headless-english"
+      ],
+      "info": {},
+      "emitted": true,
+      "isOverSizeLimit": true
+    },
+    {
+      "name": "andes-headless-spanish.module.js",
+      "size": 11534191,
+      "chunks": [
+        "andes-headless-spanish"
+      ],
+      "chunkNames": [
+        "andes-headless-spanish"
+      ],
+      "info": {},
+      "emitted": true,
+      "isOverSizeLimit": true
+    },
+    {
+      "name": "images/1.jpeg",
+      "size": 89365,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/link3.jpg",
+      "size": 200544,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/logoscaled.png",
+      "size": 94737,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "andes-headless-english": {
+      "chunks": [
+        "andes-headless-english"
+      ],
+      "assets": [
+        "andes-headless-english.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "andes-headless-spanish": {
+      "chunks": [
+        "andes-headless-spanish"
+      ],
+      "assets": [
+        "andes-headless-spanish.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "andes-headless-english": {
+      "chunks": [
+        "andes-headless-english"
+      ],
+      "assets": [
+        "andes-headless-english.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "andes-headless-spanish": {
+      "chunks": [
+        "andes-headless-spanish"
+      ],
+      "assets": [
+        "andes-headless-spanish.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 2,
+      "debug": false
+    }
+  },
+  "children": []
+}
