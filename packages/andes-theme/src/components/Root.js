@@ -59,7 +59,7 @@ const Root = ({ state, actions }) => {
     
         useEffect( () => {
             if( state.theme.lang === "en") {
-                actions.source.fetch("/search")
+                //actions.source.fetch("/search")
                 actions.source.fetch("/home")
                 actions.source.fetch("/cardimage/")
                 actions.source.fetch("/philosophy")
@@ -70,7 +70,7 @@ const Root = ({ state, actions }) => {
             }
 
             else if (state.theme.lang === "es") {
-                actions.source.fetch("/es-search")
+                //actions.source.fetch("/es-search")
                 actions.source.fetch("/home-es")
                 actions.source.fetch("/es-philosophy")
                 actions.source.fetch("/cardimage")
@@ -133,8 +133,6 @@ const Root = ({ state, actions }) => {
                 {data.isNoticiasRelevantes && <News />}                
 
                 {data.isSearchBar && <SearchBar />}
-
-
 
                 {data.id === 262 && <TerritoriosCulturales/>}
 

@@ -153,6 +153,7 @@ const settings = [
               endpoint: "typeofpublication",
               postTypeEndpoint: "singlesearch",
               params: {
+                per_page: 100,
                 _embed: true
               }
             }

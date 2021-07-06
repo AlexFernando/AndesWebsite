@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer, SectionContainer} from './Filosofia';
-import {SearchBar, InputBar, NotFoundContainer } from './SearchBar';
+import {SearchBar, InputBar, NotFoundContainer, FormStyled } from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
@@ -150,6 +150,14 @@ const Publicaciones = ({state, actions}) => {
     };
 
 
+    // Enter Key for search button 
+    const handleKeypress = e => {
+        //it triggers by pressing the enter key
+        if (e.keyCode === 13) {
+            handleSubmit();
+        }
+    };
+
     return (
         <>
         <MarginTopContainer>
@@ -167,22 +175,27 @@ const Publicaciones = ({state, actions}) => {
 
         <SectionContainer>
             <SearchBar>
-                <InputBar>
-                    <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
+                <FormStyled>
+                    <InputBar>
+                        <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
 
-                        <input 
-                            type="text"
-                            placeholder="What are you searching for?"
-                            value={searchTerm}
-                            onChange={handleChange}
-                        />
-                </InputBar>
-            
-                <ButtonAction  onClick={handleSubmit}>
-                    <LinkButton href="/publications">SEARCH</LinkButton>
-                </ButtonAction>
+                            <input 
+                                type="text"
+                                placeholder="What are you searching for?"
+                                value={searchTerm}
+                                onChange={handleChange}
+                                onKeyPress={handleKeypress}
+                            />                    
+                    </InputBar>
+
+                    <ButtonAction  onClick={handleSubmit} type="submit">
+                        <LinkButton href="/publications">SEARCH</LinkButton>
+                    </ButtonAction>
+                </FormStyled>
             </SearchBar>
         </SectionContainer>
+
+
 
         {data.isReady ? 
         <SectionPublications>
