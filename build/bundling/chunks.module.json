@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "afccf0ed60e325ef4a78",
+  "hash": "af00d3de653d04c59a68",
   "publicPath": "/static/",
   "outputPath": "/home/alexf/Documents/react_projects/AndesWebsite/build/static",
   "assetsByChunkName": {
@@ -12,7 +12,7 @@
   "assets": [
     {
       "name": "andes-headless-english.module.js",
-      "size": 11534191,
+      "size": 11561547,
       "chunks": [
         "andes-headless-english"
       ],
@@ -20,12 +20,12 @@
         "andes-headless-english"
       ],
       "info": {},
-      "emitted": true,
+      "emitted": false,
       "isOverSizeLimit": true
     },
     {
       "name": "andes-headless-spanish.module.js",
-      "size": 11534191,
+      "size": 11561547,
       "chunks": [
         "andes-headless-spanish"
       ],
@@ -33,7 +33,7 @@
         "andes-headless-spanish"
       ],
       "info": {},
-      "emitted": true,
+      "emitted": false,
       "isOverSizeLimit": true
     },
     {

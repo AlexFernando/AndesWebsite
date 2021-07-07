@@ -16,11 +16,16 @@ const FeaturedImage = ({state, imgID, element}) => {
     }
 
     else if (element === 'publication') {
-        return  (
-            <>
-                <Image src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
-            </>
-        );
+        
+            return(
+            
+                <>
+                    <Image src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
+                </>
+            );
+            
+       
+        
     }
 
     else if (element === 'event') {

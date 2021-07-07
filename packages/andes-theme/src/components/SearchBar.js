@@ -39,7 +39,17 @@ export const SearchBar = styled.div`
     }
 `;
 
-export const InputBar = styled.form`
+export const FormStyled = styled.form`
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    @media (max-width: 768px){
+        flex-direction: column;
+    }
+`
+
+export const InputBar = styled.div`
     display: flex;
     flex-basis: 70%;
     justify-content: flex-start;
@@ -192,34 +202,41 @@ const SearchBarComponent = ({state, actions}) => {
         }
 
         setSearchTerm("")
-
   
     };
 
- 
+        // Enter Key for search button 
+    const handleKeypress = e => {
+        //it triggers by pressing the enter key
+        if (e.keyCode === 13) {
+            handleSubmit();
+        }
+    };
+
     return ( 
 
 
         <SectionContainer css={css`margin-top: 18vh;`}>
        
             <SearchBar>
-                <InputBar>
-                    <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
-                    
-                  
-                        <input 
-                            type="text"
-                            placeholder="What are you searching for?"
-                            value={searchTerm}
-                            onChange={handleChange}
-                        />
-            
+
+                <FormStyled>
+                    <InputBar>
+                        <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
+                        
+                            <input 
+                                type="text"
+                                placeholder="What are you searching for?"
+                                value={searchTerm}
+                                onChange={handleChange}
+                                onKeyPress={handleKeypress}
+                            />    
+                    </InputBar>
                 
-                </InputBar>
-            
-                <ButtonAction  onClick={handleSubmit}>
-                        <LinkButton href="/searchbar">SEARCH</LinkButton>
-                </ButtonAction>
+                    <ButtonAction  onClick={handleSubmit} type="submit">
+                            <LinkButton href="/searchbar">SEARCH</LinkButton>
+                    </ButtonAction>
+                </FormStyled>
             </SearchBar>
             
             
