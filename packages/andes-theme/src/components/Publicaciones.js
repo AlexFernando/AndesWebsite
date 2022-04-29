@@ -134,10 +134,12 @@ const Publicaciones = ({state, actions}) => {
                 keywordCleaned.push(keywords[i].trim().toLowerCase());
             }
 
- 
-            return (
-                publication.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()) || publication.acf.author.toLowerCase().includes(searchTerm.toLowerCase()) || keywordCleaned.includes(searchTerm.toLowerCase())
-            );
+            if(publication.title.rendered && publication.acf.author && keywordCleaned.length > 0) {
+                return (
+                    publication.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()) || publication.acf.author.toLowerCase().includes(searchTerm.toLowerCase()) || keywordCleaned.includes(searchTerm.toLowerCase())
+                );
+            }
+            
         })
     
         setSearchResults(results);

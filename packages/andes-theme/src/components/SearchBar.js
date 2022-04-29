@@ -99,7 +99,7 @@ export const PostStyled = styled.div`
             flex-direction:column-reverse;
         }
 
-        img {
+     /*    img {
             flex-basis: 30%;
             object-fit: contain;
             width: 220px;
@@ -110,7 +110,7 @@ export const PostStyled = styled.div`
                 height: 100%;
                 margin: 1rem 0;
             }
-        }
+        } */
 
         div{
             flex-basis: 60%;
@@ -195,17 +195,15 @@ const SearchBarComponent = ({state, actions}) => {
      
         setSearchResults(results);
 
-        console.log("resultados", searchResults);
 
         if(results.length === 0 && searchTerm) {
             setAlternativeTerm(searchTerm);
         }
 
         setSearchTerm("")
-  
     };
 
-        // Enter Key for search button 
+    // Enter Key for search button 
     const handleKeypress = e => {
         //it triggers by pressing the enter key
         if (e.keyCode === 13) {

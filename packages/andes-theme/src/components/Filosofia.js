@@ -122,13 +122,12 @@ const ObjetivesContent = styled.div`
 
 export const ImagePhilosophy = styled(Image)`
     
-    @media (
-        max-width: 768px){
+    @media (min-width: 768px){
         max-width: 100%;
         max-height: 100%;
     }
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 100%;
+    max-height: 100%;
     align-self: center;
 `
 
@@ -136,7 +135,6 @@ export const ImageStyle = styled.img`
     
     max-height: 100%; 
     max-width: 100%;
-
        
     @media (min-width: 768px){
         max-width: 50%;
@@ -200,7 +198,10 @@ const Filosofia = ({state, actions}) => {
                             </div>
                         </ObjetivesContent>
                     </div>
+                    
             </SectionContainer>
+
+            
             
         </MarginTopContainer>
 

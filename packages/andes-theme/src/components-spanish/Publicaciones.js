@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {connect, css, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer, SectionContainer} from './Filosofia';
-import {SearchBar, InputBar, NotFoundContainer } from './SearchBar';
+import {SearchBar, InputBar, NotFoundContainer, FormStyled } from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
@@ -88,6 +88,7 @@ const Publicaciones = ({state, actions}) => {
 
     useEffect( () => {
         actions.source.fetch("/es-search")
+        console.log("holllaaa")
      }, [])
 
     const data = state.source.get('/es-search');
@@ -133,12 +134,13 @@ const Publicaciones = ({state, actions}) => {
 
             for( let i = 0 ; i < keywords.length ; i++) {
                 keywordCleaned.push(keywords[i].trim().toLowerCase());
-            }
-
+            } 
  
-            return (
-                publication.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()) || publication.acf.author.toLowerCase().includes(searchTerm.toLowerCase()) || keywordCleaned.includes(searchTerm.toLowerCase())
-            );
+            if(publication.title.rendered !== undefined && publication.acf.author !== undefined && keywordCleaned.length > 0) {
+                return (
+                    publication.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()) || publication.acf.author.toLowerCase().includes(searchTerm.toLowerCase()) || keywordCleaned.includes(searchTerm.toLowerCase())
+                );
+            }
         })    
         setSearchResults(results);
 
@@ -147,6 +149,14 @@ const Publicaciones = ({state, actions}) => {
         }
 
         setSearchTerm("")
+    };
+
+    // Enter Key for search button 
+    const handleKeypress = e => {
+        //it triggers by pressing the enter key
+        if (e.keyCode === 13) {
+            handleSubmit();
+        }
     };
 
 
@@ -167,20 +177,26 @@ const Publicaciones = ({state, actions}) => {
 
         <SectionContainer>
             <SearchBar>
-                <InputBar>
-                    <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
 
-                        <input 
-                            type="text"
-                            placeholder="What are you searching for?"
-                            value={searchTerm}
-                            onChange={handleChange}
-                        />
-                </InputBar>
-            
-                <ButtonAction  onClick={handleSubmit}>
-                    <LinkButton href="/es-publications">BUSCAR</LinkButton>
-                </ButtonAction>
+                <FormStyled>
+
+                    <InputBar>
+                        <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
+
+                            <input 
+                                type="text"
+                                placeholder="Qué estás buscando?"
+                                value={searchTerm}
+                                onChange={handleChange}
+                                onKeyPress={handleKeypress}
+                            />
+                    </InputBar>
+                
+                    <ButtonAction  onClick={handleSubmit} type="submit">
+                        <LinkButton href="/es-publications">BUSCAR</LinkButton>
+                    </ButtonAction>
+                </FormStyled>
+                
             </SearchBar>
         </SectionContainer>
 
