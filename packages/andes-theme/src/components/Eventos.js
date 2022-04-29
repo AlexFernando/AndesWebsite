@@ -19,8 +19,9 @@ const SectionEvent = styled.div`
 
 export const EventContainer = styled.div`
 
-    flex-basis: 40%;
+    flex-basis: 30%;
     margin-top: 3rem;
+    margin-bottom: 3rem;
 
     h1 {
         text-transform: uppercase;
@@ -36,16 +37,25 @@ export const EventContainer = styled.div`
     }
 
     h3 {
-        color: #f07723;
+        //color: #f07723;
+        color: #fff;
         font-size: 1.5rem;
         text-transform: uppercase;
+        background-color: #333333;
+        padding: 1rem;
+        border-radius: 1rem;
     }
 
     p {
-        color: #44841a;
+        //color: #44841a;
         font-size: 1.2rem;
         font-weight: bold;
         text-transform: uppercase;
+        background-color: #44841a;
+        color: #fff;
+        padding: .5rem;
+        margin: 0;
+        border-radius: 1rem;
     }
 `;
 

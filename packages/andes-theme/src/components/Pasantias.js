@@ -178,7 +178,7 @@ const Pasantias = ({state , actions}) => {
                                     </div>
                                     
                                     
-                                    <ImageIntership src={cardIntership.acf.image_card.sizes.medium_large}/>
+                                    <ImageIntership src={cardIntership.acf.image_card.sizes.medium}/>
                                     
                                 </BlockInfo>
                             )

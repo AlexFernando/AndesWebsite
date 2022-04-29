@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import {connect, css, styled } from "frontity";
 import {MarginTopContainer} from './Filosofia';
-import {dataPublications} from '../data/dataPublicaciones';
-import {SearchBar, InputBar, NotFoundContainer } from './SearchBar';
+import {FormStyled, SearchBar, InputBar, NotFoundContainer } from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ButtonAction} from './bgImage';
@@ -145,27 +144,40 @@ const RepoAnniversaryPublications = () => {
         setSearchTerm("")
     };
 
+    // Enter Key for search button 
+    const handleKeypress = e => {
+        //it triggers by pressing the enter key
+        if (e.keyCode === 13) {
+            handleSubmit();
+        }
+    };
+
     return (
         
         <MarginTopContainer>
        
                 <SearchBar>
-                    <InputBar>
-                        <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
 
-                            <input 
-                                type="text"
-                                placeholder="What are you searching for?"
-                                value={searchTerm}
-                                onChange={handleChange}
-                            />
-                
+                    <FormStyled>
+                        <InputBar>
+                            <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
+
+                                <input 
+                                    type="text"
+                                    placeholder="What are you searching for?"
+                                    value={searchTerm}
+                                    onChange={handleChange}
+                                    onKeyPress={handleKeypress}
+                                />
                     
-                    </InputBar>
-                
-                    <ButtonAction  onClick={handleSubmit}>
-                            <LinkButton href="/publicaciones">BUSCAR</LinkButton>
-                    </ButtonAction>
+                        
+                        </InputBar>
+                    
+                        <ButtonAction  onClick={handleSubmit} type="submit">
+                                <LinkButton href="/es-publicaciones">BUSCAR</LinkButton>
+                        </ButtonAction>
+                    </FormStyled>
+                    
                 </SearchBar>
        
             <SectionPublications>

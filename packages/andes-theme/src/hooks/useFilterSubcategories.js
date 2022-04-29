@@ -1,66 +1,31 @@
 import React,{useState, useEffect} from 'react';
-import {styled} from "frontity";
+import {styled, css} from "frontity";
 
-const Categories = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-basis: 20%;
-    flex-grow: 0;
-    flex-shrink: 1;
+const MyForm = styled.form`
 
-    @media(max-width: 768px) {
- 
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-basis: 100%;
-    }
-`;
+    margin-bottom: 3rem;
 
-const ButtonCategory = styled.button`
-    padding: 1rem;
-    text-align: left;
-    cursor: pointer;
-    background-color: #44841a;
-    border-color: #44841a;
-    color: #fff;
-
-    span {
+    select {
+        height: 5vh;
+        width: 30vw;
         font-size: 1.2rem;
-    }
+        background-color: #44841a;
+        border-color: #44841a;
+        color: #fff;
 
-    @media(max-width: 768px) {
+            option {
+                font-size: 1rem;
+                background-color: #fff;
+                color: #000;
+            }
 
-        padding: .5rem;
-        span {
-            font-size: .8rem;
+        
+        @media(max-width: 768px) {
+            width: 80vw;
         }
+        
     }
-`;
-
-const ButtonSubCategory = styled.button`
-    padding: 1rem;
-    text-align: left;
-    cursor: pointer;
-    background-color: #f07723;
-    border-color: #f07723;
-    color: #fff;
-
-    p {
-        font-size: 1.1rem;
-        padding: 0;
-        margin: 0 0 0 4rem;
-   
-    }
-
-    @media(max-width: 768px) {
-
-        padding: .5rem;
-        p {
-            font-size: .8rem;
-        }
-    }
-`;
-
+`
 
 const useFilterSubcategories = () => {
 
@@ -125,18 +90,24 @@ const useFilterSubcategories = () => {
     //porque parentesis y no llaves?
     const FilterSubcategoriesUI = () => (
 
-        <Categories>
-                
-            {realCategories.map(option => (
-                <>
-                <ButtonCategory onClick = { () => saveCategory(option.name)}><span>{option.number}.- {option.name}</span></ButtonCategory>
-                {
-                    option.subcategories.length > 0 ? option.subcategories.map( subCategorie => <ButtonSubCategory onClick = { () => saveCategory(subCategorie)}><p>{subCategorie}</p></ButtonSubCategory>) : null 
-                }
-                </>
-            ))}
-           
-        </Categories>
+        <MyForm>
+                <select
+                    onChange = { e => saveCategory(e.target.value) }
+                    value={allCategory}
+                >
+
+                    <option>Todas las categorías</option>
+                  
+                    {realCategories.map(option => (
+                        <>
+                        {<option css={css`font-weight: 700`}> {option.name}</option>}
+                        {
+                            option.subcategories.length > 0 ? option.subcategories.map( subCategorie => <option>&nbsp;&nbsp;&nbsp;{subCategorie}</option>) : null
+                        }
+                        </>
+                    ))}
+                </select>
+        </MyForm>
     )
 
     return {

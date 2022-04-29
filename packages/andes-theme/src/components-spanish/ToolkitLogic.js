@@ -7,21 +7,17 @@ import FeaturedImage from './FeaturedImage';
 import Loading from './Loading';
 
 const SectionToolkit = styled.div`
-    display: flex;
+    display: flex; 
     padding: 2rem;
-    
+    flex-direction: column;   
     justify-content: space-between;
-
-    @media(max-width: 768px) {
-        flex-direction: column;
-    }
 `;
 
 const ContainerPapers = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
-    flex-basis: 80%;
+    flex-basis: 100%;
     padding: 0 2rem;
     flex-wrap: wrap;
 
@@ -39,7 +35,7 @@ const ElemPaper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 40%;
+    flex-basis: 20%;
     margin: 1rem 1rem;
 
     @media(max-width: 768px) {
@@ -70,6 +66,7 @@ const ElemPaper = styled.div`
         }
     }
 `;
+
 
 const ToolkitLogic = ({state, actions}) => {
 
@@ -128,9 +125,14 @@ const ToolkitLogic = ({state, actions}) => {
     useEffect( () => {
       
             if(allCategory !== "") {
-                const filter = toolkitData.filter(elemToolkit => elemToolkit.category === allCategory || elemToolkit.subcategory === allCategory)                
+                const filter = toolkitData.filter(elemToolkit => elemToolkit.category === allCategory.trim() || elemToolkit.subcategory === allCategory.trim())                
                 saveFiltered(filter);
             } 
+
+            if(allCategory === "Todas las categorías") {
+                const emptyArr = []
+                saveFiltered(emptyArr);
+            }
     }, [allCategory])
 
     return ( 
@@ -143,7 +145,7 @@ const ToolkitLogic = ({state, actions}) => {
          
                 { 
                 
-                filtered.length === 0 && allCategory === "" ?
+                filtered.length === 0 && allCategory === "" || allCategory === "Todas las categorías" ?
                         
                         <ContainerPapers>
                             
@@ -197,36 +199,6 @@ const ToolkitLogic = ({state, actions}) => {
 
                         <p>Thank you</p>
                     </NotFoundContainer> 
-            
-                    <NotFoundContainer>
-                        <h2>Oops!</h2> 
-                            
-                        <h3>There's no files to show in this category </h3>
-
-                        <p>Please, click in another category</p>
-
-                        <p>Thank you</p>
-                    </NotFoundContainer>
-
-                    <NotFoundContainer>
-                        <h2>Oops!</h2> 
-                            
-                        <h3>There's no files to show in this category </h3>
-
-                        <p>Please, click in another category</p>
-
-                        <p>Thank you</p>
-                    </NotFoundContainer>
-
-                    <NotFoundContainer>
-                        <h2>Oops!</h2> 
-                                
-                        <h3>There's no files to show in this category </h3>
-
-                        <p>Please, click in another category</p>
-
-                        <p>Thank you</p>
-                    </NotFoundContainer>
                     </ContainerPapers> 
                     
                 }

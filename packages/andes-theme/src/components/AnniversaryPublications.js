@@ -41,7 +41,7 @@ const AnniversaryPublications = ({state, actions}) => {
             </div>
             </SectionText>
 
-            
+        
             <RepoAnniversaryPublications />
         </MarginTopContainer>
      );

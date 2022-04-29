@@ -39,7 +39,17 @@ export const SearchBar = styled.div`
     }
 `;
 
-export const InputBar = styled.form`
+export const FormStyled = styled.form`
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    @media (max-width: 768px){
+        flex-direction: column;
+    }
+`
+
+export const InputBar = styled.div`
     display: flex;
     flex-basis: 70%;
     justify-content: flex-start;
@@ -89,7 +99,7 @@ export const PostStyled = styled.div`
             flex-direction:column-reverse;
         }
 
-        img {
+        /* img {
             flex-basis: 30%;
             object-fit: contain;
             width: 220px;
@@ -100,7 +110,7 @@ export const PostStyled = styled.div`
                 height: 100%;
                 margin: 1rem 0;
             }
-        }
+        } */
 
         div{
             flex-basis: 60%;
@@ -196,6 +206,14 @@ const SearchBarComponent = ({state, actions}) => {
   
     };
 
+    // Enter Key for search button 
+    const handleKeypress = e => {
+        //it triggers by pressing the enter key
+        if (e.keyCode === 13) {
+            handleSubmit();
+        }
+    };
+
  
     return ( 
 
@@ -203,23 +221,28 @@ const SearchBarComponent = ({state, actions}) => {
         <SectionContainer css={css`margin-top: 18vh;`}>
        
             <SearchBar>
-                <InputBar>
-                    <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
+
+                <FormStyled>
+                    <InputBar>
+                        <FontAwesomeIcon css={css`font-size: 1.8rem; color: #44841a;`}icon={faSearch}/>
+                        
                     
-                  
-                        <input 
-                            type="text"
-                            placeholder="¿Qué deseas buscar?"
-                            value={searchTerm}
-                            onChange={handleChange}
-                        />
-            
+                            <input 
+                                type="text"
+                                placeholder="¿Qué deseas buscar?"
+                                value={searchTerm}
+                                onChange={handleChange}
+                                onKeyPress={handleKeypress}
+                            />
                 
-                </InputBar>
-            
-                <ButtonAction  onClick={handleSubmit}>
+                    
+                    </InputBar>
+                
+                    <ButtonAction  onClick={handleSubmit} type="submit">
                         <LinkButton href="/es-searchbar">BUSCAR</LinkButton>
-                </ButtonAction>
+                    </ButtonAction>
+                </FormStyled>
+                
             </SearchBar>
             
             

@@ -4,12 +4,17 @@ import {connect, styled, css} from "frontity";
 const MyCalendar =  styled.div`
   flex-basis: 40%;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 10rem;
+
+  @media(max-width: 768px) {
+    margin-top: 2rem;
+  }
 
   h1 {
-    color: #f07723;
+    //color: #f07723;
     margin-bottom: 2rem;
     font-size: 1.6rem;
+    color: #000;
   }
 `
 
@@ -26,6 +31,7 @@ const Header = styled.div`
   padding: 10px 10px 5px 10px;
   display: flex;
   justify-content: space-between;
+  //background-color: #44841a;
   background-color: #44841a;
   border-radius: 1rem 1rem 0 0;
   color: #fff;
@@ -116,69 +122,70 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
 
     return ( 
       <MyCalendar>  
+        <Frame>
+          
+          <Header>
+            <Button onClick={() => setDate(new Date(year, month - 1, day))}>Prev</Button>
+            <div>
+              {MONTHS[month]} {year}
+            </div>
+            <Button onClick={() => setDate(new Date(year, month + 1, day))}>Next</Button>
+          </Header>
+
+          <Body>
+            {DAYS_OF_THE_WEEK.map(d => (
+              <Day key={d}>
+                <strong>{d}</strong>
+              </Day>
+            ))}
+
+            {Array(days[month] + (startDay - 1))
+              .fill(null)
+              .map((_, index) => {
+                //console.log("que es index: ", index);
+                const d = index - (startDay - 2);
+                //console.log("que es d: ", d);
+                //console.log("startday: ",startDay)
+                //console.log(eventDay.indexOf(d) === eventMonth.indexOf(month+1) === eventYear.indexOf(year))
+                //console.log("day: ", d , "month: ", month, "year: ", year)
+                //console.log("el mes del calendario: ",month)
+                //console.log(eventDay.indexOf)
+
+                let indexDay = eventDay.indexOf(d)
+
+                if(indexDay > -1 && month === eventMonth[indexDay] && year === eventYear[indexDay] ) {
+                  
+
+
+                  return (
+                    <Day
+                      key={index}
+                      isSelected={true}
+                      onClick = { () => showEvent(idArray[indexDay])}
+                    >
+                      {d > 0 ? d : ''}
+                    </Day>
+                  );
+                
+                }
+
+                else {
+                  return (
+                    <Day
+                      key={index}
+                    >
+                      {d > 0 ? d : ''}
+                    </Day>
+                  );
+                  
+                }
+
+                
+              })}
+          </Body>
+      </Frame>
+
       <h1>{`CURRENT DAY : ${today}`}</h1>
-      <Frame>
-        
-        <Header>
-          <Button onClick={() => setDate(new Date(year, month - 1, day))}>Prev</Button>
-          <div>
-            {MONTHS[month]} {year}
-          </div>
-          <Button onClick={() => setDate(new Date(year, month + 1, day))}>Next</Button>
-        </Header>
-
-        <Body>
-          {DAYS_OF_THE_WEEK.map(d => (
-            <Day key={d}>
-              <strong>{d}</strong>
-            </Day>
-          ))}
-
-          {Array(days[month] + (startDay - 1))
-            .fill(null)
-            .map((_, index) => {
-              //console.log("que es index: ", index);
-              const d = index - (startDay - 2);
-              //console.log("que es d: ", d);
-              //console.log("startday: ",startDay)
-              //console.log(eventDay.indexOf(d) === eventMonth.indexOf(month+1) === eventYear.indexOf(year))
-              //console.log("day: ", d , "month: ", month, "year: ", year)
-              //console.log("el mes del calendario: ",month)
-              //console.log(eventDay.indexOf)
-
-              let indexDay = eventDay.indexOf(d)
-
-              if(indexDay > -1 && month === eventMonth[indexDay] && year === eventYear[indexDay] ) {
-                
-
-
-                return (
-                  <Day
-                    key={index}
-                    isSelected={true}
-                    onClick = { () => showEvent(idArray[indexDay])}
-                  >
-                    {d > 0 ? d : ''}
-                  </Day>
-                );
-              
-              }
-
-              else {
-                return (
-                  <Day
-                    key={index}
-                  >
-                    {d > 0 ? d : ''}
-                  </Day>
-                );
-                
-              }
-
-              
-            })}
-        </Body>
-    </Frame>
     </MyCalendar>
      );
 }

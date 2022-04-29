@@ -85,10 +85,13 @@ export const PublicationCard = styled.div`
 
 const RepoAnniversaryPublications = ({state, actions}) => {
 
+    
+
     useEffect( () => {
 
         if(state.theme.lang === "en") {
             actions.source.fetch("/search")
+
         }
 
         else {
@@ -97,6 +100,10 @@ const RepoAnniversaryPublications = ({state, actions}) => {
      }, [])
 
     const data = state.theme.lang === "en" ? state.source.get('/search') : state.source.get('/es-search');
+
+    let linkMyButtonSubmit = state.theme.lang === "en" ? "/aniversariopublicaciones" : "/es-aniversariopublicaciones"
+
+    console.log(linkMyButtonSubmit)
 
     let publications = [];
 
@@ -166,7 +173,7 @@ const RepoAnniversaryPublications = ({state, actions}) => {
                     </InputBar>
                 
                     <ButtonAction  onClick={handleSubmit} type="submit">
-                        <LinkButton href="/publications">SEARCH</LinkButton>
+                        <LinkButton href={linkMyButtonSubmit}>SEARCH</LinkButton>
                     </ButtonAction>
                 </FormStyled>
             </SearchBar>

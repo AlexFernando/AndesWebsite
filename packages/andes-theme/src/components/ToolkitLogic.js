@@ -9,19 +9,15 @@ import Loading from './Loading';
 const SectionToolkit = styled.div`
     display: flex; 
     padding: 2rem;
-    
+    flex-direction: column;   
     justify-content: space-between;
-
-    @media(max-width: 768px) {
-        flex-direction: column;
-    }
 `;
 
 const ContainerPapers = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
-    flex-basis: 80%;
+    flex-basis: 100%;
     padding: 0 2rem;
     flex-wrap: wrap;
 
@@ -39,7 +35,8 @@ const ElemPaper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 40%;
+    align-self: center;
+    flex-basis: 20%;
     margin: 1rem 1rem;
 
     @media(max-width: 768px) {
@@ -55,15 +52,9 @@ const ElemPaper = styled.div`
         text-align: center;       
     }
 
-    img {
-        max-width: 80%;
 
-        @media(max-width: 768px) {
-            max-width: 100%;
-        }
-    }
     div {
-        max-width: 80%;
+        //max-width: 80%;
         text-align: center;
         @media(max-width: 768px) {
             max-width: 100%;
@@ -123,12 +114,17 @@ const ToolkitLogic = ({state, actions}) => {
     toolkitData.sort((a, b) => (a.acf.date < b.acf.date) ? 1 : -1)
 
 
-    useEffect( () => {
-      
+    useEffect( () => {      
             if(allCategory !== "") {
-                const filter = toolkitData.filter(elemToolkit => elemToolkit.category === allCategory || elemToolkit.subcategory === allCategory)
+                const filter = toolkitData.filter(elemToolkit => elemToolkit.category === allCategory.trim() || elemToolkit.subcategory === allCategory.trim())
                 saveFiltered(filter);
-            } 
+            }
+            
+            if(allCategory === "All Category") {
+
+                const emptyArr = []
+                saveFiltered(emptyArr);
+            }
     }, [allCategory])
 
     return ( 
@@ -142,7 +138,7 @@ const ToolkitLogic = ({state, actions}) => {
                 { 
                 
                 
-                filtered.length === 0 && allCategory === "" ?
+                filtered.length === 0 && allCategory === "All Category" || allCategory ===""?
                         
                         <ContainerPapers>
                             
@@ -196,36 +192,7 @@ const ToolkitLogic = ({state, actions}) => {
 
                         <p>Thank you</p>
                     </NotFoundContainer> 
-            
-                    <NotFoundContainer>
-                        <h2>Oops!</h2> 
-                            
-                        <h3>There's no files to show in this category </h3>
-
-                        <p>Please, click in another category</p>
-
-                        <p>Thank you</p>
-                    </NotFoundContainer>
-
-                    <NotFoundContainer>
-                        <h2>Oops!</h2> 
-                            
-                        <h3>There's no files to show in this category </h3>
-
-                        <p>Please, click in another category</p>
-
-                        <p>Thank you</p>
-                    </NotFoundContainer>
-
-                    <NotFoundContainer>
-                        <h2>Oops!</h2> 
-                                
-                        <h3>There's no files to show in this category </h3>
-
-                        <p>Please, click in another category</p>
-
-                        <p>Thank you</p>
-                    </NotFoundContainer>
+        
                     </ContainerPapers> 
                     
                 }
