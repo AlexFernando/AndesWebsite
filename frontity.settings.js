@@ -75,6 +75,9 @@ const settings = [
 
           ]
         },
+        "theme": {
+          fontSets: "us-ascii",
+        }
       }
     },
     "@frontity/tiny-router",
@@ -87,7 +90,7 @@ const settings = [
 //SPANISH SITE
 {
   "name": "andes-headless-spanish",
-  "match": [".*https?:\/\/andes.org.pe\/es-(.*)?$"],
+  "match": [".*https?:\/\/localhost:3000\/es-(.*)?$"],
   "state": {
     "frontity": {
       "url": "https://andes.org.pe/es-",

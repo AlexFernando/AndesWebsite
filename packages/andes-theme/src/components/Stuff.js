@@ -6,10 +6,13 @@ import Loading from './Loading';
 
 import Image from "@frontity/components/image";
 
+//handle image size according to size screen
+import CardFeaturedImage from './CardFeatureImage';
+
 export const SubSection = styled.div`
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
     
@@ -35,6 +38,11 @@ export const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 0 1.5rem 0;
+
+    @media (min-width: 768px){
+        flex-basis: 50%;
+    }
+   
 
     h3 {
         margin: 0 0 .5rem 0;
@@ -159,10 +167,10 @@ const Staff = ({state, actions}) => {
 
                                         </TextContainer>
                         
-                                        
-                                        <ImageSection src={cardStuff.acf.image_card.sizes.medium_large} />
-                                    
-                                    
+                                        {/* <ImageSection src={cardStuff.acf.image_card.sizes.medium_large} /> */}
+
+                                        <CardFeaturedImage  media = {cardStuff.acf.image_card.sizes} elem="stuff" />
+
                                     </SubSection>
                                 )
                             })

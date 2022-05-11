@@ -13,6 +13,9 @@ import Loading from './Loading';
 
 import {readMore} from './Root';
 
+//handle image size according to size screen
+import CardFeaturedImage from './CardFeatureImage';
+
 const NosotrosYachay = ({state, actions}) => {
 
     useEffect( () => {
@@ -173,7 +176,7 @@ const NosotrosYachay = ({state, actions}) => {
                                                     return(
                                                         <>
                                                             <br></br>
-                                                            <h3>{item} <br></br><span> {arrayDescription[index]}</span></h3> 
+                                                            <h3>{item} <span> {arrayDescription[index]}</span></h3> 
                                                             
                                                         </>
                                                     )
@@ -184,9 +187,9 @@ const NosotrosYachay = ({state, actions}) => {
                                         </TextContainer>
                         
                                         
-                                        <ImageSection src={cardYachay.acf.image_card.sizes.medium_large} />
+                                        {/* <ImageSection src={cardYachay.acf.image_card.sizes.medium_large} /> */}
                                     
-                                    
+                                        <CardFeaturedImage  media = {cardYachay.acf.image_card.sizes} elem="stuff" />
                                     </SubSection>
                                 )
                             })

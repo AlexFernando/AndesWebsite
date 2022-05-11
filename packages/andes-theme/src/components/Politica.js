@@ -1,13 +1,16 @@
 import React, {useEffect} from 'react';
 import {connect, styled} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import {SectionContainer, MainParagraph, CardsContainer, Card, ImagePotatoPark} from './potatoPark'
+import {SectionContainer, MainParagraph, ImagePotatoPark} from './potatoPark'
 
 import {SectionText} from './HomePage';
 
 import {faListAlt, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIconList, FontAwesomeIconStyled} from './TerritoriosCulturales';
+import {FontAwesomeIconList, FontAwesomeIconStyled, CardsContainerAlternative, CardAlternative} from './TerritoriosCulturales';
 import {readMore} from './Root';
+
+//handle image size according to size screen
+import CardFeaturedImage from './CardFeatureImage';
 
 export const FixedCard = styled.div`
     display: flex;
@@ -184,7 +187,7 @@ const Politica = ({state, actions}) => {
                     </div>
                 </SectionInfoList>
 
-                <CardsContainer>  
+                <CardsContainerAlternative>  
                 {data.isReady ?
                     
                     <>
@@ -193,18 +196,21 @@ const Politica = ({state, actions}) => {
 
                             return(
 
-                                <Card>
+                                <CardAlternative>
                                     
-                                    <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/>
+                                    {/* <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/> */}
+
+                                    <ImagePotatoPark  src = {cardImages.acf.image_card.sizes.medium_large} />
                                     
+                                    <div>
                                     <h3>{cardImages.title.rendered}</h3>
                                     <p dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
                                 
                                     </p>
 
                                     <a href={  cardImages.acf.link_card} target="_blank" rel="noopener noreferrer">{readMore}</a>
-                                    
-                                </Card>
+                                    </div>
+                                </CardAlternative>
                             )
                         })}
 
@@ -214,7 +220,7 @@ const Politica = ({state, actions}) => {
 
                 }
 
-                </CardsContainer>
+                </CardsContainerAlternative>
                     
             </SectionContainer>
 

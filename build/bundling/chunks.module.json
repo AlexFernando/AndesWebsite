@@ -2,17 +2,38 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "d741be5727732bee399e",
+  "hash": "e0e48b9c36fb9f8b85f9",
   "publicPath": "/static/",
   "outputPath": "/home/alexf/Documents/react_projects/AndesWebsite/build/static",
   "assetsByChunkName": {
-    "andes-headless-english": "andes-headless-english.module.js",
-    "andes-headless-spanish": "andes-headless-spanish.module.js"
+    "andes-headless-english": [
+      "andes-headless-english.module.js",
+      "andes-headless-english.f8e6c1b71ad03f8e14f3.hot-update.js"
+    ],
+    "andes-headless-spanish": [
+      "andes-headless-spanish.module.js",
+      "andes-headless-spanish.f8e6c1b71ad03f8e14f3.hot-update.js"
+    ]
   },
   "assets": [
     {
+      "name": "andes-headless-english.f8e6c1b71ad03f8e14f3.hot-update.js",
+      "size": 142826,
+      "chunks": [
+        "andes-headless-english"
+      ],
+      "chunkNames": [
+        "andes-headless-english"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "andes-headless-english.module.js",
-      "size": 11618002,
+      "size": 11730491,
       "chunks": [
         "andes-headless-english"
       ],
@@ -23,14 +44,120 @@
       "emitted": false
     },
     {
-      "name": "andes-headless-spanish.module.js",
-      "size": 11618002,
+      "name": "andes-headless-spanish.f8e6c1b71ad03f8e14f3.hot-update.js",
+      "size": 142826,
       "chunks": [
         "andes-headless-spanish"
       ],
       "chunkNames": [
         "andes-headless-spanish"
       ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "andes-headless-spanish.module.js",
+      "size": 11730491,
+      "chunks": [
+        "andes-headless-spanish"
+      ],
+      "chunkNames": [
+        "andes-headless-spanish"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "f8e6c1b71ad03f8e14f3.hot-update.json",
+      "size": 94,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "fonts/Lato-Black.ttf",
+      "size": 69500,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "fonts/Lato-BlackItalic.ttf",
+      "size": 72000,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "fonts/Lato-Bold.ttf",
+      "size": 73332,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "fonts/Lato-BoldItalic.ttf",
+      "size": 77732,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "fonts/Lato-Italic.ttf",
+      "size": 75792,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "fonts/Lato-Light.ttf",
+      "size": 77208,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "fonts/Lato-LightItalic.ttf",
+      "size": 49080,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "fonts/Lato-Regular.ttf",
+      "size": 75152,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "fonts/Lato-Thin.ttf",
+      "size": 69976,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "fonts/Lato-ThinItalic.ttf",
+      "size": 48864,
+      "chunks": [],
+      "chunkNames": [],
       "info": {},
       "emitted": false
     },
@@ -66,7 +193,8 @@
         "andes-headless-english"
       ],
       "assets": [
-        "andes-headless-english.module.js"
+        "andes-headless-english.module.js",
+        "andes-headless-english.f8e6c1b71ad03f8e14f3.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -76,7 +204,8 @@
         "andes-headless-spanish"
       ],
       "assets": [
-        "andes-headless-spanish.module.js"
+        "andes-headless-spanish.module.js",
+        "andes-headless-spanish.f8e6c1b71ad03f8e14f3.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -88,7 +217,8 @@
         "andes-headless-english"
       ],
       "assets": [
-        "andes-headless-english.module.js"
+        "andes-headless-english.module.js",
+        "andes-headless-english.f8e6c1b71ad03f8e14f3.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -98,7 +228,8 @@
         "andes-headless-spanish"
       ],
       "assets": [
-        "andes-headless-spanish.module.js"
+        "andes-headless-spanish.module.js",
+        "andes-headless-spanish.f8e6c1b71ad03f8e14f3.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

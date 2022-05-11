@@ -9,6 +9,9 @@ import Loading from './Loading';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIconList} from './TerritoriosCulturales'
 
+//handle image size according to size screen
+import CardFeaturedImage from './CardFeatureImage';
+
 const SpanStyled = styled.span`
     font-style: italic;
     font-weight: 700;
@@ -120,7 +123,10 @@ const Cursos = ({state, actions}) => {
                                     </div>
                                     
                                     
-                                    <ImageIntership src={cardIntership.acf.image_card.sizes.medium}/>
+                                    {/* <ImageIntership src={cardIntership.acf.image_card.sizes.medium}/> */}
+
+                                
+                                    <CardFeaturedImage  media = {cardIntership.acf.image_card.sizes} elem = "courses"/>
                                     
                                 </BlockInfo>
                             )

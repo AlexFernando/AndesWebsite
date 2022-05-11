@@ -18,14 +18,10 @@ const FeaturedImage = ({state, imgID, element}) => {
     else if (element === 'publication') {
         
             return(
-            
                 <>
                     <Image src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
                 </>
             );
-            
-       
-        
     }
 
     else if (element === 'event') {
@@ -101,13 +97,14 @@ const FeaturedImage = ({state, imgID, element}) => {
     }
 
     else {
+   
         return  (
             <>
                 <Image src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
             </>
         );
+        
     }
-    
 }
 
 const ToolkitImageStyle = styled(Image)`
@@ -142,6 +139,10 @@ const SingleImageStyle = styled(Image)`
         height: 150px;
         align-self: center;
     }
+`
+
+const CardStyleAll = styled(Image)`
+    display: flex;
 `
 
 export default connect(FeaturedImage);

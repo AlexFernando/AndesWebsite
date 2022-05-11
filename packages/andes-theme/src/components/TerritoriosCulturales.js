@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect, styled } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import {SectionContainer, CardsContainer, Card, MainParagraph, ImagePotatoPark} from './potatoPark';
+import {SectionContainer, MainParagraph, ImagePotatoPark} from './potatoPark';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle, faListAlt, faLeaf, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { VerticalBorder } from './Dropdown';
@@ -97,6 +97,72 @@ const AditionalContainerImage = styled(Image)`
     max-width: 100%;
     max-height: 20vh;
 `
+
+export const CardsContainerAlternative = styled.div`
+    display: flex;
+    justify-content: center;
+    
+    @media (max-width: 768px){
+        flex-direction: column;
+    }    
+
+
+    @media (max-width: 1300px){
+       flex-wrap: wrap;
+   }
+`
+
+export const CardAlternative = styled.div`
+    display: flex;
+    /* flex-direction: column; */
+    flex-basis: 33.33%;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: #eaeade; */
+    line-height: 1.2;
+    margin: 2rem;
+    border-radius: 1rem;
+    padding-bottom: 1.5rem;
+    box-shadow: 0 1px 20px 1px grey;
+
+    @media (max-width: 768px){
+        margin: 1rem 0 1rem 0;
+            /* flex-direction: column; */
+    }
+
+    @media (max-width: 1300px){
+        flex-basis: 40%;
+        flex-grow: 0;
+    }
+
+    div {
+        text-align: center;
+    }
+
+    h3 {
+        color: #44841a;
+        padding: 0 1rem 0 1rem;
+    }
+
+    p {
+        margin-top: 0;
+        padding: 0rem 1rem 1rem 1rem;
+        font-weight: 400;
+        font-size: 1rem;
+        color: #545454;
+        text-align: justify;
+    }
+    
+    a {
+        text-decoration: none;
+        background-color: #f07723;
+        color: #fff;
+        padding: .8rem;
+        border-radius: 10px;
+    }
+`
+
 
 const TerritoriosCulturales = ({state,actions}) => {
 
@@ -220,7 +286,8 @@ const TerritoriosCulturales = ({state,actions}) => {
             </BriefSection>
 
             <SubSectionTitle>Case Studies</SubSectionTitle>
-            <CardsContainer>
+            
+            <CardsContainerAlternative>
 
             {data.isReady ?
                 
@@ -230,21 +297,15 @@ const TerritoriosCulturales = ({state,actions}) => {
 
                     return(
 
-                    <Card>
-                        
-                        <h3>{cardImages.title.rendered}</h3>
+                    <CardAlternative>
 
                         <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/>
-  
-                        <span dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
-                    
-                        </span>
-
-                    
-
-                        <a href={  cardImages.acf.link_card} target="_blank" rel="noopener noreferrer">{readMore}</a>
-                        
-                    </Card>
+                        <div>
+                            <h3>{cardImages.title.rendered}</h3>
+                            <span dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}></span>
+                            <a href={  cardImages.acf.link_card} target="_blank" rel="noopener noreferrer">{readMore}</a>
+                        </div>
+                    </CardAlternative>
                     )
                 })}
 
@@ -253,7 +314,7 @@ const TerritoriosCulturales = ({state,actions}) => {
 
             }
 
-            </CardsContainer>
+            </CardsContainerAlternative>
 
             <SubSectionTitle>{pageBiocultural.acf.additional_resources_title}</SubSectionTitle>
             
