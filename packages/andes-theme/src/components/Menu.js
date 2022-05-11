@@ -166,7 +166,7 @@ const Hamburger = styled.div`
 //   }
 // `
 
-const Button = styled.a`
+const Button = styled.button`
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -176,6 +176,11 @@ const Button = styled.a`
     color: #000;
     text-decoration: none;
     cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    border-style: none;
+    border-color: transparent;
+    border-width: 0;
   
     @media(min-width: 768px) {
         margin: 0rem 1rem 0 1rem;
@@ -241,7 +246,7 @@ const Menu =  () => {
     <>
     <Navigation>
       
-      <Link href="/"><Image src={logo} height="60" width="60" /></Link>
+      <Link href="/"><Image src={logo} height="60" width="60" alt="logo" /></Link>
  
       <Toggle
         navbarOpen={navbarOpen}
@@ -262,6 +267,7 @@ const Menu =  () => {
             setNavOpen = {setNavbarOpen}
         />
             <Border />
+
             <Button onClick={() => setOpenAboutMobile(!openAboutMobile)}>
               Andes
             </Button>

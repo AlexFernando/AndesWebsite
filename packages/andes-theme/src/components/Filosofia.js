@@ -5,6 +5,9 @@ import {FontAwesomeIconList} from './TerritoriosCulturales';
 
 import Image from "@frontity/components/image";
 
+//handle image size according to size screen
+import CardFeaturedImage from './CardFeatureImage';
+
 export const MarginTopContainer = styled.div`
     margin-top: 12vh;
 
@@ -105,7 +108,9 @@ const ObjetivesContent = styled.div`
     }
 
 
+
     div {
+        flex-basis: 100%;
         padding: 0rem 1rem;
 
         ul {
@@ -171,7 +176,7 @@ const Filosofia = ({state, actions}) => {
                     <div>
                     <h3>Our Objectives: </h3>                    
                         <ObjetivesContent>
-                            <div>
+                            {/* <div>
                                 <ul>
                                     {objectivesArr.slice(0,2).map( objetive => {
                                             return(
@@ -180,7 +185,7 @@ const Filosofia = ({state, actions}) => {
                                         }) 
                                     }
                                 </ul>
-
+                                <CardFeaturedImage  media = {pagePhilosophy.acf.image_one.sizes} />
                                 <ImagePhilosophy src={pagePhilosophy.acf.image_one.sizes.medium_large} />
                             </div>                       
                        
@@ -194,8 +199,30 @@ const Filosofia = ({state, actions}) => {
                                         }) 
                                     }
                                 </ul>
+                                <CardFeaturedImage  media = {pagePhilosophy.acf.image_two.sizes} />
                                 <ImagePhilosophy src={pagePhilosophy.acf.image_two.sizes.medium_large} />
+                            </div> */}
+
+                            
+                            <div>
+                                <ul>
+                                    {objectivesArr.map( objetive => {
+                                        return(
+                                            <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{objetive}</li>      
+                                        )
+                                    }) 
+                                    }
+                                </ul>
                             </div>
+                            
+                            <div>
+                                <CardFeaturedImage  media = {pagePhilosophy.acf.image_one.sizes} />
+                            </div>
+
+                            <div>
+                                <CardFeaturedImage  media = {pagePhilosophy.acf.image_two.sizes} />
+                            </div>
+
                         </ObjetivesContent>
                     </div>
                     

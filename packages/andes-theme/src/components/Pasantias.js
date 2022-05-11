@@ -10,6 +10,9 @@ import { FontAwesomeIconList} from './TerritoriosCulturales'
 
 import Image from "@frontity/components/image";
 
+//handle image size according to size screen
+import CardFeaturedImage from './CardFeatureImage';
+
 export const ContainerBlocks = styled.div`
  
 `;
@@ -176,10 +179,8 @@ const Pasantias = ({state , actions}) => {
                                         }
                                         
                                     </div>
-                                    
-                                    
-                                    <ImageIntership src={cardIntership.acf.image_card.sizes.medium}/>
-                                    
+                                    {/* <ImageIntership src={cardIntership.acf.image_card.sizes.medium}/> */}
+                                    <CardFeaturedImage  media = {cardIntership.acf.image_card.sizes} elem = "courses"/>
                                 </BlockInfo>
                             )
                         })}

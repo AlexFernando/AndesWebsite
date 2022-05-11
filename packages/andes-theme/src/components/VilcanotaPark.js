@@ -4,6 +4,8 @@ import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './F
 import {SectionContainer, CardsContainer, Card, ImagePotatoPark} from './potatoPark'
 import Loading from './Loading';
 import {readMore} from './Root';
+//handle image size according to size screen
+import CardFeaturedImage from './CardFeatureImage';
 
 const VilcanotaPark = ({state, actions}) => {
 
@@ -76,8 +78,8 @@ const VilcanotaPark = ({state, actions}) => {
                                 return(
 
                                     <Card>
-                                        
-                                        <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/>
+                                        <CardFeaturedImage  media = {cardImages.acf.image_card.sizes} />
+                                        {/* <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/> */}
                                         
                                         <h3>{cardImages.title.rendered}</h3>
                                         <p dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>

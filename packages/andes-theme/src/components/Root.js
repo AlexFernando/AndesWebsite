@@ -51,6 +51,9 @@ export let getMore = '';
 export let learn = '';
 export let explore = '';
 
+//fonts
+import FontFaces from "../styles/font-faces";
+
  
 const Root = ({ state, actions }) => {
 
@@ -63,7 +66,7 @@ const Root = ({ state, actions }) => {
                 actions.source.fetch("/home")
                 actions.source.fetch("/cardimage/")
                 actions.source.fetch("/philosophy")
-                readMore = 'READ MORE'
+                readMore = 'READ FURTHER '
                 getMore = 'GET MORE'
                 learn = 'LEARN'
                 explore = 'EXPLORE'
@@ -84,6 +87,9 @@ const Root = ({ state, actions }) => {
 
     return (
         <>
+
+           
+
             <Global
                 styles={css`
 
@@ -107,10 +113,15 @@ const Root = ({ state, actions }) => {
                 `}
             />
 
+            <FontFaces />
+
             <Head>
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+                {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" /> */}
                 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+                <title>Andes Cusco</title>
+                <meta name="description" content="Asociación Andes, is an NGO based on the wonderfull city of Cusco. Actively works on issues of biodiversity conservation, indigenous rights, and sustainable development. Apply for volunteer season." />
+                <html lang="en" />
             </Head>
             
             {!data.isReady ? <Loading /> : 

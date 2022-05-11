@@ -13,6 +13,9 @@ import {readMore} from './Root';
 
 import Image from "@frontity/components/image";
 
+//handle image size according to size screen
+import CardFeaturedImage from './CardFeatureImage';
+
 export const SectionContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -54,7 +57,12 @@ export const CardsContainer = styled.div`
     
     @media (max-width: 768px){
         flex-direction: column;
-    }
+    }    
+
+
+    @media (max-width: 1300px){
+       flex-wrap: wrap;
+   }
 `;
 
 export const Card = styled.div`
@@ -64,14 +72,21 @@ export const Card = styled.div`
     flex-basis: 33.33%;
     flex-grow: 1;
     align-items: center;
-    background-color: #eaeade;
+    justify-content: space-between;
+    /* background-color: #eaeade; */
     line-height: 1.2;
     margin: 2rem;
     border-radius: 1rem;
     padding-bottom: 1.5rem;
+    box-shadow: 0 1px 20px 1px grey;
 
     @media (max-width: 768px){
         margin: 1rem 0 1rem 0;
+    }
+
+    @media (max-width: 1300px){
+        flex-basis: 40%;
+        flex-grow: 0;
     }
 
     h3 {
@@ -80,10 +95,12 @@ export const Card = styled.div`
     }
 
     p {
+        margin-top: 0;
         padding: 0rem 1rem 1rem 1rem;
         font-weight: 400;
         font-size: 1rem;
         color: #545454;
+        text-align: justify;
     }
     
     a {
@@ -99,6 +116,15 @@ export const ImagePotatoPark = styled(Image)`
     max-width: 100%;
     max-height: 100%;
     border-radius: 1rem 1rem 0 0;   
+
+    /**new style last fixed */
+    width: 50%;
+    align-self: center;
+    max-height: 45vh; 
+
+    @media (max-width: 768px){
+        display: none;
+    }
 `
 
 const SectionInfoContainer = styled.div`
@@ -154,6 +180,7 @@ const PotatoPark = ({state, actions}) => {
     const pagePotatoPark = state.theme.lang === "en" ? state.source.page[303] : state.source.page[283]
 
     const data = state.source.get('/cardimage');
+
 
     let cardImagesArr = [];
 
@@ -317,12 +344,11 @@ const PotatoPark = ({state, actions}) => {
 
                                     <Card>
                                         
-                                        <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/>
+                                        {/* <ImagePotatoPark src={cardImages.acf.image_card.sizes.medium_large}/> */}
+                                        <CardFeaturedImage  media = {cardImages.acf.image_card.sizes} />
                                         
                                         <h3>{cardImages.title.rendered}</h3>
-                                        <p dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
-                                    
-                                        </p>
+                                        <p dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}></p>
 
                                         <a href={cardImages.acf.link_card} target="_blank" rel="noopener noreferrer">{readMore}</a>
                                         

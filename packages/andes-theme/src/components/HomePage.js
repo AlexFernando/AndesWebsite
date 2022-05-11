@@ -5,7 +5,8 @@ import Link from './Link';
 import Loading from './Loading';
 import {readMore, getMore, explore, learn} from './Root'
 
-import Image from "@frontity/components/image";
+//handle image size according to size screen
+import CardFeaturedImage from './CardFeatureImage';
 
 const Content = styled.div`  
     background-image: url(${props => props.background});
@@ -202,6 +203,10 @@ const CardsHomeContainer = styled.div`
                 flex-direction: column;
         padding: 0rem;
     }
+
+    @media (max-width: 1300px){
+       flex-wrap: wrap;
+   }
 `;
 
 const CardsHome = styled.div`
@@ -221,7 +226,15 @@ const CardsHome = styled.div`
    -ms-flex-preferred-size: 33.33%;
        -webkit-flex-basis: 33.33%;
            flex-basis: 33.33%;
+   
    background-color: #fff;
+   box-shadow: 0 1px 20px 1px grey;
+   border-radius: 1rem;
+    padding-bottom: 1.5rem;
+    justify-content: space-between;
+    /* background-color: #eaeade; */
+    line-height: 1.2;
+    margin: 2rem;
 
    @media (max-width: 768px){
        margin: 1rem;
@@ -294,13 +307,12 @@ const CardsHome = styled.div`
    }
 `;
 
-const ImageCardHome = styled(Image)`
-
-    width: 100%;
-    align-self: center;
-    max-height: 40vh; /**new line image height */
-       
-`
+// const ImageCardHome = styled(Image)`
+//     width: 100%;
+//     align-self: center;
+//     max-height: 35vh; /**new line image height */     
+//     border-radius: 1rem 1rem 0 0; 
+// `
 
 const HomePage = ({state, actions, libraries}) => {
 
@@ -309,9 +321,10 @@ const HomePage = ({state, actions, libraries}) => {
     const data = state.source.get('/cardimage');
 
     let cardImagesArr = [];
-
-    
+  
     if(data.isReady) {
+
+
         
         data.items.map(({id}) => { 
                 if(state.theme.lang === "en") {
@@ -328,13 +341,15 @@ const HomePage = ({state, actions, libraries}) => {
             }
         )
     }
+
+
    
     return (        
         <>
             {typeof pageHome === "undefined" ? <Loading /> : 
             <>
             <MarginTopContainer>
-                <Content background = {pageHome.acf.image_background}>
+                <Content background = {pageHome.acf.image_background.sizes.large}> 
                     <TextoImagen >
                         <h1 dangerouslySetInnerHTML={ {__html: pageHome.acf.home_title}}></h1>
                         <p dangerouslySetInnerHTML={ {__html: pageHome.acf.home_slogan}}></p>
@@ -370,7 +385,7 @@ const HomePage = ({state, actions, libraries}) => {
 
                         <CardsHome>
                             <div>
-                                <ImageCardHome src={cardImages.acf.image_card.sizes.medium_large}/>
+                                <CardFeaturedImage media={cardImages.acf.image_card.sizes} alt = "homecards"/>
                             </div>
                     
                             <h3>{cardImages.title.rendered}</h3>
@@ -428,7 +443,7 @@ const HomePage = ({state, actions, libraries}) => {
 
                         <CardsHome>
                         <div>
-                            <ImageCardHome src={cardImages.acf.image_card.sizes.medium_large}/>
+                            <CardFeaturedImage  media = {cardImages.acf.image_card.sizes} alt = "homecards"/>
                             <strong>{cardImages.acf.tag_card}</strong>
                         </div>
                 
@@ -451,7 +466,7 @@ const HomePage = ({state, actions, libraries}) => {
             }
             </CardsHomeContainer>
             </SectionHomePage>       
-                </>
+            </>
             } 
         </>
     )
