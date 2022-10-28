@@ -1,11 +1,12 @@
 import React from 'react'
 import {connect, styled} from "frontity";
 import Image from "@frontity/components/image";
+import logo from '../static/images/logoscaled.png';
 
 const FeaturedImage = ({state, imgID, element}) => {
     
     const media = state.source.attachment[imgID];
-    
+
     if(element === 'noticia') {
 
         return (
@@ -16,12 +17,13 @@ const FeaturedImage = ({state, imgID, element}) => {
     }
 
     else if (element === 'publication') {
-        
-            return(
-                <>
-                    <Image src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
-                </>
-            );
+                return(
+                    <>
+                        <Image src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
+                    </>
+                );
+            
+            
     }
 
     else if (element === 'event') {
@@ -44,11 +46,19 @@ const FeaturedImage = ({state, imgID, element}) => {
     else if (element === 'singlesearch') {
 
             if(window.outerHeight < 850) {
-                return (
-                    <>
-                        <SingleImageStyle src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
-                    </>
-                )
+
+                if(media.media_details.sizes.thumbnail) {
+                    return (
+                        <>
+                            <SingleImageStyle src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
+                        </>
+                    )
+                }
+
+                else {
+                    <Image src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
+                }
+               
             }
     
             if(media.media_details.sizes.medium) {

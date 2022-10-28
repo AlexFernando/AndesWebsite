@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import {styled} from "frontity";
 import {Border} from './Menu';
-import Link from "./Link";
-
+import LinkMenu from "./LinkMenu";
 import Image from "@frontity/components/image";
 
 const DropDownBox = styled.div`  
@@ -116,7 +115,7 @@ const ButtonStyled = styled.button`
     font-size: 1rem;
 `;
 
-const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitle =null, options2 = null, ImageNav = null, thirdTitle =null, options3 = null}) => {
+const Dropdown = ({ navOpen, setNavOpen, open, setOpen, hoverOpen, setHoverOpen, hoverOpenResearch, setHoverOpenResearch, options=null, secondTitle =null, options2 = null, ImageNav = null, thirdTitle =null, options3 = null}) => {
 
   let titleOptions = options.shift();
 
@@ -125,13 +124,14 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitl
   const handleClick = e => {
     if (node.current.contains(e.target)) {
       // inside click
+      console.log("inside click")
       return;
     }
     // outside click
-  
     setOpen(false);
-    
+    setHoverOpen(false);
   };
+
    
   useEffect(() => {
     document.addEventListener("mousedown", handleClick);
@@ -145,7 +145,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitl
 
     <DropDownBox ref={node}>
       
-      {open && (
+      {(open || hoverOpen) && (
         <>
           <ImageStyle src={ImageNav} />
 
@@ -159,7 +159,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitl
               {options.map(opt => (
                     <>
                       <ListStyle key={opt}>
-                        <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}><Link href={`/${opt.toLowerCase().replace(/\s/g, "")}`}>{opt}</Link></ButtonStyled>
+                        <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}><LinkMenu href={`/${opt.toLowerCase().replace(/\s/g, "")}`}>{opt}</LinkMenu></ButtonStyled>
                       </ListStyle>
                       <Border />
                     </>
@@ -177,7 +177,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitl
                               <>
                               <ListStyle key={opt2}>
                                 <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}>
-                                  <Link href={`/${opt2.toLowerCase().replace(/\s/g, "")}`}>{opt2}</Link>  
+                                  <LinkMenu href={`/${opt2.toLowerCase().replace(/\s/g, "")}`}>{opt2}</LinkMenu>  
                                 </ButtonStyled>                                
                               </ListStyle>
                               <Border />
@@ -200,7 +200,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitl
                               <>
                               <ListStyle key={opt3}>
                                 <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}>
-                                  <Link href={`/${opt3.toLowerCase().replace(/\s/g, "")}`}>{opt3}</Link>  
+                                  <LinkMenu href={`/${opt3.toLowerCase().replace(/\s/g, "")}`}>{opt3}</LinkMenu>  
                                 </ButtonStyled>                                
                               </ListStyle>
                               <Border />

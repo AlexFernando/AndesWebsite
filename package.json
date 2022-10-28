@@ -28,6 +28,7 @@
     "@frontity/wp-source": "1.10.0",
     "andes-theme": "file:packages/andes-theme",
     "frontity": "1.13.0",
-    "frontity-contact-form-7": "0.1.7"
+    "frontity-contact-form-7": "0.1.7",
+    "react-multi-carousel": "^2.8.0"
   }
 }

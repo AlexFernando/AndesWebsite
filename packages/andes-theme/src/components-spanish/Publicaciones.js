@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {connect, css, styled } from "frontity";
+import {connect, css, styled, Global } from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer, SectionContainer} from './Filosofia';
 import {SearchBar, InputBar, NotFoundContainer, FormStyled } from './SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,22 +10,52 @@ import LinkButton from "./LinkButton";
 import FeaturedImage from './FeaturedImage';
 import Loading from './Loading';
 
+/**CAROUSEL*/
+import Carousel from "react-multi-carousel";
+import multiCarouselStyles from  "react-multi-carousel/lib/styles.css";
+import generalStyles from '../styles/generalStyles.css';
+
+const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      paritialVisibilityGutter: 60
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      paritialVisibilityGutter: 50
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      paritialVisibilityGutter: 30
+    }
+};
+
+
+
 const SectionPublications = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0rem 2rem 1rem 2rem;
+    align-items: stretch;
 `;
 
 export const PublicationCard = styled.div`
     display: flex;
     margin-top: 3rem;
-    flex-basis: 22%;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+    margin-left: 1%;
+    margin-right: 1%;
+    flex-basis: 20%;
     cursor: pointer;
+    box-shadow: 0 .8px 5px .8px grey;
+    border-radius: .5rem;
+    align-items: stretch;
+    padding: 1%;
+
 
     @media(max-width: 768px) {
         flex-basis: 100%;
@@ -38,8 +68,9 @@ export const PublicationCard = styled.div`
     a {
         text-decoration: none;
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
-
 
     h3 {
             font-size: 1.1rem;
@@ -54,7 +85,9 @@ export const PublicationCard = styled.div`
     img {
         max-width: 40%;
         margin-right: 1rem;
-        align-self:center;  
+        /* align-items: flex-start; */
+        /* border-radius: .5rem 0 0 .5rem; */
+        height: 18vh;
 
         @media(max-width: 768px) {
             max-width: 50%;
@@ -83,12 +116,18 @@ export const PublicationCard = styled.div`
         }
 `;
 
+const ImageInfo = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem;
+`
+
+
 
 const Publicaciones = ({state, actions}) => {
 
     useEffect( () => {
         actions.source.fetch("/es-search")
-        console.log("holllaaa")
      }, [])
 
     const data = state.source.get('/es-search');
@@ -200,89 +239,140 @@ const Publicaciones = ({state, actions}) => {
             </SearchBar>
         </SectionContainer>
 
-        {data.isReady ? 
-        <SectionPublications>
+        {data.isReady ?
 
-            {searchResults.length === 0 && alternativeTerm === "" ?
-                
-                publications.map( publication => {
+        <div>
+            {data.isReady & searchResults.length === 0 && alternativeTerm === "" ?
 
-                    return (
-                        
-                        <PublicationCard key = {publication.id}>
-                            <a href={publication.meta._links_to} target="_blank" rel="noopener noreferrer">
-                              <FeaturedImage imgID = {publication.featured_media} element = "publication"/>
+                <SectionPublications>
+                    {/* <Global styles={multiCarouselStyles} />
+                    <Global styles={generalStyles} />
+                    <Carousel
+                        ssr
+                        partialVisbile
+                        itemClass="image-item"
+                        responsive={responsive}
+                        swipeable={true}
+                        autoPlay = {true}
+                        autoPlaySpeed = {4000}
+                    ></Carousel> */}
+                        {
+                            publications.map( publication => {
 
-                              <div>
-                                <h3>{publication.title.rendered}</h3>
+                                return (
+                                
+                                    <PublicationCard key = {publication.id}>
+                                    <a href={publication.meta._links_to} target="_blank" rel="noopener noreferrer">
 
-                                <p>Autor : 
-                                    <span dangerouslySetInnerHTML={ {__html: publication.acf.author}}></span>
-                                </p>
-                            
-                                <p>Fecha : 
-                                    <span dangerouslySetInnerHTML={ {__html: publication.acf.date}}></span>
-                                </p>
-                              </div>           
-                            </a>
-                        </PublicationCard>
-                    )
-                })
+                                        <h3>{publication.title.rendered}</h3>
+                                    
+                                    
+                                        <ImageInfo>
 
-                :null
-            }
+                                            <FeaturedImage imgID = {publication.featured_media} element = "publication"/>
 
-            {/** match with some element  */}
-            
-            {    
-                searchResults.length > 0 ?
-                   
-                    searchResults.map( publication => {
+                                            <div> 
+                                                <p>Autor : 
+                                                    <span dangerouslySetInnerHTML={ {__html: publication.acf.author}}></span>
+                                                </p>
+                                            
+                                                <p>Fecha : 
+                                                    <span dangerouslySetInnerHTML={ {__html: publication.acf.date}}></span>
+                                                </p>
+                                            </div>    
+
+                                        </ImageInfo>
+
+                                    </a>
+
+                                </PublicationCard>
+                                )
+                            })
+                        }
+
+                 
+                </SectionPublications>
+
+                :  <null />    
+            } 
+
+
+            {data.isReady &  searchResults.length > 0 ?
+
+                <SectionPublications>
+
+                    <Global styles={multiCarouselStyles} />
+                    <Global styles={generalStyles} />
+                    {/* <Carousel
+                        ssr
+                        partialVisbile
+                        itemClass="image-item"
+                        responsive={responsive}
+                        swipeable={true}
+                        autoPlay = {true}
+                        autoPlaySpeed = {4000}
+                    ></Carousel> */}
+
+                        {
+                            searchResults.map( publication => {
+
+                                return (
+                                
+                                         
+                                    <PublicationCard key = {publication.id}>
+                                    <a href={publication.meta._links_to} target="_blank" rel="noopener noreferrer">
+
+                                        <h3>{publication.title.rendered}</h3>
+                                    
+                                    
+                                        <ImageInfo>
+
+                                            <FeaturedImage imgID = {publication.featured_media} element = "publication"/>
+
+                                            <div> 
+                                                <p>Autor : 
+                                                    <span dangerouslySetInnerHTML={ {__html: publication.acf.author}}></span>
+                                                </p>
+                                            
+                                                <p>Fecha : 
+                                                    <span dangerouslySetInnerHTML={ {__html: publication.acf.date}}></span>
+                                                </p>
+                                            </div>    
+
+                                        </ImageInfo>
+
+                                    </a>
+
+                                </PublicationCard>
+                                )
+                            })
+                        }
+
+                </SectionPublications>
+
+                :  <null />    
+                } 
+
                     
-                        return (
-                       
-                            <PublicationCard key = {publication.id}>
-                                <a href={publication.meta._links_to} target="_blank" rel="noopener noreferrer">
-                                    <FeaturedImage imgID = {publication.featured_media} element = "publication"/>
-    
-                                    <div>
-                                    <h3>{publication.title.rendered}</h3>
-                                    <p>Autor : 
-                                        <span dangerouslySetInnerHTML={ {__html: publication.acf.author}}></span>
-                                    </p>
-                            
-                                    <p>Fecha : 
-                                        <span dangerouslySetInnerHTML={ {__html: publication.acf.date}}></span>
-                                    </p>
-                                    </div>           
-                                </a>
-                            </PublicationCard>
-                        )
-                    })
-  
-                  :null                    
-            }
-
-            {/** If we can't find a term */}
-                
-            {alternativeTerm!=="" && searchResults.length === 0 ?
-                    
-                <>
-                <NotFoundContainer>
-                    <h2>Oops!</h2> 
+                {alternativeTerm!=="" && searchResults.length === 0 ?
                         
-                    <h3>We coudn't find any content related to the word "{alternativeTerm}"</h3>
+                    <>
+                    <NotFoundContainer>
+                        <h2>Oops!</h2> 
+                            
+                        <h3>No pudimos encontrar ningun contenido relacionado a la palabra "{alternativeTerm}"</h3>
 
-                    <p>Plase use another term of search</p>
+                        <p>Por favor, intenta usar otro término de búsqueda</p>
 
-                    <p>Thank you.</p>
-                </NotFoundContainer> 
-                </>
-                :null
-            }
+                        <p>Gracias.</p>
+                    </NotFoundContainer> 
+                    </>
+                    :null
+                }
+        </div>
 
-        </SectionPublications>
-        : <Loading />
+        :<Loading />
+
         }
         </>
        

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Dropdown from "./Dropdown";
-import {styled} from "frontity";
+import {styled, connect} from "frontity";
 import Image from "@frontity/components/image";
 import logo from '../static/images/logoscaled.png';
 import imgAndes from '../static/images/1.jpeg';
 import imgPluriculturalidad from '../static/images/link3.jpg';
 import Link from "./Link";
+import LinkMenu from "./LinkMenu";
 import LinkButtonHome  from './LinkButtonHome';
 import SecondaryNavbarMobile from './SecondaryNavbarMobile';
  
@@ -232,7 +233,7 @@ export const Border = styled.div`
 `;
 
 
-const Menu =  () => {
+const Menu =  ({state}) => {
 
   const [navbarOpen, setNavbarOpen] = useState(false)
   
@@ -241,6 +242,10 @@ const Menu =  () => {
   
   const [openResearch, setOpenResearch] = useState(false);
   const [openResearchMobile, setOpenResearchMObile] = useState(false);
+
+  //onHover show SubMenu State 
+  const [isShown, setIsShown] = useState(false);
+  const [isShownResearch, setIsShownResearch] = useState(false);
   
   return (
     <>
@@ -268,8 +273,10 @@ const Menu =  () => {
         />
             <Border />
 
-            <Button onClick={() => setOpenAboutMobile(!openAboutMobile)}>
-              Andes
+            <Button 
+              onClick={() => setOpenAboutMobile(!openAboutMobile)} 
+            >
+              <LinkMenu href={state.router.link}> Andes </LinkMenu>
             </Button>
             <Border />
               {openAboutMobile ? 
@@ -292,7 +299,7 @@ const Menu =  () => {
         
 
             <Button onClick={() => setOpenResearchMObile(!openResearchMobile)}>
-              Pluriversity
+              <LinkMenu href={state.router.link}>Pluriversity</LinkMenu> 
             </Button>
             <Border />
               {openResearchMobile ?
@@ -313,22 +320,22 @@ const Menu =  () => {
               } 
 
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
-              <Link href="/publications">Publications</Link>
+              <LinkMenu href="/publications">Publications</LinkMenu>
           </Button>
           <Border />
 
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
-            <Link href= "/news">News</Link>
+            <LinkMenu href= "/news">News</LinkMenu>
           </Button> 
           <Border />
           
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}> 
-            <Link href= "/events">Events</Link>
+            <LinkMenu href= "/events">Events</LinkMenu>
           </Button> 
           <Border />
 
           <ButtonContact onClick = {() => setNavbarOpen(!navbarOpen)}>
-             <Link href="/stayintouch">Contact</Link>
+             <LinkMenu href="/stayintouch">Contact</LinkMenu>
           </ButtonContact>
   
         </Navbox>
@@ -337,11 +344,25 @@ const Menu =  () => {
 
       ) : (
         <Navbox open>
-          <Button onClick={() => setOpenAbout(!openAbout)}>ANDES</Button> 
-          <Button onClick={() => setOpenResearch(!openResearch)}>PLURIVERSITY</Button> 
-          <Button><Link href="/publications">PUBLICATIONS</Link></Button> 
-          <Button><Link href= "/news">NEWS</Link></Button> 
-          <Button> <Link href= "/events">EVENTS</Link></Button> 
+          <Button 
+            onClick={() => setOpenAbout(!openAbout)}
+            onMouseEnter={() => {setIsShown(true), setIsShownResearch(false)}}
+            // onMouseLeave={() => setIsShown(false)}
+          >
+            <LinkMenu href={state.router.link}> ANDES </LinkMenu>
+           
+          </Button>
+
+          <Button 
+            onClick={() => setOpenResearch(!openResearch)}
+            onMouseEnter={() => {setIsShownResearch(true), setIsShown(false)}}
+            // onMouseLeave={() => setIsShownResearch(false)}
+          >
+            <LinkMenu href={state.router.link}>  PLURIVERSITY </LinkMenu>
+          </Button> 
+          <Button><LinkMenu href="/publications">PUBLICATIONS</LinkMenu></Button> 
+          <Button><LinkMenu href= "/news">NEWS</LinkMenu></Button> 
+          <Button> <LinkMenu href= "/events">EVENTS</LinkMenu></Button> 
 
           <LinkButtonHome href="/stayintouch">CONTACT</LinkButtonHome>
         </Navbox>
@@ -351,10 +372,12 @@ const Menu =  () => {
 
     </Navigation>
    
-    {openAbout ? 
+    {openAbout || isShown ? 
       <Dropdown
         open = {openAbout}
         setOpen = {setOpenAbout}
+        hoverOpen = {isShown}
+        setHoverOpen = {setIsShown}
         options={["Who we are?", "Philosophy", "People"]}
         secondTitle = {'What We Do?'}
         options2={["Biocultural Territories", "Advocacy and Politics"]}
@@ -364,10 +387,12 @@ const Menu =  () => {
       />  : null
     }
 
-    {openResearch ? 
+    {openResearch || isShownResearch? 
       <Dropdown
         open = {openResearch}
         setOpen = {setOpenResearch}
+        hoverOpen = {isShownResearch}
+        setHoverOpen = {setIsShownResearch}
         options = {["Yachay Kuychi", "Who We Are"]}
         secondTitle = {'What We Do?'}
         options2 = {["Courses", "Intership and Volunteering", "Exchanges"]}
@@ -380,4 +405,4 @@ const Menu =  () => {
   );
 }
 
-export default Menu;
+export default connect(Menu);

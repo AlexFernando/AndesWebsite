@@ -13,9 +13,10 @@ const SectionToolkit = styled.div`
     justify-content: space-between;
 `;
 
+
 const ContainerPapers = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-basis: 100%;
     padding: 0 2rem;
@@ -34,10 +35,11 @@ const ElemPaper = styled.div`
 
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-basis: 20%;
-    margin: 1rem 1rem;
+    align-items: flex-start;
+    flex-basis: 18%;
+    margin: 2% 3%;
 
+ 
     @media(max-width: 768px) {
         flex-basis: 100%;
         margin: 2rem 0;
@@ -48,25 +50,21 @@ const ElemPaper = styled.div`
         flex-direction: column;
         text-decoration: none;
         color: #545454;
-        text-align: center;       
+        text-align: center;  
+       
+     
     }
 
-    img {
-        max-width: 80%;
 
-        @media(max-width: 768px) {
-            max-width: 100%;
-        }
-    }
     div {
-        max-width: 80%;
+        //max-width: 80%;
         text-align: center;
+    
         @media(max-width: 768px) {
             max-width: 100%;
         }
     }
 `;
-
 
 const ToolkitLogic = ({state, actions}) => {
 
