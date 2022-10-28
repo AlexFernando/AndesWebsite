@@ -117,7 +117,7 @@ const ButtonStyled = styled.button`
 `;
 
 
-const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitle =null, options2 = null, ImageNav = null, thirdTitle =null, options3 = null}) => {
+const Dropdown = ({ navOpen, setNavOpen, open, setOpen, hoverOpen, setHoverOpen, options=null, secondTitle =null, options2 = null, ImageNav = null, thirdTitle =null, options3 = null}) => {
 
   let titleOptions = options.shift();
 
@@ -131,7 +131,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitl
     // outside click
   
     setOpen(false);
-    
+    setHoverOpen(false);
   };
    
   useEffect(() => {
@@ -146,7 +146,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, options=null, secondTitl
 
     <DropDownBox ref={node}>
       
-      {open && (
+      {(open || hoverOpen) && (
         <>
           <ImageStyle src={ImageNav} />
 

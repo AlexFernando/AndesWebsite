@@ -23,7 +23,7 @@ const settings = [
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "https://en.andescusco.info/wp-json/",
+          "api": "https://en.andescusco.info/wp-json",
 
           "params": {
             per_page: 100,
@@ -60,6 +60,12 @@ const settings = [
               endpoint: "toolkitposts",
               archive: "alltoolkit"
             },
+
+            {
+              type: "allnews",
+              endpoint: "allnews",
+              archive: "/allnews",
+            }
           ],
 
           "taxonomies": [
@@ -90,7 +96,7 @@ const settings = [
 //SPANISH SITE
 {
   "name": "andes-headless-spanish",
-  "match": [".*https?:\/\/localhost:3000\/es-(.*)?$"],
+  "match": [".*https?:\/\/andes.org.pe\/es-(.*)?$"],
   "state": {
     "frontity": {
       "url": "https://andes.org.pe/es-",
@@ -148,6 +154,11 @@ const settings = [
               endpoint: "toolkitposts",
               archive: "alltoolkit"
             },
+            {
+              type: "allnews",
+              endpoint: "allnews",
+              archive: "/es-allnews",
+            }
           ],
   
           "taxonomies": [

@@ -9,7 +9,8 @@ import {readMore, getMore, explore, learn} from './Root'
 import CardFeaturedImage from './CardFeatureImage';
 
 const Content = styled.div`  
-    background-image: url(${props => props.background});
+    background-image:
+    url(${props => props.background.large});
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center center;
@@ -23,10 +24,11 @@ const TextoImagen = styled.div`
     justify-content: space-between;
     align-content: flex-start;
     overflow-wrap: break-word;
+    height: auto;
    
     @media(min-width: 768px) {
-        height: 573px;
-        padding: 6rem;
+     
+        padding: 10rem;
     }
 
     h1 {
@@ -207,6 +209,8 @@ const CardsHomeContainer = styled.div`
     @media (max-width: 1300px){
        flex-wrap: wrap;
    }
+
+   align-items: stretch;
 `;
 
 const CardsHome = styled.div`
@@ -231,7 +235,7 @@ const CardsHome = styled.div`
    box-shadow: 0 1px 20px 1px grey;
    border-radius: 1rem;
     padding-bottom: 1.5rem;
-    justify-content: space-between;
+
     /* background-color: #eaeade; */
     line-height: 1.2;
     margin: 2rem;
@@ -270,9 +274,10 @@ const CardsHome = styled.div`
        }
    }
 
-   h3 {
+   h2 {
        color: #44841a;
        text-align: center;
+       font-size: 1.2rem;
    }
 
    span {
@@ -303,6 +308,8 @@ const CardsHome = styled.div`
            padding: .8rem;
            border-radius: 10px;
            text-align: center;
+
+           align-self: center;
        }
    }
 `;
@@ -323,8 +330,6 @@ const HomePage = ({state, actions, libraries}) => {
     let cardImagesArr = [];
   
     if(data.isReady) {
-
-
         
         data.items.map(({id}) => { 
                 if(state.theme.lang === "en") {
@@ -349,7 +354,7 @@ const HomePage = ({state, actions, libraries}) => {
             {typeof pageHome === "undefined" ? <Loading /> : 
             <>
             <MarginTopContainer>
-                <Content background = {pageHome.acf.image_background.sizes.large}> 
+                <Content background = {pageHome.acf.image_background.sizes}> 
                     <TextoImagen >
                         <h1 dangerouslySetInnerHTML={ {__html: pageHome.acf.home_title}}></h1>
                         <p dangerouslySetInnerHTML={ {__html: pageHome.acf.home_slogan}}></p>
@@ -372,7 +377,6 @@ const HomePage = ({state, actions, libraries}) => {
                 </div>
             </SectionText>
 
-
         <SectionHomePage>
         <CardsHomeContainer>
             {data.isReady ?
@@ -388,7 +392,7 @@ const HomePage = ({state, actions, libraries}) => {
                                 <CardFeaturedImage media={cardImages.acf.image_card.sizes} alt = "homecards"/>
                             </div>
                     
-                            <h3>{cardImages.title.rendered}</h3>
+                            <h2>{cardImages.title.rendered}</h2>
                                     
                             <span dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
                         
@@ -434,6 +438,7 @@ const HomePage = ({state, actions, libraries}) => {
         </SectionText>
 
         <SectionHomePage>
+
         <CardsHomeContainer>
             {data.isReady ?    
                     <>
@@ -447,7 +452,7 @@ const HomePage = ({state, actions, libraries}) => {
                             <strong>{cardImages.acf.tag_card}</strong>
                         </div>
                 
-                        <h3>{cardImages.title.rendered}</h3>
+                        <h2>{cardImages.title.rendered}</h2>
                                 
                                 <span dangerouslySetInnerHTML={{ __html: cardImages.excerpt.rendered}}>
                               

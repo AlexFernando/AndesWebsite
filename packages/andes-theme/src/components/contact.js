@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faInstagram, faYoutube, faFacebookSquare} from '@fortawesome/free-brands-svg-icons';
 import LinkButton from './LinkButton';
 
+//contact footer
+import ContactFooter from './ContactFooter';
+
 const ContactContainer = styled.div`
     display: flex;
     background-color: #333333;
@@ -87,32 +90,6 @@ const ContactForm = styled.div`
         font-size: 2rem;
         font-weight: 300;
     }
-    form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        margin-bottom: 2rem;
-
-        div {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            letter-spacing: 1px;
-            font-size: 1.2rem;
-        }
-
-        input {
-            height: 30px;
-        }
-
-        input, textarea {
-            margin:1rem 1rem 2rem 1rem;
-            border: none;
-            border-radius: 5px;
-        }
-    }
 `;
 
 const FontAwesomeIconStyled = styled(FontAwesomeIcon)`
@@ -137,7 +114,7 @@ const Contact = () => {
                 <ul>
                     <li><FontAwesomeIconStyled icon={faMapMarkedAlt}/>ANDES Asociation</li>
                    
-                    <li><FontAwesomeIconStyled icon={faStreetView}/>Urb. Santa Monica, Wanchaq, Cusco, Peru.</li>
+                    <li><FontAwesomeIconStyled icon={faStreetView}/>HUARAN,  SECTOR  ACANPERAY S/N - CALCA-CUSCO</li>
                 
                     <li> <FontAwesomeIconStyled icon={faMailBulk}/>Postal Code Nº 567, Cusco - Peru </li>
                 </ul>
@@ -145,21 +122,7 @@ const Contact = () => {
             <ContactForm>
                 <h3>Contact</h3>
                 
-                <form>
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <input id="email" type="text" name="email"></input>
-                    </div>
-
-                    <div>
-                        <label id="message" htmlFor="message">Message</label>
-
-                        <textarea name="message" id="" cols="30" rows="7"></textarea>
-                     
-                    </div>
-
-                    <ButtonAction> <LinkButton href="/">SUBMIT</LinkButton></ButtonAction>
-                </form>
+                <ContactFooter />
             </ContactForm>
         </ContactContainer>
 

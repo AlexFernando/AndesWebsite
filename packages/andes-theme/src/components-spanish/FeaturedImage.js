@@ -48,11 +48,17 @@ const FeaturedImage = ({state, imgID, element}) => {
     else if (element === 'singlesearch') {
 
             if(window.outerHeight < 850) {
-                return (
-                    <>
-                        <SingleImageStyle src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
-                    </>
-                )
+                if(media.media_details.sizes.thumbnail) {
+                    return (
+                        <>
+                            <SingleImageStyle src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
+                        </>
+                    )
+                }
+
+                else {
+                    <Image src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
+                }
             }
     
             if(media.media_details.sizes.medium) {

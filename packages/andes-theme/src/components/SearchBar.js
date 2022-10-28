@@ -165,15 +165,23 @@ const SearchBarComponent = ({state, actions}) => {
 
     useEffect( () => {
         actions.source.fetch("/search")
+        actions.source.fetch("/allnews")
      }, [])
 
     const data = state.source.get('/search');
+    const newsData = state.source.get("/allnews")
 
     let publications = [];
 
     if(data.isReady) {
         data.items.map( ({id}) => {
             publications.push(state.source.singlesearch[id]);
+        })
+    }
+
+    if(newsData.isReady) {
+        newsData.items.map( ({id}) => {
+            publications.push(state.source.allnews[id]);
         })
     }
 
@@ -238,33 +246,31 @@ const SearchBarComponent = ({state, actions}) => {
             </SearchBar>
             
             
-            {data.isReady ? 
+            {data.isReady && publications.length > 0 ? 
             
                 <>
                 {searchResults.length === 0 && alternativeTerm === "" ?
                     
-                    data.items.map( ({id}) => {
+                    publications.map( elem  => {
 
-                        const publications = state.source.singlesearch[id]
-    
                         return (
                             <>
                         
-                            {publications.typeofpublication[0] === 3 ?
+                            {elem.typeofpublication && elem.typeofpublication[0] === 3 ?
 
-                                <PostStyled key = {id}>
-                                    <a href={publications.meta._links_to} target="_blank" rel="noopener noreferrer">
-                                    <FeaturedImage imgID = {publications.featured_media} element = "singlesearch"/>
+                                <PostStyled key = {elem.id}>
+                                    <a href={elem.meta._links_to} target="_blank" rel="noopener noreferrer">
+                                    <FeaturedImage imgID = {elem.featured_media} element = "singlesearch"/>
         
                                     <div>
-                                        <h3>{publications.title.rendered}</h3>
+                                        <h3>{elem.title.rendered}</h3>
         
                                         <p>Author : 
-                                            <span dangerouslySetInnerHTML={ {__html: publications.acf.author}}></span>
+                                            <span dangerouslySetInnerHTML={ {__html: elem.acf.author}}></span>
                                         </p>
                                     
                                         <p>Date : 
-                                            <span dangerouslySetInnerHTML={ {__html: publications.acf.date}}></span>
+                                            <span dangerouslySetInnerHTML={ {__html: elem.acf.date}}></span>
                                         </p>
                                     </div>           
                                     </a>
@@ -272,15 +278,15 @@ const SearchBarComponent = ({state, actions}) => {
 
                             : 
 
-                                <PostStyled key = {id}>
-                                    <a href={publications.meta._links_to} target="_blank" rel="noopener noreferrer">
-                                    <FeaturedImage imgID = {publications.featured_media} element = "singlesearch"/>
+                                <PostStyled key = {elem.id}>
+                                    <a href={elem.meta._links_to} target="_blank" rel="noopener noreferrer">
+                                    <FeaturedImage imgID = {elem.featured_media} element = "singlesearch"/>
 
                                     <div>
-                                        <h3>{publications.title.rendered}</h3>
+                                        <h3>{elem.title.rendered}</h3>
   
                                         <p>Date : 
-                                            <span dangerouslySetInnerHTML={ {__html: publications.acf.date}}></span>
+                                            <span dangerouslySetInnerHTML={ {__html: elem.acf.datefield}}></span>
                                         </p>
                                     </div>           
                                     </a>
@@ -299,7 +305,7 @@ const SearchBarComponent = ({state, actions}) => {
                 {searchResults.map(item => (
 
                     <>
-                    {item.typeofpublication[0] === 3 ? 
+                    {item.typeofpublication && item.typeofpublication[0] === 3 ? 
                     
                         <PostStyled key = {item.id}>
                             <a href={item.meta._links_to} target="_blank" rel="noopener noreferrer">
@@ -329,7 +335,7 @@ const SearchBarComponent = ({state, actions}) => {
                                 <h3>{item.title.rendered}</h3>
                             
                                 <p>Date : 
-                                    <span dangerouslySetInnerHTML={ {__html: item.acf.date}}></span>
+                                    <span dangerouslySetInnerHTML={ {__html: item.acf.datefield}}></span>
                                 </p>
                             </div>           
                             </a>

@@ -8,10 +8,27 @@ import FeaturedImage from './FeaturedImage';
 const News = ({state,actions}) => {
 
     useEffect( () => {
-        actions.source.fetch("/es-search")
-     }, [])
+        actions.source.fetch("/es-allnews")
+    }, [])
 
-     const data = state.source.get('/es-search');
+    const data = state.source.get('/es-allnews');
+
+    let arrayOfNews = [];  
+
+    if(data.isReady) {
+        data.items.map( ({id}) => {
+            const singleSearch = state.source.allnews[id];
+            //create an arrays of all news
+            arrayOfNews.push(singleSearch)
+        
+        })
+    }
+
+    if(arrayOfNews.length > 0 ) {
+        arrayOfNews.sort(function(a,b) {
+            return new Date(b.acf.datefield) - new Date(a.acf.datefield)
+        })
+    }
 
     return ( 
 
@@ -22,52 +39,36 @@ const News = ({state,actions}) => {
                 <SubTitle>Información Relevante<br></br> Historias Reales</SubTitle>
                 
             </HeadContainer>
+
             {
-            data.isReady ?
+            data.isReady && arrayOfNews.length > 0 ? 
+            
             <>
-
-            {
-                data.items.map( ({id}) => {
-
-                const singleSearch = state.source.singlesearch[id];
-
-                let typeOfPublication = false;
-                
-                if(singleSearch.typeofpublication[0] === 2) {
-                    typeOfPublication = true;
-                }
-
-                    return (
-
-                    <>
-                            { typeOfPublication ? 
-                            <PostStyled key = {id}>
+                {
+                    arrayOfNews.map( newElem => {
+                        return(
+                            <>
+                                <PostStyled key = {newElem.id}>
                                 
-                                <a href={singleSearch.meta._links_to} target="_blank" rel="noopener noreferrer">
-                                <FeaturedImage imgID = {singleSearch.featured_media} element = "singlesearch"/>
+                                    <a href={newElem.meta._links_to} target="_blank" rel="noopener noreferrer">
+                                    <FeaturedImage imgID = {newElem.featured_media} element = "singlesearch"/>
 
-                                <div>
-                                    <h3>{singleSearch.title.rendered}</h3>
-                                    <div dangerouslySetInnerHTML={{ __html: singleSearch.content.rendered}}></div>
-                               
-                                 
-                                    <p>Fecha : 
-                                    <span dangerouslySetInnerHTML={ {__html: singleSearch.acf.date}}></span>
-                                    </p>
-                                </div>           
-                                </a>
-                            </PostStyled>
-                            : null
-                            }
-                        
-                    </>
-                    )
-                })
-            }
-        </>
-
-        : <Loading />
-
+                                    <div>
+                                        <h3>{newElem.title.rendered}</h3>
+                                        <div dangerouslySetInnerHTML={{ __html: newElem.content.rendered}}></div>
+                                        <p>Fecha : 
+                                            <span dangerouslySetInnerHTML={ {__html: newElem.acf.datefield}}></span>
+                                        </p>
+                                    </div>           
+                                    </a>
+                                </PostStyled>
+                            </>
+                        )
+                    })
+                }
+            </> 
+            
+            : <Loading />
         }
 
         </MarginTopContainer>

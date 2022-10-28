@@ -18,6 +18,7 @@ const Link = ({ href, actions, children }) => {
           actions.router.set(href); 
           window.scrollTo(0, 0);
         }}
+
       >
         {children}
       </Anchor>

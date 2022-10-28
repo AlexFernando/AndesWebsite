@@ -6,6 +6,7 @@ import logo from '../static/images/logoscaled.png';
 import imgAndes from '../static/images/1.jpeg';
 import imgPluriculturalidad from '../static/images/link3.jpg';
 import Link from "./Link";
+import LinkMenu from '../components/LinkMenu'
 import SecondaryNavbarMobile from './SecondaryNavbarMobile';
 import LinkButtonHome from "./LinkButtonHome";
  
@@ -245,6 +246,10 @@ const Menu =  () => {
   const [openEventos, setOpenEventos] = useState(false);
   const [openEventosMobile, setOpenEventosMobile] = useState(false);
 
+  //onHover show SubMenu State 
+  const [isShown, setIsShown] = useState(false);
+  const [isShownResearch, setIsShownResearch] = useState(false);
+
   return (
     <>
     <Navigation>
@@ -271,7 +276,7 @@ const Menu =  () => {
         />
             <Border />
             <Button onClick={() => setOpenAboutMobile(!openAboutMobile)}>
-              Andes
+              <LinkMenu href="/es-">Andes</LinkMenu> 
             </Button>
             <Border />
               {openAboutMobile ? 
@@ -294,7 +299,7 @@ const Menu =  () => {
         
 
             <Button onClick={() => setOpenResearchMObile(!openResearchMobile)}>
-              Pluriversidad
+              <LinkMenu href="/es-">Pluriversidad</LinkMenu> 
             </Button>
             <Border />
               {openResearchMobile ?
@@ -315,22 +320,22 @@ const Menu =  () => {
               } 
 
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
-              <Link href="/es-publications">Publicaciones</Link>
+              <LinkMenu href="/es-publications">Publicaciones</LinkMenu>
           </Button>
           <Border />
 
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
-            <Link href= "/es-news">Noticias</Link>
+            <LinkMenu href= "/es-news">Noticias</LinkMenu>
           </Button> 
           <Border />
           
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}> 
-            <Link href= "/es-events">Eventos</Link>
+            <LinkMenu href= "/es-events">Eventos</LinkMenu>
           </Button> 
           <Border />
 
           <ButtonContact onClick = {() => setNavbarOpen(!navbarOpen)}>
-             <Link href="/es-stayintouch/">Contacto</Link>
+             <LinkMenu href="/es-stayintouch/">Contacto</LinkMenu>
           </ButtonContact>
               <br></br>
               <br></br>
@@ -342,11 +347,24 @@ const Menu =  () => {
 
       ) : (
         <Navbox open>
-          <Button onClick={() => setOpenAbout(!openAbout)}>ANDES</Button> 
-          <Button onClick={() => setOpenResearch(!openResearch)}>PLURIVERSIDAD</Button> 
-          <Button><Link href="/es-publications">PUBLICACIONES</Link></Button> 
-          <Button><Link href= "/es-news">NOTICIAS</Link></Button> 
-          <Button> <Link href= "/es-events">EVENTOS</Link></Button> 
+          <Button 
+            onClick={() => setOpenAbout(!openAbout)}
+            onClick={() => setOpenAbout(!openAbout)}
+            onMouseEnter={() => {setIsShown(true), setIsShownResearch(false)}}
+          >
+            <LinkMenu href="/es-">ANDES</LinkMenu>
+          </Button> 
+          <Button 
+            onClick={() => setOpenResearch(!openResearch)}
+            onClick={() => setOpenResearch(!openResearch)}
+            onMouseEnter={() => {setIsShownResearch(true), setIsShown(false)}}
+          >
+
+              <LinkMenu href="/es-">PLURIVERSIDAD</LinkMenu>
+          </Button> 
+          <Button><LinkMenu href="/es-publications">PUBLICACIONES</LinkMenu></Button> 
+          <Button><LinkMenu href= "/es-news">NOTICIAS</LinkMenu></Button> 
+          <Button> <LinkMenu href= "/es-events">EVENTOS</LinkMenu></Button> 
           <LinkButtonHome href="/es-stayintouch/">CONTACTO</LinkButtonHome>
         </Navbox>
       )}
@@ -354,10 +372,12 @@ const Menu =  () => {
 
     </Navigation>
    
-    {openAbout ? 
+    {openAbout || isShown ? 
       <Dropdown
         open = {openAbout}
         setOpen = {setOpenAbout}
+        hoverOpen = {isShown}
+        setHoverOpen = {setIsShown}
         options={["Quienes somos?", "Philosophy*Filosofia", "People*Personas"]}
         secondTitle = {'Que hacemos?'}
         options2={["Biocultural Territories*Territorios Bioculturales", "Advocacy and Politics*Incidencias Politicas"]}
@@ -367,10 +387,12 @@ const Menu =  () => {
       />  : null
     }
 
-    {openResearch ? 
+    {openResearch || isShownResearch ? 
       <Dropdown
         open = {openResearch}
         setOpen = {setOpenResearch}
+        hoverOpen = {isShownResearch}
+        setHoverOpen = {setIsShownResearch}
         options = {["Yachay Kuychi", "Who We Are*Quienes somos?"]}
         secondTitle = {'Qué Hacemos?'}
         options2 = {["Courses*Cursos", "Intership and Volunteering*Pasantias", "Exchanges*Intercambios"]}
