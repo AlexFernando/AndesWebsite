@@ -288,9 +288,9 @@ const Menu =  ({state}) => {
                     setOpen = {setOpenAboutMobile}
                     options={["Who We are?", "Philosophy", "People"]}
                     secondTitle = {'What We Do?'}
-                    options2={["Biocultural Territories", "Advocacy and Politics"]}
+                    options2={["Biocultural Territories", "Advocacy and Politics", "International Programs and Networks"]}
                     thirdTitle = {["Where We Work?"]}
-                    options3={["Potato Park - Pisac", "Chalakuy Park - Lares", "Spiritual Park - Vilcanota", "International Programs and Networks"]}
+                    options3={["Potato Park - Pisac", "Chalakuy Park - Lares", "Spiritual Park - Vilcanota"]}
                   /> 
         
 
@@ -380,9 +380,9 @@ const Menu =  ({state}) => {
         setHoverOpen = {setIsShown}
         options={["Who we are?", "Philosophy", "People"]}
         secondTitle = {'What We Do?'}
-        options2={["Biocultural Territories", "Advocacy and Politics"]}
+        options2={["Biocultural Territories", "Advocacy and Politics", "International Programs and Networks"]}
         thirdTitle = {["Where We Work?"]}
-        options3={["Potato Park - Pisac", "Chalakuy Park - Lares", "Spiritual Park - Vilcanota", "International Programs and Networks"]}
+        options3={["Potato Park - Pisac", "Chalakuy Park - Lares", "Spiritual Park - Vilcanota"]}
         ImageNav = {imgAndes}
       />  : null
     }

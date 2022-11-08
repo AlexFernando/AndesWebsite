@@ -280,15 +280,15 @@ const SearchBarComponent = ({state, actions}) => {
 
                                 <PostStyled key = {elem.id}>
                                     <a href={elem.meta._links_to} target="_blank" rel="noopener noreferrer">
-                                    <FeaturedImage imgID = {elem.featured_media} element = "singlesearch"/>
+                                        <FeaturedImage imgID = {elem.featured_media} element = "singlesearch"/>
 
-                                    <div>
-                                        <h3>{elem.title.rendered}</h3>
-  
-                                        <p>Date : 
-                                            <span dangerouslySetInnerHTML={ {__html: elem.acf.datefield}}></span>
-                                        </p>
-                                    </div>           
+                                        <div>
+                                            <h3>{elem.title.rendered}</h3>
+    
+                                            <p>Date : 
+                                                <span dangerouslySetInnerHTML={ {__html: elem.acf.datefield}}></span>
+                                            </p>
+                                        </div>           
                                     </a>
                                 </PostStyled>
                         

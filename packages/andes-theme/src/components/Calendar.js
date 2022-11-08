@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {connect, styled, css} from "frontity";
+import getAllIndexes from  '../helpers/findIndexes';
 
 const MyCalendar =  styled.div`
   flex-basis: 40%;
@@ -67,30 +68,20 @@ const Day = styled.div`
 `;
 
 const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray}) => {
-
-    //console.log(eventDay, eventMonth, eventYear)
-
+ 
     const DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     const DAYS_LEAP = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     const DAYS_OF_THE_WEEK = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
     const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
     const today = new Date();
-    //console.log(today)
     const [date, setDate] = useState(today);
-
     const [day, setDay] = useState(date.getDate());
-    //console.log(day)
     const [month, setMonth] = useState(date.getMonth());
-    //console.log(month)
     const [year, setYear] = useState(date.getFullYear());
-    //console.log(year)
 
     const calculateStartDayOfMonth = (date) => {
-
-      //console.log("Date con parametro 1: ", new Date(date.getFullYear(), date.getMonth(), 1), "Obten dia: ", new Date(date.getFullYear(), date.getMonth(), 1).getDay(), )
       return new Date(date.getFullYear(), date.getMonth(), 1).getDay() === 0 ? 7 :  new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-
     } 
 
     const [startDay, setStartDay] = useState(calculateStartDayOfMonth(date));
@@ -102,10 +93,9 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
       setStartDay(calculateStartDayOfMonth(date));
     }, [date]);
 
-    const showEvent = (id) => {
+    const showEvent = (eventId) => {
       setIsEvent(true);
-      //console.log("el id: ", id)
-      setId(id);
+      setId(eventId);
     }
 
     
@@ -114,11 +104,6 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
     }
 
     const days = isLeapYear(date.getFullYear()) ? DAYS_LEAP : DAYS;
-
-    //console.log("isLapYear or no: ", days)
-
-    //console.log("days: ", eventDay, "months: ", eventMonth, "year ", eventYear);
-                
 
     return ( 
       <MyCalendar>  
@@ -142,46 +127,71 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
             {Array(days[month] + (startDay - 1))
               .fill(null)
               .map((_, index) => {
-                //console.log("que es index: ", index);
+              
                 const d = index - (startDay - 2);
-                //console.log("que es d: ", d);
-                //console.log("startday: ",startDay)
-                //console.log(eventDay.indexOf(d) === eventMonth.indexOf(month+1) === eventYear.indexOf(year))
-                //console.log("day: ", d , "month: ", month, "year: ", year)
-                //console.log("el mes del calendario: ",month)
-                //console.log(eventDay.indexOf)
 
                 let indexDay = eventDay.indexOf(d)
 
-                if(indexDay > -1 && month === eventMonth[indexDay] && year === eventYear[indexDay] ) {
+                let manyIndex = getAllIndexes(eventDay,d)
                   
+                if(manyIndex.length > 0  && manyIndex[0] > -1 && month === eventMonth[manyIndex[0]] && year === eventYear[manyIndex[0]] ) {
 
+                  let arrEventsId = [];
 
-                  return (
-                    <Day
-                      key={index}
-                      isSelected={true}
-                      onClick = { () => showEvent(idArray[indexDay])}
-                    >
-                      {d > 0 ? d : ''}
-                    </Day>
-                  );
-                
+                  for (let num = 0 ; num < manyIndex.length; num ++) {
+                    arrEventsId.push(idArray[manyIndex[num]])
+                  }
+
+                    return (
+                      <Day
+                        key={index}
+                        isSelected={true}
+                        onClick = { () => showEvent(arrEventsId)}
+                      >
+                        {d > 0 ? d : ''}
+                      </Day>
+                    );
                 }
-
+         
                 else {
-                  return (
+                  return(
                     <Day
-                      key={index}
-                    >
-                      {d > 0 ? d : ''}
-                    </Day>
-                  );
+                    key={index}
+                  >
+                    {d > 0 ? d : ''}
+                  </Day>)
+                  }
                   
-                }
+
+                // if(manyIndex[0] > -1 && month === eventMonth[manyIndex[0]] && year === eventYear[manyIndex[0]] ) {
+                
+                //   return (
+                //     <Day
+                //       key={index}
+                //       isSelected={true}
+                //       onClick = { () => showEvent(idArray[manyIndex[0]])}
+                //     >
+                //       {d > 0 ? d : ''}
+                //     </Day>
+                //   );
+                
+                // }
+
+                // else {
+                //   return (
+                //     <Day
+                //       key={index}
+                //     >
+                //       {d > 0 ? d : ''}
+                //     </Day>
+                //   );
+                  
+                // }
 
                 
-              })}
+              }
+              
+              )}
           </Body>
       </Frame>
 

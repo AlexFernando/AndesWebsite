@@ -65,6 +65,12 @@ const settings = [
               type: "allnews",
               endpoint: "allnews",
               archive: "/allnews",
+            },
+
+            {
+              type: "allevents",
+              endpoint: "allevents",
+              archive: "/allevents",
             }
           ],
 
@@ -158,6 +164,12 @@ const settings = [
               type: "allnews",
               endpoint: "allnews",
               archive: "/es-allnews",
+            },
+
+            {
+              type: "allevents",
+              endpoint: "allevents",
+              archive: "/es-allevents",
             }
           ],
   

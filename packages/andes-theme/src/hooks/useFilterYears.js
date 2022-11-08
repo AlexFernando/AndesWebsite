@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import {styled} from "frontity";
-import {yearsCategories} from '../data/yearsCategoriesEvents';
+// import {yearsCategories} from '../data/yearsCategoriesEvents';
 
 const Formulario = styled.form`
     width: 60%;
@@ -30,6 +30,22 @@ const Select = styled.select`
     }
 `;
 
+const yearsCategories = [
+    {"id": "1", "year": 2022},
+    {"id": "1", "year": 2021},
+    {"id": "1", "year": 2020},
+    {"id": "1", "year": 2019},
+    {"id": "1", "year": 2018},
+    {"id": "1", "year": 2017},
+    {"id": "1", "year": 2016},
+    {"id": "1", "year": 2015},
+    {"id": "1", "year": 2014},
+    {"id": "1", "year": 2013},
+    {"id": "1", "year": 2012},
+    {"id": "1", "year": 2011},
+    {"id": "1", "year": 2010},
+]
+
 const useFilter = () => {
 
     const [category, saveCategory] = useState('');
@@ -41,7 +57,7 @@ const useFilter = () => {
                 onChange = { e => saveCategory(e.target.value) }
                 value={category}
             >
-                <option value="" label="AllEvents">-- AllEvents --</option>
+                <option value="" label="Choose a year">-- Choose a year --</option>
                 {yearsCategories.map(option => (
                     <option key={option.id} label={option.year} value={option.year}>{option.year}</option>
                 ))}
