@@ -59,13 +59,17 @@ const Root = ({ state, actions }) => {
 
     const data = state.source.get(state.router.link);
 
-    
+
+
+        console.log("current link: ", state.router.link, " the id : ", data.id)
+
         useEffect( () => {
             if( state.theme.lang === "en") {
                 //actions.source.fetch("/search")
+                console.log("version en ingles")
                 actions.source.fetch("/home")
-                actions.source.fetch("/cardimage/")
-                actions.source.fetch("/philosophy")
+                actions.source.fetch("/cardimage")
+                // actions.source.fetch("/philosophy")
                 readMore = 'READ FURTHER '
                 getMore = 'GET MORE'
                 learn = 'LEARN'
@@ -73,9 +77,10 @@ const Root = ({ state, actions }) => {
             }
 
             else if (state.theme.lang === "es") {
+                console.log("my version in spanish")
                 //actions.source.fetch("/es-search")
                 actions.source.fetch("/home-es")
-                actions.source.fetch("/es-philosophy")
+                // actions.source.fetch("/es-philosophy")
                 actions.source.fetch("/cardimage")
                 readMore = 'LEER MÁS'
                 getMore = 'SABER MÁS'
@@ -129,7 +134,7 @@ const Root = ({ state, actions }) => {
             <>
             { 
             
-            state.theme.lang == "en" ?
+            state.theme.lang === "en" ?
                 
                 <>
                 <SecondaryNavbar />
@@ -237,7 +242,7 @@ const Root = ({ state, actions }) => {
 
                 {data.id === 493 && <AnniversaryPublications/>}
 
-                {state.router.link === "/es-stayintouch/" && data.isPage &&  <FormularioContacto/>}
+                {state.router.link === "/es-/es-stayintouch/" && data.isPage &&  <FormularioContacto/>}
                 
                     <ContactSpanish />
                     <FooterSpanish title={"Andes"}/>

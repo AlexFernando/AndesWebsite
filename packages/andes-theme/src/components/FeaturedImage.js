@@ -5,115 +5,125 @@ import logo from '../static/images/logoscaled.png';
 
 const FeaturedImage = ({state, imgID, element}) => {
     
+
     const media = state.source.attachment[imgID];
 
-    if(element === 'noticia') {
-
-        return (
-            <>
-                <Image src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
-            </>
-        );
+    if(media.media_details.sizes.medium === undefined) {
+        return  <NoPhotoString>NO PHOTO</NoPhotoString> 
     }
 
-    else if (element === 'publication') {
-                return(
-                    <>
-                        <Image src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
-                    </>
-                );
-            
-            
-    }
+    else if(media) {
+    
+        if(element === 'noticia') {
 
-    else if (element === 'event') {
-        if(window.outerHeight < 850) {
             return (
                 <>
-                    <EventImageStyle src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
+                    <Image src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
+                </>
+            );
+        }
+
+        else if (element === 'publication') {
+                    return(
+                        <>
+                            <PublicationImageStyle src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
+                        </>
+                    );
+                
+                
+        }
+
+        else if (element === 'event') {
+            
+            if(window.outerHeight < 850) {
+                return (
+                    <>
+                        <EventImageStyle src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
+                    </>
+                )
+            }
+    
+        
+            return (
+                <>
+                    <EventImageStyle src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
                 </>
             )
         }
-   
-     
-        return (
-            <>
-                <EventImageStyle src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
-            </>
-        )
-    }
 
-    else if (element === 'singlesearch') {
+        else if (element === 'singlesearch') {
 
-            if(window.outerHeight < 850) {
+                if(window.outerHeight < 850) {
 
-                if(media.media_details.sizes.thumbnail) {
+                    if(media.media_details.sizes.thumbnail) {
+                        return (
+                            <>
+                                <SingleImageStyle src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
+                            </>
+                        )
+                    }
+
+                    else {
+                        <Image src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
+                    }
+                
+                }
+        
+                if(media.media_details.sizes.medium) {
                     return (
                         <>
-                            <SingleImageStyle src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
+                            <Image src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
                         </>
                     )
                 }
 
                 else {
-                    <Image src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
+                    return (
+                        <>
+                            <Image src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
+                        </>
+                    )
                 }
-               
-            }
-    
-            if(media.media_details.sizes.medium) {
-                return (
-                    <>
-                        <Image src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
-                    </>
-                )
-            }
-
-            else {
-                return (
-                    <>
-                        <Image src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
-                    </>
-                )
-            }
-       
-    }
-
-    else if (element === 'toolkit') {
-
-            if(window.outerHeight < 850) {
-                return (
-                    <>
-                        <ToolkitImageStyle src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
-                    </>
-                )
-            }
-       
-            if(media.media_details.sizes.medium) {
-                return (
-                    <>
-                        <ToolkitImageStyle src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
-                    </>
-                )
-            }
-
-            else {
-                return (
-                    <>
-                        <ToolkitImageStyle src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
-                    </>
-                )
-            }
-    }
-
-    else {
-   
-        return  (
-            <>
-                <Image src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
-            </>
-        );
         
+        }
+
+        else if (element === 'toolkit') {
+
+                if(window.outerHeight < 850) {
+                    return (
+                        <>
+                            <ToolkitImageStyle src={media.media_details.sizes.thumbnail.source_url} alt={media.alt_text} />
+                        </>
+                    )
+                }
+        
+                if(media.media_details.sizes.medium) {
+                    return (
+                        <>
+                            <ToolkitImageStyle src={media.media_details.sizes.medium.source_url} alt={media.alt_text} />
+                        </>
+                    )
+                }
+
+                else {
+                    return (
+                        <>
+                            <ToolkitImageStyle src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
+                        </>
+                    )
+                }
+        }
+
+        else {
+    
+            return  (
+                <>
+                    <Image src={media.media_details.sizes.full.source_url} alt={media.alt_text} />
+                </>
+            );
+            
+        }
+
     }
 }
 
@@ -153,6 +163,14 @@ const SingleImageStyle = styled(Image)`
 
 const CardStyleAll = styled(Image)`
     display: flex;
+`
+
+const PublicationImageStyle = styled(Image)`
+    border: 1px solid #a0a0a0;
+`
+
+const NoPhotoString = styled.div`
+    color: #000;
 `
 
 export default connect(FeaturedImage);

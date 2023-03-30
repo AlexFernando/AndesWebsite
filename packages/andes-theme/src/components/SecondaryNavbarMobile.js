@@ -48,12 +48,23 @@ const ContainerNav = styled.nav`
 
 const SecondaryNavbarMobile = ({state, actions, setNavOpen, navOpen}) => {
 
+
     let myLink = state.router.link;
+    console.log("myLink: ", myLink);
     let myNewLink = "";
-    if(myLink.indexOf("/") > -1) {
-        myNewLink = myLink.replace("/","-")
+
+    let linkSpanish = "";
+    if(myLink === "/") {
+        linkSpanish = "/es-"
     }
-    let linkSpanish = "/es"+ myNewLink;
+
+    else if(myLink.indexOf("/") > -1) {
+        console.log("paso por aqui")
+        myNewLink = myLink.replace("/","-")
+        console.log("myNewLink: ", myNewLink)
+        linkSpanish = "/es-"+"/es"+ myNewLink;
+    }
+
     
     return ( 
 

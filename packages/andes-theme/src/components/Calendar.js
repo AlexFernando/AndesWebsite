@@ -2,70 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {connect, styled, css} from "frontity";
 import getAllIndexes from  '../helpers/findIndexes';
 
-const MyCalendar =  styled.div`
-  flex-basis: 40%;
-  text-align: center;
-  margin-top: 10rem;
 
-  @media(max-width: 768px) {
-    margin-top: 2rem;
-  }
-
-  h1 {
-    //color: #f07723;
-    margin-bottom: 2rem;
-    font-size: 1.6rem;
-    color: #000;
-  }
-`
-
-const Frame = styled.div`
-  border: 1px solid lightgrey;
-  border-radius: 1rem;
-  box-shadow: 2px 2px 2px #eee;
-
-`;
-
-const Header = styled.div`
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px 10px 5px 10px;
-  display: flex;
-  justify-content: space-between;
-  //background-color: #44841a;
-  background-color: #44841a;
-  border-radius: 1rem 1rem 0 0;
-  color: #fff;
-`;
-
-const Button = styled.div`
-  cursor: pointer;
-`;
-
-const Body = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const Day = styled.div`
-  width: 14.2%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-
-  ${props =>
-    props.isSelected &&
-    css`
-      background-color: green;
-      border-radius: .5rem;
-      cursor: pointer;
-      font-weight: 700;
-      color: #fff;
-    `}
-`;
 
 const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray}) => {
  
@@ -133,15 +70,19 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
                 let indexDay = eventDay.indexOf(d)
 
                 let manyIndex = getAllIndexes(eventDay,d)
-                  
-                if(manyIndex.length > 0  && manyIndex[0] > -1 && month === eventMonth[manyIndex[0]] && year === eventYear[manyIndex[0]] ) {
+                
+                if(manyIndex.length > 0) {
 
                   let arrEventsId = [];
 
-                  for (let num = 0 ; num < manyIndex.length; num ++) {
-                    arrEventsId.push(idArray[manyIndex[num]])
+                  for(let j = 0 ; j < manyIndex.length ; j++ ){
+                    
+                    if(manyIndex[j] > -1 && month === eventMonth[manyIndex[j]] && year === eventYear[manyIndex[j]]) {
+                      arrEventsId.push(idArray[manyIndex[j]])
+                    }
                   }
 
+                  if(arrEventsId.length >0) {
                     return (
                       <Day
                         key={index}
@@ -151,8 +92,11 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
                         {d > 0 ? d : ''}
                       </Day>
                     );
+                  }
+
                 }
-         
+
+
                 else {
                   return(
                     <Day
@@ -162,33 +106,6 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
                   </Day>)
                   }
                   
-
-                // if(manyIndex[0] > -1 && month === eventMonth[manyIndex[0]] && year === eventYear[manyIndex[0]] ) {
-                
-                //   return (
-                //     <Day
-                //       key={index}
-                //       isSelected={true}
-                //       onClick = { () => showEvent(idArray[manyIndex[0]])}
-                //     >
-                //       {d > 0 ? d : ''}
-                //     </Day>
-                //   );
-                
-                // }
-
-                // else {
-                //   return (
-                //     <Day
-                //       key={index}
-                //     >
-                //       {d > 0 ? d : ''}
-                //     </Day>
-                //   );
-                  
-                // }
-
-                
               }
               
               )}
@@ -199,5 +116,68 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
     </MyCalendar>
      );
 }
+
+const MyCalendar =  styled.div`
+  flex-basis: 40%;
+  text-align: center;
+  margin-top: 10rem;
+
+  @media(max-width: 768px) {
+    margin-top: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    color: #000;
+  }
+`
+
+const Frame = styled.div`
+  border: 1px solid lightgrey;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px #eee;
+
+`;
+
+const Header = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 10px 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #44841a;
+  border-radius: 1rem 1rem 0 0;
+  color: #fff;
+`;
+
+const Button = styled.div`
+  cursor: pointer;
+`;
+
+const Body = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Day = styled.div`
+  width: 14.2%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+  ${props =>
+    props.isSelected &&
+    css`
+      background-color: green;
+      border-radius: .5rem;
+      cursor: pointer;
+      font-weight: 700;
+      color: #fff;
+    `}
+`;
 
 export default Calendar;

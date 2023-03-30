@@ -165,7 +165,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, hoverOpen, setHoverOpen,
                     return(
                     <>
                       <ListStyle key={opt}>
-                        <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}><Link href={`/es-${opt1.toLowerCase().replace(/\s/g, "")}`}>{opt2}</Link></ButtonStyled>
+                        <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}><Link href={`/es-/es-${opt1.toLowerCase().replace(/\s/g, "")}`}>{opt2}</Link></ButtonStyled>
                       </ListStyle>
                       <Border />
                     </>
@@ -188,7 +188,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, hoverOpen, setHoverOpen,
                               <>
                               <ListStyle key={opt2}>
                                 <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}>
-                                  <Link href={`/es-${linkRouter.toLowerCase().replace(/\s/g, "")}`}>{titleTag}</Link>  
+                                  <Link href={`/es-/es-${linkRouter.toLowerCase().replace(/\s/g, "")}`}>{titleTag}</Link>  
                                 </ButtonStyled>                                
                               </ListStyle>
                               <Border />
@@ -216,7 +216,7 @@ const Dropdown = ({ navOpen, setNavOpen, open, setOpen, hoverOpen, setHoverOpen,
                               <>
                               <ListStyle key={opt3}>
                                 <ButtonStyled onClick={() => {setOpen(false); setNavOpen(false);}}>
-                                  <Link href={`/es-${linkRouter3.toLowerCase().replace(/\s/g, "")}`}>{titleTag3}</Link>  
+                                  <Link href={`/es-/es-${linkRouter3.toLowerCase().replace(/\s/g, "")}`}>{titleTag3}</Link>  
                                 </ButtonStyled>                                
                               </ListStyle>
                               <Border />

@@ -51,7 +51,7 @@ const CardFeaturedImage = ({media, elem, alt}) => {
 
             return (
                 <>
-                    <ImageCardHome src={media.medium} alt= {alt}  />
+                    <ImageCardHome src={media.medium} />
                 </>
             )
         }
@@ -61,7 +61,7 @@ const CardFeaturedImage = ({media, elem, alt}) => {
             console.log("pantalla grande")
             return (
                 <>
-                    <ImageCardHome src={media.medium_large} alt= {alt}/>
+                    <ImageCardHome src={media.medium_large} />
                 </>
             )
         }

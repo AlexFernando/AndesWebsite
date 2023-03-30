@@ -1,9 +1,8 @@
 {
   "errors": [],
   "warnings": [],
-  "version": "4.44.2",
-  "hash": "84b80d358da0db4452fd",
-  "publicPath": "/static/",
+  "hash": "7ece8dd11442cd206228",
+  "publicPath": "",
   "outputPath": "/home/alexf/Documents/react_projects/AndesWebsite/build/static",
   "assetsByChunkName": {
     "andes-headless-english": "andes-headless-english.module.js",
@@ -12,7 +11,7 @@
   "assets": [
     {
       "name": "andes-headless-english.module.js",
-      "size": 12162091,
+      "size": 14034551,
       "chunks": [
         "andes-headless-english"
       ],
@@ -24,7 +23,7 @@
     },
     {
       "name": "andes-headless-spanish.module.js",
-      "size": 12162091,
+      "size": 14034551,
       "chunks": [
         "andes-headless-spanish"
       ],
@@ -39,7 +38,9 @@
       "size": 69500,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/fonts/Lato/Lato-Black.ttf"
+      },
       "emitted": false
     },
     {
@@ -47,7 +48,9 @@
       "size": 72000,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/fonts/Lato/Lato-BlackItalic.ttf"
+      },
       "emitted": false
     },
     {
@@ -55,7 +58,9 @@
       "size": 73332,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/fonts/Lato/Lato-Bold.ttf"
+      },
       "emitted": false
     },
     {
@@ -63,7 +68,9 @@
       "size": 77732,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/fonts/Lato/Lato-BoldItalic.ttf"
+      },
       "emitted": false
     },
     {
@@ -71,7 +78,9 @@
       "size": 75792,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/fonts/Lato/Lato-Italic.ttf"
+      },
       "emitted": false
     },
     {
@@ -79,7 +88,9 @@
       "size": 77208,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/fonts/Lato/Lato-Light.ttf"
+      },
       "emitted": false
     },
     {
@@ -87,7 +98,9 @@
       "size": 49080,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/fonts/Lato/Lato-LightItalic.ttf"
+      },
       "emitted": false
     },
     {
@@ -95,7 +108,9 @@
       "size": 75152,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/fonts/Lato/Lato-Regular.ttf"
+      },
       "emitted": false
     },
     {
@@ -103,7 +118,9 @@
       "size": 69976,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/fonts/Lato/Lato-Thin.ttf"
+      },
       "emitted": false
     },
     {
@@ -111,7 +128,9 @@
       "size": 48864,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/fonts/Lato/Lato-ThinItalic.ttf"
+      },
       "emitted": false
     },
     {
@@ -119,7 +138,9 @@
       "size": 89365,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/static/images/1.jpeg"
+      },
       "emitted": false
     },
     {
@@ -127,7 +148,9 @@
       "size": 200544,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/static/images/link3.jpg"
+      },
       "emitted": false
     },
     {
@@ -135,33 +158,13 @@
       "size": 94737,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/andes-theme/src/static/images/logoscaled.png"
+      },
       "emitted": false
     }
   ],
   "filteredAssets": 0,
-  "entrypoints": {
-    "andes-headless-english": {
-      "chunks": [
-        "andes-headless-english"
-      ],
-      "assets": [
-        "andes-headless-english.module.js"
-      ],
-      "children": {},
-      "childAssets": {}
-    },
-    "andes-headless-spanish": {
-      "chunks": [
-        "andes-headless-spanish"
-      ],
-      "assets": [
-        "andes-headless-spanish.module.js"
-      ],
-      "children": {},
-      "childAssets": {}
-    }
-  },
   "namedChunkGroups": {
     "andes-headless-english": {
       "chunks": [
@@ -184,12 +187,19 @@
       "childAssets": {}
     }
   },
-  "logging": {
-    "webpack.buildChunkGraph.visitModules": {
-      "entries": [],
-      "filteredEntries": 2,
-      "debug": false
+  "generator": "loadable-components",
+  "chunks": [
+    {
+      "id": "andes-headless-english",
+      "files": [
+        "andes-headless-english.module.js"
+      ]
+    },
+    {
+      "id": "andes-headless-spanish",
+      "files": [
+        "andes-headless-spanish.module.js"
+      ]
     }
-  },
-  "children": []
+  ]
 }

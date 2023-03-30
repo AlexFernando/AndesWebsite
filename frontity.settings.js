@@ -71,6 +71,10 @@ const settings = [
               type: "allevents",
               endpoint: "allevents",
               archive: "/allevents",
+              params: {
+	              per_page: 100,
+                _embed: true
+              }
             }
           ],
 
@@ -93,8 +97,7 @@ const settings = [
       }
     },
     "@frontity/tiny-router",
-    "@frontity/html2react",
-    "frontity-contact-form-7"
+    "@frontity/html2react"
   ]
 },
 
@@ -102,7 +105,7 @@ const settings = [
 //SPANISH SITE
 {
   "name": "andes-headless-spanish",
-  "match": [".*https?:\/\/andes.org.pe\/es-(.*)?$"],
+  "match": [".*https?:\/\/www.andes.org.pe\/es-(.*)?$"],
   "state": {
     "frontity": {
       "url": "https://andes.org.pe/es-",
@@ -170,6 +173,10 @@ const settings = [
               type: "allevents",
               endpoint: "allevents",
               archive: "/es-allevents",
+              params: {
+	              per_page: 100,
+                _embed: true
+              }
             }
           ],
   
@@ -190,8 +197,7 @@ const settings = [
       }
     },
      "@frontity/tiny-router",
-    "@frontity/html2react",
-    "frontity-contact-form-7"
+    "@frontity/html2react"
   ]
 }
 

@@ -1,12 +1,20 @@
 import React, {useEffect} from 'react';
-import {connect} from "frontity";
+import {connect, styled} from "frontity";
 import {HeadContainer, Title, SubTitle, Separator, MarginTopContainer} from './Filosofia';
-import {SectionContainer, CardsContainer, Card, ImagePotatoPark} from './potatoPark'
+import {SectionContainer, CardsContainer, Card, ImagePotatoPark, SectionInfoContainer, FastInfo} from './potatoPark'
 import Loading from './Loading';
 import {readMore} from './Root';
 
 //handle image size according to size screen
 import CardFeaturedImage from './CardFeatureImage';
+
+// more import 
+import {faListAlt, faArrowAltCircleRight, faMountain, faMale, faLanguage, faExclamationTriangle, faTractor, faSeedling, faHiking, faUtensils, faHands, faCarrot} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIconList, FontAwesomeIconStyled, BriefSection, InfoItem} from './TerritoriosCulturales';
+
+import { VerticalBorder } from './Dropdown';
+
+import Image from "@frontity/components/image";
 
 const LaresPark = ({state, actions}) => {
 
@@ -27,6 +35,10 @@ const LaresPark = ({state, actions}) => {
 
     let cardImagesArr = [];
 
+    let FirstArrayOfIcons = [faMountain, faMale, faLanguage, faExclamationTriangle];
+    let SecondArrayOfIcons = [faTractor, faSeedling, faHiking, faUtensils, faHands, faCarrot];
+
+
     
     if(data.isReady) {
         
@@ -45,6 +57,24 @@ const LaresPark = ({state, actions}) => {
                 }
             }
         )
+    }
+
+
+    let infoListOne = [];
+    let infoListTwo = [];
+    let listActivities = [];
+
+
+    if(typeof pagePotatoPark !== "undefined") {
+    
+        infoListOne = pagePotatoPark.acf.info_list_1.split("*");
+        infoListOne.shift();
+    
+        infoListTwo = pagePotatoPark.acf.info_list_2.split("*");
+        infoListTwo.shift();
+    
+        listActivities = pagePotatoPark.acf.list_activities.split("*");
+        listActivities.shift();
     }
 
     return ( 
@@ -71,6 +101,89 @@ const LaresPark = ({state, actions}) => {
                 <p>{pageLaresPark.acf.paragraph_1}</p>
 
                 <p>{pageLaresPark.acf.paragraph_2}</p>   
+
+                <SectionInfoContainer>
+
+                    <FastInfo>
+                        {
+                            Object.keys(pageLaresPark.acf.data_list).map( (elem, index) => {
+                                return(
+                                    <div>
+                                        <FontAwesomeIconStyled icon={FirstArrayOfIcons[index]}/>
+                                        <h3>{pageLaresPark.acf.data_list[elem].title}</h3>
+                                        <p>{pageLaresPark.acf.data_list[elem].data}</p>
+                                    </div>
+                                )
+                        
+                            })
+                        }
+                
+                    </FastInfo>
+
+                </SectionInfoContainer>
+
+                <BriefSection>
+
+                    <InfoItem>
+                        
+                        <FontAwesomeIconStyled icon={faListAlt}/>
+                            <h3>{pageLaresPark.acf.info_title_1}</h3>
+                            <p>{pageLaresPark.acf.info_paragraph}</p>
+                    </InfoItem>
+                    <VerticalBorder></VerticalBorder>
+
+                    <InfoItem>
+                        <FontAwesomeIconStyled icon={faListAlt}/>
+                        
+                        <h3>{pageLaresPark.acf.info_title_2}</h3>
+
+                        <ul>
+                            {infoListOne.map( listItem => {
+                                    return(
+                                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{listItem}</li>      
+                                    )
+                                }) 
+                            }
+                        </ul>
+                    </InfoItem>
+                    
+                    <VerticalBorder></VerticalBorder>
+                    
+                    <InfoItem>
+
+                        <FontAwesomeIconStyled icon={faListAlt}/>
+
+                        <h3>{pageLaresPark.acf.info_title_3}</h3>
+
+                        <ul>
+                            {infoListTwo.map( listItem => {
+                                    return(
+                                        <li><FontAwesomeIconList icon={faArrowAltCircleRight}/>{listItem}</li>      
+                                    )
+                                }) 
+                            }
+                        </ul>
+                    </InfoItem>
+                </BriefSection>
+
+                <SectionInfoContainer>
+                    <h2>{pageLaresPark.acf.title_activities}</h2>
+
+                    <FastInfo>
+                        {
+                            listActivities.map( (itemTitleList , index)  => {
+                                return(
+                                    <div>
+                                        <FontAwesomeIconStyled icon={SecondArrayOfIcons[index]}/>
+                                        <h3>{itemTitleList}</h3>
+                                    </div>
+                                )
+                            }) 
+                        }
+                    </FastInfo>
+
+                </SectionInfoContainer>
+
 
                  
                 <CardsContainer>

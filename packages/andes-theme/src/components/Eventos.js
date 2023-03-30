@@ -9,11 +9,241 @@ import Iframe from "@frontity/components/iframe";
 //filter
 import useFilter from '../hooks/useFilterYears';
 
+const Eventos = ({state, actions}) => {
+
+    useEffect( () => {
+        actions.source.fetch("/allevents")
+     }, [])
+
+   const data = state.source.get("/allevents");
+
+   const [isEvent, setIsEvent] = useState(false)
+   const [id, setId] = useState([]);//cambiar esto por un arr de ids
+
+   //UseFilter categories 
+   const {category,  FilterUI} = useFilter("");
+   const [filterByYearEvents , setFilterByYearEvents] = useState([])
+   const [isFilterYear, setIsFilterYear] = useState(false)
+
+   const eventDay = [];
+
+   const eventMonth = [];
+
+   const eventYear = [];
+
+   const idArray = [];
+
+   let arrayOfEvents = [];
+
+   //array of events 
+   
+   if(data.isReady) {
+
+       data.items.map( ({id}) => {
+           
+            const singleSearch = state.source.allevents[id];
+            arrayOfEvents.push(singleSearch);
+            const arrayDate = singleSearch.acf.date.split("/");
+            eventDay.push(parseInt(arrayDate[0]))
+            eventMonth.push(parseInt(arrayDate[1])-1)
+            eventYear.push(parseInt(arrayDate[2]))
+            idArray.push(singleSearch.id)
+       })
+   }
+
+   let arrEventsFiltered =  id.map( elemId => {   
+    return arrayOfEvents.filter(event => event.id === elemId)
+   })
+
+   let arrEvenstOrderByDate = arrayOfEvents.sort((a,b)=>new Date(b.acf.date.split("/").reverse().join("-")) - new Date(a.acf.date.split("/").reverse().join("-")))
+
+   console.log("arr filter by date: ", arrEvenstOrderByDate)
+
+   //detect change of year
+    useEffect( () => {
+       let eventsFilterByYear = arrayOfEvents.filter(event => event.acf.date.split("/")[2] === category.toString())
+       setIsFilterYear(true)
+       setFilterByYearEvents(eventsFilterByYear);
+    }, [category])
+
+ 
+    return ( 
+        <MarginTopContainer>
+            <HeadContainer>
+                <Title>
+                    Events
+                </Title>
+                <Separator></Separator>
+                <SubTitle>
+                    Take part of our events
+                </SubTitle>
+      
+            </HeadContainer>
+
+            {
+                data.isReady ?
+
+                <>
+                <SectionEvent>
+
+                    <ContainerEventsCalendar>
+                    {
+        
+                        isEvent ?
+        
+                            arrEventsFiltered.length > 0 && arrEventsFiltered.map( event => (    
+                                <EventContainer key={event[0].id}>
+                                    <h1>ANDES - Events</h1>
+
+                                    <h3>{event[0].title.rendered}</h3>
+                              
+                                    {event[0].featured_media ? 
+                                        <FeaturedImage imgID = {event[0].featured_media} element = "event"/>
+                                        : null
+                                    }
+
+
+                                    {event[0].acf.link_video? 
+                                        <Iframe 
+                                            src={event[0].acf.link_video}
+                                            title="video of the event"
+                                            height="500"
+                                            width="500" 
+                                        />
+                                        : null
+                                    }
+                                    
+                                    <span>{event[0].acf.date_texto}</span>
+
+                                    {
+                                        event[0].acf.link_pdf? 
+                                        <a href={event[0].acf.link_pdf} rel="noopener noreferrer" target="_blank">View pdf</a>
+                                        :null
+                                    }
+
+                                    {
+                                         event[0].acf.paragraph_text?
+                                         <p>{event[0].acf.paragraph_text}</p>
+                                         :null
+                                    }                                
+                                   
+                                </EventContainer>   
+                            )) 
+                        : 
+        
+                        <>
+                            
+                            <EventContainer>
+                                <h1>The Latest</h1>
+                                {arrEvenstOrderByDate[0].featured_media ? 
+                                    <FeaturedImage imgID = {arrEvenstOrderByDate[0].featured_media} element = "event"/>
+                                :null}
+
+                                <h3>{arrEvenstOrderByDate[0].title.rendered}</h3>
+                                <span>{arrEvenstOrderByDate[0].acf.date_texto}</span>
+
+                                {arrEvenstOrderByDate[0].acf.link_video? 
+                                        <Iframe 
+                                            src={arrEvenstOrderByDate[0].acf.link_video}
+                                            title="video of the event"
+                                            height="500"
+                                            width="500" 
+                                        />
+                                        : null
+                                    }
+
+                                    {
+                                        arrEvenstOrderByDate[0].acf.link_pdf? 
+                                        <a href={arrEvenstOrderByDate[0].acf.link_pdf} rel="noopener noreferrer" target="_blank">View pdf</a>
+                                        :null
+                                    }
+
+                                    {
+                                         arrEvenstOrderByDate[0].acf.paragraph_text?
+                                         <p>{arrEvenstOrderByDate[0].acf.paragraph_text}</p>
+                                         :null
+                                    }   
+                            </EventContainer>
+                        </>
+                    }
+                    </ContainerEventsCalendar>
+
+                  
+                    <CalendarPastEvents>
+                        <Calendar 
+                            eventDay = {eventDay} 
+                            eventMonth = {eventMonth} 
+                            eventYear = {eventYear} 
+                            setIsEvent = {setIsEvent}
+                            setId = {setId}
+                            idArray = {idArray}
+                        />
+
+                        {FilterUI()}
+
+
+                            {isFilterYear ? 
+
+                                <div>
+                                <h1>PAST EVENTS IN {category}</h1>
+
+                                {filterByYearEvents.length>0 && filterByYearEvents.map(elem => {
+                                    return(
+                                        <ContainerEventBrief>
+                                            {elem.featured_media ? 
+                                                <FeaturedImage imgID = {elem.featured_media} element = "event"/> : null
+                                            }
+                                            {elem.acf.link_video? 
+                                                <Iframe 
+                                                    src={elem.acf.link_video}
+                                                    title="video of the event"
+                                                    height="150"
+                                                    width="150" 
+                                                />
+                                                : null
+                                            }
+
+                                            <div>
+                                                <h3>{elem.title.rendered}</h3>
+                                                <p>Date : 
+                                                    <span>{elem.acf.date_texto}</span>
+                                                </p>
+                                            </div>
+                                        </ContainerEventBrief>
+                                    )
+                                })}
+
+                                </div>
+
+                                :<NotEvents>
+                                    <h2>
+                                        There's no events in - {category}                                   
+                                    </h2>
+                                </NotEvents>
+                            }
+
+                       </CalendarPastEvents>
+                        
+                </SectionEvent>
+                </>
+                : <Loading />
+            }    
+
+        </MarginTopContainer>
+    );
+}
+
 const SectionEvent = styled.div`
     display: grid;
     grid-template-columns: 40% 50%;
     grid-template-rows: auto;
     grid-gap: 1rem;
+
+
+    @media (max-width: 768px){
+        grid-template-columns: 1fr;
+    }
+
 `;
 
 const ContainerEventsCalendar = styled.div`
@@ -23,6 +253,12 @@ const ContainerEventsCalendar = styled.div`
     margin-bottom: 3rem;
     padding-left: 5rem;
     padding-right: 5rem;
+
+
+    @media (max-width: 768px){
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 `
 
 export const EventContainer = styled.div`
@@ -90,12 +326,13 @@ const CalendarPastEvents = styled.div`
     display: flex;
     flex-direction: column;
     flex-basis: 50%;
+
+    @media (max-width: 768px){
+        padding: 0 .5rem;
+    }
 `
 
 const ContainerEventBrief = styled.div`
-    /* display: grid;
-    justify-content: space-between;
-    align-content: center; */
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-auto-rows: minmax(100px, 150px);
@@ -108,6 +345,9 @@ const ContainerEventBrief = styled.div`
     @media (max-width: 768px){
         padding: 1rem;
         margin: 1rem;
+        grid-template-columns: 1fr 1fr;
+
+        grid-auto-rows: minmax(100px, 250px);
     }
 
     div{
@@ -125,235 +365,18 @@ const ContainerEventBrief = styled.div`
 
         span, strong {
             color: #545454;
-        }   
+        }        
+    }
+`
+const NotEvents = styled.div`
+    text-align: center;
+    margin-top: 1rem;
+    color: #545454;
+
+    h2 {
+        font-size: 1.2rem;
     }
 `
 /**Calendar and past events */
-
-const Eventos = ({state, actions}) => {
-
-    useEffect( () => {
-        actions.source.fetch("/allevents")
-     }, [])
-
-   const data = state.source.get("/allevents");
-
-   const [isEvent, setIsEvent] = useState(false)
-   const [id, setId] = useState([]);//cambiar esto por un arr de ids
-
-   //UseFilter categories 
-   const {category,  FilterUI} = useFilter("");
-   const [filterByYearEvents , setFilterByYearEvents] = useState([])
-   const [isFilterYear, setIsFilterYear] = useState(false)
-
-   const eventDay = [];
-
-   const eventMonth = [];
-
-   const eventYear = [];
-
-   const idArray = [];
-
-   let arrayOfEvents = [];
-
-   //array of events 
-   
-   if(data.isReady) {
-
-       data.items.map( ({id}) => {
-           
-            const singleSearch = state.source.allevents[id];
-            arrayOfEvents.push(singleSearch);
-            const arrayDate = singleSearch.acf.date.split("/");
-            eventDay.push(parseInt(arrayDate[0]))
-            eventMonth.push(parseInt(arrayDate[1])-1)
-            eventYear.push(parseInt(arrayDate[2]))
-            idArray.push(singleSearch.id)
-       })
-   }
-
-   let arrEventsFiltered =  id.map( elemId => {
-    return arrayOfEvents.filter(event => event.id === elemId)
-   })
-
-   let arrEvenstOrderByDate = arrayOfEvents.sort((a,b)=>b.acf.date - a.acf.date)
-
-   console.log("arrEventsByDate: ", arrEvenstOrderByDate);
-
-
-   //detect change of year
-    useEffect( () => {
-       let eventsFilterByYear = arrayOfEvents.filter(event => event.acf.date.split("/")[2] === category.toString())
-       setIsFilterYear(true)
-       setFilterByYearEvents(eventsFilterByYear);
-    }, [category])
-
-    console.log("filterByYears: ", filterByYearEvents)
- 
-    return ( 
-        <MarginTopContainer>
-            <HeadContainer>
-                <Title>
-                    Events
-                </Title>
-                <Separator></Separator>
-                <SubTitle>
-                    Take part of our events
-                </SubTitle>
-      
-            </HeadContainer>
-
-            {
-                data.isReady ?
-
-                <>
-                <SectionEvent>
-
-                    <ContainerEventsCalendar>
-                    {
-        
-                        isEvent ?
-        
-                            arrEventsFiltered.length > 0 && arrEventsFiltered.map( event => (    
-                                <EventContainer key={event[0].id}>
-                                    <h1>ANDES - Events</h1>
-
-                                    <h3>{event[0].title.rendered}</h3>
-                              
-                                    {event[0].featured_media ? 
-                                        <FeaturedImage imgID = {event[0].featured_media} element = "event"/>
-                                        : null
-                                    }
-
-
-                                    {event[0].acf.link_video? 
-                                        <Iframe 
-                                            src={event[0].acf.link_video}
-                                            title="video of the event"
-                                            height="500"
-                                            width="500" 
-                                        />
-                                        : null
-                                    }
-                                    
-                                    <span>{event[0].acf.date_texto}</span>
-
-                                    {
-                                        event[0].acf.link_pdf? 
-                                        <a href={event[0].acf.link_pdf} rel="noopener noreferrer" target="_blank">View pdf</a>
-                                        :null
-                                    }
-
-                                    {
-                                         event[0].acf.paragraph_text?
-                                         <p>{event[0].acf.paragraph_text}</p>
-                                         :null
-                                    }                                
-                                    {/* <p>Date : <span dangerouslySetInnerHTML={ {__html: event[0].excerpt.rendered}}></span>
-                                    </p> */}
-                                </EventContainer>   
-                            )) 
-                        : 
-        
-                        <>
-                            
-                            <EventContainer>
-                                <h1>The Latest</h1>
-                                {arrEvenstOrderByDate[0].featured_media ? 
-                                    <FeaturedImage imgID = {arrEvenstOrderByDate[0].featured_media} element = "event"/>
-                                :null}
-
-                                <h3>{arrEvenstOrderByDate[0].title.rendered}</h3>
-                                <span>{arrEvenstOrderByDate[0].acf.date_texto}</span>
-
-                                {arrEvenstOrderByDate[0].acf.link_video? 
-                                        <Iframe 
-                                            src={arrEvenstOrderByDate[0].acf.link_video}
-                                            title="video of the event"
-                                            height="500"
-                                            width="500" 
-                                        />
-                                        : null
-                                    }
-
-                                    {
-                                        arrEvenstOrderByDate[0].acf.link_pdf? 
-                                        <a href={arrEvenstOrderByDate[0].acf.link_pdf} rel="noopener noreferrer" target="_blank">View pdf</a>
-                                        :null
-                                    }
-
-                                    {
-                                         arrEvenstOrderByDate[0].acf.paragraph_text?
-                                         <p>{arrEvenstOrderByDate[0].acf.paragraph_text}</p>
-                                         :null
-                                    }   
-                                {/* <p dangerouslySetInnerHTML={ {__html: arrayOfEvents[0].excerpt.rendered}}></p> */}
-                            </EventContainer>
-                        </>
-                    }
-                    </ContainerEventsCalendar>
-
-                  
-                    <CalendarPastEvents>
-                        <Calendar 
-                            eventDay = {eventDay} 
-                            eventMonth = {eventMonth} 
-                            eventYear = {eventYear} 
-                            setIsEvent = {setIsEvent}
-                            setId = {setId}
-                            idArray = {idArray}
-                        />
-
-                        {FilterUI()}
-
-
-                            {isFilterYear ? 
-
-                                <div>
-                                <h1>PAST EVENTS IN {category}</h1>
-
-                                {filterByYearEvents.length>0 && filterByYearEvents.map(elem => {
-                                    return(
-                                        <ContainerEventBrief>
-                                            {elem.featured_media ? 
-                                                <FeaturedImage imgID = {elem.featured_media} element = "event"/> : null
-                                            }
-                                            {elem.acf.link_video? 
-                                                <Iframe 
-                                                    src={elem.acf.link_video}
-                                                    title="video of the event"
-                                                    height="150"
-                                                    width="250" 
-                                                />
-                                                : null
-                                            }
-
-                                            <div>
-                                                <h3>{elem.title.rendered}</h3>
-                                                <p>Date : 
-                                                    <span>{elem.acf.date_texto}</span>
-                                                </p>
-                                            </div>
-                                        </ContainerEventBrief>
-                                    )
-                                })}
-
-                                </div>
-
-                                :null
-                            }
-
-                       </CalendarPastEvents>
-                        
-                </SectionEvent>
-                </>
-                : <Loading />
-            }    
-
-
-
-        </MarginTopContainer>
-    );
-}
  
 export default connect(Eventos);

@@ -16,152 +16,7 @@ import Image from "@frontity/components/image";
 //handle image size according to size screen
 import CardFeaturedImage from './CardFeatureImage';
 
-export const SectionContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: 0rem 2rem 2rem 2rem;
-
-    @media(max-width: 768px) {
-        padding: 0 1rem 0 1rem;
-    }
-
-    p {
-        padding: 2rem 25rem 0 4rem;
-        line-height: 1.5;
-        font-size: 1.1rem;
-        color: #545454;
-        margin-bottom: 0;
-
-        @media(max-width: 768px) {
-            padding: 0 1rem 0 1rem;
-            font-size: 1rem;
-        }
-    }
-`;
-
-export const MainParagraph = styled.span`
-        padding: 0 25rem 0 4rem;
-        line-height: 1.5;
-        font-size: 1.4rem;
-        color: #4c4c4c;
-
-        @media(max-width: 768px) {
-            padding: 0 1rem 0 1rem;
-            font-size: 1.2rem;
-        }
-`
-
-export const CardsContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    
-    @media (max-width: 768px){
-        flex-direction: column;
-    }    
-
-
-    @media (max-width: 1300px){
-       flex-wrap: wrap;
-   }
-`;
-
-export const Card = styled.div`
-
-    display: flex;
-    flex-direction: column;
-    flex-basis: 33.33%;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: space-between;
-    /* background-color: #eaeade; */
-    line-height: 1.2;
-    margin: 2rem;
-    border-radius: 1rem;
-    padding-bottom: 1.5rem;
-    box-shadow: 0 1px 20px 1px grey;
-
-    @media (max-width: 768px){
-        margin: 1rem 0 1rem 0;
-    }
-
-    @media (max-width: 1300px){
-        flex-basis: 40%;
-        flex-grow: 0;
-    }
-
-    h3 {
-        color: #44841a;
-        padding: 0 1rem 0 1rem;
-    }
-
-    p {
-        margin-top: 0;
-        padding: 0rem 1rem 1rem 1rem;
-        font-weight: 400;
-        font-size: 1rem;
-        color: #545454;
-        text-align: justify;
-    }
-    
-    a {
-        text-decoration: none;
-        background-color: #f07723;
-        color: #fff;
-        padding: .8rem;
-        border-radius: 10px;
-    }
-`;
-
-export const ImagePotatoPark = styled(Image)`
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 1rem 1rem 0 0;   
-
-    /**new style last fixed */
-    width: 50%;
-    align-self: center;
-    max-height: 45vh; 
-
-    @media (max-width: 768px){
-        display: none;
-    }
-`
-
-const SectionInfoContainer = styled.div`
-    margin: 2rem 0;
-    h2{
-        text-align: center;
-    }
-`;
-
-const FastInfo = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    text-align: center;
-    margin: 4rem 0;
-
-    @media(min-width: 768px) {
-        div {
-            flex-basis: 25%;
-        }
-    }
-
-
-    @media(max-width: 768px) {
-        flex-direction: column;
-
-        div {
-            margin: 1rem 0;
-        }
-    }
-
-    p {
-        color: #000;
-        padding: 0;
-    }
-`;
-const PotatoPark = ({state, actions}) => {
+const PotatoPark = ({state, actions, libraries}) => {
 
     useEffect( () => {
         
@@ -212,13 +67,8 @@ const PotatoPark = ({state, actions}) => {
 
 
     if(typeof pagePotatoPark !== "undefined") {
-
-        dataTitleList = pagePotatoPark.acf.data_titles_list.split("*");
-        dataTitleList.shift();
-    
-        dataTextList = pagePotatoPark.acf.data_text_list.split("*");
-        dataTextList.shift();
-    
+        
+        console.log("data: ", pagePotatoPark)
         infoListOne = pagePotatoPark.acf.info_list_1.split("*");
         infoListOne.shift();
     
@@ -229,6 +79,8 @@ const PotatoPark = ({state, actions}) => {
         listActivities.shift();
     }
 
+    const Html2react = libraries.html2react.Component;
+    
     return ( 
        
         <>
@@ -248,29 +100,40 @@ const PotatoPark = ({state, actions}) => {
             
             </HeadContainer>
 
+           
+
             <SectionContainer>
-                <MainParagraph>
-                    {pagePotatoPark.acf.main_text}
-                </MainParagraph>
+
+                <ContainerParagraphMap>
+                    <MainParagraph>
+                        {pagePotatoPark.acf.main_text}
+                    </MainParagraph>
+
+                    <Content>       
+                        <Html2react html={pagePotatoPark.content.rendered} />
+                    </Content> 
+                </ContainerParagraphMap>
+
                 
                 <SectionInfoContainer>
-                <FastInfo>
-                    {
-                        dataTitleList.map( (itemTitleList , index)  => {
-                            return(
-                                <div>
-                                    <FontAwesomeIconStyled icon={FirstArrayOfIcons[index]}/>
-                                    <h3>{itemTitleList}</h3>
-                                    <p>{dataTextList[index]}</p>
-                                </div>
-                            )
-                        }) 
-                    }
-            
-                </FastInfo>
+
+                    <FastInfo>
+                        {
+                            Object.keys(pagePotatoPark.acf.data_list).map( (elem, index) => {
+                                return(
+                                    <div>
+                                        <FontAwesomeIconStyled icon={FirstArrayOfIcons[index]}/>
+                                        <h3>{pagePotatoPark.acf.data_list[elem].title}</h3>
+                                        <p>{pagePotatoPark.acf.data_list[elem].data}</p>
+                                    </div>
+                                )
+                        
+                            })
+                        }
+                
+                    </FastInfo>
 
                 </SectionInfoContainer>
-
 
                 <BriefSection>
 
@@ -373,3 +236,183 @@ const PotatoPark = ({state, actions}) => {
 }
  
 export default connect(PotatoPark);
+
+export const SectionContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 2rem 2rem 2rem;
+
+    @media(max-width: 768px) {
+        padding: 0 1rem 0 1rem;
+    }
+
+    p {
+        padding: 2rem 25rem 0 4rem;
+        line-height: 1.5;
+        font-size: 1.1rem;
+        color: #545454;
+        margin-bottom: 0;
+
+        @media(max-width: 768px) {
+            padding: 0 1rem 0 1rem;
+            font-size: 1rem;
+        }
+    }
+`;
+
+export const ContainerParagraphMap = styled.div`
+    display: flex;
+    justify-content: space-between;
+
+    @media(max-width: 1000px) {
+        flex-direction: column;
+    }
+`
+
+export const MainParagraph = styled.span`
+        flex-basis: 40%;
+        padding: 0 2rem 0 2rem;
+        line-height: 1.5;
+        font-size: 1.4rem;
+        color: #4c4c4c;
+
+        @media(max-width: 768px) {
+            padding: 0 1rem 0 1rem;
+            font-size: 1.2rem;
+        }
+`
+
+/**Styles google map content rendered */
+export const Content = styled.div`
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding-bottom: 4rem;
+
+    @media (max-width: 968px) {
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    } 
+
+    iframe{
+        @media (max-width: 768px) {
+            width: 300px;
+        } 
+     
+    }
+`
+
+export const CardsContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    
+    @media (max-width: 768px){
+        flex-direction: column;
+    }    
+
+
+    @media (max-width: 1300px){
+       flex-wrap: wrap;
+   }
+`;
+
+export const Card = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33.33%;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: #eaeade; */
+    line-height: 1.2;
+    margin: 2rem;
+    border-radius: 1rem;
+    padding-bottom: 1.5rem;
+    box-shadow: 0 1px 20px 1px grey;
+
+    @media (max-width: 768px){
+        margin: 1rem 0 1rem 0;
+    }
+
+    @media (max-width: 1300px){
+        flex-basis: 40%;
+        flex-grow: 0;
+    }
+
+    h3 {
+        color: #44841a;
+        padding: 0 1rem 0 1rem;
+    }
+
+    p {
+        margin-top: 0;
+        padding: 0rem 1rem 1rem 1rem;
+        font-weight: 400;
+        font-size: 1rem;
+        color: #545454;
+        text-align: justify;
+    }
+    
+    a {
+        text-decoration: none;
+        background-color: #f07723;
+        color: #fff;
+        padding: .8rem;
+        border-radius: 10px;
+    }
+`;
+
+export const ImagePotatoPark = styled(Image)`
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1rem 1rem 0 0;   
+
+    /**new style last fixed */
+    width: 50%;
+    align-self: center;
+    max-height: 45vh; 
+
+    @media (max-width: 768px){
+        display: none;
+    }
+`
+
+export const SectionInfoContainer = styled.div`
+    margin: 2rem 0;
+    h2{
+        text-align: center;
+    }
+`;
+
+export const FastInfo = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    text-align: center;
+    margin: 4rem 0;
+
+    @media(min-width: 768px) {
+        div {
+            flex-basis: 25%;
+        }
+    }
+
+
+    @media(max-width: 768px) {
+        flex-direction: column;
+
+        div {
+            margin: 1rem 0;
+        }
+    }
+
+    p {
+        color: #000;
+        padding: 0;
+    }
+`;

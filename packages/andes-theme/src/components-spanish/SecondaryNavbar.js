@@ -74,7 +74,7 @@ const SecondaryNavbar = ({state, actions, setNavOpen, navOpen}) => {
 
     let myLink = state.router.link;
 
-    let linkEnglish = myLink === "/es-/" ?  myLink.replace("/es-/","/") : myLink.replace("/es-","/");
+    let linkEnglish = myLink === "/es-/" ?  myLink.replace("/es-/","/") : myLink.replace("/es-/es-","/");
 
     return ( 
 
@@ -85,7 +85,7 @@ const SecondaryNavbar = ({state, actions, setNavOpen, navOpen}) => {
                 <a href={linkEnglish}>ENGLISH</a>
                 <a href={myLink}>ESPAÑOL</a>
 
-                <a href="/es-searchbar">
+                <a href="/es-/es-searchbar">
                     <span>Buscar</span>
                     <FontAwesomeIcon css={css`font-size: 1.2rem;`}icon={faSearch}/>
                 </a> 

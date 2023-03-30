@@ -23,19 +23,17 @@ export default {
           isHomePageSpanish: true,
         },
 
-
         "/searchbar/": {
           isReady: true,
           isFetching: false,
           isSearchBar: true,
         },
 
-        "/es-searchbar/": {
+        "/es-/es-searchbar/": {
           isReady: true,
           isFetching: false,
           isSearchBarSpanish: true,
         },
-
 
         "/investigacion/": {
           isReady: true,
@@ -43,7 +41,7 @@ export default {
           isInvestigacion: true,
         },
 
-        "/es-investigacion/": {
+        "/es-/es-investigacion/": {
           isReady: true,
           isFetching: false,
           isInvestigacionSpanish: true,
@@ -55,7 +53,7 @@ export default {
           isIntercambios: true,
         },
 
-        "/es-exchanges/": {
+        "/es-/es-exchanges/": {
           isReady: true,
           isFetching: false,
           isIntercambiosSpanish: true,
@@ -67,7 +65,7 @@ export default {
           isIntercambios: true,
         },
 
-        "/es-intercambios/": {
+        "/es-/es-intercambios/": {
           isReady: true,
           isFetching: false,
           isIntercambiosSpanish: true,
@@ -79,7 +77,7 @@ export default {
           isToolkit: true,
         },
 
-        "/es-toolkit/": {
+        "/es-/es-toolkit/": {
           isReady: true,
           isFetching: false,
           isToolkitSpanish: true,
@@ -91,7 +89,7 @@ export default {
           isPublicaciones: true,
         },        
 
-        "/es-publications/": {
+        "/es-/es-publications/": {
           isReady: true,
           isFetching: false,
           isPublicacionesSpanish: true,
@@ -104,7 +102,7 @@ export default {
           isNoticiasRelevantes: true,
         },
 
-        "/es-news/": {
+        "/es-/es-news/": {
           isReady: true,
           isFetching: false,
           isNoticiasRelevantesSpanish: true,
@@ -117,7 +115,7 @@ export default {
           isEventos: true,
         },
 
-        "/es-events/": {
+        "/es-/es-events/": {
           isReady: true,
           isFetching: false,
           isEventosSpanish: true,

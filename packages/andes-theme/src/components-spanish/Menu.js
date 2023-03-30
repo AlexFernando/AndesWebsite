@@ -149,24 +149,6 @@ const Hamburger = styled.div`
     top: 10px;
   }
 `
-
-// const MobileBox = styled.div`
-//   display: none;
-
-//   @media (max-width: 768px) {
-//     display: -webkit-box;
-//     display: -webkit-flex;
-//     display: -ms-flexbox;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-around;
-//     flex: 1 0 100%; /**new line */
-//     width: 100%;
-
-    
-//   }
-// `
-
 const Button = styled.a`
     display: -webkit-box;
     display: -webkit-flex;
@@ -254,7 +236,7 @@ const Menu =  () => {
     <>
     <Navigation>
       
-      <Link href="/es-"><Image src={logo} height="60" width="60" /></Link>
+      <Link href="/es-"><Image src={logo} height="80" width="220" /></Link>
  
       <Toggle
         navbarOpen={navbarOpen}
@@ -288,9 +270,9 @@ const Menu =  () => {
                     setOpen = {setOpenAboutMobile}
                     options={["Quienes somos?", "Philosophy*Filosofia", "People*Personas"]}
                     secondTitle = {'Qué Hacemos?'}
-                    options2={["Biocultural Territories*Territorios Bioculturales", "Advocay and Politics*Incidencias Politicas"]}
+                    options2={["Biocultural Territories*Territorios Bioculturales", "Advocay and Politics*Incidencias Politicas", "International Programs and Networks*Programas y Redes Internacionales"]}
                     thirdTitle = {["Dónde trabajamos?"]}
-                    options3={["Potato Park - Pisac*Parque de la Papa - Pisac", "Chalakuy Park - Lares*Parque de Maiz - Lares", "Spiritual Park - Vilcanota*Parque Espiritual - Vilcanota", "International Programs and Networks*Programas y Redes Internacionales"]}
+                    options3={["Potato Park - Pisac*Parque de la Papa - Pisac", "Chalakuy Park - Lares*Parque de Maiz - Lares", "Spiritual Park - Vilcanota*Parque Espiritual - Vilcanota"]}
                   /> 
             
 
@@ -320,22 +302,22 @@ const Menu =  () => {
               } 
 
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
-              <LinkMenu href="/es-publications">Publicaciones</LinkMenu>
+              <LinkMenu href="/es-/es-publications">Publicaciones</LinkMenu>
           </Button>
           <Border />
 
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}>
-            <LinkMenu href= "/es-news">Noticias</LinkMenu>
+            <LinkMenu href= "/es-/es-news">Noticias</LinkMenu>
           </Button> 
           <Border />
           
           <Button onClick = {() => setNavbarOpen(!navbarOpen)}> 
-            <LinkMenu href= "/es-events">Eventos</LinkMenu>
+            <LinkMenu href= "/es-/es-events">Eventos</LinkMenu>
           </Button> 
           <Border />
 
           <ButtonContact onClick = {() => setNavbarOpen(!navbarOpen)}>
-             <LinkMenu href="/es-stayintouch/">Contacto</LinkMenu>
+             <LinkMenu href="/es-/es-stayintouch/">Contacto</LinkMenu>
           </ButtonContact>
               <br></br>
               <br></br>
@@ -362,10 +344,10 @@ const Menu =  () => {
 
               <LinkMenu href="/es-">PLURIVERSIDAD</LinkMenu>
           </Button> 
-          <Button><LinkMenu href="/es-publications">PUBLICACIONES</LinkMenu></Button> 
-          <Button><LinkMenu href= "/es-news">NOTICIAS</LinkMenu></Button> 
-          <Button> <LinkMenu href= "/es-events">EVENTOS</LinkMenu></Button> 
-          <LinkButtonHome href="/es-stayintouch/">CONTACTO</LinkButtonHome>
+          <Button><LinkMenu href="/es-/es-publications">PUBLICACIONES</LinkMenu></Button> 
+          <Button><LinkMenu href= "/es-/es-news">NOTICIAS</LinkMenu></Button> 
+          <Button> <LinkMenu href= "/es-/es-events">EVENTOS</LinkMenu></Button> 
+          <LinkButtonHome href="/es-/es-stayintouch/">CONTACTO</LinkButtonHome>
         </Navbox>
       )}
       
@@ -380,9 +362,9 @@ const Menu =  () => {
         setHoverOpen = {setIsShown}
         options={["Quienes somos?", "Philosophy*Filosofia", "People*Personas"]}
         secondTitle = {'Que hacemos?'}
-        options2={["Biocultural Territories*Territorios Bioculturales", "Advocacy and Politics*Incidencias Politicas"]}
+        options2={["Biocultural Territories*Territorios Bioculturales", "Advocacy and Politics*Incidencias Politicas", "International Programs and Networks*Programas y Redes Internacionales"]}
         thirdTitle = {["Dónde trabajamos?"]}
-        options3={["Potato Park - Pisac*Parque de la Papa - Pisac", "Chalakuy Park - Lares*Parque de Maiz - Lares", "Spiritual Park - Vilcanota*Parque Espiritual - Vilcanota", "International Programs and Networks*Programas y Redes Internacionales"]}
+        options3={["Potato Park - Pisac*Parque de la Papa - Pisac", "Chalakuy Park - Lares*Parque de Maiz - Lares", "Spiritual Park - Vilcanota*Parque Espiritual - Vilcanota"]}
         ImageNav = {imgAndes}
       />  : null
     }

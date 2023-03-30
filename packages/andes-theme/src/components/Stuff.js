@@ -79,13 +79,15 @@ export const ImageSection = styled(Image)`
 const Staff = ({state, actions}) => {
 
     useEffect( () => {
-            
+        console.log("hola")
         if(state.theme.lang === "en") {
+            console.log("hola english")
             actions.source.fetch("/people")
             actions.source.fetch("/cardpersona/")
         }
 
         else {
+            console.log("hola spanish")
             actions.source.fetch("/es-people")
             actions.source.fetch("/cardpersona/")
         }

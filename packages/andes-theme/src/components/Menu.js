@@ -251,7 +251,7 @@ const Menu =  ({state}) => {
     <>
     <Navigation>
       
-      <Link href="/"><Image src={logo} height="60" width="60" alt="logo" /></Link>
+      <Link href="/"><Image src={logo} height="80" width="220" alt="logo" /></Link>
  
       <Toggle
         navbarOpen={navbarOpen}

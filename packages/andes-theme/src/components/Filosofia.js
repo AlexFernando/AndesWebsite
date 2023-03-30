@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect, styled } from "frontity";
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIconList} from './TerritoriosCulturales';
@@ -7,6 +7,9 @@ import Image from "@frontity/components/image";
 
 //handle image size according to size screen
 import CardFeaturedImage from './CardFeatureImage';
+
+//loading 
+import Loading from './Loading';
 
 export const MarginTopContainer = styled.div`
     margin-top: 12vh;
@@ -147,16 +150,37 @@ export const ImageStyle = styled.img`
     }
 `
 
-const Filosofia = ({state, actions}) => {
+const ImageCardHome = styled(Image)`
+    width: 100%;
+    align-self: center;
+    max-height: 35vh; /**new line image height */     
+    border-radius: 1rem 1rem 0 0; 
+`
+
+const Filosofia = ({state, actions, libraries}) => {
+
+    useEffect( () => {
+        
+        if(state.theme.lang === "en") {
+            actions.source.fetch("/philosophy")
+        }
+
+        else {
+            actions.source.fetch("/es-philosophy")
+        }
+    }, [])
     
     const pagePhilosophy = state.theme.lang === "en" ? state.source.page[172] : state.source.page[192];
 
     const objectivesArr = pagePhilosophy.acf.objectives.split("*");
 
     objectivesArr.shift();
-
+    
     return ( 
 
+        <>
+        { typeof pagePhilosophy === "undefined"  ? <Loading />
+        :
         <MarginTopContainer>
             <HeadContainer>
                 <Title>{pagePhilosophy.acf.title}</Title>
@@ -214,14 +238,20 @@ const Filosofia = ({state, actions}) => {
                                     }
                                 </ul>
                             </div>
-                            
+
                             <div>
+                                <ImageCardHome src={pagePhilosophy.acf.image_one.sizes.medium_large} />
+                            </div>
+                            <div>
+                                <ImageCardHome src={pagePhilosophy.acf.image_two.sizes.medium_large} />
+                            </div>
+                            {/* <div>
                                 <CardFeaturedImage  media = {pagePhilosophy.acf.image_one.sizes} />
                             </div>
 
                             <div>
                                 <CardFeaturedImage  media = {pagePhilosophy.acf.image_two.sizes} />
-                            </div>
+                            </div> */}
 
                         </ObjetivesContent>
                     </div>
@@ -232,6 +262,8 @@ const Filosofia = ({state, actions}) => {
             
         </MarginTopContainer>
 
+        }
+        </>
     );
 }
  

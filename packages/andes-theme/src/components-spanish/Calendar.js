@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {connect, styled, css} from "frontity";
+import getAllIndexes from  '../helpers/findIndexes';
 
 const MyCalendar =  styled.div`
   flex-basis: 40%;
@@ -102,12 +103,10 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
       setStartDay(calculateStartDayOfMonth(date));
     }, [date]);
 
-    const showEvent = (id) => {
+    const showEvent = (eventId) => {
       setIsEvent(true);
-      //console.log("el id: ", id)
-      setId(id);
+      setId(eventId);
     }
-
     
     const isLeapYear = (year) => {
       return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
@@ -122,7 +121,7 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
 
     return ( 
       <MyCalendar>  
-        <Frame>
+       <Frame>
           
           <Header>
             <Button onClick={() => setDate(new Date(year, month - 1, day))}>Prev</Button>
@@ -142,48 +141,54 @@ const Calendar = ({eventDay, eventMonth, eventYear, setIsEvent, setId, idArray})
             {Array(days[month] + (startDay - 1))
               .fill(null)
               .map((_, index) => {
-                //console.log("que es index: ", index);
+              
                 const d = index - (startDay - 2);
-                //console.log("que es d: ", d);
-                //console.log("startday: ",startDay)
-                //console.log(eventDay.indexOf(d) === eventMonth.indexOf(month+1) === eventYear.indexOf(year))
-                //console.log("day: ", d , "month: ", month, "year: ", year)
-                //console.log("el mes del calendario: ",month)
-                //console.log(eventDay.indexOf)
 
                 let indexDay = eventDay.indexOf(d)
 
-                if(indexDay > -1 && month === eventMonth[indexDay] && year === eventYear[indexDay] ) {
-                  
-
-
-                  return (
-                    <Day
-                      key={index}
-                      isSelected={true}
-                      onClick = { () => showEvent(idArray[indexDay])}
-                    >
-                      {d > 0 ? d : ''}
-                    </Day>
-                  );
+                let manyIndex = getAllIndexes(eventDay,d)
                 
+                if(manyIndex.length > 0) {
+
+                  let arrEventsId = [];
+
+                  for(let j = 0 ; j < manyIndex.length ; j++ ){
+                    
+                    if(manyIndex[j] > -1 && month === eventMonth[manyIndex[j]] && year === eventYear[manyIndex[j]]) {
+                      arrEventsId.push(idArray[manyIndex[j]])
+                    }
+                  }
+
+                  if(arrEventsId.length >0) {
+                    return (
+                      <Day
+                        key={index}
+                        isSelected={true}
+                        onClick = { () => showEvent(arrEventsId)}
+                      >
+                        {d > 0 ? d : ''}
+                      </Day>
+                    );
+                  }
+
                 }
+
 
                 else {
-                  return (
+                  return(
                     <Day
-                      key={index}
-                    >
-                      {d > 0 ? d : ''}
-                    </Day>
-                  );
+                    key={index}
+                  >
+                    {d > 0 ? d : ''}
+                  </Day>)
+                  }
                   
-                }
-
-                
-              })}
+              }
+              
+              )}
           </Body>
       </Frame>
+
 
       <h1>{`FECHA DE HOY : ${today}`}</h1>
     </MyCalendar>
